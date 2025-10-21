@@ -5,7 +5,7 @@
 It defines the standardized structure, policies, automation pipelines, and AI-assisted development workflows used across the organization.
 
 --------
----
+-------
 ## 📘 Purpose
 
 The purpose of **ELA-Main** is to:
