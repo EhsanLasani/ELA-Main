@@ -1,0 +1,15 @@
+context_sources:
+  - "../ELA-Main/architecture/"
+  - "../ELA-Main/shared-libs/"
+  - "./01_Definition/"
+  - "./03_Coding/AI_Prompts/"
+
+settings:
+  max_tokens: 800
+  temperature: 0.2
+  reviewers:
+    - name: Lead Developer
+      email: lead.dev@example.com
+notes:
+  - Update sources when shared libraries change version.
+  - Store actual API credentials in Key Vault.
