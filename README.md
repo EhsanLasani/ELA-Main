@@ -4,7 +4,7 @@
 **ELA-Main** is the **master governance and template repository** for all Enterprise-Level Application (ELA) projects.  
 It defines the standardized structure, policies, automation pipelines, and AI-assisted development workflows used across the organization.
 
----
+------
 ---
 ## 📘 Purpose
 
