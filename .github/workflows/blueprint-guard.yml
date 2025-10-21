@@ -1,0 +1,39 @@
+name: blueprint-guard
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Verify required blueprint files
+        run: |
+          set -e
+          echo "🔍 Checking Systems Integration Blueprint artifacts..."
+          test -f Systems_Integration_Blueprint.md
+          test -f Systems_Integration_Blueprint.png
+          if [ -f ".codex/blueprint-generator.md" ] || [ -f "VSCode_Codex_Blueprint_Generator.md" ]; then
+            echo "✅ Codex prompt file found."
+          else
+            echo "❌ Missing Codex prompt file (.codex/blueprint-generator.md or VSCode_Codex_Blueprint_Generator.md)" >&2
+            exit 1
+          fi
+          echo "✅ All required files exist."
+
+      # (Optional stricter rule)
+      - name: Ensure blueprint updated in this PR (optional)
+        run: |
+          set -e
+          echo "Checking if blueprint files were changed in this PR..."
+          CHANGED=$(git diff --name-only origin/main...HEAD | grep -E "Systems_Integration_Blueprint\.md|Systems_Integration_Blueprint\.png" || true)
+          if [ -z "$CHANGED" ]; then
+            echo "⚠️ Blueprint not modified in this PR."
+            echo "If you changed integrations, update blueprint files before merging."
+            # exit 1  # uncomment to enforce
+          else
+            echo "✅ Blueprint updated in this PR."
+          fi
