@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** TMP-DES-COMPLIANCE-C
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 # Compliance Checklist Template
 
 | Control Area | Requirement | Evidence | Owner | Status |

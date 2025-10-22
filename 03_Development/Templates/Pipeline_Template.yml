@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** TMP-DEV-PIPELINE-TEM
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 # 03_Development/Templates/Pipeline_Template.yml
 # Purpose: Baseline CI/CD pipeline for ELA projects (GitHub Actions).
 # Customize matrix, language-specific steps, and deployment logic per service.

@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** TMP-DEV-CODING-STAND
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 <!-- 03_Development/Templates/Coding_Standards_Template.md -->
 # Coding Standards (Template)
 

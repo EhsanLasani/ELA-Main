@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** DOC-DEF-README
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 ﻿# Definition Phase
 
 This folder contains the Definition phase artifacts for the ELA framework.

@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** DOC-DEF-REVIEW-CHECK
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 ﻿# Definition Phase Review Checklist
 - [ ] Scope aligned with Business Case
 - [ ] Success criteria measurable

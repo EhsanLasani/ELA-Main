@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** DOC-MON-README
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 # 07 - Monitoring & Control
 
 Track delivery performance, resource utilization, and compliance with governance checkpoints.

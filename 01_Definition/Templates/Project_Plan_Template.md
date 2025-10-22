@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** TMP-DEF-PROJECT-PLAN
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 ﻿# Project Plan (Template)
 1. Overview & Business Need
 2. Objectives & Success Criteria

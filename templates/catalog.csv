@@ -1,38 +1,72 @@
-ItemID,ItemType,SubType,Path,Description,Active,CreatedOn,ModifiedOn,ObsoletedOn,CommitRef,SourceURL
-TPL-DEF-001,Template,Definition,documentation/Definition/Project_Plan.md,"Project plan covering objectives, milestones, budget, governance.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Definition/Project_Plan.md
-TPL-DEF-002,Template,Definition,documentation/Definition/Requirements_Document.md,"Functional and non-functional requirements capture.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Definition/Requirements_Document.md
-TPL-DEF-003,Template,Definition,documentation/Definition/Architecture_Diagram.drawio,"Draw.io starter for architecture blueprint diagrams.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Definition/Architecture_Diagram.drawio
-TPL-DEF-004,Template,Definition,documentation/Definition/Risk_Assessment.xlsx,"Excel shell for project risk register.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Definition/Risk_Assessment.xlsx
-TPL-DEF-004A,Template,Definition,documentation/Definition/Risk_Assessment.csv,"CSV seed for risk register imports.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Definition/Risk_Assessment.csv
-TPL-DEF-005,Template,Definition,documentation/Definition/Stakeholder_Register.md,"Stakeholder listing with roles, responsibilities, contacts.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Definition/Stakeholder_Register.md
-TPL-EXE-001,Template,Execution,documentation/Execution/Infrastructure_Design.md,"Infrastructure and environment design summary.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/Infrastructure_Design.md
-TPL-EXE-002,Template,Execution,documentation/Execution/Technology_Stack.md,"Technology stack and tooling definition.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/Technology_Stack.md
-TPL-EXE-003,Template,Execution,documentation/Execution/Test_Plan.xlsx,"Excel test plan shell for execution readiness.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/Test_Plan.xlsx
-TPL-EXE-003A,Template,Execution,documentation/Execution/Test_Plan.csv,"CSV seed for test plan import.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/Test_Plan.csv
-TPL-EXE-004,Template,Execution,documentation/Execution/Deployment_Plan.md,"Deployment plan including stages, approvals, communications.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/Deployment_Plan.md
-TPL-EXE-005,Template,Execution,documentation/Execution/AI_Context/context.yaml,"Context configuration for Codex/AI integrations.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/AI_Context/context.yaml
-TPL-EXE-006,Template,Execution,documentation/Execution/Compliance_Checklist.md,"Checklist for security, privacy, and regulatory sign-offs.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Execution/Compliance_Checklist.md
-TPL-COD-001,Guide,Coding,documentation/README.md,"Stage-to-template cross-reference index.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/README.md
-TPL-TST-001,Template,Testing,documentation/Testing/Test_Strategy.md,"Testing strategy covering scope, objectives, tooling.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Test_Strategy.md
-TPL-TST-002,Template,Testing,documentation/Testing/Test_Case_Inventory.xlsx,"Excel inventory for manual and automated test cases.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Test_Case_Inventory.xlsx
-TPL-TST-002A,Template,Testing,documentation/Testing/Test_Case_Inventory.csv,"CSV seed for test case import.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Test_Case_Inventory.csv
-TPL-TST-003,Template,Testing,documentation/Testing/Automated_Test_Report.md,"Report template for automated test summary.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Automated_Test_Report.md
-TPL-TST-004,Template,Testing,documentation/Testing/Defect_Log.xlsx,"Excel defect tracking log.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Defect_Log.xlsx
-TPL-TST-004A,Template,Testing,documentation/Testing/Defect_Log.csv,"CSV seed for defect log import.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Defect_Log.csv
-TPL-TST-005,Template,Testing,documentation/Testing/Performance_Benchmark.md,"Performance benchmarking results template.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Testing/Performance_Benchmark.md
-TPL-DEP-001,Template,Deployment,documentation/Deployment/Release_Readiness_Checklist.md,"Checklist for final release approvals and gating evidence.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Deployment/Release_Readiness_Checklist.md
-TPL-DEP-002,Template,Deployment,documentation/Deployment/Rollback_Steps.md,"Rollback plan outlining triggers, steps, and verification.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Deployment/Rollback_Steps.md
-TPL-DEP-003,Template,Deployment,documentation/Deployment/Deployment_Log.md,"Deployment log structure for staging and production runs.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Deployment/Deployment_Log.md
-TPL-DEP-004,Template,Deployment,documentation/Deployment/Environment_Config.md,"Notes on configuration sources, secrets, and monitoring hooks.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Deployment/Environment_Config.md
-TPL-CHG-001,Template,Change_Management,documentation/Change_Management/Change_Log.md,"Markdown change log table for releases and CR IDs.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Change_Management/Change_Log.md
-TPL-CHG-002,Template,Change_Management,documentation/Change_Management/Revision_History.csv,"CSV seed for detailed revision history tracking.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Change_Management/Revision_History.csv
-TPL-CHG-003,Template,Change_Management,documentation/Change_Management/Continuous_Improvement.md,"Backlog for lessons learned and improvement actions.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Change_Management/Continuous_Improvement.md
-TPL-CHG-004,Guide,Change_Management,documentation/Change_Management/Branch_Naming_Convention.md,"Branch naming quick reference for contributors.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Change_Management/Branch_Naming_Convention.md
-TPL-MON-001,Template,Monitoring_Control,documentation/Monitoring_Control/Performance_Report.xlsx,"Excel template for reporting metrics and variance.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Monitoring_Control/Performance_Report.xlsx
-TPL-MON-001A,Template,Monitoring_Control,documentation/Monitoring_Control/Performance_Report.csv,"CSV seed for performance metrics.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Monitoring_Control/Performance_Report.csv
-TPL-MON-002,Template,Monitoring_Control,documentation/Monitoring_Control/Resource_Utilization_Report.md,"Resource allocation and utilization summary.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Monitoring_Control/Resource_Utilization_Report.md
-TPL-MON-003,Template,Monitoring_Control,documentation/Monitoring_Control/Access_Audit_Reports/README.md,"Checklist for quarterly access reviews.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Monitoring_Control/Access_Audit_Reports/README.md
-TPL-MON-004,Template,Monitoring_Control,documentation/Monitoring_Control/Archive_Checklist.md,"Project closeout archival checklist.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/documentation/Monitoring_Control/Archive_Checklist.md
-TUT-GLB-001,Guide,Global,folder-structure.md,"Reference for the standard ELA project folder hierarchy.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/folder-structure.md
-TUT-RPT-001,Guide,Reporting,reporting/README.md,"Guidance for storing reporting templates and dashboards.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/reporting/README.md
-ASSET-RPT-001,Asset,Reporting,reporting/Performance_Dashboard.pbix,"Placeholder Power BI dashboard to replace with project version.",Y,2025-10-22,2025-10-22,,dcdd7e8a89975d6b5159918a6427f7e34758308f,https://github.com/EhsanLasani/ELA-Main/blob/dcdd7e8a89975d6b5159918a6427f7e34758308f/templates/reporting/Performance_Dashboard.pbix
+ID,Artifact_Name,File_Path,Phase,Version,Status,Owner,Last_Updated,GitHub_URL,Linked_PR,Remarks
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+DOC-POL-ELA-DEVELOPM,ELA Development Policy.md,00_Policy/ELA_Development_Policy.md,Policy,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/00_Policy/ELA_Development_Policy.md,,
+DOC-POL-ELA-POLICY-A,ELA Policy Addendum Blueprint.md,00_Policy/ELA_Policy_Addendum_Blueprint.md,Policy,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/00_Policy/ELA_Policy_Addendum_Blueprint.md,,
+DOC-POL-SYSTEMS-INTE,Systems Integration Blueprint.md,00_Policy/Systems_Integration_Blueprint.md,Policy,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/00_Policy/Systems_Integration_Blueprint.md,,
+DOC-DEF-DATA-FLOW,Data Flow.md,01_Definition/Architecture/Data_Flow.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Architecture/Data_Flow.md,,
+DOC-DEF-INTERFACE-CA,Interface Catalog.md,01_Definition/Architecture/Interface_Catalog.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Architecture/Interface_Catalog.md,,
+DOC-DEF-PROJECT-PLAN,Project Plan.md,01_Definition/Project_Plan.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Project_Plan.md,,
+DOC-DEF-README,README.md,01_Definition/README.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/README.md,,
+DOC-DEF-REQUIREMENTS,Requirements Document.md,01_Definition/Requirements_Document.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Requirements_Document.md,,
+DOC-DEF-STAKEHOLDER,Stakeholder Register.md,01_Definition/Stakeholder_Register.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Stakeholder_Register.md,,
+TMP-DEF-PROJECT-PLAN,Project Plan Template.md,01_Definition/Templates/Project_Plan_Template.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Templates/Project_Plan_Template.md,,
+TMP-DEF-REQUIREMENTS,Requirements Document Template.md,01_Definition/Templates/Requirements_Document_Template.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Templates/Requirements_Document_Template.md,,
+TMP-DEF-STAKEHOLDER,Stakeholder Register Template.md,01_Definition/Templates/Stakeholder_Register_Template.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Templates/Stakeholder_Register_Template.md,,
+DOC-DEF-REVIEW-CHECK,Review Checklist.md,01_Definition/Validation/Review_Checklist.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Validation/Review_Checklist.md,,
+DOC-DEF-SIGNOFF-SHEE,Signoff Sheet.md,01_Definition/Validation/Signoff_Sheet.md,Definition,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/01_Definition/Validation/Signoff_Sheet.md,,
+DOC-DES-README,README.md,02_Design/README.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/README.md,,
+TMP-DES-API-SPEC-TEM,API Spec Template.md,02_Design/Templates/API_Spec_Template.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/Templates/API_Spec_Template.md,,
+TMP-DES-COMPLIANCE-C,Compliance Checklist.md,02_Design/Templates/Compliance_Checklist.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/Templates/Compliance_Checklist.md,,
+TMP-DES-ERD-TEMPLATE,ERD Template.md,02_Design/Templates/ERD_Template.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/Templates/ERD_Template.md,,
+TMP-DES-INFRASTRUCTU,Infrastructure Design.md,02_Design/Templates/Infrastructure_Design.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/Templates/Infrastructure_Design.md,,
+TMP-DES-SOLUTION-ARC,Solution Architecture Template.md,02_Design/Templates/Solution_Architecture_Template.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/Templates/Solution_Architecture_Template.md,,
+TMP-DES-TECHNOLOGY-S,Technology Stack.md,02_Design/Templates/Technology_Stack.md,Design,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/02_Design/Templates/Technology_Stack.md,,
+TMP-DEV-CODING-STAND,Coding Standards Template.md,03_Development/Templates/Coding_Standards_Template.md,Development,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/03_Development/Templates/Coding_Standards_Template.md,,
+TMP-DEV-DEPLOYMENT-P,Deployment Plan Template.md,03_Development/Templates/Deployment_Plan_Template.md,Development,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/03_Development/Templates/Deployment_Plan_Template.md,,
+TMP-DEV-PIPELINE-TEM,Pipeline Template.yml,03_Development/Templates/Pipeline_Template.yml,Development,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/03_Development/Templates/Pipeline_Template.yml,,
+TMP-DEV-TEST-CASE-TE,Test Case Template.md,03_Development/Templates/Test_Case_Template.md,Development,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/03_Development/Templates/Test_Case_Template.md,,
+DOC-INT-README,README.md,04_Systems_Integration/README.md,Integration,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/04_Systems_Integration/README.md,,
+DOC-INT-SYSTEMS-INTE,Systems Integration Blueprint.md,04_Systems_Integration/Systems_Integration_Blueprint.md,Integration,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/04_Systems_Integration/Systems_Integration_Blueprint.md,,
+TMP-INT-INTEGRATION,Integration Test Template.md,04_Systems_Integration/Templates/Integration_Test_Template.md,Integration,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/04_Systems_Integration/Templates/Integration_Test_Template.md,,
+TMP-INT-INTERFACE-CO,Interface Control Document Template.md,04_Systems_Integration/Templates/Interface_Control_Document_Template.md,Integration,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/04_Systems_Integration/Templates/Interface_Control_Document_Template.md,,
+DOC-VAL-README,README.md,05_Validation_Testing/README.md,Validation,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/05_Validation_Testing/README.md,,
+TMP-VAL-TEST-PLAN-TE,Test Plan Template.md,05_Validation_Testing/Templates/Test_Plan_Template.md,Validation,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/05_Validation_Testing/Templates/Test_Plan_Template.md,,
+TMP-VAL-TRACEABILITY,Traceability Matrix Template.md,05_Validation_Testing/Templates/Traceability_Matrix_Template.md,Validation,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/05_Validation_Testing/Templates/Traceability_Matrix_Template.md,,
+TMP-VAL-UAT-CHECKLIS,UAT Checklist Template.md,05_Validation_Testing/Templates/UAT_Checklist_Template.md,Validation,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/05_Validation_Testing/Templates/UAT_Checklist_Template.md,,
+DOC-MON-README,README.md,07_Monitoring_Control/README.md,Monitoring,v1.0,Draft,,2025-10-22,https://github.com/<org>/<repo>/blob/main/07_Monitoring_Control/README.md,,
