@@ -1,6 +1,42 @@
 #!/usr/bin/env python3
 import csv, os, sys, re, datetime, pathlib
 
+# add near top
+import subprocess, re, datetime, pathlib
+
+def detect_repo_slug() -> str:
+    try:
+        url = subprocess.check_output(["git","config","--get","remote.origin.url"], text=True).strip()
+    except Exception:
+        return ""
+    m = re.match(r"^https://github\.com/([^/]+/[^/]+?)(?:\.git)?$", url, re.I)
+    if m: return m.group(1)
+    m = re.match(r"^git@github\.com:([^/]+/[^/]+?)(?:\.git)?$", url, re.I)
+    if m: return m.group(1)
+    return ""
+
+# replace your blob_url with:
+_REPO_SLUG = detect_repo_slug()
+def blob_url(path):
+    return f"https://github.com/{_REPO_SLUG}/blob/main/{path}" if _REPO_SLUG else ""
+
+# when loading catalog, drop blank rows:
+def load_catalog():
+    rows = []
+    if os.path.exists(CATALOG):
+        with open(CATALOG, newline="", encoding="utf-8") as f:
+            r = csv.DictReader(f)
+            for row in r:
+                # skip all-empty
+                if not any((row.get(k) or "").strip() for k in REQ_COLS):
+                    continue
+                rows.append({k: (row.get(k,"") or "").strip() for k in REQ_COLS})
+    return rows
+
+# replace deprecated utcnow:
+today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+
+
 CATALOG = "templates/catalog.csv"
 REPO = pathlib.Path(".").resolve()
 
