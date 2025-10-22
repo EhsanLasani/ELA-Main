@@ -1,0 +1,203 @@
+# 03_Development/Templates/Pipeline_Template.yml
+# Purpose: Baseline CI/CD pipeline for ELA projects (GitHub Actions).
+# Customize matrix, language-specific steps, and deployment logic per service.
+#
+# Metadata
+# - Artifact ID (catalog.csv): TMP-CI
+# - Version: v1.0
+# - Owner:
+# - Linked Ticket / PR:
+
+name: ci-cd
+
+on:
+  push:
+    branches: [ main, release/*, hotfix/* ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  ORG_NAME: your-org
+  APP_NAME: your-app
+  CACHE_VERSION: v1
+  # Example vars; add more via repo/org ENV or Secrets.
+
+permissions:
+  contents: read
+  id-token: write        # for OIDC to cloud if needed
+  packages: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ----------------------------
+  # 1) Static checks & unit tests
+  # ----------------------------
+  build_test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ node, python ]
+        include:
+          - language: node
+            setup: |
+              corepack enable
+              npm ci
+            test: |
+              npm run lint
+              npm test --if-present
+              npm run build --if-present
+            cache_key: node-${{ hashFiles('**/package-lock.json', '**/pnpm-lock.yaml', '**/yarn.lock') }}
+          - language: python
+            setup: |
+              python -m pip install --upgrade pip
+              pip install -r requirements.txt || true
+            test: |
+              ruff check . || true
+              pytest -q || true
+              python -m build || true
+            cache_key: py-${{ hashFiles('**/requirements*.txt') }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup ${{ matrix.language }}
+        run: |
+          ${{ matrix.setup }}
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ~/.cache/pip
+            .venv
+            node_modules
+          key: ${{ env.CACHE_VERSION }}-${{ matrix.cache_key }}
+
+      - name: Run tests & build
+        run: |
+          ${{ matrix.test }}
+
+      - name: Upload test artifacts (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs-${{ matrix.language }}
+          path: |
+            coverage.*
+            junit*.xml
+            reports/**
+          if-no-files-found: ignore
+
+  # ----------------------------
+  # 2) Security & quality gates
+  # ----------------------------
+  security_quality:
+    name: Security & Quality Gates
+    runs-on: ubuntu-latest
+    needs: [ build_test ]
+    steps:
+      - uses: actions/checkout@v4
+
+      # Example: dependency review for PRs
+      - name: Dependency Review
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/dependency-review-action@v4
+
+      # Example: CodeQL (enable per language)
+      # - name: Initialize CodeQL
+      #   uses: github/codeql-action/init@v3
+      #   with:
+      #     languages: javascript, python
+      # - name: Perform CodeQL Analysis
+      #   uses: github/codeql-action/analyze@v3
+
+      - name: Quality Gate (placeholder)
+        run: |
+          echo "Add SAST/DAST, coverage thresholds, and policy checks here."
+          # exit 1 to fail gate if threshold not met
+
+  # ----------------------------
+  # 3) Package & publish artifact
+  # ----------------------------
+  package:
+    name: Package Artifact
+    runs-on: ubuntu-latest
+    needs: [ security_quality ]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package
+        run: |
+          echo "Build deployment-ready artifact (container image / zip / chart)."
+          # e.g., docker build -t ghcr.io/${{ github.repository }}:${{ github.sha }} .
+
+      - name: Login to GHCR (example)
+        uses: docker/login-action@v3
+        if: ${{ false }}   # set true to enable
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push image (example)
+        if: ${{ false }}   # set true to enable
+        run: |
+          echo "docker push ghcr.io/${{ github.repository }}:${{ github.sha }}"
+
+      - name: Upload packaged artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: |
+            dist/**
+            build/**
+            *.tar
+            *.zip
+          if-no-files-found: warn
+
+  # ----------------------------
+  # 4) Deploy (staged, protected envs)
+  # ----------------------------
+  deploy:
+    name: Deploy (staged)
+    runs-on: ubuntu-latest
+    environment:
+      name: production          # use GitHub Environments for approvals/secrets
+      url: ${{ steps.out.outputs.app_url }}
+    needs: [ package ]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: package
+          path: ./package
+
+      - name: Configure cloud auth (OIDC example)
+        if: ${{ false }}   # set true and add cloud provider step
+        run: echo "Authenticate to cloud using OIDC and deploy."
+
+      - name: Deploy step (placeholder)
+        id: deploy
+        run: |
+          echo "Run IaC/Helm/kubectl/CLI to deploy the artifact."
+          echo "app_url=https://example.app" >> $GITHUB_OUTPUT
+
+      - name: Post-deploy verification
+        run: |
+          echo "Hit health endpoints / run synthetic checks / validate migrations."
+          # exit 1 to rollback on failure
+
+      - name: Conditional rollback (example)
+        if: ${{ failure() }}
+        run: |
+          echo "Invoke rollback routine (helm rollback / previous tag)."
+

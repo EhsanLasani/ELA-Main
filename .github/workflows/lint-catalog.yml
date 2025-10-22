@@ -1,0 +1,128 @@
+name: Lint Catalog (templates/catalog.csv)
+
+on:
+  pull_request:
+    paths:
+      - "templates/catalog.csv"
+  workflow_dispatch:
+
+jobs:
+  lint-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate templates/catalog.csv
+        run: |
+          python - <<'PY'
+          import csv, os, re, sys, urllib.parse
+
+          CATALOG = "templates/catalog.csv"
+          REQ_COLS = ["ID","Artifact_Name","File_Path","Phase","Version","Status","Owner","Last_Updated","GitHub_URL","Linked_PR","Remarks"]
+          ALLOWED_PHASE = {"Policy","Definition","Design","Development","Integration","Validation","Monitoring"}
+          ALLOWED_STATUS = {"Draft","Under Review","Approved","Baseline","Archived"}
+          VERSION_RE = re.compile(r"^v\d+(?:\.\d+)?$")   # v1 or v1.2
+          DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")   # YYYY-MM-DD (not strict calendar validate)
+          URL_SCHEMES = {"http","https"}
+
+          def err(msg):
+            print(f"::error::{msg}")
+
+          if not os.path.exists(CATALOG):
+            err(f"{CATALOG} not found")
+            sys.exit(1)
+
+          with open(CATALOG, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            header = reader.fieldnames or []
+            missing = [c for c in REQ_COLS if c not in header]
+            if missing:
+              err(f"Missing required columns: {missing}")
+              sys.exit(1)
+
+            ids_seen = set()
+            errors = 0
+            rows = list(reader)
+            if not rows:
+              err("Catalog has no rows.")
+              sys.exit(1)
+
+            for i, r in enumerate(rows, start=2):  # row number incl. header
+              row_id = r["ID"].strip()
+              name = r["Artifact_Name"].strip()
+              path = r["File_Path"].strip()
+              phase = r["Phase"].strip()
+              ver = r["Version"].strip()
+              status = r["Status"].strip()
+              owner = r["Owner"].strip()
+              last = r["Last_Updated"].strip()
+              url = (r.get("GitHub_URL") or "").strip()
+
+              # ID
+              if not row_id:
+                err(f"Row {i}: ID cannot be empty")
+                errors += 1
+              elif row_id in ids_seen:
+                err(f"Row {i}: duplicate ID '{row_id}'")
+                errors += 1
+              else:
+                ids_seen.add(row_id)
+
+              # Basic non-empty checks
+              for col, val in [("Artifact_Name",name),("File_Path",path),("Phase",phase),("Version",ver),("Status",status)]:
+                if not val:
+                  err(f"Row {i} ({row_id}): '{col}' cannot be empty")
+                  errors += 1
+
+              # Phase enum
+              if phase and phase not in ALLOWED_PHASE:
+                err(f"Row {i} ({row_id}): invalid Phase '{phase}' (allowed: {sorted(ALLOWED_PHASE)})")
+                errors += 1
+
+              # Status enum
+              if status and status not in ALLOWED_STATUS:
+                err(f"Row {i} ({row_id}): invalid Status '{status}' (allowed: {sorted(ALLOWED_STATUS)})")
+                errors += 1
+
+              # Version format
+              if ver and not VERSION_RE.match(ver):
+                err(f"Row {i} ({row_id}): invalid Version '{ver}' (expected vX or vX.Y)")
+                errors += 1
+
+              # Date format (not mandatory, but if present check shape)
+              if last and not DATE_RE.match(last):
+                err(f"Row {i} ({row_id}): Last_Updated '{last}' should be YYYY-MM-DD")
+                errors += 1
+
+              # File existence (best-effort): allow docs, templates, blueprints, etc.
+              if path:
+                fs_ok = os.path.exists(path)
+                if not fs_ok:
+                  # also try stripped leading './'
+                  if path.startswith("./") and os.path.exists(path[2:]):
+                    fs_ok = True
+                if not fs_ok:
+                  err(f"Row {i} ({row_id}): File_Path does not exist in repo checkout: '{path}'")
+                  errors += 1
+
+              # URL sanity (optional)
+              if url:
+                p = urllib.parse.urlparse(url)
+                if p.scheme not in URL_SCHEMES or not p.netloc:
+                  err(f"Row {i} ({row_id}): GitHub_URL looks invalid: '{url}'")
+                  errors += 1
+
+            if errors:
+              print(f"Found {errors} problem(s) in catalog.")
+              sys.exit(1)
+
+            print(f"Catalog OK: {len(rows)} rows, {len(ids_seen)} unique IDs.")
+          PY
