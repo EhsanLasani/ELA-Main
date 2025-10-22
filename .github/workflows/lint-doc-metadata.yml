@@ -1,0 +1,44 @@
+name: Lint Doc Metadata
+on:
+  pull_request:
+    paths:
+      - "00_Policy/**/*.md"
+      - "01_Definition/**/*.md"
+      - "02_Design/**/*.md"
+      - "03_Development/Templates/**/*.md"
+      - "04_Systems_Integration/**/*.md"
+      - "05_Validation_Testing/**/*.md"
+      - "07_Monitoring_Control/**/*.md"
+  workflow_dispatch:
+
+jobs:
+  lint-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for '## 0. Metadata' blocks
+        run: |
+          set -e
+          fail=0
+          while IFS= read -r -d '' f; do
+            # skip if file is empty
+            [ -s "$f" ] || continue
+            if ! grep -qE '^## 0\. Metadata' "$f"; then
+              echo "::error file=$f::Missing '## 0. Metadata' section"
+              fail=1
+            fi
+            # optional: ensure Artifact ID line exists
+            if ! grep -qE 'Artifact ID \(catalog\.csv\):' "$f"; then
+              echo "::error file=$f::Missing 'Artifact ID (catalog.csv):' line"
+              fail=1
+            fi
+          done < <(git ls-files \
+            "00_Policy/**/*.md" \
+            "01_Definition/**/*.md" \
+            "02_Design/**/*.md" \
+            "03_Development/Templates/**/*.md" \
+            "04_Systems_Integration/**/*.md" \
+            "05_Validation_Testing/**/*.md" \
+            "07_Monitoring_Control/**/*.md" -z)
+          exit $fail
