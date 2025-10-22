@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** TMP-VAL-AUTOMATED-TE
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 # Automated Test Report Template
 
 - **Build/Run ID:**

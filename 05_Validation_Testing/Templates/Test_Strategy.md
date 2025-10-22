@@ -1,3 +1,9 @@
+## 0. Metadata
+- **Artifact ID (catalog.csv):** TMP-VAL-TEST-STRATEG
+- **Version:** v1.0
+- **Owner:** 
+- **Linked Ticket / PR:** 
+
 # Test Strategy Template
 
 ## Objectives

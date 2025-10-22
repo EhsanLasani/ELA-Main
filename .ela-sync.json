@@ -1,0 +1,10 @@
+{
+  "pre": [
+    "python 03_Development/tools/scan_and_sync_catalog.py",
+    "python 03_Development/tools/backfill_metadata.py",
+    "python 03_Development/tools/fix_catalog.py"
+  ],
+  "post": [
+    "echo Sync finished at $(Get-Date)"
+  ]
+}
