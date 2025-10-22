@@ -37,7 +37,7 @@ jobs:
         run: |
           echo "${{ steps.prfiles.outputs.changed }}"
 
-            - name: Update templates/catalog.csv
+      - name: Update templates/catalog.csv
         id: updatecsv
         run: |
           set -e
@@ -128,11 +128,14 @@ jobs:
           git commit -m "chore(catalog): auto-update from ${{ github.event.pull_request.title }}"
           git push
 
+      
       - name: Notify Teams (optional)
-        if: ${{ steps.updatecsv.outputs.UPDATED == '1' && secrets.TEAMS_WEBHOOK_URL != '' }}
+        if: ${{ steps.updatecsv.outputs.UPDATED == '1' }}
         run: |
-          msg=$(jq -nc --arg t "${{ github.event.pull_request.title }}" \
-                          --arg n "${{ github.event.pull_request.number }}" \
-                          --arg u "${{ github.event.pull_request.html_url }}" \
-                          '{text: ("📄 Catalog updated: " + $t + " (PR#" + $n + ") " + $u)}')
-          curl -sS -H "Content-Type: application/json" -d "$msg" "${{ secrets.TEAMS_WEBHOOK_URL }}"
+          if [ -n "${{ secrets.TEAMS_WEBHOOK_URL }}" ]; then
+            msg=$(jq -nc --arg t "${{ github.event.pull_request.title }}" \
+                            --arg n "${{ github.event.pull_request.number }}" \
+                            --arg u "${{ github.event.pull_request.html_url }}" \
+                            '{text: ("📄 Catalog updated: " + $t + " (PR#" + $n + ") " + $u)}')
+            curl -sS -H "Content-Type: application/json" -d "$msg" "${{ secrets.TEAMS_WEBHOOK_URL }}"
+          fi
