@@ -1,0 +1,226 @@
+*** Begin Patch
+*** Add File: 01_Definition/README.md
++# Definition Phase
++
++This folder contains the **Definition Phase** artifacts of the Enterprise-Level Application (ELA) Framework.
++It defines *what* will be built, *why*, *by whom*, and *under what constraints*.
++Outputs here establish the **project baseline** for the subsequent Design and Development phases.
++
++## 📘 Purpose
++Ensure business objectives, functional requirements, risks, and stakeholders are clearly documented and approved.
++All downstream activities trace back to these artifacts.
++
++## 🗂 Folder Structure
++| Path | Description |
++|------|-------------|
++| **Project_Plan.md** | Business case, objectives, scope, milestones, governance model. |
++| **Requirements_Document.md** | Functional, non-functional, and data requirements. |
++| **Stakeholder_Register.md** | Key stakeholders, roles, influence, and engagement. |
++| **Risk_Assessment.csv** | Risk register with probability, impact, mitigation, owner. |
++| **/Architecture/** | Context/data flow diagrams, interface catalogs. |
++| **/Validation/** | Review checklist and signoff sheet. |
++| **/Templates/** | Reusable Definition templates. |
++
++## ⚙️ Workflow & Governance
++1. **Draft** → author updates artifacts in a feature branch (`definition/*` or feature branch).
++2. **Review** → PR raised; reviewers use `/Validation/Review_Checklist.md`.
++3. **Approval** → merge to `main`; tag `definition-baseline-vX.Y`.
++4. **Traceability** → link requirement IDs to design/testing/integration.
++
++## 🔗 References
++- ../00_Policy/ELA_Development_Policy.docx
++- ../02_Systems_Integration/Systems_Integration_Blueprint.md
++- ../00_Policy/ELA_Policy_Addendum_Blueprint.docx
++
+*** End Patch
+*** Begin Patch
+*** Add File: 01_Definition/Validation/Review_Checklist.md
++# Definition Phase Review Checklist
++
++- [ ] Scope clearly defined and in-sync with Business Case
++- [ ] Success criteria measurable
++- [ ] Requirements complete (functional + non-functional)
++- [ ] Security & compliance constraints captured
++- [ ] Stakeholder Register filled and engagement plan defined
++- [ ] Risks identified, owners assigned, mitigations realistic
++- [ ] Architecture context & data flow diagrams present
++- [ ] Traceability: Requirements ↔ Design/Testing links planned
++
+*** End Patch
+*** Begin Patch
+*** Add File: 01_Definition/Validation/Signoff_Sheet.md
++# Definition Phase Signoff
++
++- **Project:** 
++- **Version/Tag:** definition-baseline-vX.Y
++- **Date:** 
++
++| Role | Name | Decision | Date | Comments |
++|------|------|----------|------|----------|
++| Product Owner |  | Approved/Changes |  |  |
++| Architect |  | Approved/Changes |  |  |
++| Security/Compliance |  | Approved/Changes |  |  |
++| PMO |  | Approved/Changes |  |  |
++
+*** End Patch
+*** Begin Patch
+*** Add File: 01_Definition/Templates/Project_Plan_Template.md
++# Project Plan (Template)
++
++## 1. Overview & Business Need
++## 2. Objectives & Success Criteria
++## 3. Scope & Deliverables (In/Out)
++## 4. Milestones & Timeline
++## 5. Governance & Roles
++## 6. Dependencies & Constraints
++## 7. Budget Summary
++## 8. Risk Overview (link Risk_Assessment.csv)
++## 9. Change Control Process
++
+*** End Patch
+*** Begin Patch
+*** Add File: 01_Definition/Templates/Requirements_Document_Template.md
++# Requirements (Template)
++
++## 1. Introduction & Context
++## 2. Stakeholders (summary; link Stakeholder_Register.md)
++## 3. Functional Requirements
++- REQ-001: 
++- REQ-002: 
++## 4. Non-Functional Requirements
++## 5. Data & Integration Requirements
++## 6. Security & Compliance
++## 7. Assumptions/Dependencies/Constraints
++## 8. Acceptance Criteria
++
+*** End Patch
+*** Begin Patch
+*** Add File: 01_Definition/Templates/Stakeholder_Register_Template.md
++# Stakeholder Register (Template)
++
++| Name | Role | Dept | Influence | Interest | Communication Strategy |
++|------|------|------|-----------|----------|------------------------|
++|  |  |  | High/Med/Low | High/Med/Low |  |
++
+*** End Patch
+*** Begin Patch
+*** Add File: 01_Definition/Templates/Risk_Assessment_Template.csv
++Risk ID,Description,Probability,Impact,Mitigation,Owner,Status
++R-001,,Low/Med/High,Low/Med/High,,,
++
+*** End Patch
+*** Begin Patch
+*** Add File: 00_Policy/Repository_Structure_Guide.md
++# Repository Structure Guide (ELA)
++
++This guide defines the standard layout, naming, and governance rules across the ELA repository.
++
++## Core Principles
++- Each phase is **self-contained**: Templates + active docs + README (controller).
++- Central **templates/catalog.csv** is the persistent artifact registry.
++- Every controlled file must have a catalog entry.
++
++## Folder Pattern (per phase)
++- `README.md` – purpose, workflow, approvals, traceability
++- `Templates/` – reusable templates for the phase
++- Additional subfolders as needed (e.g., `Architecture/`, `Validation/`)
++
++## Tagging
++- Definition baseline tag: `definition-baseline-vX.Y`
++
++## Teams & Automation
++- GitHub Actions update the catalog on merges.
++- Teams webhook (secret `TEAMS_WEBHOOK_URL`) receives notifications.
++
+*** End Patch
+*** Begin Patch
+*** Add File: templates/Templates_Governance.md
++# Templates & Catalog Governance
++
++## Purpose
++Ensure all artifacts are tracked centrally while each phase owns its templates and documents locally.
++
++## Catalog (`templates/catalog.csv`)
++Columns: `ID,Artifact_Name,File_Path,Phase,Version,Status,Owner,Last_Updated,GitHub_URL,Linked_PR,Remarks`
++
++## Rules
++1. Every controlled file has a catalog entry.
++2. Version bumps happen via PR merge; GitHub Action updates `Version` & `Last_Updated`.
++3. Phase templates live under `*/Templates/`.
++4. `/templates/documentation/` is deprecated (remove after migration).
++
++## Teams Notifications
++Provide the incoming webhook URL in the repo secret `TEAMS_WEBHOOK_URL`.
++
+*** End Patch
+*** Begin Patch
+*** Add File: .github/workflows/update-catalog.yml
++name: Update Catalog & Notify
++on:
++  push:
++    branches: [ "main", "chore/**", "feature/**" ]
++    paths:
++      - "**/*.md"
++      - "**/*.csv"
++      - "!README.md"
++  pull_request:
++    types: [closed]
++jobs:
++  update-catalog:
++    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++      - name: Setup Python
++        uses: actions/setup-python@v5
++        with:
++          python-version: "3.x"
++      - name: Update catalog.csv
++        run: |
++          python - <<'PY'
++          import csv, os, datetime, re, sys
++          CATALOG="templates/catalog.csv"
++          if not os.path.exists(CATALOG):
++              sys.exit(0)
++          pr_title = os.environ.get("PR_TITLE","")
++          pr_number = os.environ.get("PR_NUMBER","")
++          changed = False
++          rows = []
++          with open(CATALOG, newline='', encoding='utf-8') as f:
++              rows = list(csv.DictReader(f))
++          # naive rule: if PR title contains 'v' like v1. or vX.Y -> bump Version in matching rows by File_Path heuristic
++          # you can refine this later to parse actual file diffs
++          m = re.search(r'v(\\d+)(?:\\.(\\d+))?', pr_title, re.I)
++          ts = datetime.datetime.utcnow().strftime("%Y-%m-%d")
++          for r in rows:
++              if r.get("File_Path") and any(seg in pr_title for seg in r["File_Path"].split("/")[1:3]):
++                  if m:
++                      r["Version"] = f"v{m.group(1)}" + (f".{m.group(2)}" if m.group(2) else "")
++                  r["Last_Updated"] = ts
++                  r["Linked_PR"] = f"PR#{pr_number}"
++                  changed = True
++          if changed:
++              with open(CATALOG, "w", newline='', encoding='utf-8') as f:
++                  w = csv.DictWriter(f, fieldnames=rows[0].keys())
++                  w.writeheader(); w.writerows(rows)
++          PY
++        env:
++          PR_TITLE: ${{ github.event.pull_request.title }}
++          PR_NUMBER: ${{ github.event.pull_request.number }}
++      - name: Commit catalog update (if any)
++        run: |
++          if git status --porcelain | grep templates/catalog.csv; then
++            git config user.name "github-actions"
++            git config user.email "actions@github.com"
++            git add templates/catalog.csv
++            git commit -m "chore(catalog): auto-update from ${{ github.event.pull_request.title }}"
++            git push
++          fi
++      - name: Notify Teams (optional)
++        if: ${{ secrets.TEAMS_WEBHOOK_URL != '' }}
++        run: |
++          msg=$(jq -nc --arg t "${{ github.event.pull_request.title }}" --arg n "${{ github.event.pull_request.number }}" --arg u "${{ github.event.pull_request.html_url }}" '{text: ("📄 Catalog updated: " + $t + " (PR#" + $n + ") " + $u)}')
++          curl -H "Content-Type: application/json" -d "$msg" "${{ secrets.TEAMS_WEBHOOK_URL }}"
++
+*** End Patch
