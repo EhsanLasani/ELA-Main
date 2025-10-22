@@ -1,22 +1,26 @@
-# 01 - Definition
+﻿# Definition Phase
 
-Establish the project foundation before any build work starts. Populate this folder with the artifacts that capture intent, scope, and architecture.
+This folder contains the Definition phase artifacts for the ELA framework.
+It defines what will be built, why, by whom, and under what constraints.
 
-## Required Deliverables
-- `Project_Plan.md` - objectives, milestones, budget, governance contacts.
-- `Requirements_Document.docx` - approved functional and non-functional requirements.
-- `Architecture_Diagram.drawio` - high-level and detailed system views.
-- `Risk_Assessment.xlsx` - identified risks with impact/mitigation.
-- `Stakeholder_Register.md` - roles, responsibilities, communication cadence.
+## Purpose
+Transform business goals into a validated, approved baseline for Design/Build.
 
-## Templates
-- `templates/documentation/Definition/Project_Plan.md`
-- `templates/documentation/Definition/Requirements_Document.md`
-- `templates/documentation/Definition/Architecture_Diagram.drawio`
-- `templates/documentation/Definition/Risk_Assessment.xlsx` (+ CSV starter)
-- `templates/documentation/Definition/Stakeholder_Register.md`
+## Folder Structure
+| Path | Description |
+|------|-------------|
+| Project_Plan.md | Business case, objectives, scope, milestones, governance |
+| Requirements_Document.md | Functional, non-functional, and data requirements |
+| Stakeholder_Register.md | Stakeholders, roles, influence, engagement |
+| Risk_Assessment.csv | Risk register with probability, impact, mitigation, owner |
+| /Architecture/ | Context/data-flow diagrams, interface catalog |
+| /Validation/ | Review checklist and signoff sheet |
+| /Templates/ | Reusable Definition templates |
 
-## Tips
-- Copy the templates above into this folder and export to DOCX/XLSX as stakeholders require.
-- Link supporting SharePoint documents using relative paths or URLs.
-- Record assumptions and decisions so downstream teams understand constraints.
+## Workflow
+Draft → PR Review → Approval → Merge to `main` → Tag `definition-baseline-vX.Y`
+
+## References
+- ../00_Policy/ELA_Development_Policy.docx
+- ../02_Systems_Integration/Systems_Integration_Blueprint.md
+- ../00_Policy/ELA_Policy_Addendum_Blueprint.docx
