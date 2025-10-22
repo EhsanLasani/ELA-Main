@@ -11,6 +11,7 @@ It defines what will be built, why, by whom, and under what constraints.
 
 ## Purpose
 Transform business goals into a validated, approved baseline for Design/Build.
+aDDING LINE FOR CHECL YAML
 
 ## Folder Structure
 | Path | Description |
