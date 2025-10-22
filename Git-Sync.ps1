@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-  Generic Git sync helper for any repository.
+  Generic Git sync helper for any repository (PowerShell 5.1+ compatible).
 .DESCRIPTION
   - Auto-detects repo root, current branch, and origin remote
-  - Stages all changes, prompts for a commit message (configurable), commits
+  - Stages changes, prompts for commit message (configurable), commits
   - Pushes to upstream (or sets it using defaultRemote/defaultBranch)
   - Pulls latest to keep local in sync
   - Supports global defaults (~/.ela-sync.defaults.json) and repo overrides (.ela-sync.json)
@@ -47,7 +47,8 @@ function Get-CurrentBranch {
 function Get-RemoteUrl { (git config --get remote.origin.url 2>$null).Trim() }
 
 function Get-Upstream {
-  $up = (git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>$null).Trim()
+  # Quote @{u} for PowerShell so it doesn't parse as a hashtable literal
+  $up = (git rev-parse --abbrev-ref --symbolic-full-name "@{u}" 2>$null).Trim()
   return $up  # e.g., origin/main
 }
 
@@ -55,11 +56,11 @@ function Ensure-Upstream($branch, $fallbackRemote, $fallbackBranch) {
   $up = Get-Upstream
   if ($up) { return $up }
   $remote = if ($fallbackRemote) { $fallbackRemote } else { "origin" }
-  $target = if ($fallbackBranch) { $fallbackBranch } else { $branch }
-  Write-Host "⚠️  No upstream set for '$branch'. Setting upstream to $remote/$target..." -ForegroundColor Yellow
+  $targetBranch = if ($fallbackBranch) { $fallbackBranch } else { $branch }
+  Write-Host "⚠️  No upstream set for '$branch'. Setting upstream to $remote/$targetBranch..." -ForegroundColor Yellow
   git push -u $remote $branch
   if ($LASTEXITCODE -ne 0) { throw "Failed to set upstream $remote/$branch." }
-  return "$remote/$target"
+  return "$remote/$targetBranch"
 }
 
 # --------------- Banner & Git Check -----------------
@@ -93,6 +94,7 @@ $config           = Merge-Configs $globalConfig $repoConfig
 
 # derive defaults
 $defaultRemote  = if ($config.defaultRemote)  { "$($config.defaultRemote)" } else { "origin" }
+# PS 5.1 doesn't have ??; use explicit fallback
 $defaultBranch  = if ($config.defaultBranch)  { "$($config.defaultBranch)" } else { $null }
 $autoPrompt     = if ($null -ne $config.autoCommitPrompt) { [bool]$config.autoCommitPrompt } else { $true }
 
@@ -124,7 +126,10 @@ if (-not $status) {
   Write-Host "✅ No changes to commit." -ForegroundColor Green
   # still pull to stay in sync
   $up = Get-Upstream
-  if (-not $up) { $up = Ensure-Upstream $currentBranch $defaultRemote ($defaultBranch ?? $currentBranch) }
+  if (-not $up) {
+    $fallbackBranch = if ($defaultBranch) { $defaultBranch } else { $currentBranch }
+    $up = Ensure-Upstream $currentBranch $defaultRemote $fallbackBranch
+  }
   $parts = $up.Split('/')
   Write-Host "`n🔄 Pulling latest from $up..." -ForegroundColor Cyan
   git pull $parts[0] $parts[1]
@@ -142,7 +147,6 @@ if ($autoPrompt) {
     exit 1
   }
 } else {
-  # fallback non-interactive default
   $commitMessage = "chore: sync via Git-Sync.ps1"
 }
 
@@ -153,7 +157,10 @@ if ($LASTEXITCODE -ne 0) { Write-Host "❌ Commit failed." -ForegroundColor Red;
 # ---------------- Push & Pull Sync ------------------
 
 $upstream = Get-Upstream
-if (-not $upstream) { $upstream = Ensure-Upstream $currentBranch $defaultRemote ($defaultBranch ?? $currentBranch) }
+if (-not $upstream) {
+  $fallbackBranch = if ($defaultBranch) { $defaultBranch } else { $currentBranch }
+  $upstream = Ensure-Upstream $currentBranch $defaultRemote $fallbackBranch
+}
 
 $u = $upstream.Split('/')
 $remoteName = $u[0]; $remoteBranch = $u[1]
