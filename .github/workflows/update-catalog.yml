@@ -37,13 +37,15 @@ jobs:
         run: |
           echo "${{ steps.prfiles.outputs.changed }}"
 
-      - name: Update templates/catalog.csv
+            - name: Update templates/catalog.csv
         id: updatecsv
         run: |
           set -e
           CATALOG="templates/catalog.csv"
           if [ ! -f "$CATALOG" ]; then
             echo "No catalog.csv found. Skipping."
+            # still expose an output so later 'if' works
+            echo "UPDATED=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -58,39 +60,45 @@ jobs:
           default_branch = "main"
 
           if not changed:
+            # no touched files; mark not-updated and exit
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as go:
+              go.write("UPDATED=0\n")
             sys.exit(0)
 
           def normalize(p): return p.strip().strip("/")
 
-          # map of normalized changed paths for quick lookup
           changed_set = set(map(normalize, changed))
 
-          # parse optional version token from PR title (e.g., v1.2)
           m = re.search(r'\bv(\d+(?:\.\d+)?)\b', pr_title, re.I)
           version_from_title = f"v{m.group(1)}" if m else None
 
-          # load catalog
-          with open(CATALOG, newline='', encoding='utf-8') as f:
-            rows = list(csv.DictReader(f))
-          if not rows:
+          try:
+            with open(CATALOG, newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          except FileNotFoundError:
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as go:
+              go.write("UPDATED=0\n")
             sys.exit(0)
 
-          today = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+          if not rows:
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as go:
+              go.write("UPDATED=0\n")
+            sys.exit(0)
+
+          today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
           updated = False
 
           def blob_url(path):
             return f"https://github.com/{repo}/blob/{default_branch}/{path}"
 
           for r in rows:
-            fp = r.get("File_Path","").strip()
+            fp = (r.get("File_Path") or "").strip()
             if not fp:
               continue
             nfp = normalize(fp)
-            # update row if its File_Path is exactly (or parent dir matches) one of the changed files
             if nfp in changed_set or any(ch.startswith(nfp + "/") for ch in changed_set):
               r["Last_Updated"] = today
               r["Linked_PR"] = f"PR#{pr_number}"
-              # refresh GitHub_URL to main (in case file moved)
               r["GitHub_URL"] = blob_url(nfp)
               if version_from_title:
                 r["Version"] = version_from_title
@@ -102,7 +110,8 @@ jobs:
               w.writeheader()
               w.writerows(rows)
 
-          print("UPDATED=" + ("1" if updated else "0"))
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as go:
+            go.write(f"UPDATED={'1' if updated else '0'}\n")
           PY
         env:
           CHANGED: ${{ steps.prfiles.outputs.changed }}
@@ -111,7 +120,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
 
       - name: Commit catalog changes (if any)
-        if: contains(steps.updatecsv.outputs.UPDATED, '1')
+        if: ${{ steps.updatecsv.outputs.UPDATED == '1' }}
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
@@ -120,7 +129,7 @@ jobs:
           git push
 
       - name: Notify Teams (optional)
-        if: contains(steps.updatecsv.outputs.UPDATED, '1') && secrets.TEAMS_WEBHOOK_URL != ''
+        if: ${{ steps.updatecsv.outputs.UPDATED == '1' && secrets.TEAMS_WEBHOOK_URL != '' }}
         run: |
           msg=$(jq -nc --arg t "${{ github.event.pull_request.title }}" \
                           --arg n "${{ github.event.pull_request.number }}" \
