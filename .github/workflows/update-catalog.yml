@@ -41,7 +41,7 @@ jobs:
         id: updatecsv
         run: |
           set -e
-          CATALOG="templates/catalog.csv"
+          CATALOG="catalog.csv"
           if [ ! -f "$CATALOG" ]; then
             echo "No catalog.csv found. Skipping."
             # still expose an output so later 'if' works
@@ -52,7 +52,7 @@ jobs:
           python - <<'PY'
           import csv, json, os, sys, datetime, re
 
-          CATALOG = "templates/catalog.csv"
+          CATALOG = "catalog.csv"
           changed = json.loads(os.environ.get("CHANGED", "[]"))
           pr_title = os.environ.get("PR_TITLE","")
           pr_number = os.environ.get("PR_NUMBER","")
@@ -124,7 +124,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add templates/catalog.csv
+          git add catalog.csv
           git commit -m "chore(catalog): auto-update from ${{ github.event.pull_request.title }}"
           git push
 
