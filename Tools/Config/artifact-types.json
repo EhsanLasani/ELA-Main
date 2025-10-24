@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "ELA Artifact Type Definitions",
+  "description": "Defines all artifact types and their metadata requirements for the ELA framework",
+  "version": "1.0",
+  "last_updated": "2025-10-24",
+  "artifact_types": {
+    "DOC": {
+      "name": "Documentation",
+      "prefix": "DOC",
+      "description": "Informational documents that explain policies, procedures, concepts, or provide guidance",
+      "subtypes": [
+        {"code": "POL", "name": "Policy Documents"},
+        {"code": "GDL", "name": "Guideline Documents"},
+        {"code": "REF", "name": "Reference Documentation"},
+        {"code": "README", "name": "README files"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "phase",
+        "description"
+      ],
+      "optional_fields": [
+        "custodian",
+        "effective_date",
+        "review_cycle",
+        "compliance_standards",
+        "approved_by",
+        "linked_pr"
+      ],
+      "structure_template": "doc_structure",
+      "naming_pattern": "DOC-[PHASE]-[NAME]"
+    },
+    "TMP": {
+      "name": "Template",
+      "prefix": "TMP",
+      "description": "Structured documents meant to be copied and filled out for specific projects/tasks",
+      "subtypes": [
+        {"code": "DEF", "name": "Definition Phase Templates"},
+        {"code": "DES", "name": "Design Phase Templates"},
+        {"code": "DEV", "name": "Development Phase Templates"},
+        {"code": "TST", "name": "Testing Phase Templates"},
+        {"code": "DEP", "name": "Deployment Phase Templates"},
+        {"code": "OPS", "name": "Operations Phase Templates"},
+        {"code": "CHG", "name": "Change Management Templates"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "phase",
+        "description",
+        "process_group",
+        "process_step"
+      ],
+      "optional_fields": [
+        "template_category",
+        "fill_instructions_url"
+      ],
+      "structure_template": "template_structure",
+      "naming_pattern": "TMP-[PHASE]-[NAME]"
+    },
+    "GDL": {
+      "name": "Guideline",
+      "prefix": "GDL",
+      "description": "Process guides and how-to documents",
+      "subtypes": [
+        {"code": "PROC", "name": "Process Guidelines"},
+        {"code": "TECH", "name": "Technical Guidelines"},
+        {"code": "OVERVIEW", "name": "Phase Process Overviews"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "phase",
+        "description"
+      ],
+      "optional_fields": [
+        "process_overview",
+        "covered_templates",
+        "target_audience"
+      ],
+      "structure_template": "guideline_structure",
+      "naming_pattern": "GDL-[PHASE]-[NAME]"
+    },
+    "VAL": {
+      "name": "Validation Checklist",
+      "prefix": "VAL",
+      "description": "Quality assurance checklists and validation criteria",
+      "subtypes": [
+        {"code": "QA", "name": "Quality Assurance Checklists"},
+        {"code": "SEC", "name": "Security Validation"},
+        {"code": "COMP", "name": "Compliance Validation"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "phase",
+        "description"
+      ],
+      "optional_fields": [
+        "validation_target",
+        "entry_criteria",
+        "exit_criteria",
+        "checkpoint_count"
+      ],
+      "structure_template": "validation_structure",
+      "naming_pattern": "VAL-[PHASE]-[NAME]"
+    },
+    "WFL": {
+      "name": "Workflow",
+      "prefix": "WFL",
+      "description": "Automated workflows and CI/CD scripts",
+      "subtypes": [
+        {"code": "CI", "name": "CI/CD Workflows"},
+        {"code": "AUTO", "name": "Automation Scripts"},
+        {"code": "DEPLOY", "name": "Deployment Workflows"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "description"
+      ],
+      "optional_fields": [
+        "trigger_conditions",
+        "dependencies",
+        "environment"
+      ],
+      "structure_template": "workflow_structure",
+      "naming_pattern": "WFL-[TYPE]-[NAME]"
+    },
+    "SCR": {
+      "name": "Script",
+      "prefix": "SCR",
+      "description": "Utility and helper scripts",
+      "subtypes": [
+        {"code": "PS", "name": "PowerShell Scripts"},
+        {"code": "BASH", "name": "Bash Scripts"},
+        {"code": "UTIL", "name": "Utility Scripts"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "description"
+      ],
+      "optional_fields": [
+        "language",
+        "dependencies",
+        "execution_context"
+      ],
+      "structure_template": "script_structure",
+      "naming_pattern": "SCR-[TYPE]-[NAME]"
+    },
+    "IMG": {
+      "name": "Image/Diagram",
+      "prefix": "IMG",
+      "description": "Visual assets, diagrams, and images",
+      "subtypes": [
+        {"code": "ARCH", "name": "Architecture Diagrams"},
+        {"code": "FLOW", "name": "Flowcharts"},
+        {"code": "UI", "name": "UI Mockups"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "description"
+      ],
+      "optional_fields": [
+        "format",
+        "source_file",
+        "related_documents"
+      ],
+      "structure_template": "image_metadata",
+      "naming_pattern": "IMG-[TYPE]-[NAME]"
+    },
+    "CFG": {
+      "name": "Configuration",
+      "prefix": "CFG",
+      "description": "Configuration files and settings",
+      "subtypes": [
+        {"code": "ENV", "name": "Environment Configuration"},
+        {"code": "APP", "name": "Application Configuration"},
+        {"code": "INFRA", "name": "Infrastructure Configuration"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "description"
+      ],
+      "optional_fields": [
+        "environment",
+        "sensitive_data",
+        "validation_schema"
+      ],
+      "structure_template": "config_structure",
+      "naming_pattern": "CFG-[CONTEXT]-[NAME]"
+    },
+    "TST": {
+      "name": "Test Artifact",
+      "prefix": "TST",
+      "description": "Test cases, test plans, and test reports",
+      "subtypes": [
+        {"code": "PLAN", "name": "Test Plans"},
+        {"code": "CASE", "name": "Test Cases"},
+        {"code": "REPORT", "name": "Test Reports"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "phase",
+        "description"
+      ],
+      "optional_fields": [
+        "test_type",
+        "coverage_target",
+        "automation_status"
+      ],
+      "structure_template": "test_structure",
+      "naming_pattern": "TST-[TYPE]-[NAME]"
+    },
+    "DAT": {
+      "name": "Data File",
+      "prefix": "DAT",
+      "description": "Data files, datasets, and data exports",
+      "subtypes": [
+        {"code": "REF", "name": "Reference Data"},
+        {"code": "SEED", "name": "Seed Data"},
+        {"code": "EXPORT", "name": "Data Exports"}
+      ],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "description"
+      ],
+      "optional_fields": [
+        "format",
+        "schema_version",
+        "record_count"
+      ],
+      "structure_template": "data_metadata",
+      "naming_pattern": "DAT-[TYPE]-[NAME]"
+    },
+    "INST": {
+      "name": "Instance",
+      "prefix": "INST",
+      "description": "Filled template instances for specific projects",
+      "subtypes": [],
+      "required_fields": [
+        "artifact_id",
+        "version",
+        "artifact_type",
+        "status",
+        "owner",
+        "last_updated",
+        "phase",
+        "description",
+        "template_source",
+        "derived_from",
+        "project_name",
+        "filled_by",
+        "filled_date",
+        "validation_status"
+      ],
+      "optional_fields": [
+        "validated_by",
+        "validation_date",
+        "validation_notes"
+      ],
+      "structure_template": "instance_structure",
+      "naming_pattern": "INST-[PHASE]-[PROJECT]-[NAME]"
+    }
+  },
+  "status_values": [
+    "Draft",
+    "Active",
+    "Under Review",
+    "Deprecated",
+    "Archived"
+  ],
+  "phase_values": [
+    "Policy",
+    "Definition",
+    "Design",
+    "Development",
+    "Testing",
+    "Deployment",
+    "Operations",
+    "Change Management"
+  ]
+}
