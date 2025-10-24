@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-03-README
+Artifact_Name: 03 – Development
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: 03 – Development
+File_Path: 03_Development/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/03_Development/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Development
+Process_Group: Development
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # 03 – Development
 
 This phase contains the working source code, automation hooks, and AI prompts.  

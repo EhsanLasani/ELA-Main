@@ -1,23 +1,31 @@
+## Metadata
+---
+Artifact_ID: DOC-00-README
+Artifact_Name: Definition Phase Templates
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Definition Phase Templates
+File_Path: 00_Policy/Templates/01_Definition/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Definition Phase Templates
 
 ## Overview
 
 This folder contains master templates for the **Definition Phase (01_Definition)** of the ELA-Main governance framework. The Definition phase establishes **WHAT** needs to be built by capturing requirements, stakeholder needs, risks, compliance obligations, and project scope before design and implementation begin.
-
----
-
-## Purpose
-
-The Definition Phase ensures:
-- Clear business case and project scope
-- Documented functional and non-functional requirements
-- Identified stakeholders, risks, and dependencies
-- Baseline architectural decisions and compliance obligations
-- Test strategy and quality gates defined upfront
-
-All Definition artifacts serve as the **source of truth** for downstream phases (Design, Development, Testing, Deployment, Operations, Change Management).
-
----
 
 ## Complete Template Index
 
@@ -66,28 +74,6 @@ The **Architecture/** subfolder contains visual templates:
 
 These support the Architecture_Decision_Record documents.
 
----
-
-## Usage Guidelines
-
-### For ELA-Main Framework Maintainers
-1. **DO NOT edit these master templates directly** for project work
-2. These are **reference templates** — projects copy them into their own `01_Definition/` folder
-3. Update templates here only when:
-   - Policy changes require template updates
-   - New compliance standards are added
-   - Lessons learned identify template improvements
-4. Version all template changes and document in `06_Change_Management/changelog.md`
-
-### For Project Teams
-1. **Copy** templates from `00_Policy/Templates/02_Definition/` into your project's `01_Definition/` folder
-2. **Customize** for your project context (replace placeholders, add sections as needed)
-3. **Version control**: Include Project ID, version, date in document headers
-4. **Approval workflow**: All Definition artifacts require PMO/EAO review before proceeding to Design phase
-5. **Traceability**: Link downstream artifacts (Design docs, test cases, code) back to Definition requirements
-
----
-
 ## Definition Phase Validation Checklist
 
 Before proceeding to **03_Design Phase**, verify:
@@ -133,72 +119,12 @@ Before proceeding to **03_Design Phase**, verify:
 - [ ] Document approval recorded in 06_Change_Management/changelog.md
 - [ ] Traceability matrix established (requirements → design → code → tests)
 
----
-
-## Phase Cross-References
-
-### Templates Consumed By Downstream Phases
-
-Templates from this folder are referenced and utilized in the following phases:
-
-#### → 03_Design Phase
-- **Architecture_Decision_Record_Template.md** → Feeds architectural design decisions
-- **NFR_Specification_Template.md** → Informs design of SLIs, SLOs, and observability requirements
-- **Functional_Requirements_SRS_Template.md** → Guides API specifications and UX design standards
-- **Dependency_Assessment_Template.md** → Informs integration architecture
-
-#### → 04_Development Phase
-- **Compliance_Matrix_ISO_IEEE_OWASP.md** → Enforces secure coding standards and compliance
-- **Functional_Requirements_SRS_Template.md** → Guides implementation and technical documentation
-- **Data_Governance_Template.md** → Shapes data handling in code
-
-#### → 06_Testing Phase
-- **Test_Strategy_Template.md** → Defines test scope and approach
-- **NFR_Specification_Template.md** → Drives performance and security testing
-- **Functional_Requirements_SRS_Template.md** → Basis for test case generation
-
-#### → 09_Change_Management Phase
-- **Project_Kickoff_Checklist.md** → Baseline for project initiation and governance
-- **Risk_Assessment_Template.csv** → Feeds change risk analysis
-
-### Key Integration Points
-
-| Template | Primary Consumer Phase(s) | Purpose |
-|----------|---------------------------|----------|
+-------|---------------------------|----------|
 | Requirements_Document_Template.md | 03_Design, 04_Development, 06_Testing | Source of truth for WHAT needs to be built |
 | Architecture_Decision_Record_Template.md | 03_Design | Records WHY decisions were made |
 | Compliance_Matrix_ISO_IEEE_OWASP.md | 04_Development, 06_Testing | Ensures standards adherence |
 | Test_Strategy_Template.md | 06_Testing | Defines HOW validation occurs |
 | Dependency_Assessment_Template.md | 03_Design, 05_Systems_Integration | Maps external dependencies |
-
----
-## Traceability & Governance
-
-### Traceability Rules
-1. **Forward Traceability**: All downstream artifacts must reference the Definition phase template they derive from
-   - Design documents cite Requirements IDs
-   - Code comments reference Functional Requirements
-   - Test cases link to Requirements and NFRs
-
-2. **Backward Traceability**: Every requirement must be validated by at least one test case
-
-3. **Impact Analysis**: When Definition documents change:
-   - Notify all dependent phase teams (Design, Development, Testing)
-   - Update traceability matrix
-   - Record change in 06_Change_Management/changelog.md
-
-### Version Control
-- All Definition templates must be version-controlled in Git
-- Use semantic versioning: `v1.0.0` for initial approval, `v1.1.0` for minor updates, `v2.0.0` for major scope changes
-- Tag approvals with Git tags: `definition-approval-v1.0`
-
-### Change Control
-- Changes to approved Definition artifacts require Change Request (CR)
-- CR must be reviewed by PMO/EAO
-- Impact assessment required for all changes
-- Changes must be communicated to all stakeholders
-
----
 
 ## Standards Alignment
 
@@ -207,17 +133,6 @@ Templates from this folder are referenced and utilized in the following phases:
 - **BABOK**: Business Analysis Body of Knowledge
 - **ISO 27001**: Information Security Management
 - **OWASP**: Secure development practices
-
----
-
-## Maintenance
-
-- **Template Version**: 2.0.0
-- **Last Updated**: 2025-10-24
-- **Owner**: Enterprise Architecture Office (EAO)
-- **Review Cycle**: Quarterly
-
----
 
 ## Related Documentation
 

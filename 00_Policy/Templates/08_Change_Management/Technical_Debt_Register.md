@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-Technical_Debt_Regis
+Artifact_Name: Technical Debt Register
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Technical Debt Register
+File_Path: 00_Policy/Templates/08_Change_Management/Technical_Debt_Register.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/08_Change_Management/Technical_Debt_Register.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Technical Debt Register
 
 ## Document Control
@@ -52,42 +75,7 @@ Technical debt represents compromises in code, architecture, or infrastructure t
 **Owner:** [Name]
 **Target Resolution:** [Date]
 
----
-
-## 3. Active Debt Items
-
-### 3.1 Critical Priority
-
-#### TD-001: [Title]
-- **Component:** [System/Module]
-- **Impact:** [Description]
-- **Effort:** [Estimate]
-- **Owner:** [Name]
-- **Status:** [Status]
-
-### 3.2 High Priority
-
-#### TD-002: [Title]
-- **Component:** [System/Module]
-- **Impact:** [Description]
-- **Effort:** [Estimate]
-- **Owner:** [Name]
-- **Status:** [Status]
-
-### 3.3 Medium Priority
-
-#### TD-003: [Title]
-- **Component:** [System/Module]
-- **Impact:** [Description]
-- **Effort:** [Estimate]
-- **Owner:** [Name]
-- **Status:** [Status]
-
-## 4. Debt by Category
-
-### 4.1 Code Quality
-| ID | Description | Priority | Effort |
-|----|-------------|----------|--------|
+-|-------------|----------|--------|
 | [ID] | [Description] | [Priority] | [Effort] |
 
 ### 4.2 Architecture

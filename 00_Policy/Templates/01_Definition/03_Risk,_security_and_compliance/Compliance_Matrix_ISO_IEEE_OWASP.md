@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-Compliance_Matrix_IS
+Artifact_Name: COMPLIANCE MATRIX: ISO / IEEE / OWASP
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: COMPLIANCE MATRIX: ISO / IEEE / OWASP
+File_Path: 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Compliance_Matrix_ISO_IEEE_OWASP.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Compliance_Matrix_ISO_IEEE_OWASP.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # COMPLIANCE MATRIX: ISO / IEEE / OWASP
 
 ## Document Control
@@ -11,23 +34,6 @@
 | **Assessed By** | [Name/Role] |
 | **Approved By** | [CTO / Enterprise Architect] |
 | **Next Review Date** | [YYYY-MM-DD] |
-
----
-
-## PURPOSE
-
-This compliance matrix maps ELA Development Policy requirements to international standards including ISO/IEC, IEEE, and OWASP guidelines. It ensures that ELA projects meet industry best practices and regulatory requirements.
-
-**Standards Covered:**
-- ISO/IEC 12207: Software Lifecycle Processes
-- ISO/IEC 25010: Software Quality Model
-- ISO/IEC 27001: Information Security Management
-- IEEE 829: Software Test Documentation
-- IEEE 730: Software Quality Assurance
-- OWASP Top 10: Web Application Security
-- OWASP ASVS: Application Security Verification Standard
-
----
 
 ## COMPLIANCE SUMMARY
 
@@ -43,11 +49,4 @@ This compliance matrix maps ELA Development Policy requirements to international
 
 **Overall Compliance:** [X]%
 
----
-
-## 1. ISO/IEC 12207: SOFTWARE LIFECYCLE PROCESSES
-
-### 1.1 Primary Life Cycle Processes
-
-| ISO 12207 Process | ELA Policy Requirement | Implementation | Status | Evidence/Reference |
-|-------------------|------------------------|----------------|--------|---------
+----------------|------------------------|----------------|--------|---------

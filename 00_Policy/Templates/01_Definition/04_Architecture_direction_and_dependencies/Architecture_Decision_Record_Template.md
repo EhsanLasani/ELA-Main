@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-Architecture_Decisio
+Artifact_Name: ARCHITECTURE DECISION RECORD (ADR)
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: ARCHITECTURE DECISION RECORD (ADR)
+File_Path: 00_Policy/Templates/01_Definition/04_Architecture_direction_and_dependencies/Architecture_Decision_Record_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/04_Architecture_direction_and_dependencies/Architecture_Decision_Record_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # ARCHITECTURE DECISION RECORD (ADR)
 
 ## ADR-[Number]: [Short Title]
@@ -7,25 +30,6 @@
 **Deciders:** [List decision makers]  
 **Technical Story:** [Link to ticket/story]  
 
----
-
-## Context and Problem Statement
-
-[Describe the architectural issue/decision that needs to be made. Include relevant context, constraints, and requirements.]
-
-**Problem:** [One sentence problem statement]
-
-**Business Context:**
-- [Business driver 1]
-- [Business driver 2]
-
-**Technical Context:**
-- [Current system state]
-- [Constraints]
-- [Requirements]
-
----
-
 ## Decision Drivers
 
 * [Driver 1: e.g., Performance requirements]
@@ -33,25 +37,6 @@
 * [Driver 3: e.g., Team expertise]
 * [Driver 4: e.g., Time to market]
 * [Driver 5: e.g., Scalability needs]
-
----
-
-## Considered Options
-
-### Option 1: [Name]
-**Description:** [Brief description]
-
-**Pros:**
-- [Advantage 1]
-- [Advantage 2]
-
-**Cons:**
-- [Disadvantage 1]
-- [Disadvantage 2]
-
-**Cost/Effort:** [Low/Medium/High]
-
----
 
 ### Option 2: [Name]
 **Description:** [Brief description]
@@ -65,23 +50,6 @@
 - [Disadvantage 2]
 
 **Cost/Effort:** [Low/Medium/High]
-
----
-
-### Option 3: [Name]
-**Description:** [Brief description]
-
-**Pros:**
-- [Advantage 1]
-- [Advantage 2]
-
-**Cons:**
-- [Disadvantage 1]
-- [Disadvantage 2]
-
-**Cost/Effort:** [Low/Medium/High]
-
----
 
 ## Decision Outcome
 
@@ -98,23 +66,6 @@
 - [Trade-off 1]
 - [Trade-off 2]
 
----
-
-## Implementation Plan
-
-### Phase 1: [Timeline]
-- [ ] [Task 1]
-- [ ] [Task 2]
-
-### Phase 2: [Timeline]
-- [ ] [Task 3]
-- [ ] [Task 4]
-
-**Estimated Effort:** [X person-days/weeks]
-**Target Completion:** [YYYY-MM-DD]
-
----
-
 ## Validation
 
 **Success Criteria:**
@@ -124,17 +75,6 @@
 **Monitoring:**
 - [Metric 1 to track]
 - [Metric 2 to track]
-
----
-
-## Links
-
-* [Link to related ADRs]
-* [Link to technical specs]
-* [Link to proof of concept]
-* [Link to discussion/RFC]
-
----
 
 ## Notes
 

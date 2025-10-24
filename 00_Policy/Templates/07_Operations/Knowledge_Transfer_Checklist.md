@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: VAL-00-Knowledge_Transfer_C
+Artifact_Name: Knowledge Transfer Checklist
+Artifact_Type: VAL
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Knowledge Transfer Checklist
+File_Path: 00_Policy/Templates/07_Operations/Knowledge_Transfer_Checklist.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Knowledge_Transfer_Checklist.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Knowledge Transfer Checklist
 
 ## Document Control

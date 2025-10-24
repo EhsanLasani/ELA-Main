@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: VAL-00-Quality_Gates_Checkl
+Artifact_Name: QUALITY GATES CHECKLIST
+Artifact_Type: VAL
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: QUALITY GATES CHECKLIST
+File_Path: 00_Policy/Templates/05_Testing/Quality_Gates_Checklist.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/Quality_Gates_Checklist.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # QUALITY GATES CHECKLIST
 
 ## Document Control
@@ -7,22 +30,6 @@
 | **Sprint/Release** | [Number] |
 | **QA Lead** | [Name] |
 | **Date** | [YYYY-MM-DD] |
-
----
-
-## GATE 1: CODE QUALITY
-- [ ] Code coverage ≥80%
-- [ ] No critical SonarQube issues
-- [ ] No high security vulnerabilities
-- [ ] Code review completed
-- [ ] Coding standards followed
-- [ ] Unit tests passing (100%)
-- [ ] Documentation updated
-
-**Status:** [ ] Pass [ ] Fail
-**Blocker Issues:** [List any blockers]
-
----
 
 ## GATE 2: BUILD & INTEGRATION
 - [ ] Build pipeline successful
@@ -35,21 +42,6 @@
 **Status:** [ ] Pass [ ] Fail
 **Blocker Issues:** [List any blockers]
 
----
-
-## GATE 3: FUNCTIONAL TESTING
-- [ ] All test cases executed
-- [ ] Pass rate ≥95%
-- [ ] Critical scenarios validated
-- [ ] Regression testing completed
-- [ ] Edge cases tested
-- [ ] Error handling verified
-
-**Status:** [ ] Pass [ ] Fail
-**Blocker Issues:** [List any blockers]
-
----
-
 ## GATE 4: NON-FUNCTIONAL REQUIREMENTS
 - [ ] Performance targets met
 - [ ] Security scan passed
@@ -60,20 +52,6 @@
 
 **Status:** [ ] Pass [ ] Fail
 **Blocker Issues:** [List any blockers]
-
----
-
-## GATE 5: USER ACCEPTANCE
-- [ ] UAT scenarios executed
-- [ ] Business stakeholder sign-off
-- [ ] User feedback incorporated
-- [ ] Training materials prepared
-- [ ] Support documentation ready
-
-**Status:** [ ] Pass [ ] Fail
-**Blocker Issues:** [List any blockers]
-
----
 
 ## GATE 6: PRODUCTION READINESS
 - [ ] Infrastructure provisioned
@@ -86,19 +64,6 @@
 
 **Status:** [ ] Pass [ ] Fail
 **Blocker Issues:** [List any blockers]
-
----
-
-## OVERALL QUALITY GATE STATUS
-
-**Decision:** [ ] GO [ ] NO-GO
-
-**Summary:**
-- Gates Passed: __/6
-- Critical Issues: [Count]
-- Recommendation: [Go/No-Go with justification]
-
----
 
 ## APPROVALS
 | Role | Name | Date | Status |

@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-blueprint-generator
+Artifact_Name: VS Code – Codex Blueprint Generator
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: VS Code – Codex Blueprint Generator
+File_Path: .codex/blueprint-generator.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/.codex/blueprint-generator.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # VS Code – Codex Blueprint Generator
 
 Place this file at `.codex/blueprint-generator.md`. Use your Codex/ChatGPT extension to run it as a prompt for generating the **Systems Integration Blueprint** artifacts.

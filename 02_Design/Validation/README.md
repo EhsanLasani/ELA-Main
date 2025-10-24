@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-02-README
+Artifact_Name: Design Phase Validation
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Design Phase Validation
+File_Path: 02_Design/Validation/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/02_Design/Validation/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Design
+Process_Group: Design
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Design Phase Validation
 
 This folder contains validation checklists and review criteria for Design Phase deliverables.

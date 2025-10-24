@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TMP-00-Deployment_Plan_Temp
+Artifact_Name: Deployment Plan Template
+Artifact_Type: TMP
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Deployment Plan Template
+File_Path: 00_Policy/Templates/03_Development/Deployment_Plan_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Deployment_Plan_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v1.0
+---
 # Deployment Plan Template
 
 ## 0. Metadata
@@ -6,27 +29,13 @@
 - **Owner:**  
 - **Linked Ticket / PR:**  
 
----
-
-## 1. Pipeline Overview
-- **Trigger branches:** (e.g., `main`, `release/*`, `hotfix/*`)
-- **Environments & promotion order:** Dev → QA → UAT → Prod
-- **Release cadence:** (e.g., weekly, on-demand, hotfix policy)
-- **Change freeze windows:** (dates/time windows, if any)
-
----
-
 ## 2. Release Artifacts & Versioning
 - **Artifact(s):** (image tags, packages, charts)
 - **Registry/Storage:** (e.g., GHCR/ECR/ACR, Nexus/Artifactory)
 - **Versioning scheme:** (SemVer, build number, git tag)
 - **SBOM / provenance:** (how/where generated & stored)
 
----
-
-## 3. Stage Details
-| Stage | Purpose | Commands/Tools | Pre-checks | Approvers | Rollback |
-|--------|----------|----------------|-------------|-----------|-----------|
+-----|----------|----------------|-------------|-----------|-----------|
 | Dev    |          |                |             |           |           |
 | QA     |          |                |             |           |           |
 | UAT    |          |                |             |           |           |
@@ -34,46 +43,16 @@
 
 > **Note:** define pre-checks (migrations ready, feature flags default state, maintenance page toggle, etc.)
 
----
-
-## 4. Configuration & Secrets
-- **Config source:** (env files, ConfigMap, parameter store, feature flags)
-- **Secrets source:** (Vault/KeyVault/Secret Manager; never commit secrets)
-- **Rotation policy:** (how/when secrets rotate)
-- **Runtime toggles:** (flags, kill-switches, dark launch)
-
----
-
 ## 5. Verification & Quality Gates
 - **Automated checks:** lint, SAST/DAST, unit/integration tests, coverage threshold
 - **Health probes:** readiness/liveness, synthetic checks
 - **Performance sanity:** smoke/performance baseline comparisons
 - **Data migrations:** order, idempotency, backfill plan
 
----
-
-## 6. Rollback / Backout Plan
-- **Mechanism:** (blue/green, canary, recreate, Helm rollback, DB restore point)
-- **RPO/RTO targets:**  
-- **Conditions to trigger rollback:**  
-- **Steps:** numbered, exact commands
-- **Post-rollback validation:** (what to check)
-
----
-
 ## 7. Release Schedule
 - **Staging window:** day/time, duration  
 - **Production window:** day/time, duration  
 - **Change management ticket / CAB reference:**  
-
----
-
-## 8. Communication Plan
-- **Stakeholders:** names/roles (PO, Dev Lead, SRE, Security, Support)  
-- **Channels:** Teams channel(s), email DLs, status page  
-- **Templates:** pre-release notice, in-flight updates, completion/incident notes
-
----
 
 ## 9. Post-Deployment Tasks
 - **Monitoring:** dashboards/alerts to watch (links)  
@@ -81,15 +60,6 @@
 - **Runbook updates:** paths and owners  
 - **Changelog:** update location  
 - **Incident review:** if any anomalies (timebox + owner)
-
----
-
-## 10. Compliance & Audit
-- **Approvals captured in:** PR, change ticket, Signoff sheet  
-- **Controls:** SoD, 4-eyes, artifact integrity (sigstore/cosign), access logs  
-- **Retention:** logs/metrics/traces retention windows  
-
----
 
 ## 11. Appendix
 - **Environment matrix:** instance sizes, autoscaling, regions, quotas  

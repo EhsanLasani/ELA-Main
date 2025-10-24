@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-01-NFR_Guidelines
+Artifact_Name: Non-Functional Requirements (NFR) Implementation Guidelines
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Non-Functional Requirements (NFR) Implementation Guidelines
+File_Path: 01_Definition/Guidelines/NFR_Guidelines.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/NFR_Guidelines.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Definition
+Process_Group: Definition
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Non-Functional Requirements (NFR) Implementation Guidelines
 
 ## 0. Metadata
@@ -6,14 +29,6 @@
 - **Version:** v1.0
 - **Owner:**
 - **Linked Ticket / PR:**
-
----
-
-## Purpose
-
-This guide provides practical implementation guidance for defining, documenting, and validating Non-Functional Requirements (NFRs) within the ELA framework. It supplements the NFR_Specification_Template.md and aligns with ELA Development Policy v2.0 Section 4 (Requirements & Architecture).
-
----
 
 ## 1. Understanding NFR Categories
 
@@ -99,29 +114,6 @@ This guide provides practical implementation guidance for defining, documenting,
 ❌ BAD: System should be secure
 ```
 
----
-
-## 2. Defining Measurable NFRs
-
-### SMART Criteria for NFRs
-
-**S - Specific:** Clearly define what will be measured
-**M - Measurable:** Include quantifiable metrics
-**A - Achievable:** Ensure technical feasibility
-**R - Relevant:** Align with business objectives
-**T - Time-bound:** Specify measurement windows
-
-### Template for Writing NFRs
-
-```
-[NFR-ID] [Category] [Priority]: [System/Component] shall [action/capability] [measurable target] under [conditions] measured by [metric/method].
-
-Example:
-NFR-001 Performance Critical: The payment API shall process transactions with p95 response time < 500ms under 1000 req/s load measured via APM tool.
-```
-
----
-
 ## 3. NFR Prioritization
 
 ### Priority Levels
@@ -154,75 +146,6 @@ Consider:
 3. **Technical Debt:** Long-term maintainability and evolvability
 4. **Cost:** Implementation and operational cost vs benefit
 5. **Dependencies:** Prerequisites for other requirements
-
----
-
-## 4. Common NFR Patterns
-
-### E-Commerce Platform
-
-**Performance:**
-- Product search: p95 < 300ms
-- Checkout flow: p95 < 1s per step
-- Payment processing: p95 < 2s
-
-**Availability:**
-- 99.95% uptime during business hours
-- 99.9% uptime off-hours
-- RTO: 15 minutes, RPO: 5 minutes
-
-**Scalability:**
-- Support 2x Black Friday peak traffic
-- Auto-scale within 60 seconds
-
-**Security:**
-- PCI-DSS Level 1 compliance
-- TLS 1.3 for all transactions
-- MFA for admin access
-
-### SaaS Application
-
-**Performance:**
-- UI interactions: p95 < 200ms
-- Background jobs: complete within 5 minutes
-- Database queries: p95 < 50ms
-
-**Availability:**
-- 99.99% uptime (52.6 min/year downtime)
-- Multi-region active-active deployment
-- Zero-downtime deployments
-
-**Scalability:**
-- Support 100K concurrent users
-- Multi-tenant architecture with tenant isolation
-- Horizontal scaling for compute and data layers
-
-**Security:**
-- SOC 2 Type II compliance
-- SAML 2.0 SSO integration
-- Customer-managed encryption keys (CMEK)
-
-### Healthcare System
-
-**Performance:**
-- Clinical data retrieval: p95 < 500ms
-- Patient record search: p95 < 1s
-
-**Availability:**
-- 99.99% uptime for critical care systems
-- 4-hour RTO for disaster recovery
-- 15-minute RPO for patient data
-
-**Scalability:**
-- Support 10K concurrent clinicians
-- Store 10 years of patient history
-
-**Security:**
-- HIPAA compliance (encryption, audit logging, access controls)
-- Role-based access with attribute-based policies
-- Comprehensive audit trail retention (7 years)
-
----
 
 ## 5. NFR Testing & Validation
 
@@ -284,42 +207,6 @@ Consider:
 - Frequency: Annual or before major releases
 - Scope: External and internal infrastructure
 
----
-
-## 6. NFR Documentation Standards
-
-### Required Documentation
-
-1. **NFR Specification Document:**
-   - Use NFR_Specification_Template.md
-   - Include all NFR categories
-   - Define measurable targets and SLOs
-
-2. **Test Plans:**
-   - Performance test scenarios
-   - Security test cases
-   - Acceptance criteria
-
-3. **Monitoring & Alerting:**
-   - Define metrics to track
-   - Set up dashboards and alerts
-   - Document runbooks for incidents
-
-4. **Compliance Evidence:**
-   - Document compliance mappings
-   - Maintain audit trails
-   - Prepare for compliance audits
-
-### Traceability
-
-Every NFR must be traceable to:
-- **Business Requirement:** Why this NFR exists
-- **Test Case:** How it will be validated
-- **Monitoring Metric:** How it will be measured in production
-- **Architecture Decision:** How it influences design
-
----
-
 ## 7. NFR Governance
 
 ### Review Checkpoints
@@ -358,32 +245,6 @@ Every NFR must be traceable to:
 4. Communicate changes to stakeholders
 5. Update monitoring and alerting thresholds
 
----
-
-## 8. Tools & Resources
-
-### Performance Monitoring
-
-- **APM Tools:** Datadog, New Relic, Dynatrace, AppDynamics
-- **Infrastructure Monitoring:** Prometheus, Grafana, CloudWatch
-- **Distributed Tracing:** Jaeger, Zipkin, OpenTelemetry
-- **Synthetic Monitoring:** Pingdom, UptimeRobot, Checkly
-
-### Security Tools
-
-- **SAST:** SonarQube, Checkmarx, Veracode, Snyk
-- **DAST:** OWASP ZAP, Burp Suite, Acunetix
-- **Dependency Scanning:** Snyk, WhiteSource, Dependabot
-- **Secret Management:** HashiCorp Vault, AWS Secrets Manager, Azure Key Vault
-
-### Testing Tools
-
-- **Load Testing:** JMeter, Gatling, k6, Locust
-- **Chaos Engineering:** Chaos Monkey, Gremlin, LitmusChaos
-- **API Testing:** Postman, REST Assured, Karate
-
----
-
 ## 9. Common Pitfalls & How to Avoid Them
 
 ### ❌ Pitfall 1: Vague Requirements
@@ -406,44 +267,6 @@ Every NFR must be traceable to:
 **Problem:** Discovering NFR violations during production
 **Solution:** Integrate NFR testing throughout the SDLC
 
----
-
-## 10. Review Checklist
-
-Use this checklist when reviewing NFR documentation:
-
-### Completeness
-- [ ] All NFR categories addressed (Performance, Availability, Scalability, Security, etc.)
-- [ ] Each NFR has a unique identifier
-- [ ] Priority assigned to each NFR
-- [ ] Dependencies documented
-
-### Measurability
-- [ ] Quantifiable targets defined
-- [ ] Measurement methods specified
-- [ ] Acceptance criteria clear
-- [ ] SLOs and SLAs documented
-
-### Feasibility
-- [ ] Technical feasibility validated
-- [ ] Cost estimates provided
-- [ ] Resource requirements identified
-- [ ] Timeline realistic
-
-### Traceability
-- [ ] Linked to business requirements
-- [ ] Test plans created
-- [ ] Monitoring strategy defined
-- [ ] Compliance mappings documented
-
-### Alignment
-- [ ] Aligns with ELA Development Policy v2.0
-- [ ] Follows industry best practices
-- [ ] Considers regulatory requirements
-- [ ] Stakeholder sign-off obtained
-
----
-
 ## 11. References
 
 - ELA Development Policy v2.0 (Section 4: Requirements & Architecture)
@@ -454,10 +277,5 @@ Use this checklist when reviewing NFR documentation:
 - AWS Well-Architected Framework
 - Google SRE Book (Service Level Objectives)
 
----
-
-## Version History
-
-| Version | Date | Changes | Approver |
-|---------|------|---------|----------|
+------|------|---------|----------|
 | v1.0 | 2025-10-23 | Initial NFR Guidelines | TBD |

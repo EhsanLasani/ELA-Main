@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-Requirements_Documen
+Artifact_Name: Requirements Document
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Requirements Document
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 ## 0. Metadata
 
 **Artifact ID (catalog.csv):** TMP-DEF-REQUIREMENTS  
@@ -7,14 +30,7 @@
 **Last Updated:** YYYY-MM-DD  
 **Status:** TEMPLATE
 
----
-
-# Requirements Document
-
-## Document Control
-
-| **Field** | **Details** |
-|-----------|-------------|
+--------|-------------|
 | **Project Name** | [Project Name] |
 | **Project Code** | [Code] |
 | **Document Version** | 1.0.0 |
@@ -42,22 +58,6 @@
 | Security Requirements | [X.X] | 01_Definition/Templates/Security_Requirements_Template.md |
 | Risk Assessment | [X.X] | 01_Definition/Templates/Risk_Assessment_Template.csv |
 | Project Plan | [X.X] | 01_Definition/Templates/Project_Plan_Template.md |
-
----
-
-## Table of Contents
-
-1. [Introduction & Context](#1-introduction--context)
-2. [Stakeholders](#2-stakeholders)
-3. [Functional Requirements](#3-functional-requirements)
-4. [Non-Functional Requirements](#4-non-functional-requirements)
-5. [Data & Integration Requirements](#5-data--integration-requirements)
-6. [Security & Compliance](#6-security--compliance)
-7. [Assumptions/Dependencies/Constraints](#7-assumptionsdependenciesconstraints)
-8. [Acceptance Criteria](#8-acceptance-criteria)
-9. [Appendices](#9-appendices)
-
----
 
 ## 1. Introduction & Context
 
@@ -117,19 +117,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 - Company policies and procedures
 - [Additional reference documents]
 
----
-
-## 2. Stakeholders
-
-### 2.1 Stakeholder Register
-
-**Link to Detailed Register:**  
-For comprehensive stakeholder information, see: [Stakeholder_Register_Template.md](./Stakeholder_Register_Template.md)
-
-### 2.2 Key Stakeholders Summary
-
-| **Stakeholder** | **Role** | **Interest** | **Influence** | **Engagement Strategy** |
-|-----------------|----------|--------------|---------------|-------------------------|
+--------------|----------|--------------|---------------|-------------------------|
 | [Name] | Executive Sponsor | High | High | Weekly executive briefings |
 | [Name] | Product Owner | High | High | Daily standups, backlog refinement |
 | [Name] | Business Analyst | High | Medium | Requirements workshops, validation |
@@ -164,27 +152,7 @@ For comprehensive stakeholder information, see: [Stakeholder_Register_Template.m
 - **Technical Proficiency:** [Low/Medium/High]
 - **Key Requirements:** [Primary needs]
 
----
-
-## 3. Functional Requirements
-
-### 3.1 Overview
-
-This section defines **WHAT** the system must do. Each requirement is uniquely identified and linked to business objectives.
-
-**Requirement Notation:**  
-- **REQ-XXX:** Functional requirement identifier
-- **Priority:** Must Have / Should Have / Could Have / Won't Have (MoSCoW)
-- **Status:** Draft / Approved / Implemented / Verified
-
-**Note:** For detailed software requirements specification, refer to the comprehensive [Functional Requirements (SRS) Template](../../00_Policy/Templates/01_NFR_and_Architecture/Functional_Requirements_SRS_Template.md)
-
-### 3.2 Core Functional Requirements
-
-#### 3.2.1 [Feature/Module Name 1]
-
-| **Req ID** | **Requirement Description** | **User Story** | **Priority** | **Status** |
-|------------|----------------------------|----------------|--------------|------------|
+---------|----------------------------|----------------|--------------|------------|
 | REQ-001 | The system shall allow users to [specific action] | As a [user type], I want to [action] so that [benefit] | Must Have | Draft |
 | REQ-002 | The system shall provide [functionality] | As a [user type], I want to [action] so that [benefit] | Must Have | Draft |
 | REQ-003 | The system shall enable [capability] | As a [user type], I want to [action] so that [benefit] | Should Have | Draft |
@@ -237,20 +205,7 @@ This section defines **WHAT** the system must do. Each requirement is uniquely i
 | REQ-RPT-002 | [Report Name] | [Description] | On-demand | Should Have | Draft |
 | REQ-RPT-003 | [Report Name] | [Description] | Quarterly | Could Have | Draft |
 
----
-
-## 4. Non-Functional Requirements
-
-### 4.1 Overview
-
-Non-functional requirements define **HOW WELL** the system performs its functions. These requirements address quality attributes such as performance, scalability, security, usability, and reliability.
-
-**Note:** For comprehensive NFR specification aligned with ISO 25010, refer to: [NFR Specification Template](../../00_Policy/Templates/01_NFR_and_Architecture/NFR_Specification_Template.md)
-
-### 4.2 Performance Requirements
-
-| **NFR ID** | **Requirement** | **Target Metric** | **Priority** | **Status** |
-|------------|-----------------|-------------------|--------------|------------|
+---------|-----------------|-------------------|--------------|------------|
 | NFR-PERF-001 | System response time for user interactions | < 2 seconds for 95% of requests | Must Have | Draft |
 | NFR-PERF-002 | Page load time | < 3 seconds on standard broadband | Must Have | Draft |
 | NFR-PERF-003 | API response time | < 500ms for 99% of calls | Must Have | Draft |
@@ -303,16 +258,7 @@ Non-functional requirements define **HOW WELL** the system performs its function
 | NFR-PORT-002 | Mobile platform support | iOS 14+, Android 10+ | Must Have | Draft |
 | NFR-PORT-003 | Cloud portability | Deployable on AWS, Azure, or GCP | Should Have | Draft |
 
----
-
-## 5. Data & Integration Requirements
-
-### 5.1 Data Requirements
-
-#### 5.1.1 Data Entities
-
-| **Entity Name** | **Description** | **Key Attributes** | **Estimated Volume** |
-|-----------------|-----------------|-------------------|----------------------|
+--------------|-----------------|-------------------|----------------------|
 | [Entity 1] | [Description] | [Attribute 1, Attribute 2, Attribute 3] | [X] records |
 | [Entity 2] | [Description] | [Attribute 1, Attribute 2] | [X] records |
 | [Entity 3] | [Description] | [Attribute 1, Attribute 2, Attribute 3] | [X] records |
@@ -374,18 +320,7 @@ Non-functional requirements define **HOW WELL** the system performs its function
 | [Legacy System 1] | [X] GB | Phased migration | Row-by-row validation | Database snapshot |
 | [Legacy System 2] | [X] GB | Big-bang cutover | Sample-based validation | Full backup |
 
----
-
-## 6. Security & Compliance
-
-### 6.1 Security Requirements
-
-**Note:** For detailed security requirements, refer to: [Security Requirements Template](./Security_Requirements_Template.md)
-
-#### 6.1.1 Authentication & Authorization
-
-| **REQ ID** | **Security Requirement** | **Implementation** | **Priority** | **Status** |
-|------------|-------------------------|-------------------|--------------|------------|
+---------|-------------------------|-------------------|--------------|------------|
 | SEC-AUTH-001 | Multi-factor authentication (MFA) | Support MFA for all user accounts | Must Have | Draft |
 | SEC-AUTH-002 | Role-based access control (RBAC) | Implement granular role-based permissions | Must Have | Draft |
 | SEC-AUTH-003 | Password policy | Min 12 chars, complexity requirements, 90-day expiration | Must Have | Draft |
@@ -460,16 +395,7 @@ Non-functional requirements define **HOW WELL** the system performs its function
 | OWASP Top 10 | Address all OWASP Top 10 vulnerabilities | Must Have | Draft |
 | NIST Cybersecurity Framework | Align security controls with NIST CSF | Should Have | Draft |
 
----
-
-## 7. Assumptions/Dependencies/Constraints
-
-### 7.1 Assumptions
-
-Assumptions are factors believed to be true but not yet confirmed. These should be validated during the project.
-
-| **Assumption ID** | **Assumption** | **Impact if Invalid** | **Validation Method** | **Owner** |
-|-------------------|----------------|----------------------|----------------------|----------|
+----------------|----------------|----------------------|----------------------|----------|
 | ASM-001 | [Assumption about resources] | [Impact description] | [How to validate] | [Name] |
 | ASM-002 | [Assumption about technology] | [Impact description] | [How to validate] | [Name] |
 | ASM-003 | [Assumption about users/stakeholders] | [Impact description] | [How to validate] | [Name] |
@@ -549,16 +475,7 @@ Constraints are limitations that restrict options or impose specific conditions 
 | CON-REG-002 | Data must remain in [Geographic Region] | Infrastructure location | Regional cloud deployment |
 | CON-REG-003 | Must pass [Security Audit] | Security requirements | Security-first development |
 
----
-
-## 8. Acceptance Criteria
-
-### 8.1 Project-Level Acceptance Criteria
-
-High-level criteria that must be met for the project to be considered complete and acceptable for deployment.
-
-| **Criterion ID** | **Acceptance Criterion** | **Verification Method** | **Owner** | **Status** |
-|------------------|-------------------------|------------------------|-----------|------------|
+---------------|-------------------------|------------------------|-----------|------------|
 | AC-001 | All Must Have functional requirements (REQ-xxx) implemented and tested | Requirements traceability matrix, test results | [Name] | Pending |
 | AC-002 | All Must Have non-functional requirements (NFR-xxx) met | Performance testing, load testing | [Name] | Pending |
 | AC-003 | Security requirements satisfied and passed security audit | Security audit report | [Name] | Pending |
@@ -642,14 +559,7 @@ Formal approval required from the following stakeholders before go-live:
 | [Name] | Operations Lead | Operational readiness | Pending | |
 | [Name] | Compliance Officer | Regulatory compliance | Pending | |
 
----
-
-## 9. Appendices
-
-### Appendix A: Glossary
-
-| **Term** | **Definition** |
-|----------|----------------|
+-------|----------------|
 | [Term 1] | [Definition] |
 | [Term 2] | [Definition] |
 | API | Application Programming Interface - a set of protocols and tools for building software applications |
@@ -775,16 +685,5 @@ Documents all significant changes to requirements during the project lifecycle.
 - Ignoring non-functional requirements
 - Missing dependencies and constraints
 - Inadequate security and compliance considerations
-
----
-
-## Document Status: TEMPLATE
-
-**Template Version:** 2.0.0  
-**Last Updated:** 2025-10-24  
-**Maintained by:** Enterprise Architecture Office  
-**Based on:** IEEE 830, ISO 25010, ELA Development Policy
-
----
 
 **END OF DOCUMENT**

@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-01-README
+Artifact_Name: Guidelines Documentation
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Guidelines Documentation
+File_Path: 01_Definition/Guidelines/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Definition
+Process_Group: Definition
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Guidelines Documentation
 
 This folder contains comprehensive guidelines and templates for the ELA (Enterprise-Level Architecture) project Definition phase.

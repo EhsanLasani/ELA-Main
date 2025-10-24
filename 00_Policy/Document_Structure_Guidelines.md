@@ -1,14 +1,26 @@
+## Metadata
 ---
-artifact_id: DOC-POL-DOCUMENT_STRUCTURE
-version: v1.0
-artifact_type: DOC
-status: Active
-owner: Enterprise Architecture Office (EAO)
-last_updated: 2025-10-24
-phase: Policy
-description: Comprehensive guidelines for standardizing document structure across all ELA artifacts
+Artifact_ID: DOC-00-Document_Structure_G
+Artifact_Name: Document Structure Guidelines
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Document Structure Guidelines
+File_Path: 00_Policy/Document_Structure_Guidelines.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Document_Structure_Guidelines.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
 ---
-
 # Document Structure Guidelines
 
 ## 0. Metadata
@@ -21,26 +33,6 @@ description: Comprehensive guidelines for standardizing document structure acros
 - **Review Cycle:** Semi-annual
 - **Linked Ticket / PR:**
 
----
-
-## 1. Purpose
-
-This document establishes **mandatory structure standards** for all artifacts in the ELA framework. It ensures:
-
-- **Consistency** in document formatting and organization
-- **Machine-readability** through structured metadata (YAML front matter)
-- **Human-readability** through standardized section templates
-- **Database compatibility** for future SQL/NoSQL storage and web application integration
-- **Workflow traceability** from master templates through process guides to validated instances
-- **Automation support** for CI/CD validation and catalog management
-
-This document integrates with:
-- [Artifact Metadata Standards](./Artifact_Metadata_Standards.md) - Defines artifact types and metadata fields
-- [ELA Development Policy](./ELA_Development_Policy.md) - Overall governance framework
-- Phase Process Overview documents - Process-specific workflows
-
----
-
 ## 2. Scope
 
 These guidelines apply to:
@@ -50,67 +42,6 @@ These guidelines apply to:
 - **All storage contexts**: GitHub repository, future SQL/NoSQL databases, web application
 - **All workflow stages**: Master templates → Process guides → Filled instances → Validation
 
----
-
-## 3. Key Principles
-
-### 3.1 Three-Tier Artifact Organization
-
-The ELA framework follows a **master-guide-instance** pattern:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  TIER 1: MASTER TEMPLATES                                   │
-│  Location: 00_Policy/Templates/[Phase]/[Process]/           │
-│  Purpose: Authoritative, version-controlled template copies │
-│  Artifact Type: TMP-[PHASE]-[NAME]                          │
-│  Status: Active (source of truth)                            │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│  TIER 2: PROCESS GUIDES                                      │
-│  Location: [Phase]/Guidelines/[Process]_Overview.md         │
-│  Purpose: Explain HOW to use templates, process workflows   │
-│  Artifact Type: GDL-[PHASE]-[PROCESS]                       │
-│  Status: Active (instructional)                             │
-│  Links to: Master templates in Tier 1                       │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│  TIER 3: FILLED INSTANCES                                    │
-│  Location: [Phase]/Validation/[Project]/[Instance].md       │
-│  Purpose: Completed templates for specific projects         │
-│  Artifact Type: INST-[PHASE]-[PROJECT]-[NAME]               │
-│  Status: Under Review → Active                             │
-│  Lineage: template_source, derived_from fields              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### 3.2 Phase Process Overview Integration
-
-**Phase_Process_Overview documents** define process groups and organize templates by workflow step:
-
-- **Process Groups**: Collections of related activities (e.g., "Initiation and Governance", "Requirements Gathering")
-- **Process Steps**: Specific activities within each process group
-- **Template Mapping**: Each process step references specific master templates
-- **Sequential Flow**: Processes follow a logical order within each phase
-
-**Example from Definition Phase:**
-```yaml
-process_groups:
-  - name: "Initiation and Governance"
-    process_steps:
-      - step: "01_Project_Initiation"
-        templates:
-          - TMP-DEF-PROJECT_PLAN
-          - TMP-DEF-GOVERNANCE_FRAMEWORK
-      - step: "02_Stakeholder_Management"
-        templates:
-          - TMP-DEF-STAKEHOLDER_REGISTER
-```
-
----
-
 ## 4. Universal Document Structure
 
 ### 4.1 Structure Overview
@@ -118,58 +49,28 @@ process_groups:
 Every ELA artifact follows this structure:
 
 ```markdown
----
-[YAML FRONT MATTER - Machine-readable metadata]
----
-
 # [Document Title]
 
 ## 0. Metadata
 [Human-readable metadata display]
 
----
-
-## [Content Sections]
-[Artifact-type-specific sections]
-```
-
-### 4.2 YAML Front Matter (Mandatory)
-
-All artifacts MUST begin with YAML front matter enclosed in `---` delimiters.
+` delimiters.
 
 #### 4.2.1 Core Fields (All Artifacts)
 
 ```yaml
----
-artifact_id: "[TYPE]-[PHASE]-[NAME]"
-version: "v#.#"
-artifact_type: "DOC|TMP|GDL|VAL|WFL|SCR|IMG|CFG|TST|DAT|INST"
-status: "Draft|Active|Under Review|Deprecated|Archived"
-owner: "[Team Name per Artifact Metadata Standards]"
-last_updated: "YYYY-MM-DD"
-phase: "Policy|Definition|Design|Development|Testing|Deployment|Operations|Change Management"
-description: "[One-line purpose statement]"
----
 ```
 
 #### 4.2.2 Extended Fields (Conditional)
 
 **For Templates (TMP):**
-```yaml
-process_group: "[Process group name from Phase_Process_Overview]"
-process_step: "[Specific step within process group]"
-template_category: "Planning|Analysis|Design|Implementation|Validation"
+```yaml\n\ntemplate_category: "Planning|Analysis|Design|Implementation|Validation"
 fill_instructions_url: "[Link to guideline document]"
 ```
 
 **For Instances (INST):**
-```yaml
-template_source: "TMP-[PHASE]-[NAME]"  # Master template ID
-derived_from: "[URL to master template]"
-project_name: "[Project/System name]"
-filled_by: "[Team/Person name]"
-filled_date: "YYYY-MM-DD"
-validation_status: "Pending|Validated|Failed"
+```yaml\n\nfilled_date: "YYYY-MM-DD"
+
 ```
 
 **For Guidelines (GDL):**
@@ -203,17 +104,6 @@ Immediately after the YAML front matter and document title, include Section 0:
 - **Effective Date:** [YYYY-MM-DD]
 - **Review Cycle:** [frequency]
 - **Linked Ticket / PR:** [GitHub links]
-
----
-```
-
-**Purpose:** 
-- Provides human-readable metadata display
-- Duplicates key YAML fields for readability
-- Adds optional fields not in YAML (Custodian, Effective Date, Review Cycle)
-- Creates clear separation from content sections
-
----
 
 ## 5. Artifact-Type-Specific Section Templates
 
@@ -419,102 +309,6 @@ Immediately after the YAML front matter and document title, include Section 0:
 [Track updates to this instance]
 ```
 
----
-
-## 6. Workflow Implementation
-
-### 6.1 Template Creation Workflow
-
-```
-1. Team identifies need for new template
-   ↓
-2. Create template in 00_Policy/Templates/[Phase]/[Process]/
-   - Follow TMP section template (5.2)
-   - Set process_group and process_step in YAML
-   - Set status: Draft
-   ↓
-3. Update Phase_Process_Overview document
-   - Add template reference under appropriate process step
-   - Link template URL
-   - Document purpose and usage
-   ↓
-4. Create accompanying guideline (if complex)
-   - Create GDL document
-   - Reference template ID in covered_templates
-   ↓
-5. Create validation checklist
-   - Create VAL document
-   - Define quality criteria for completed template
-   ↓
-6. Review and approve
-   - EAO reviews structure
-   - Subject matter experts review content
-   - Set status: Active
-   ↓
-7. Update catalog.csv
-   - Add template entry
-   - Add guideline entry
-   - Add checklist entry
-```
-
-### 6.2 Template Usage Workflow
-
-```
-1. Team starts process step
-   - Consult Phase_Process_Overview
-   - Identify required template
-   ↓
-2. Read process guide (if available)
-   - Review GDL document
-   - Understand context and prerequisites
-   ↓
-3. Copy master template
-   - Navigate to 00_Policy/Templates/[Phase]/[Process]/
-   - Copy template to project workspace
-   ↓
-4. Fill template
-   - Replace {{PLACEHOLDERS}} with project data
-   - Update YAML front matter:
-     * Change artifact_type: TMP → INST
-     * Change artifact_id: TMP-X → INST-PHASE-PROJECT-NAME
-     * Add template_source field
-     * Add project_name, filled_by, filled_date
-     * Set validation_status: Pending
-   ↓
-5. Run validation checklist
-   - Use associated VAL document
-   - Self-check or peer review
-   - Document results in instance
-   ↓
-6. Store instance
-   - Save to [Phase]/Validation/[Project]/
-   - Update validation_status: Validated
-   - Commit with descriptive message
-   ↓
-7. Update catalog.csv
-   - Add instance entry
-   - Link to template_source
-```
-
-### 6.3 Cross-Referencing Rules
-
-**In Templates (TMP):**
-- Reference related templates by ID: "See also: TMP-DEF-STAKEHOLDER_REGISTER"
-- Link to guidelines: "For usage instructions, see [GDL-DEF-REQUIREMENTS](path)"
-- Link to validation: "Validate using [VAL-DEF-REQUIREMENTS](path)"
-
-**In Phase_Process_Overview (GDL):**
-- Always use full paths to master templates: `[TMP-DEF-X](../../00_Policy/Templates/01_Definition/Process/template.md)`
-- Group templates by process step
-- Indicate mandatory vs. optional templates
-
-**In Instances (INST):**
-- Always include `template_source` field with template ID
-- Always include `derived_from` field with full URL to master template
-- Maintain lineage for traceability
-
----
-
 ## 7. Database Compatibility
 
 ### 7.1 SQL Schema Mapping
@@ -621,16 +415,7 @@ For MongoDB or similar document databases:
 }
 ```
 
----
-
-## 8. Validation & Quality Assurance
-
-### 8.1 Document Structure Validation
-
-**Automated checks (via GitHub Actions):**
-
-1. **YAML Front Matter Validation**
-   - All documents have valid YAML enclosed in `---` delimiters
+` delimiters
    - All mandatory fields present (artifact_id, version, artifact_type, status, owner, last_updated, phase, description)
    - Field values match allowed enums (artifact_type, status, phase)
    - artifact_id follows naming convention for artifact_type
@@ -708,68 +493,6 @@ Create `00_Policy/Schemas/artifact_frontmatter_schema.json`:
 }
 ```
 
----
-
-## 9. Migration Path for Existing Documents
-
-### 9.1 Assessment Phase
-
-1. **Inventory existing documents**
-   - Use catalog.csv as baseline
-   - Identify documents without YAML front matter
-   - Identify documents missing Section 0
-
-2. **Prioritize by impact**
-   - Policy documents (highest priority)
-   - Active templates
-   - Current phase documents
-   - Historical/archived documents (lowest priority)
-
-### 9.2 Migration Steps
-
-For each document:
-
-```markdown
-1. Extract existing metadata
-   - Look for metadata in headers, file properties
-   - Check catalog.csv entry
-   - Determine artifact type
-
-2. Create YAML front matter
-   - Use artifact type to determine fields
-   - Populate all mandatory fields
-   - Add conditional fields if applicable
-
-3. Add/update Section 0
-   - Convert inline metadata to Section 0 format
-   - Ensure alignment with YAML
-
-4. Restructure content sections
-   - Apply artifact-type-specific template (Section 5)
-   - Preserve all original content
-   - Reorganize into standard sections
-
-5. Update cross-references
-   - Replace file paths with artifact IDs where possible
-   - Add markdown links
-
-6. Validate
-   - Run automated structure checks
-   - Manual review for content integrity
-
-7. Update catalog.csv
-   - Sync with new metadata
-```
-
-### 9.3 Backward Compatibility
-
-- Old documents without YAML remain readable
-- GitHub Actions flag non-compliant documents (warning, not error)
-- Grace period of 6 months for full migration
-- Templates created after 2025-10-24 must be compliant immediately
-
----
-
 ## 10. Governance & Maintenance
 
 ### 10.1 Document Structure Evolution
@@ -811,24 +534,6 @@ If a document cannot conform to these guidelines:
 - Templates: 95% compliance within 3 months of guideline publication
 - Other artifacts: 80% compliance within 6 months
 
----
-
-## 11. Examples
-
-### 11.1 Complete Template Example
-
-See: `00_Policy/Templates/01_Definition/01_Initiation/Project_Plan_Template.md`
-
-### 11.2 Complete Process Overview Example
-
-See: `01_Definition/Guidelines/Definition_Phase_Process_Overview.md`
-
-### 11.3 Complete Instance Example
-
-(To be created as projects adopt the framework)
-
----
-
 ## 12. Tooling & Automation
 
 ### 12.1 Recommended VS Code Extensions
@@ -855,21 +560,6 @@ Automated checks on every PR:
 - **Instance Tracker**: View all instances derived from a template
 - **Validation Dashboard**: Track validation status across projects
 - **Lineage Viewer**: Visualize template → instance relationships
-
----
-
-## 13. References
-
-- [Artifact Metadata Standards](./Artifact_Metadata_Standards.md)
-- [ELA Development Policy](./ELA_Development_Policy.md)
-- [catalog.csv](../catalog.csv)
-- [Definition Phase Process Overview](../01_Definition/Guidelines/Definition_Phase_Process_Overview.md)
-- [Design Phase Process Overview](../02_Design/Guidelines/Design_Phase_Process_Overview.md)
-- YAML 1.2 Specification: https://yaml.org/spec/1.2/spec.html
-- GitHub Flavored Markdown: https://github.github.com/gfm/
-- JSON Schema: https://json-schema.org/
-
----
 
 **Document Control:**
 

@@ -1,28 +1,34 @@
+## Metadata
+---
+Artifact_ID: DOC-01-Requirements_Documen
+Artifact_Name: Requirements Document Template
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Requirements Document Template
+File_Path: 01_Definition/Guidelines/Requirements_Document_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/Requirements_Document_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Definition
+Process_Group: Definition
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Requirements Document Template
 
 **Document Version:** 1.0  
 **Last Updated:** Phase 2 (Week 3-4)  
 **Template Status:** Enhanced with traceability, NFRs, and compliance
 
----
-
-## Change Log
-
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
+------|------|---------|--------|
 | 1.0 | [Date] | Initial requirements document | [Author] |
-
----
-
-## Document Information
-
-**Project Name:** [Project Name]  
-**Document Type:** Requirements Document  
-**Stakeholders:** [List key stakeholders]  
-**Review Status:** [Draft/Under Review/Approved]  
-**Next Review Date:** [Date]
-
----
 
 ## 1. Executive Summary
 
@@ -39,31 +45,6 @@
 ### 1.3 Success Criteria
 - [Measurable criteria that define project success]
 - [Link to business objectives]
-
----
-
-## 2. Functional Requirements
-
-### 2.1 User Stories/Use Cases
-
-#### UC-001: [Use Case Name]
-**As a** [user type]  
-**I want** [functionality]  
-**So that** [business value]
-
-**Acceptance Criteria:**
-```
-Given [precondition]
-When [action]
-Then [expected result]
-And [additional conditions]
-```
-
-**Priority:** [Must/Should/Could/Won't]  
-**Risk Level:** [High/Medium/Low]  
-**Trace ID:** REQ-F-001
-
----
 
 ## 3. Non-Functional Requirements (NFRs)
 
@@ -135,23 +116,6 @@ And [additional conditions]
 **Priority:** Must  
 **Trace ID:** NFR-O-001
 
----
-
-## 4. Technical Constraints
-
-### 4.1 Technology Stack
-- [Programming languages]
-- [Frameworks]
-- [Databases]
-- [Infrastructure requirements]
-
-### 4.2 Integration Requirements
-- [External systems to integrate with]
-- [APIs and protocols]
-- [Data formats and standards]
-
----
-
 ## 5. Security Considerations
 
 ### 5.1 Threat Model Reference
@@ -163,23 +127,6 @@ And [additional conditions]
 - [List security controls per requirement]
 - [Reference compliance frameworks]
 - [Security testing requirements]
-
----
-
-## 6. Compliance and Standards
-
-### 6.1 Regulatory Requirements
-- [ ] GDPR compliance (if handling EU data)
-- [ ] SOC 2 Type II
-- [ ] ISO 27001
-- [ ] [Other relevant standards]
-
-### 6.2 Industry Standards
-- [ ] OWASP ASVS
-- [ ] NIST Cybersecurity Framework
-- [ ] [Other applicable standards]
-
----
 
 ## 7. Risks and Assumptions
 
@@ -193,13 +140,7 @@ And [additional conditions]
 - [List key assumptions made during requirements gathering]
 - [Dependencies on external factors]
 
----
-
-## 8. Traceability Matrix
-
-### 8.1 Requirements to Design
-| Req ID | Requirement | Design Component | Architecture Decision | Test Case | Status |
-|---------|-------------|------------------|---------------------|-----------|---------|
+------|-------------|------------------|---------------------|-----------|---------|
 | REQ-F-001 | [Functional req] | [Design element] | [Architecture doc ref] | TC-001 | [Status] |
 | NFR-P-001 | [Performance req] | [System component] | [Performance design] | PT-001 | [Status] |
 
@@ -207,23 +148,6 @@ And [additional conditions]
 | Req ID | Associated Risks | Risk Mitigation | Security Control |
 |---------|-----------------|----------------|------------------|
 | REQ-F-001 | R-001, R-003 | [Mitigation approach] | SC-001 |
-
----
-
-## 9. Acceptance Criteria Summary
-
-### 9.1 Functional Acceptance
-- [ ] All functional requirements pass acceptance tests
-- [ ] User acceptance testing completed
-- [ ] Business stakeholder sign-off
-
-### 9.2 Non-Functional Acceptance
-- [ ] Performance benchmarks met
-- [ ] Security controls validated
-- [ ] Reliability targets achieved
-- [ ] Compliance requirements satisfied
-
----
 
 ## 10. Appendices
 
@@ -236,12 +160,7 @@ And [additional conditions]
 ### Appendix C: Architecture Decisions
 [Link to ADRs (Architecture Decision Records)]
 
----
-
-## Review and Approval
-
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
+---|------|-----------|------|
 | Product Owner | [Name] | [Signature] | [Date] |
 | Technical Lead | [Name] | [Signature] | [Date] |
 | Security Lead | [Name] | [Signature] | [Date] |

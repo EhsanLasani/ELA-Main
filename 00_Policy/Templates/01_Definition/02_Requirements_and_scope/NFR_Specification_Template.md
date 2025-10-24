@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TMP-00-NFR_Specification_Te
+Artifact_Name: NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
+Artifact_Type: TMP
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v1.0
+---
 # NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
 
 ## Document Control
@@ -15,32 +38,7 @@
 | **Status** | [Draft / In Review / Approved] |
 | **Classification** | [Internal / Confidential] |
 
----
-
-## 1. INTRODUCTION
-
-### 1.1 Purpose
-
-This document defines the non-functional requirements (NFRs) for [Project Name]. NFRs specify the quality attributes, system constraints, and operational criteria that the application must satisfy.
-
-### 1.2 Scope
-
-**In Scope:**
-- Performance and scalability requirements
-- Security and compliance requirements
-- Availability and reliability requirements
-- Usability and accessibility requirements
-- Operational and maintenance requirements
-- Compatibility and portability requirements
-
-**Out of Scope:**
-- Functional requirements (documented separately in SRS)
-- Detailed technical design specifications
-
-### 1.3 References
-
-| Document | Version | Location |
-|----------|---------|----------|
+-------|---------|----------|
 | ELA Development Policy | 2.0 | 00_Policy/ELA_Development_Policy.md |
 | Systems Integration Blueprint | 2.0 | 00_Policy/Systems_Integration_Blueprint.md |
 | Functional Requirements (SRS) | [X.X] | [Link/Path] |
@@ -62,14 +60,7 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 | APM | Application Performance Monitoring |
 | WCAG | Web Content Accessibility Guidelines |
 
----
-
-## 2. PERFORMANCE REQUIREMENTS
-
-### 2.1 Response Time
-
-| Transaction Type | Target Response Time | Maximum Acceptable | Measurement Method |
-|------------------|---------------------|--------------------|--------------------|
+---------------|---------------------|--------------------|--------------------|
 | Page Load (UI) | < 2 seconds | < 5 seconds | Real User Monitoring |
 | API Response | < 500ms | < 2 seconds | Application Performance Monitoring |
 | Database Query | < 100ms | < 1 second | Query Performance Monitoring |
@@ -101,30 +92,6 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 | Memory Usage | < 70% | < 85% | Alert at 90% |
 | Disk I/O | < 70% | < 85% | Alert at 90% |
 | Network Bandwidth | < 60% | < 80% | Alert at 85% |
-
----
-
-## 3. SCALABILITY REQUIREMENTS
-
-### 3.1 Horizontal Scaling
-
-- Application tier must support horizontal scaling via container orchestration
-- Auto-scaling triggers: CPU > 70%, Memory > 80%, or custom metrics
-- Scale-out time: < 5 minutes
-- Scale-in time: < 10 minutes (with graceful shutdown)
-
-### 3.2 Vertical Scaling
-
-- System must support vertical scaling without downtime (where applicable)
-- Database tier should support read replicas for scaling read operations
-
-### 3.3 Load Distribution
-
-- Load balancer must distribute traffic across multiple instances
-- Support for session affinity/sticky sessions where required
-- Health checks every [30 seconds] with automatic failover
-
----
 
 ## 4. RELIABILITY REQUIREMENTS
 
@@ -164,55 +131,6 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 - Automated backup verification and testing
 - Point-in-time recovery capability
 
----
-
-## 5. SECURITY REQUIREMENTS
-
-### 5.1 Authentication
-
-- Multi-factor authentication (MFA) required for [admin/all] users
-- Password complexity: Minimum 12 characters, alphanumeric + special characters
-- Password expiration: [90 days] for privileged accounts
-- Account lockout after [5] failed login attempts
-- Session timeout: [30 minutes] of inactivity
-
-### 5.2 Authorization
-
-- Role-Based Access Control (RBAC) implementation
-- Principle of least privilege enforced
-- Segregation of duties for critical operations
-- Regular access reviews: [Quarterly]
-
-### 5.3 Data Protection
-
-**Encryption:**
-- Data at rest: AES-256 encryption
-- Data in transit: TLS 1.2 or higher
-- Database: Transparent Data Encryption (TDE)
-- Sensitive fields: Application-level encryption
-
-**Data Classification:**
-- Public, Internal, Confidential, Restricted
-- PII/PHI handling per regulatory requirements
-
-### 5.4 Security Monitoring
-
-- Centralized logging of security events
-- Real-time intrusion detection/prevention
-- Security Information and Event Management (SIEM)
-- Automated vulnerability scanning: [Weekly]
-- Penetration testing: [Annually]
-
-### 5.5 Compliance
-
-**Regulatory Requirements:**
-- [GDPR / HIPAA / SOC 2 / PCI-DSS / ISO 27001]
-- Data residency requirements: [Specify regions]
-- Right to erasure (RTBF) support
-- Audit trail retention: [7 years]
-
----
-
 ## 6. USABILITY REQUIREMENTS
 
 ### 6.1 User Interface
@@ -244,39 +162,6 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 - Progress indicators for long-running operations
 - Undo/redo functionality where applicable
 
----
-
-## 7. MAINTAINABILITY REQUIREMENTS
-
-### 7.1 Modularity
-
-- Microservices/modular architecture with loosely coupled components
-- Clear separation of concerns
-- Well-defined APIs between components
-
-### 7.2 Testability
-
-- Minimum [80%] code coverage for unit tests
-- Automated integration and e2e test suites
-- Test environments mirroring production
-- Continuous integration/continuous deployment (CI/CD)
-
-### 7.3 Documentation
-
-- Code documentation standards enforced
-- API documentation (OpenAPI/Swagger)
-- Architecture Decision Records (ADRs)
-- Runbooks for operational procedures
-
-### 7.4 Monitoring & Observability
-
-- Distributed tracing for request flows
-- Metrics collection (RED/USE methodology)
-- Log aggregation and search capability
-- Real-time dashboards for system health
-
----
-
 ## 8. COMPATIBILITY REQUIREMENTS
 
 ### 8.1 Browser Compatibility
@@ -306,30 +191,6 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 - API versioning strategy implemented
 - Breaking changes communicated [90 days] in advance
 - Support for N-1 API versions
-
----
-
-## 9. PORTABILITY REQUIREMENTS
-
-### 9.1 Platform Independence
-
-- Containerization (Docker) for application components
-- Infrastructure as Code (IaC) for deployment
-- Cloud-agnostic design where feasible
-
-### 9.2 Data Portability
-
-- Export functionality for all user data
-- Standard data formats for import/export
-- Migration tools and documentation
-
-### 9.3 Configuration Management
-
-- Externalized configuration
-- Environment-specific settings
-- Configuration as code versioned in Git
-
----
 
 ## 10. OPERATIONAL REQUIREMENTS
 
@@ -369,26 +230,6 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 - Scheduled: [Every 1st Sunday, 2 AM - 6 AM]
 - Emergency: As needed with notification
 
----
-
-## 11. LOCALIZATION & INTERNATIONALIZATION
-
-### 11.1 Language Support
-
-- Supported languages: [English, Spanish, French, etc.]
-- UTF-8 encoding throughout
-- Right-to-left (RTL) language support
-- Date/time format localization
-
-### 11.2 Regional Requirements
-
-- Currency formatting and conversion
-- Regional date/time formats
-- Time zone handling
-- Local regulatory compliance
-
----
-
 ## 12. ENVIRONMENTAL REQUIREMENTS
 
 ### 12.1 Infrastructure
@@ -410,29 +251,6 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 | [Service Name] | [Purpose] | [99.9%] |
 | [Library Name] | [Purpose] | [Latest stable] |
 
----
-
-## APPENDIX A: NFR MEASUREMENT DASHBOARD
-
-### Key Performance Indicators (KPIs)
-
-Track the following KPIs in production:
-
-1. **Availability:** Uptime percentage (monthly)
-2. **Performance:** p95 response time (daily)
-3. **Throughput:** Transactions per second (hourly)
-4. **Error Rate:** Percentage of failed requests (real-time)
-5. **Security:** Number of security incidents (monthly)
-
-### Monitoring Tools
-
-- Performance: [APM tool name]
-- Infrastructure: [Monitoring tool name]
-- Security: [SIEM tool name]
-- User Experience: [RUM tool name]
-
----
-
 ## APPENDIX B: QUALITY ATTRIBUTE SCENARIOS
 
 ### Example Scenario Template
@@ -444,18 +262,6 @@ Track the following KPIs in production:
 **Response Measure:** < 1 second for 95% of requests
 **Environment:** Normal load (500 concurrent users)
 **Priority:** High
-
----
-
-## NOTES
-
-- This template must be customized for each project based on specific requirements
-- All sections marked with [brackets] must be filled in
-- NFRs should be reviewed and updated quarterly
-- Non-compliance with critical NFRs requires escalation to CTO
-- For questions, contact Enterprise Architecture Office
-
----
 
 **Document Status:** TEMPLATE
 **Template Version:** 2.0.0

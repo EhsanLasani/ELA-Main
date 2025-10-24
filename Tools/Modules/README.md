@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-README
+Artifact_Name: ELA PowerShell Modules
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: ELA PowerShell Modules
+File_Path: Tools/Modules/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/Tools/Modules/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # ELA PowerShell Modules
 
 This directory contains reusable PowerShell modules that provide core functionality for the ELA Framework.
@@ -21,28 +44,6 @@ This directory contains reusable PowerShell modules that provide core functional
 Import-Module ./ELA.Reporting.psm1
 Show-ProjectDashboard -ProjectPath "."
 ```
-
----
-
-### 2. ELA.Validation.psm1
-
-**Purpose**: Document and artifact validation for compliance  
-**File Size**: 265 lines (6.63 KB)  
-
-**Functions**:
-- `Test-ArtifactMetadata` - Validates YAML metadata completeness
-- `Test-DocumentStructure` - Validates document structure
-- `Test-ArtifactNaming` - Validates naming conventions
-- `Test-PhaseArtifacts` - Validates all artifacts in a phase
-- `Get-ValidationRules` - Loads validation rules configuration
-
-**Example Usage**:
-```powershell
-Import-Module ./ELA.Validation.psm1
-Test-PhaseArtifacts -PhasePath "./03_Development" -Recursive
-```
-
----
 
 ## 🔧 Installation
 

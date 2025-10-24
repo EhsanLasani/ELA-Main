@@ -274,26 +274,26 @@ function Process-ArtifactFile {
         Write-Warning "Could not read file: $FilePath"
         return $null
     }
-    
+
     # Extract metadata
     $artifactType = Get-ArtifactType -FilePath $FilePath -Content $content
     $phase = Get-PhaseFromPath -FilePath $FilePath
     $title = Get-DocumentTitle -Content $content
     $filename = Split-Path $FilePath -Leaf
     $nameWithoutExt = [System.IO.Path]::GetFileNameWithoutExtension($filename)
-    
+
     # Generate Artifact ID
     $artifactID = New-ArtifactID -Type $artifactType -Phase $phase.Number -Name $nameWithoutExt
-    
+
     # Get standards type code
     $typeCode = Get-StandardsTypeCode -Type $artifactType
-    
+
     # Get relative path from repo root
     $relativePath = $FilePath -replace [regex]::Escape($RepoRoot), "" -replace "^[\\/]", ""
-    
+
     # Build GitHub URL
     $githubURL = "https://github.com/EhsanLasani/ELA-Main/blob/main/$($relativePath -replace '\\', '/')"
-    
+
     # Create metadata object based on standards
     $metadata = @{
         'Artifact_ID' = $artifactID
@@ -317,7 +317,23 @@ function Process-ArtifactFile {
         'Validation_Status' = 'Pending'
         'Comments' = "Auto-generated on $(Get-Date -Format 'yyyy-MM-dd')"
     }
-    
+
+    # Add or update YAML frontmatter in Markdown files
+    if ($FilePath -match '\.md$') {
+        # Remove all YAML frontmatter blocks and all lines starting with 'Comments:' or any metadata key, anywhere in the file
+        $metaKeys = $metadata.Keys -join '|'
+        $content = $content -replace "(?ms)^---[\s\S]*?---[\r\n]*", ''
+        $content = $content -replace "(?m)^(($metaKeys|Comments):.*)$", ''
+        $content = $content -replace "\n{3,}", "\n\n"  # Remove excessive blank lines
+        $yaml = "---`n"
+        foreach ($pair in $metadata.GetEnumerator() | Sort-Object Name) {
+            $yaml += ("{0}: {1}`n" -f $pair.Key, $pair.Value)
+        }
+        $yaml += "---`n"
+    $content = "## Metadata`n" + $yaml + $content.TrimStart()
+    Set-Content -Path $FilePath -Value $content -NoNewline
+    }
+
     Write-Host "  Type: $typeCode | Phase: $($phase.Name) | ID: $artifactID" -ForegroundColor Green
     return $metadata
 }
@@ -334,34 +350,43 @@ function Update-CatalogEntry {
     # Read existing catalog
     $catalog = @()
     if (Test-Path $CatalogPath) {
-        $catalog = Import-Csv $CatalogPath
+        $imported = Import-Csv $CatalogPath
+        if ($imported) {
+            if ($imported -is [System.Array]) {
+                $catalog = $imported
+            } else {
+                $catalog = @($imported)
+            }
+        }
     }
     
-    # Check if entry already exists
-    $existingEntry = $catalog | Where-Object { $_.'File Path' -eq $Metadata.File_Path }
-    
+    # Check if entry already exists (by File Path or Artifact_ID)
+    $existingEntry = $catalog | Where-Object { $_.'File Path' -eq $Metadata.File_Path -or $_.ID -eq $Metadata.Artifact_ID }
+
     if ($existingEntry) {
         Write-Host "  Updating existing entry" -ForegroundColor Yellow
-        # Update existing entry
-        $existingEntry.ID = $Metadata.Artifact_ID
-        $existingEntry.'Artifact Name' = $Metadata.Artifact_Name
-        $existingEntry.'Artifact Type' = $Metadata.Artifact_Type
-        $existingEntry.Version = $Metadata.Version
-        $existingEntry.Status = $Metadata.Status
-        $existingEntry.Owner = $Metadata.Owner
-        $existingEntry.'Last Updated' = $Metadata.Last_Updated
-        $existingEntry.'GitHub URL' = $Metadata.GitHub_URL
-        $existingEntry.Description = $Metadata.Description
-        $existingEntry.Phase = $Metadata.Phase
-        $existingEntry.Dependencies = $Metadata.Dependencies
-        $existingEntry.'Process Group' = $Metadata.Process_Group
-        $existingEntry.'Process Step' = $Metadata.Process_Step
-        $existingEntry.'Template Source' = $Metadata.Template_Source
-        $existingEntry.'Derived From' = $Metadata.Derived_From
-        $existingEntry.'Project Name' = $Metadata.Project_Name
-        $existingEntry.'Filled By' = $Metadata.Filled_By
-        $existingEntry.'Validation Status' = $Metadata.Validation_Status
-        $existingEntry.Comments = $Metadata.Comments
+        foreach ($entry in $existingEntry) {
+            $entry.ID = $Metadata.Artifact_ID
+            $entry.'Artifact Name' = $Metadata.Artifact_Name
+            $entry.'File Path' = $Metadata.File_Path
+            $entry.'Artifact Type' = $Metadata.Artifact_Type
+            $entry.Version = $Metadata.Version
+            $entry.Status = $Metadata.Status
+            $entry.Owner = $Metadata.Owner
+            $entry.'Last Updated' = $Metadata.Last_Updated
+            $entry.'GitHub URL' = $Metadata.GitHub_URL
+            $entry.Description = $Metadata.Description
+            $entry.Phase = $Metadata.Phase
+            $entry.Dependencies = $Metadata.Dependencies
+            $entry.'Process Group' = $Metadata.Process_Group
+            $entry.'Process Step' = $Metadata.Process_Step
+            $entry.'Template Source' = $Metadata.Template_Source
+            $entry.'Derived From' = $Metadata.Derived_From
+            $entry.'Project Name' = $Metadata.Project_Name
+            $entry.'Filled By' = $Metadata.Filled_By
+            $entry.'Validation Status' = $Metadata.Validation_Status
+            $entry.Comments = $Metadata.Comments
+        }
     } else {
         Write-Host "  Adding new entry" -ForegroundColor Green
         # Create new entry
@@ -387,7 +412,7 @@ function Update-CatalogEntry {
             'Validation Status' = $Metadata.Validation_Status
             'Comments' = $Metadata.Comments
         }
-        $catalog += $newEntry
+        $catalog = @($catalog) + $newEntry
     }
     
     # Export updated catalog
@@ -425,8 +450,16 @@ try {
         Write-Warning "Could not load standards. Proceeding with default configuration.`n"
     }
     
-    # Get catalog path
-    $catalogPath = Join-Path $repoRoot "Catalogue.csv"
+    # Always use the correct catalog path in ELA-Main/ELA-Main/catalog.csv
+    $catalogPath = Join-Path $repoRoot "catalog.csv"
+    if (-not (Test-Path $catalogPath)) {
+        # If not found, try ELA-Main/ELA-Main/catalog.csv
+        $catalogPath = Join-Path $repoRoot "ELA-Main/catalog.csv"
+        if (-not (Test-Path $catalogPath)) {
+            # If still not found, create in current working directory
+            $catalogPath = Join-Path (Get-Location) "catalog.csv"
+        }
+    }
     
     # Process file(s)
     $filesToProcess = @()

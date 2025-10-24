@@ -1,22 +1,31 @@
+## Metadata
+---
+Artifact_ID: DOC-01-Definition_Phase_Pro
+Artifact_Name: Definition Phase - Process Overview & Template Assignment
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Definition Phase - Process Overview & Template Assignment
+File_Path: 01_Definition/Guidelines/Definition_Phase_Process_Overview.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/Definition_Phase_Process_Overview.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Definition
+Process_Group: Definition
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Definition Phase - Process Overview & Template Assignment
 
 ## Purpose
 
 This document defines the **Definition Phase workflow**, assigns templates from `00_Policy/Templates/02_Definition/`, and clarifies when/how each template is used. The Definition phase establishes **WHAT** needs to be built through requirements, stakeholder analysis, and compliance frameworks.
-
----
-
-## Definition Phase Objectives
-
-The Definition Phase establishes **WHAT** to build through:
-- **Requirements Engineering**: Functional and non-functional requirements with traceability
-- **Stakeholder Management**: Stakeholder identification, RACI matrices, engagement plans
-- **Compliance Framework**: Regulatory requirements, data protection, audit controls
-- **Risk Foundation**: Initial risk assessment, threat modeling using STRIDE
-- **Business Context**: Business case, strategic alignment, success criteria
-- **Data Governance**: Data classification, retention policies, quality standards
-
----
 
 ## Inputs from Previous Phase
 
@@ -27,50 +36,6 @@ The Definition Phase establishes **WHAT** to build through:
 | Stakeholder List | Stakeholder_Analysis_Template.md | Initial stakeholder identification |
 | Initial Scope | Project_Charter_Template.md | High-level project boundaries |
 | Risk Register | Risk_Assessment.csv | Known risks and constraints |
-
----
-
-## Definition Phase Process Overview (Recommended Sequence)
-
-### **Phase 1: Stakeholder & Governance Setup**
-
-#### Step 1.1: Stakeholder Identification & Analysis
-**Template**: Stakeholder_Analysis_Template.md
-- **Inputs**: Strategic plan, organizational charts, project charter
-- **Activities**:
-  - Identify all stakeholders (internal/external)
-  - Assess power/interest/influence levels
-  - Categorize by engagement strategy
-  - Document communication preferences
-- **Outputs**: Stakeholder matrix with engagement strategies
-- **Owner**: Business Analyst / Product Owner
-- **Approver**: Sponsor / Program Manager
-
-#### Step 1.2: RACI Matrix Definition
-**Template**: RACI_Matrix_Template.md
-- **Inputs**: Stakeholder analysis, project structure
-- **Activities**:
-  - Define key decisions and deliverables
-  - Assign Responsible, Accountable, Consulted, Informed roles
-  - Validate with stakeholders
-  - Establish escalation paths
-- **Outputs**: RACI matrix for all major activities
-- **Owner**: Project Manager
-- **Approver**: Steering Committee
-
-#### Step 1.3: Communication Plan
-**Template**: Communication_Plan_Template.md
-- **Inputs**: Stakeholder analysis, RACI matrix
-- **Activities**:
-  - Define communication channels and frequency
-  - Establish status reporting cadence
-  - Create stakeholder-specific messaging plans
-  - Set up collaboration tools and governance
-- **Outputs**: Communication plan with meeting schedules
-- **Owner**: Project Manager / Scrum Master
-- **Approver**: Sponsor
-
----
 
 ### **Phase 2: Requirements Engineering**
 
@@ -122,48 +87,6 @@ The Definition Phase establishes **WHAT** to build through:
 - **Owner**: Product Owner
 - **Approver**: Product Owner / Stakeholders
 
----
-
-### **Phase 3: Compliance & Governance**
-
-#### Step 3.1: Compliance Matrix Definition
-**Template**: Compliance_Matrix_ISO_ITAR_OWSAP_md.md
-- **Inputs**: Regulatory landscape, industry standards, legal requirements
-- **Activities**:
-  - Identify applicable regulations (ISO 27001, GDPR, HIPAA, SOC2, ITAR, etc.)
-  - Map compliance requirements to system capabilities
-  - Define controls for each compliance domain
-  - Document audit requirements and evidence collection
-- **Outputs**: Compliance matrix with control mappings
-- **Owner**: Compliance Officer / Security Architect
-- **Approver**: Legal / Compliance Committee
-
-#### Step 3.2: Data Classification & Protection
-**Template**: Data_Classification_Template.md
-- **Inputs**: Data inventory, regulatory requirements, business needs
-- **Activities**:
-  - Classify data by sensitivity (Public, Internal, Confidential, Restricted)
-  - Define handling requirements for each classification
-  - Establish retention and disposal policies
-  - Document cross-border data transfer requirements
-- **Outputs**: Data classification policy and procedures
-- **Owner**: Data Protection Officer / Information Security
-- **Approver**: Chief Information Security Officer (CISO)
-
-#### Step 3.3: Security Requirements
-**Template**: Security_Requirements_Template.md
-- **Inputs**: Threat model, compliance requirements, NFRs
-- **Activities**:
-  - Define authentication and authorization requirements
-  - Specify encryption standards (at rest, in transit)
-  - Establish logging and monitoring requirements
-  - Document security testing requirements
-- **Outputs**: Security requirements specification
-- **Owner**: Security Architect
-- **Approver**: CISO / Security Review Board
-
----
-
 ### **Phase 4: Risk & Threat Analysis**
 
 #### Step 4.1: Risk Assessment
@@ -191,36 +114,6 @@ The Definition Phase establishes **WHAT** to build through:
 - **Owner**: Security Architect / AppSec Engineer
 - **Approver**: CISO
 
----
-
-### **Phase 5: Data & Integration Requirements**
-
-#### Step 5.1: Data Requirements Specification
-**Template**: Data_Requirements_Specification_Template.md
-- **Inputs**: Functional requirements, business processes, compliance needs
-- **Activities**:
-  - Define data entities and attributes
-  - Establish data quality requirements
-  - Document data sources and ownership
-  - Specify data transformation rules
-- **Outputs**: Data requirements document
-- **Owner**: Data Architect / Business Analyst
-- **Approver**: Chief Data Officer (CDO)
-
-#### Step 5.2: Interface Requirements
-**Template**: Interface_Requirements_Specification_Template.md
-- **Inputs**: System context, integration points, architectural constraints
-- **Activities**:
-  - Identify all system interfaces (APIs, file transfers, messaging)
-  - Define interface protocols and data formats
-  - Specify error handling and retry logic
-  - Document interface SLAs and dependencies
-- **Outputs**: Interface requirements specification
-- **Owner**: Integration Architect / Technical Lead
-- **Approver**: Enterprise Architect
-
----
-
 ### **Phase 6: Business Process & Change Management**
 
 #### Step 6.1: Business Process Mapping
@@ -246,48 +139,6 @@ The Definition Phase establishes **WHAT** to build through:
 - **Outputs**: Change management plan with training schedule
 - **Owner**: Change Manager / Organizational Change Management (OCM) Lead
 - **Approver**: Sponsor / HR Leadership
-
----
-
-### **Phase 7: Validation & Sign-off**
-
-#### Step 7.1: Requirements Traceability
-**Template**: Requirements_Traceability_Matrix_Template.md
-- **Inputs**: All requirements documents, design specifications (if available)
-- **Activities**:
-  - Create traceability matrix linking business needs → requirements → design → test cases
-  - Ensure bidirectional traceability
-  - Validate coverage and completeness
-  - Identify orphaned or untraced requirements
-- **Outputs**: Requirements Traceability Matrix (RTM)
-- **Owner**: Business Analyst / QA Lead
-- **Approver**: Product Owner
-
-#### Step 7.2: Definition Phase Review
-**Template**: Definition_Phase_Review_Checklist.md (from Validation folder)
-- **Inputs**: All Definition phase deliverables
-- **Activities**:
-  - Conduct formal phase review with stakeholders
-  - Validate completeness against phase exit criteria
-  - Resolve open issues and risks
-  - Obtain stakeholder sign-off
-- **Outputs**: Phase review report with approvals
-- **Owner**: Project Manager
-- **Approver**: Steering Committee
-
-#### Step 7.3: Phase Gate Sign-off
-**Template**: Definition_Phase_Signoff_Sheet.md (from Validation folder)
-- **Inputs**: Phase review results, deliverable checklist
-- **Activities**:
-  - Present deliverables to governance board
-  - Confirm readiness to proceed to Design phase
-  - Document approvals and conditions
-  - Archive baseline documents
-- **Outputs**: Signed phase gate approval
-- **Owner**: Project Manager / Program Manager
-- **Approver**: Sponsor / Governance Board
-
----
 
 ## Validation Checklist (Exit Criteria)
 
@@ -327,18 +178,6 @@ Before proceeding to Design Phase, verify:
 - [ ] Requirements traceable to business goals
 - [ ] Documentation stored in version control
 - [ ] Phase gate approval obtained
-
----
-
-## Approval Workflow
-
-1. **Business Analyst/Product Owner**: Reviews requirements for completeness and accuracy
-2. **Technical Review**: Architecture, security, and data teams validate technical feasibility
-3. **Compliance Review**: Legal and compliance teams confirm regulatory alignment
-4. **Steering Committee**: Final approval to proceed to Design Phase
-5. **Sponsor**: Signs off on phase gate and releases budget for next phase
-
----
 
 ## Related Documentation
 

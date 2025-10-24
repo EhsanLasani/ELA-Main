@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-08-README
+Artifact_Name: 06 - Change Management
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: 06 - Change Management
+File_Path: 08_Change_Management/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/08_Change_Management/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Change_Management
+Process_Group: Change_Management
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # 06 - Change Management
 
 Ensure every modification is traceable back to approved requests and properly documented.

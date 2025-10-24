@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-FinOps_Budget_Tracke
+Artifact_Name: FinOps Budget Tracker
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: FinOps Budget Tracker
+File_Path: 00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # FinOps Budget Tracker
 
 ## Document Control

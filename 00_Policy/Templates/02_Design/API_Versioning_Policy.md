@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-API_Versioning_Polic
+Artifact_Name: API VERSIONING POLICY
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: API VERSIONING POLICY
+File_Path: 00_Policy/Templates/02_Design/API_Versioning_Policy.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/02_Design/API_Versioning_Policy.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # API VERSIONING POLICY
 
 ## 1. VERSIONING STRATEGY
@@ -10,35 +33,11 @@
 - **MINOR:** New features (backward compatible)
 - **PATCH:** Bug fixes (backward compatible)
 
----
-
-## 2. VERSION LIFECYCLE
-
-| Stage | Duration | Support Level |
-|-------|----------|---------------|
+----|----------|---------------|
 | Current | Indefinite | Full support, new features |
 | Supported | 12 months | Bug fixes, security patches |
 | Deprecated | 6 months | Security patches only |
 | Sunset | N/A | No support |
-
----
-
-## 3. BREAKING CHANGES
-
-**Considered Breaking:**
-- Removing endpoints
-- Removing request/response fields
-- Changing field types
-- Adding required fields
-- Changing authentication
-
-**Communication:**
-- 6 months advance notice
-- Deprecation header in responses
-- Email notification to API consumers
-- Changelog documentation
-
----
 
 ## 4. BACKWARD COMPATIBILITY
 
@@ -46,26 +45,6 @@
 - New optional fields: backward compatible
 - Response field additions: backward compatible
 - Endpoint additions: backward compatible
-
----
-
-## 5. DEPRECATION PROCESS
-
-1. Announce deprecation (T-180 days)
-2. Add Sunset header to responses
-3. Update documentation
-4. Send email notifications
-5. Monitor usage metrics
-6. Final reminder (T-30 days)
-7. Sunset date (T-0)
-
-**Sunset Header:**
-```
-Sunset: Sat, 31 Dec 2025 23:59:59 GMT
-Link: <https://api.example.com/v2>; rel="successor-version"
-```
-
----
 
 ## 6. MIGRATION SUPPORT
 

@@ -1,12 +1,30 @@
+## Metadata
+---
+Artifact_ID: DOC-00-Functional_Requireme
+Artifact_Name: SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Functional_Requirements_SRS_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Functional_Requirements_SRS_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
 ## Functional Requirements Document
 
----
-
-## Document Control
-
-| Field | Value |
-|-------|-------|
+----|-------|
 | **Project Name** | [Enter Project Name] |
 | **Project ID** | [ELA-XXXX] |
 | **Document Version** | 1.0.0 |
@@ -17,19 +35,6 @@
 | **Approved By** | [Approver Name] |
 | **Status** | [Draft / In Review / Approved] |
 | **Classification** | [Internal / Confidential] |
-
----
-
-## Table of Contents
-
-1. [Introduction](#1-introduction)
-2. [Overall Description](#2-overall-description)
-3. [System Features and Functional Requirements](#3-system-features-and-functional-requirements)
-4. [External Interface Requirements](#4-external-interface-requirements)
-5. [Other Requirements](#5-other-requirements)
-6. [Appendices](#6-appendices)
-
----
 
 ## 1. INTRODUCTION
 
@@ -107,54 +112,7 @@ This document is organized to serve different stakeholders:
 | MFA | Multi-Factor Authentication |
 | [Add project-specific terms] | [Definition] |
 
----
-
-## 2. OVERALL DESCRIPTION
-
-### 2.1 Product Perspective
-
-**System Context:**
-[Describe how the system fits into the larger system or business environment]
-
-**System Interfaces:**
-- Integration with [System A]
-- Integration with [System B]
-- [List all external systems]
-
-**System Diagram:**
-```
-[Include a high-level system context diagram showing:
-- The system being developed
-- External systems it interfaces with
-- Users/actors
-- Data flows]
-```
-
-### 2.2 Product Functions
-
-**Major Functions:**
-1. **[Function Category 1]**: [Brief description]
-2. **[Function Category 2]**: [Brief description]
-3. **[Function Category 3]**: [Brief description]
-
-**Function Hierarchy:**
-```
-System
-├── Module 1
-│   ├── Feature 1.1
-│   └── Feature 1.2
-├── Module 2
-│   ├── Feature 2.1
-│   └── Feature 2.2
-└── Module 3
-    ├── Feature 3.1
-    └── Feature 3.2
-```
-
-### 2.3 User Classes and Characteristics
-
-| User Class | Description | Technical Expertise | Primary Tasks | Frequency of Use |
-|------------|-------------|---------------------|---------------|------------------|
+---------|-------------|---------------------|---------------|------------------|
 | Administrator | System administrators | High | System configuration, user management | Daily |
 | Power User | Advanced users | Medium | Complex workflows, reporting | Daily |
 | Standard User | Regular end users | Low | Basic operations | Daily |
@@ -214,49 +172,6 @@ The following user documentation will be delivered:
 - Availability of third-party API [API Name]
 - Integration with existing system [System Name]
 - [List other dependencies]
-
----
-
-## 3. SYSTEM FEATURES AND FUNCTIONAL REQUIREMENTS
-
-### Feature Template
-
-For each feature, use the following structure:
-
-#### 3.X [Feature Name]
-
-**Feature ID:** FEA-XXX
-
-**Description:**
-[Provide a detailed description of the feature]
-
-**Priority:** [High/Medium/Low]
-
-**Functional Requirements:**
-
-##### REQ-XXX-001: [Requirement Title]
-
-**Priority:** [High/Medium/Low]
-
-**Description:**
-The system SHALL [describe what the system must do]
-
-**Rationale:**
-[Explain why this requirement is needed]
-
-**Dependencies:**
-- Depends on REQ-XXX-XXX
-
-**Acceptance Criteria:**
-- [ ] Criterion 1
-- [ ] Criterion 2
-- [ ] Criterion 3
-
-**Test Scenarios:**
-1. [Test scenario 1]
-2. [Test scenario 2]
-
----
 
 ### 3.1 User Authentication and Authorization
 
@@ -343,53 +258,6 @@ The system SHALL implement role-based access control with the following roles:
 - [ ] Unauthorized access attempts are logged
 - [ ] Administrators can assign/modify user roles
 
----
-
-### 3.2 User Profile Management
-
-**Feature ID:** FEA-PROFILE
-
-**Description:**
-Users shall be able to view and manage their profile information.
-
-**Priority:** Medium
-
-#### REQ-PROFILE-001: View Profile
-
-**Priority:** Medium
-
-**Description:**
-The system SHALL allow users to view their profile including:
-- Personal information
-- Account settings
-- Activity history
-- Preferences
-
-**Acceptance Criteria:**
-- [ ] All profile information is displayed correctly
-- [ ] Sensitive information (password) is masked
-- [ ] Profile page loads within 2 seconds
-
-#### REQ-PROFILE-002: Edit Profile
-
-**Priority:** Medium
-
-**Description:**
-The system SHALL allow users to edit:
-- Name
-- Contact information
-- Profile picture
-- Notification preferences
-- Language preference
-
-**Acceptance Criteria:**
-- [ ] Changes are saved successfully
-- [ ] Validation errors are displayed inline
-- [ ] Confirmation message shown after successful update
-- [ ] Email verification required if email is changed
-
----
-
 ### 3.3 [Add More Features]
 
 **Feature ID:** FEA-XXX
@@ -408,82 +276,7 @@ The system SHALL allow users to edit:
 - Communication (Email, Chat, etc.)
 - Settings and Configuration
 
----
-
-## 4. EXTERNAL INTERFACE REQUIREMENTS
-
-### 4.1 User Interfaces
-
-**General UI Requirements:**
-
-#### REQ-UI-001: Responsive Design
-
-**Priority:** High
-
-**Description:**
-The system SHALL provide a responsive user interface that adapts to:
-- Desktop (1920x1080 and above)
-- Tablet (768x1024)
-- Mobile (375x667 and above)
-
-**Acceptance Criteria:**
-- [ ] UI elements scale appropriately
-- [ ] Navigation is touch-friendly on mobile devices
-- [ ] No horizontal scrolling required
-
-#### REQ-UI-002: Accessibility
-
-**Priority:** High
-
-**Description:**
-The system SHALL comply with WCAG 2.1 Level AA standards:
-- Keyboard navigation support
-- Screen reader compatibility
-- Sufficient color contrast (minimum 4.5:1)
-- Text resizing up to 200%
-
-#### REQ-UI-003: Branding
-
-**Priority:** Medium
-
-**Description:**
-The system SHALL incorporate:
-- Company logo and colors
-- Consistent typography
-- Standard UI components library
-
-### 4.2 Hardware Interfaces
-
-#### REQ-HW-001: Peripheral Support
-
-**Description:**
-The system SHALL support standard hardware peripherals:
-- Printers
-- Scanners
-- Webcams (for video calls)
-- Biometric devices (if applicable)
-
-### 4.3 Software Interfaces
-
-#### REQ-SW-001: Database Interface
-
-**Priority:** High
-
-**Description:**
-The system SHALL interface with [Database Name] using:
-- Connection Protocol: [JDBC/ODBC/Native]
-- Connection Pool: Minimum 10, Maximum 100 connections
-- Transaction Support: ACID compliant
-
-#### REQ-SW-002: Third-Party APIs
-
-**Priority:** High
-
-**Description:**
-The system SHALL integrate with the following APIs:
-
-| API Name | Purpose | Version | Authentication |
-|----------|---------|---------|----------------|
+-------|---------|---------|----------------|
 | [API 1] | [Purpose] | [v1.0] | [OAuth 2.0] |
 | [API 2] | [Purpose] | [v2.0] | [API Key] |
 
@@ -520,111 +313,6 @@ The system SHALL support WebSocket connections for real-time features:
 - Chat/Messaging
 - Live notifications
 - Real-time data updates
-
----
-
-## 5. OTHER REQUIREMENTS
-
-### 5.1 Data Requirements
-
-#### REQ-DATA-001: Data Validation
-
-**Priority:** High
-
-**Description:**
-The system SHALL validate all input data:
-- Format validation (email, phone, date)
-- Range validation (numeric fields)
-- Length validation (string fields)
-- Business rule validation
-
-#### REQ-DATA-002: Data Storage
-
-**Priority:** High
-
-**Description:**
-The system SHALL store data with:
-- Encryption at rest (AES-256)
-- Encryption in transit (TLS 1.2+)
-- Regular backups (daily)
-- Retention policy compliance
-
-#### REQ-DATA-003: Data Export
-
-**Priority:** Medium
-
-**Description:**
-The system SHALL allow users to export data in:
-- CSV format
-- Excel format
-- PDF format
-- JSON format (for API integrations)
-
-### 5.2 Localization Requirements
-
-#### REQ-LOC-001: Multi-Language Support
-
-**Priority:** Medium
-
-**Description:**
-The system SHALL support the following languages:
-- English (default)
-- [Language 2]
-- [Language 3]
-
-**Acceptance Criteria:**
-- [ ] All UI text is translatable
-- [ ] Date/time formats adjust to locale
-- [ ] Currency symbols display correctly
-- [ ] RTL language support (if applicable)
-
-### 5.3 Legal and Compliance Requirements
-
-#### REQ-LEGAL-001: Terms of Service
-
-**Priority:** High
-
-**Description:**
-The system SHALL:
-- Display Terms of Service during registration
-- Require explicit acceptance
-- Maintain record of acceptance with timestamp
-
-#### REQ-LEGAL-002: Privacy Policy
-
-**Priority:** High
-
-**Description:**
-The system SHALL:
-- Provide accessible privacy policy
-- Allow users to download their data (GDPR)
-- Support right to be forgotten (data deletion)
-
-#### REQ-LEGAL-003: Cookie Consent
-
-**Priority:** High
-
-**Description:**
-The system SHALL:
-- Display cookie consent banner for EU users
-- Allow granular cookie preferences
-- Honor "Do Not Track" settings
-
-### 5.4 Business Rules
-
-#### REQ-BUSINESS-001: [Business Rule 1]
-
-**Priority:** [High/Medium/Low]
-
-**Description:**
-[Describe the business rule that the system must enforce]
-
-**Example:**
-- Users must be 18 years or older to register
-- Maximum file upload size is 50 MB
-- Free tier limited to 100 transactions per month
-
----
 
 ## 6. APPENDICES
 
@@ -693,54 +381,6 @@ The system SHALL:
 |---------|------|--------|------------------------|
 | 1.0.0 | [Date] | [Author] | Initial version |
 | 1.1.0 | [Date] | [Author] | Added [features] |
-
----
-
-## NOTES FOR TEMPLATE USERS
-
-### How to Use This Template
-
-1. **Customize Document Control**: Fill in project-specific information
-2. **Complete Section 1**: Define purpose, scope, and context
-3. **Detail Section 2**: Describe the product comprehensively
-4. **Specify Section 3**: List all functional requirements using the template format
-5. **Define Section 4**: Specify all interface requirements
-6. **Add Section 5**: Include other necessary requirements
-7. **Complete Appendices**: Add supporting documentation
-
-### Best Practices
-
-- **Be Specific**: Use concrete, measurable terms
-- **Be Testable**: Each requirement should be verifiable
-- **Be Consistent**: Use standard terminology throughout
-- **Be Complete**: Cover all aspects of functionality
-- **Be Feasible**: Ensure requirements are technically achievable
-- **Prioritize**: Mark critical requirements clearly
-- **Trace**: Maintain traceability to business requirements
-- **Review**: Get stakeholder signoff before development
-
-### Requirement Quality Checklist
-
-Each requirement should be:
-- [ ] **Necessary**: Addresses a real business need
-- [ ] **Unambiguous**: Has only one interpretation
-- [ ] **Testable**: Can be verified through testing
-- [ ] **Complete**: Fully describes the functionality
-- [ ] **Consistent**: Does not contradict other requirements
-- [ ] **Traceable**: Linked to business objective
-- [ ] **Feasible**: Can be implemented within constraints
-- [ ] **Prioritized**: Has defined priority level
-
-### Common Pitfalls to Avoid
-
-- ❌ Mixing functional and non-functional requirements
-- ❌ Using vague terms like "user-friendly" or "fast"
-- ❌ Specifying design solutions instead of requirements
-- ❌ Including implementation details
-- ❌ Omitting acceptance criteria
-- ❌ Not involving stakeholders in review
-
----
 
 **Document Status:** TEMPLATE
 **Template Version:** 1.0.0

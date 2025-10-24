@@ -1,11 +1,34 @@
+## Metadata
+---
+Artifact_ID: DOC-00-README
+Artifact_Name: 🏗️ ELA-Main
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: 🏗️ ELA-Main
+File_Path: README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # 🏗️ ELA-Main  
 ### Enterprise-Level Application Development Framework (Main Repository)
 
 **ELA-Main** is the **master governance and template repository** for all Enterprise-Level Application (ELA) projects.  
 It defines the standardized structure, policies, automation pipelines, and AI-assisted development workflows used across the organization.
 
---------
-------------
+--
+------
 ## 📘 Purpose
 
 The purpose of **ELA-Main** is to:

@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TMP-00-Runbook_Template
+Artifact_Name: Runbook Template
+Artifact_Type: TMP
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Runbook Template
+File_Path: 00_Policy/Templates/07_Operations/Runbook_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Runbook_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v1.0
+---
 # Runbook Template
 
 ## Document Control

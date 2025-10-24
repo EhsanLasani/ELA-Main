@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-03-README
+Artifact_Name: Development Phase Validation
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Development Phase Validation
+File_Path: 03_Development/Validation/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/03_Development/Validation/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Development
+Process_Group: Development
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Development Phase Validation
 
 This folder contains validation checklists and review criteria for Development Phase deliverables.

@@ -1,31 +1,31 @@
+## Metadata
+---
+Artifact_ID: VAL-01-Review_Checklist
+Artifact_Name: Review Checklist
+Artifact_Type: VAL
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Review Checklist
+File_Path: 01_Definition/Guidelines/Review_Checklist.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/Review_Checklist.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Definition
+Process_Group: Definition
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Review Checklist
 
 **Version:** 1.0  
 **Last Updated:** Phase 2 (Week 3-4)  
 **Purpose:** Quality checklist for reviewing requirements documents, PRs, and Definition phase deliverables
-
----
-
-## Document Review Checklist
-
-Use this checklist when reviewing requirements documents, design docs, and other Definition phase artifacts.
-
-### General Quality
-- [ ] Document follows the template structure
-- [ ] All sections are complete (no [TBD] or empty sections)
-- [ ] Version number and last updated date are current
-- [ ] Change log is updated with recent modifications
-- [ ] Document owner and reviewers are identified
-- [ ] Links to related documents are valid and up-to-date
-
-### Clarity and Completeness
-- [ ] Purpose and scope are clearly defined
-- [ ] Technical terms are defined or linked to Glossary.md
-- [ ] Assumptions are explicitly stated
-- [ ] Dependencies on other systems/components are identified
-- [ ] Success criteria are measurable and specific
-
----
 
 ## Requirements Review Checklist
 
@@ -53,36 +53,6 @@ Use this checklist when reviewing requirements documents, design docs, and other
 - [ ] Traceability matrix links requirements to design/test/risks
 - [ ] High-priority risks have corresponding mitigations
 - [ ] Security threats identified in threat model are addressed
-
----
-
-## Security Review Checklist
-
-### Threat Modeling
-- [ ] Threat model has been conducted for this component/feature
-- [ ] Data flow diagram (DFD) is current and accurate
-- [ ] Trust boundaries are clearly marked
-- [ ] All STRIDE categories have been evaluated
-- [ ] Threats are rated by impact and likelihood
-- [ ] High-priority threats have documented mitigations
-- [ ] Mitigation owners and timelines are assigned
-
-### Security Controls
-- [ ] Authentication mechanism is specified
-- [ ] Authorization model (RBAC, ABAC) is defined
-- [ ] Sensitive data is encrypted at rest and in transit
-- [ ] Input validation and sanitization are required
-- [ ] Logging includes security-relevant events (login, access, changes)
-- [ ] Error handling doesn't expose sensitive information
-- [ ] Rate limiting is implemented for public endpoints
-
-### Compliance
-- [ ] Regulatory requirements (GDPR, SOC 2, etc.) are identified
-- [ ] PII handling procedures are documented
-- [ ] Data retention policies are specified
-- [ ] Compliance requirements are mapped to controls
-
----
 
 ## Code/PR Review Checklist
 
@@ -116,66 +86,12 @@ Use this checklist when reviewing requirements documents, design docs, and other
 - [ ] Caching is used appropriately
 - [ ] Resource cleanup (connections, files) is handled
 
----
-
-## Definition Phase Sign-off Checklist
-
-Before moving to the Design phase, ensure:
-
-### Documentation Complete
-- [ ] Requirements document is complete and approved
-- [ ] Threat model is documented with mitigations assigned
-- [ ] NFR guidelines have been followed
-- [ ] All templates are filled out completely
-- [ ] Supporting documents (glossary, diagrams) are ready
-
-### Stakeholder Approval
-- [ ] Product owner has approved functional requirements
-- [ ] Technical lead has approved architecture approach
-- [ ] Security team has approved threat model and mitigations
-- [ ] QA lead has approved test strategy
-- [ ] All P0 and P1 concerns are addressed
-
-### Risks Managed
-- [ ] All high and critical risks have mitigation plans
-- [ ] Risk owners are assigned
-- [ ] Risk acceptance is documented (if applicable)
-- [ ] Dependencies are identified and tracked
-
-### Readiness for Next Phase
-- [ ] Design phase entry criteria are met
-- [ ] Team has capacity and skills for implementation
-- [ ] External dependencies are confirmed available
-- [ ] Timelines and milestones are realistic
-
----
-
 ## How to Use This Checklist
 
 1. **For Document Reviews:** Go through relevant section before approving any Definition phase document
 2. **For PRs:** Use Code/PR section when reviewing code changes
 3. **For Phase Gates:** Use Definition Phase Sign-off section before transitioning to Design
 4. **Customize:** Adapt this checklist to your project's specific needs
-
----
-
-## Review Process
-
-### Recommended Review Workflow
-1. Author completes document/code
-2. Author performs self-review using this checklist
-3. Peers review using this checklist
-4. Address all comments and concerns
-5. Final approval from designated reviewer(s)
-6. Document approval in version history
-
-### Severity Levels for Issues
-- **Blocker:** Must be fixed before approval (security, compliance, major gaps)
-- **Critical:** Should be fixed before approval (quality, completeness)
-- **Major:** Should be addressed soon (improvements, clarifications)
-- **Minor:** Nice to have (style, suggestions)
-
----
 
 **Tips for Effective Reviews:**
 - Focus on substance, not style (unless style affects clarity)

@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TMP-00-Environment_Configur
+Artifact_Name: Untitled Document
+Artifact_Type: TMP
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Untitled Document
+File_Path: 00_Policy/Templates/03_Development/Environment_Configuration_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Environment_Configuration_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v1.0
+---
 Environment_Configuration_Template.md# Environment Configuration Template
 
 ## Document Control

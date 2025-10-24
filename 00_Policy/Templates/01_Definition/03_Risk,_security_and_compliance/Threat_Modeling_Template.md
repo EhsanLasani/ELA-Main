@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TMP-00-Threat_Modeling_Temp
+Artifact_Name: THREAT MODELING TEMPLATE
+Artifact_Type: TMP
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: THREAT MODELING TEMPLATE
+File_Path: 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Threat_Modeling_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Threat_Modeling_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v1.0
+---
 # THREAT MODELING TEMPLATE
 
 ## Document Control
@@ -9,14 +32,6 @@
 | **Threat Modeler** | [Name] |
 | **Date** | [YYYY-MM-DD] |
 | **Review Date** | [YYYY-MM-DD] |
-
----
-
-## METHODOLOGY: STRIDE
-
-**Spoofing | Tampering | Repudiation | Information Disclosure | Denial of Service | Elevation of Privilege**
-
----
 
 ## 1. SYSTEM OVERVIEW
 
@@ -33,12 +48,7 @@
 2. [Asset 2: e.g., Payment data]
 3. [Asset 3: e.g., Authentication tokens]
 
----
-
-## 2. DATA FLOW DIAGRAM (DFD)
-
-```
-[External User] --HTTPS--> [Load Balancer] ---> [Web App] ---> [API Gateway]
+> [Web App] ---> [API Gateway]
                                                       |
                                                       v
                                               [Database]
@@ -49,26 +59,6 @@
 - Processes: [Web Server, API, Auth Service]
 - Data Stores: [Database, Cache, File Storage]
 - Data Flows: [HTTPS requests, SQL queries]
-
----
-
-## 3. THREAT IDENTIFICATION
-
-### Threat 1: [Threat Name]
-**Category:** [Spoofing/Tampering/Repudiation/Info Disclosure/DoS/Elevation]
-**Description:** [How the threat manifests]
-**Attack Vector:** [How attacker exploits]
-**Impact:** [What damage occurs] - **Severity: [Critical/High/Medium/Low]**
-**Likelihood:** [High/Medium/Low]
-**Risk Score:** [Impact × Likelihood]
-
-**Mitigation:**
-- [ ] [Control 1]
-- [ ] [Control 2]
-**Status:** [Not Started/In Progress/Implemented]
-**Owner:** [Name]
-
----
 
 ### Threat 2: SQL Injection
 **Category:** Tampering
@@ -86,26 +76,6 @@
 **Status:** In Progress
 **Owner:** Dev Team
 
----
-
-### Threat 3: Session Hijacking
-**Category:** Spoofing
-**Description:** Attacker steals session tokens to impersonate users
-**Attack Vector:** XSS, insecure cookies, network sniffing
-**Impact:** Unauthorized access to user accounts - **Severity: High**
-**Likelihood:** Medium
-**Risk Score:** 6/10
-
-**Mitigation:**
-- [x] HTTPOnly and Secure cookie flags
-- [x] TLS 1.3 for all communications
-- [x] CSRF tokens
-- [x] Session timeout (15 min inactivity)
-**Status:** Implemented
-**Owner:** Security Team
-
----
-
 ## 4. THREAT SUMMARY TABLE
 
 | ID | Threat | Category | Severity | Likelihood | Risk | Status | Owner |
@@ -114,25 +84,6 @@
 | T-002 | SQL Injection | Tampering | Critical | High | 9 | In Progress | Dev |
 | T-003 | Session Hijacking | Spoofing | High | Medium | 6 | Implemented | Security |
 | T-004 | [Add more] | | | | | | |
-
----
-
-## 5. ATTACK TREE (Example)
-
-```
-Goal: Steal Customer Data
-├── SQL Injection
-│   ├── Unvalidated input
-│   └── Direct DB queries
-├── API Exploitation
-│   ├── Broken authentication
-│   └── Missing rate limiting
-└── Social Engineering
-    ├── Phishing
-    └── Insider threat
-```
-
----
 
 ## 6. SECURITY CONTROLS
 
@@ -153,40 +104,15 @@ Goal: Steal Customer Data
 - [ ] Automated rollback
 - [ ] Backup and recovery
 
----
-
-## 7. RESIDUAL RISKS
-
-**After implementing mitigations:**
-
-| Risk ID | Description | Residual Severity | Acceptance |
-|---------|-------------|-------------------|------------|
+------|-------------|-------------------|------------|
 | R-001 | [Risk description] | [Low/Medium] | [Accepted/Mitigate further] |
-
----
-
-## 8. ASSUMPTIONS & DEPENDENCIES
-
-**Assumptions:**
-- [Assumption 1]
-- [Assumption 2]
-
-**Dependencies:**
-- [Dependency 1: e.g., Cloud provider security]
-
----
 
 ## 9. REVIEW & UPDATES
 
 - **Next Review Date:** [YYYY-MM-DD]
 - **Review Frequency:** Quarterly or after major changes
 
----
-
-## APPROVAL
-
-| Role | Name | Date | Status |
-|------|------|------|--------|
+---|------|------|--------|
 | Security Lead | | | [ ] Approved |
 | Solution Architect | | | [ ] Approved |
 | CISO | | | [ ] Approved |

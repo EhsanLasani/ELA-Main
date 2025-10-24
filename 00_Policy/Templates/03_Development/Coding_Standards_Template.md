@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TMP-00-Coding_Standards_Tem
+Artifact_Name: Coding Standards (Template)
+Artifact_Type: TMP
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Coding Standards (Template)
+File_Path: 00_Policy/Templates/03_Development/Coding_Standards_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Coding_Standards_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v1.0
+---
 ## 0. Metadata
 - **Artifact ID (catalog.csv):** TMP-DEV-CODING-STAND
 - **Version:** v1.0
@@ -14,31 +37,10 @@
 
 This template defines baseline coding standards for ELA projects. Extend with language-specific addendums as needed.
 
----
-
-## 1. General Principles
-- Prefer **clarity over cleverness**; readability first.
-- Keep functions and modules **small and cohesive** (single responsibility).
-- **Fail fast** on invalid states; validate inputs near boundaries.
-- Write **tests alongside code**; keep coverage meaningful (target ≥ 80%).
-- No secrets or credentials in code, logs, or history.
-- Everything **linted, formatted, and typed** (where applicable) before PR.
-
----
-
 ## 2. Source Layout & Naming
 - Use a clear `Source_Code/` structure mirroring domains or features.
 - Filenames, packages, and namespaces: **lowercase-with-dashes** or **snake_case** (follow language norms).
 - Public APIs are **intentional**; avoid needless exports; prefer module-private helpers.
-
----
-
-## 3. Documentation & Headers
-- Every file includes a **header** with: module name, brief description, author/team, license notice (if required).
-- Every public class/function includes a **docstring** describing purpose, inputs, outputs, and edge cases.
-- Maintain `README.md` at the module or root describing build, run, and test instructions.
-
----
 
 ## 4. Testing Standards
 - Co-locate tests under `tests/` mirroring the source layout.

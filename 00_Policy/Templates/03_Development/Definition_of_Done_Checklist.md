@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: VAL-00-Definition_of_Done_C
+Artifact_Name: DEFINITION OF DONE (DoD) CHECKLIST
+Artifact_Type: VAL
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: DEFINITION OF DONE (DoD) CHECKLIST
+File_Path: 00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # DEFINITION OF DONE (DoD) CHECKLIST
 
 ## Document Control
@@ -11,16 +34,6 @@
 | **Sprint/Iteration** | [If applicable] |
 | **Reviewed By** | [Name] |
 | **Date** | [YYYY-MM-DD] |
-
----
-
-## PURPOSE
-
-This checklist defines the "Definition of Done" criteria for each SDLC phase in ELA projects. All criteria must be met before work can be considered complete and before moving to the next phase.
-
-**Key Principle:** Work is not done until ALL applicable criteria are satisfied.
-
----
 
 ## 1. DEFINITION PHASE - DEFINITION OF DONE
 
@@ -53,55 +66,6 @@ This checklist defines the "Definition of Done" criteria for each SDLC phase in 
 - [ ] **Risk register** created and reviewed
 
 **Phase Exit Criteria:** All checklist items completed and signed off.
-
----
-
-## 2. DESIGN PHASE - DEFINITION OF DONE
-
-### Detailed Design
-- [ ] **Detailed architecture** documented (component/service diagrams)
-- [ ] **Database schema** designed and reviewed
-- [ ] **API specifications** defined (OpenAPI/Swagger)
-- [ ] **UX/UI designs** completed and approved
-- [ ] **Wireframes/mockups** finalized
-- [ ] **Integration flows** documented
-
-### Technical Specifications
-- [ ] **Technical design document** completed
-- [ ] **Interface definitions** documented
-- [ ] **Error handling strategy** defined
-- [ ] **Logging and monitoring** approach defined
-- [ ] **Performance targets** specified
-
-### Security Design
-- [ ] **Threat model** completed and reviewed
-- [ ] **Security controls** identified for each threat
-- [ ] **Authentication/authorization** design completed
-- [ ] **Data encryption** strategy defined
-- [ ] **Security review** conducted
-
-### Infrastructure & DevOps
-- [ ] **Infrastructure architecture** defined (IaC templates)
-- [ ] **CI/CD pipeline** design completed
-- [ ] **Environment strategy** defined (dev/test/staging/prod)
-- [ ] **Deployment strategy** documented
-- [ ] **Rollback procedures** defined
-
-### Testing Strategy
-- [ ] **Test plan** created
-- [ ] **Test cases** derived from requirements
-- [ ] **Test data strategy** defined
-- [ ] **Performance test scenarios** defined
-
-### Approval & Sign-off
-- [ ] **Design review** conducted
-- [ ] **Security design** approved by Security team
-- [ ] **Architecture compliance** verified
-- [ ] **Phase sign-off** obtained
-
-**Phase Exit Criteria:** Design complete, reviewed, and approved.
-
----
 
 ## 3. DEVELOPMENT/CODING PHASE - DEFINITION OF DONE
 
@@ -162,56 +126,6 @@ This checklist defines the "Definition of Done" criteria for each SDLC phase in 
 
 **Phase Exit Criteria:** Code complete, tested, reviewed, and merged.
 
----
-
-## 4. TESTING PHASE - DEFINITION OF DONE
-
-### Test Execution
-- [ ] **All test cases** executed
-- [ ] **Integration testing** completed
-- [ ] **System testing** completed
-- [ ] **UAT (User Acceptance Testing)** completed
-- [ ] **Performance testing** completed
-- [ ] **Security testing** completed
-- [ ] **Accessibility testing** completed (WCAG 2.1)
-
-### Defect Management
-- [ ] **All critical/high defects** resolved
-- [ ] **Medium defects** resolved or deferred with approval
-- [ ] **Low defects** documented
-- [ ] **Regression testing** completed after fixes
-- [ ] **No open blockers**
-
-### Non-Functional Testing
-- [ ] **Performance targets** met (response time, throughput)
-- [ ] **Load testing** completed
-- [ ] **Stress testing** completed
-- [ ] **Security penetration testing** completed (if required)
-- [ ] **Compatibility testing** completed (browsers, devices)
-
-### Test Evidence
-- [ ] **Test results** documented
-- [ ] **Test coverage** report generated
-- [ ] **Defect reports** finalized
-- [ ] **Test summary report** created
-- [ ] **Screenshots/videos** captured (if applicable)
-
-### Documentation
-- [ ] **Test plan** updated with results
-- [ ] **Known issues** documented
-- [ ] **User documentation** reviewed
-- [ ] **Release notes** drafted
-
-### Approval & Sign-off
-- [ ] **QA sign-off** obtained
-- [ ] **UAT sign-off** obtained from business stakeholders
-- [ ] **Security testing** sign-off obtained
-- [ ] **Go/No-Go decision** made
-
-**Phase Exit Criteria:** All testing complete, defects resolved, sign-offs obtained.
-
----
-
 ## 5. DEPLOYMENT PHASE - DEFINITION OF DONE
 
 ### Pre-Deployment
@@ -269,32 +183,6 @@ This checklist defines the "Definition of Done" criteria for each SDLC phase in 
 
 **Phase Exit Criteria:** Application deployed, verified, and operational in production.
 
----
-
-## 6. OPERATIONS & MONITORING - DEFINITION OF DONE
-
-### Continuous Monitoring (Ongoing)
-- [ ] **Uptime SLA** met
-- [ ] **Performance metrics** within targets
-- [ ] **Error rates** acceptable
-- [ ] **No critical incidents** unresolved
-- [ ] **Security events** monitored and addressed
-
-### Incident Management
-- [ ] **Incidents logged** and tracked
-- [ ] **Root cause analysis** completed for critical incidents
-- [ ] **Post-incident reviews** conducted
-- [ ] **Preventive actions** implemented
-
-### Maintenance & Support
-- [ ] **Regular backups** verified
-- [ ] **Disaster recovery** tested periodically
-- [ ] **Security patches** applied
-- [ ] **Dependencies updated** (no critical vulnerabilities)
-- [ ] **Technical debt** tracked and addressed
-
----
-
 ## 7. USER STORY / FEATURE - DEFINITION OF DONE
 
 *Use this for Sprint/Iteration completion:*
@@ -310,22 +198,6 @@ This checklist defines the "Definition of Done" criteria for each SDLC phase in 
 - [ ] **Demo-ready**
 - [ ] **Deployed to test/staging** environment
 - [ ] **Product Owner acceptance**
-
----
-
-## 8. SPRINT/ITERATION - DEFINITION OF DONE
-
-- [ ] **All user stories** meet their DoD
-- [ ] **Sprint goals** achieved
-- [ ] **Code merged** to develop branch
-- [ ] **All tests** passing in CI/CD
-- [ ] **Sprint demo** completed
-- [ ] **Sprint retrospective** conducted
-- [ ] **No technical debt** added (or documented)
-- [ ] **Product backlog** updated
-- [ ] **Next sprint planned**
-
----
 
 ## COMPLIANCE & STANDARDS CHECKLIST
 
@@ -343,25 +215,12 @@ This checklist defines the "Definition of Done" criteria for each SDLC phase in 
 - [ ] **Documentation standards** met
 - [ ] **Change management** process followed
 
----
-
-## APPROVALS
-
-| Phase | Approver Role | Name | Date | Status |
-|-------|---------------|------|------|--------|
+----|---------------|------|------|--------|
 | Definition | Product Owner | | | [ ] Approved |
 | Design | Solution Architect | | | [ ] Approved |
 | Development | Tech Lead | | | [ ] Approved |
 | Testing | QA Lead | | | [ ] Approved |
 | Deployment | Operations Lead | | | [ ] Approved |
-
----
-
-## NOTES
-
-[Document any exceptions, deviations, or additional notes]
-
----
 
 ## REVISION HISTORY
 

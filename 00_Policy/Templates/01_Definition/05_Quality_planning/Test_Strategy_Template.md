@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: TST-00-Test_Strategy_Templa
+Artifact_Name: TEST STRATEGY
+Artifact_Type: TST
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: TEST STRATEGY
+File_Path: 00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # TEST STRATEGY
 
 ## Document Control
@@ -7,23 +30,6 @@
 | **Version** | 1.0.0 |
 | **QA Lead** | [Name] |
 | **Date** | [YYYY-MM-DD] |
-
----
-
-## 1. TEST SCOPE
-
-**In Scope:**
-- Functional testing
-- Integration testing
-- Performance testing
-- Security testing
-- Accessibility testing
-- UAT
-
-**Out of Scope:**
-- [List exclusions]
-
----
 
 ## 2. TEST LEVELS
 
@@ -51,30 +57,6 @@
 - **Duration:** 2 weeks
 - **Automation:** Manual
 
----
-
-## 3. TEST TYPES
-
-### Functional Testing
-- [ ] Positive scenarios
-- [ ] Negative scenarios
-- [ ] Boundary conditions
-- [ ] Error handling
-
-### Non-Functional Testing
-- [ ] Performance (load, stress, soak)
-- [ ] Security (OWASP, penetration)
-- [ ] Usability
-- [ ] Accessibility (WCAG 2.1 AA)
-- [ ] Compatibility (browsers, devices)
-
-### Regression Testing
-- [ ] Full regression suite
-- [ ] Smoke tests
-- [ ] Sanity tests
-
----
-
 ## 4. TEST ENVIRONMENTS
 
 | Environment | Purpose | Data | Access |
@@ -83,17 +65,6 @@
 | TEST | QA testing | Masked production | QA Team |
 | STAGING | UAT, integration | Production-like | Stakeholders |
 | PRODUCTION | Smoke tests only | Real | Ops Team |
-
----
-
-## 5. TEST DATA STRATEGY
-
-- **Synthetic Data:** For dev/test
-- **Masked Data:** Production data anonymized
-- **Test Data Management:** Dedicated tool
-- **Data Refresh:** Weekly
-
----
 
 ## 6. DEFECT MANAGEMENT
 
@@ -111,24 +82,6 @@
 3. Developer fix
 4. QA verification
 5. Close
-
----
-
-## 7. ENTRY/EXIT CRITERIA
-
-### Entry Criteria
-- [ ] Requirements approved
-- [ ] Test environment ready
-- [ ] Test data available
-- [ ] Build deployed
-
-### Exit Criteria
-- [ ] All test cases executed
-- [ ] 95% pass rate
-- [ ] No critical/high defects
-- [ ] NFRs validated
-
----
 
 ## 8. AUTOMATION STRATEGY
 

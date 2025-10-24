@@ -1,20 +1,31 @@
+## Metadata
+---
+Artifact_ID: DOC-01-Threat_Modeling_Guid
+Artifact_Name: Threat Modeling Guide
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Threat Modeling Guide
+File_Path: 01_Definition/Guidelines/Threat_Modeling_Guide.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/Threat_Modeling_Guide.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Definition
+Process_Group: Definition
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Threat Modeling Guide
 
 **Version:** 1.0  
 **Last Updated:** Phase 2 (Week 3-4)  
 **Purpose:** Guide teams through systematic threat identification and mitigation using STRIDE methodology
-
----
-
-## Table of Contents
-1. [Introduction](#introduction)
-2. [When to Conduct Threat Modeling](#when-to-conduct-threat-modeling)
-3. [STRIDE Methodology Overview](#stride-methodology-overview)
-4. [Step-by-Step Process](#step-by-step-process)
-5. [Example Threat Model](#example-threat-model)
-6. [Tools and Resources](#tools-and-resources)
-
----
 
 ## 1. Introduction
 
@@ -25,19 +36,6 @@ Threat modeling is a structured approach to identifying, prioritizing, and addre
 - Cost-effective: cheaper to fix vulnerabilities in design than production
 - Improves communication between security and development teams
 - Creates audit trail for compliance
-
----
-
-## 2. When to Conduct Threat Modeling
-
-### Required Scenarios
-- New system or feature design (before implementation)
-- Significant architecture changes
-- Integration with external systems
-- Handling of sensitive data (PII, financial, health)
-- Public-facing applications
-
----
 
 ## 3. STRIDE Methodology Overview
 
@@ -67,50 +65,6 @@ STRIDE is an acronym for six threat categories:
 **Definition:** Gaining unauthorized capabilities  
 **Mitigations:** Least privilege principle, RBAC, input validation, security testing
 
----
-
-## 4. Step-by-Step Process
-
-### Step 1: Define System Scope
-1. Identify what is being threat modeled
-2. Define boundaries (in scope vs. out of scope)
-3. List key stakeholders
-
-### Step 2: Create Data Flow Diagram (DFD)
-**Components:**
-- External Entities (rectangles): Users, external systems
-- Processes (circles): Application components, services
-- Data Stores (parallel lines): Databases, file systems
-- Data Flows (arrows): How data moves
-- Trust Boundaries (dotted lines): Security boundaries
-
-### Step 3: Identify Assets
-- Data: PII, financial records, credentials
-- Services: APIs, authentication services
-- Infrastructure: Servers, databases
-
-### Step 4: Identify Threats Using STRIDE
-For each component walk through each STRIDE category
-
-### Step 5: Rate Threats
-**Impact:** Critical, High, Medium, Low  
-**Likelihood:** Very High, High, Medium, Low  
-**Risk Score = Impact × Likelihood**
-
-### Step 6: Define Mitigations
-1. Eliminate: Remove vulnerable component
-2. Mitigate: Implement security controls
-3. Transfer: Use third-party services
-4. Accept: Document and accept risk
-
-### Step 7: Validate and Test
-- Code Review
-- Penetration Testing
-- Security Scanning (SAST/DAST)
-- Compliance Audit
-
----
-
 ## 5. Example Threat Model
 
 ### System: User Authentication Service
@@ -122,21 +76,6 @@ For each component walk through each STRIDE category
 | T-001 | Login API | Spoofing | Attacker impersonates user | High | High | Critical | Implement MFA | In Progress |
 | T-002 | Password | Info Disclosure | Passwords in plaintext | Critical | Medium | Critical | Use bcrypt hashing | Closed |
 | T-003 | Login API | DoS | Brute force attack | Medium | High | High | Rate limiting | Closed |
-
----
-
-## 6. Tools and Resources
-
-### Threat Modeling Tools
-- Microsoft Threat Modeling Tool (Free, Windows)
-- OWASP Threat Dragon (Free, cross-platform)
-
-### References
-- [OWASP Threat Modeling](https://owasp.org/www-community/Threat_Modeling)
-- [Microsoft STRIDE Documentation](https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats)
-- [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/)
-
----
 
 ## Quick Checklist
 

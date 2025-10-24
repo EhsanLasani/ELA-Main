@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-ELA_Development_Poli
+Artifact_Name: 0. Metadata
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: 0. Metadata
+File_Path: 00_Policy/ELA_Development_Policy.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/ELA_Development_Policy.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # 0. Metadata
 
 - **Artifact ID (catalog.csv):** DOC-POL-ELA-DEVELOPM
@@ -9,25 +32,6 @@
 - **Review Cycle:** Semi-annual
 - **Linked Ticket / PR:**
 
----
-
-# Policy and Procedure: Enterprise-Level Application (ELA) Development Framework
-
-## 1. Purpose
-
-This policy defines the **mandatory standards, procedures, and governance framework** for planning, designing, developing, securing, deploying, and operating Enterprise-Level Applications (ELAs) using the ELA-Main framework and shared assets.
-
-It ensures:
-- **Consistency** across all ELA projects
-- **Quality** through enforced standards and quality gates
-- **Security** by design and continuous verification
-- **Compliance** with international standards (ISO/IEC 25010:2023, OWASP ASVS 4.0, SOC 2, WCAG 2.2 AA)
-- **Traceability** from requirements through deployment and monitoring
-- **Automation** via CI/CD pipelines and infrastructure as code
-- **Innovation** balanced with technical debt management
-
----
-
 ## 2. Scope
 
 This policy applies to:
@@ -38,12 +42,7 @@ This policy applies to:
 - **All environments:** Local development, CI/CD, Dev, Test, Staging, Production
 - **All phases:** Definition, Design, Development, Testing, Deployment, Operations, Change Management, and Continuous Improvement
 
----
-
-## 3. Roles and Responsibilities
-
-| Role | Responsibilities |
-|------|------------------|
+---|------------------|
 | **Chief Technology Officer (CTO)** | Approves policy and exceptions; resolves escalations; owns strategic technical direction |
 | **Enterprise Architecture Office (EAO)** | Maintains ELA-Main structure and shared assets; conducts architecture reviews; enforces standards; maintains ADR repository |
 | **Security Office** | Defines security baselines and threat modeling standards; reviews security architecture; manages vulnerability remediation; owns incident response procedures |
@@ -56,41 +55,7 @@ This policy applies to:
 | **Data Steward** | Oversees data classification, lineage, cataloging, retention policies, and data quality monitoring |
 | **QA / Test Engineer** | Develops test strategies and automation; validates NFRs; conducts accessibility and performance testing |
 
----
-
-## 4. Policy Statements
-
-### 4.1 Governance and Lifecycle
-
-**4.1.1 Project Registration**
-- Every ELA project **must** be registered with a unique Project ID
-- Automated provisioning creates: MS Teams private channel, GitHub repository (cloned from ELA-Main), SharePoint document library, Project board, Initial environments and secrets
-
-**4.1.2 Standard Lifecycle Phases**
-
-All ELA projects follow these mandatory phases:
-
-1. **Definition Phase** - Required: Business Case, Project Charter, Stakeholder Map, Initial Requirements, NFR Specification, Data Classification
-2. **Design Phase** - Required: Architecture Decision Records (ADRs), C4 Diagrams, Threat Model, API Specifications, Data Model, Test Strategy, DR/BCP Plan
-3. **Development Phase** - Required: Source Code, Unit Tests, Integration Tests, Documentation, SBOM, Code Review Records
-4. **Testing & Validation Phase** - Required: Test Plans, Test Cases, Execution Reports, Accessibility Audit, Performance Test Results, Security Scan Reports
-5. **Deployment/Release Phase** - Required: Release Notes, Deployment Runbooks, Rollback Procedures, Configuration Templates, Production Readiness Checklist
-6. **Change Management Phase** - Required: Change Requests, Impact Assessments, Approval Records, Communication Plans
-7. **Monitoring & Operations Phase** - Required: SLO/SLI Definitions, Dashboards, Alert Configurations, Incident Response Runbooks, On-Call Schedules, Post-Incident Reviews
-
-**4.1.3 Phase Gates**
-- Each phase has defined entry and exit criteria
-- Progression requires approval from Technical Lead and compliance verification
-- Exceptions require CTO approval with documented risk assessment
-
-### 4.2 Non-Functional Requirements (NFRs)
-
-**4.2.1 NFR Definition**
-
-Projects **must** define measurable NFRs during the Definition Phase:
-
-| Category | Examples | Measurement |
-|----------|----------|-------------|
+-------|----------|-------------|
 | **Performance** | Response time (p50, p95, p99), Throughput (RPS/TPS) | Load testing, APM |
 | **Availability** | Uptime SLO (99.9%), RTO, RPO | Synthetic monitoring |
 | **Scalability** | Concurrent users, Data volume growth | Load testing, capacity planning |
@@ -341,17 +306,6 @@ File headers must include:
 - CTO approval required with documented expiry date
 - All exceptions tracked and reviewed quarterly
 
----
-
-## 5. Integration and Automation
-
-- **ChatGPT Codex:** Integrated with IDEs; context loaded from project and ELA-Main repos
-- **GitHub Workflows:** PR triggers CI/CD; automated deployments; notifications to Teams
-- **MS Teams Automation:** Updates on builds, deployments, incidents; bot assistance for common tasks
-- **Secrets Management:** Centralized vault integration for IDEs, CI/CD, and runtime environments
-
----
-
 ## 6. Documentation and Archival
 
 - Completed projects archived with all source code, reports, and version tags
@@ -359,42 +313,11 @@ File headers must include:
 - Post-mortem and lessons learned captured
 - Knowledge base updated with reusable patterns and solutions
 
----
-
-## 7. Continuous Improvement
-
-- Policy reviewed semi-annually by EAO
-- Based on lessons learned, technology evolution, and industry best practices
-- Feedback collected from teams and stakeholders
-- Metrics tracked for policy effectiveness
-
----
-
 ## 8. Enforcement
 
 - Branch protections, required status checks, CODEOWNERS, and protected environments enforce compliance
 - Non-compliant changes cannot be merged
 - Violations escalated to Engineering Manager and IT Governance PMO
-
----
-
-## 9. References
-
-- [Artifact Metadata Standards](./Artifact_Metadata_Standards.md)
-- - [Document Structure Guidelines](./Document_Structure_Guidelines.md)
-- ISO/IEC 27001 (Information Security Management)
-- ISO/IEC 12207 (Software Lifecycle Processes)
-- ISO/IEC 25010:2023 (Software Product Quality)
-- OWASP Top 10 and ASVS 4.0
-- NIST 800-53 (Security Controls)
-- SOC 2 Trust Service Criteria
-- WCAG 2.2 (Web Content Accessibility Guidelines)
-- TOGAF 10 (Enterprise Architecture Framework)
-- ArchiMate (Architecture Modeling Language)
-- 12-Factor App Methodology
-- Conventional Commits Specification
-
----
 
 ## Version Control
 

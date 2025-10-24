@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-00-Artifact_Metadata_St
+Artifact_Name: Artifact Metadata Standards and Catalog Guidelines
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Artifact Metadata Standards and Catalog Guidelines
+File_Path: 00_Policy/Artifact_Metadata_Standards.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Artifact_Metadata_Standards.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Artifact Metadata Standards and Catalog Guidelines
 
 ## 0. Metadata
@@ -10,21 +33,6 @@
 - **Review Cycle:** Semi-annual
 - **Linked Ticket / PR:**
 
----
-
-## 1. Purpose
-
-This document defines the **mandatory metadata standards** and **artifact type classifications** for all artifacts in the ELA-Main repository and derivative projects. It ensures:
-
-- **Consistency** in artifact identification and cataloging
-- **Traceability** from requirements through implementation
-- **Discoverability** of templates, guidelines, and validation checklists
-- **Governance** through standardized metadata fields
-- **Automation** of catalog management via CI/CD workflows
-- - **Structured Documents** through standardized YAML front matter and type-specific sections (see [Document Structure Guidelines](./Document_Structure_Guidelines.md))
-
----
-
 ## 2. Scope
 
 This standard applies to:
@@ -34,24 +42,7 @@ This standard applies to:
 - **All project teams** creating or maintaining ELA artifacts
 - **Automated workflows** that validate and update the catalog
 
----
-
-## 3. Artifact Type Definitions
-
-### 3.1 DOC - Documentation
-
-**Definition:** Informational documents that explain policies, procedures, concepts, or provide guidance. Not meant to be filled out or executed.
-
-**Subtypes:**
-- **DOC-POL** = Policy Documents
-- **DOC-GDL** = Guideline Documents
-- **DOC-REF** = Reference Documentation
-- **DOC-README** = README files
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `DOC-[PHASE]-[NAME]` | `DOC-POL-ELA_DEV` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v2.0` | Version number |
 | **Owner** | Role name | `Enterprise Architecture Office (EAO)` | Responsible team |
@@ -70,25 +61,7 @@ This standard applies to:
 - **Approved_By:** Role/person who approved
 - **Linked_PR:** PR number or GitHub URL
 
----
-
-### 3.2 TMP - Template
-
-**Definition:** Structured documents meant to be copied and filled out for specific projects/tasks. Contains placeholders and instructions.
-
-**Subtypes:**
-- **TMP-DEF** = Definition Phase Templates
-- **TMP-DES** = Design Phase Templates
-- **TMP-DEV** = Development Phase Templates
-- **TMP-TST** = Testing Phase Templates
-- **TMP-DEP** = Deployment Phase Templates
-- **TMP-OPS** = Operations Phase Templates
-- **TMP-CHG** = Change Management Templates
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `TMP-[PHASE]-[NAME]` | `TMP-DEF-PROJECT_PLAN` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Business Analysis Team` | Responsible team |
@@ -105,23 +78,7 @@ This standard applies to:
 - **Completion_Time:** Estimated minutes/hours
 - **Required_Tools:** Software needed
 
----
-
-### 3.3 GDL - Guideline
-
-**Definition:** Best practices, how-to guides, and instructional documents that provide step-by-step guidance or recommendations.
-
-**Subtypes:**
-- **GDL-DEF** = Definition Phase Guidelines
-- **GDL-DES** = Design Phase Guidelines
-- **GDL-DEV** = Development Phase Guidelines
-- **GDL-SEC** = Security Guidelines
-- **GDL-PROC** = Process Guidelines
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `GDL-[PHASE]-[NAME]` | `GDL-DEF-NFR_GUIDELINES` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Solution Architecture Team` | Responsible team |
@@ -137,23 +94,7 @@ This standard applies to:
 - **Mandatory:** Yes \| No \| Conditional
 - **Related_Standards:** ISO, OWASP, NIST references
 
----
-
-### 3.4 VAL - Validation Checklist
-
-**Definition:** Checklists used to validate completeness, quality, or compliance of deliverables. Used for quality gates and phase exits.
-
-**Subtypes:**
-- **VAL-DEF** = Definition Phase Validation
-- **VAL-DES** = Design Phase Validation
-- **VAL-DEV** = Development Phase Validation
-- **VAL-SEC** = Security Validation
-- **VAL-ACC** = Accessibility Validation
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `VAL-[PHASE]-[NAME]` | `VAL-DEF-EXIT_CHECKLIST` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `QA Team` | Responsible team |
@@ -169,23 +110,7 @@ This standard applies to:
 - **Pass_Criteria:** Percentage or count required
 - **Responsible_Roles:** Who performs validation
 
----
-
-### 3.5 WFL - Workflow
-
-**Definition:** Automated workflows and CI/CD pipeline definitions that execute actions, validations, or deployments.
-
-**Subtypes:**
-- **WFL-CI** = Continuous Integration Workflows
-- **WFL-CD** = Continuous Deployment Workflows
-- **WFL-VAL** = Validation Workflows
-- **WFL-SEC** = Security Scanning Workflows
-- **WFL-SYNC** = Synchronization Workflows
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `WFL-[TYPE]-[NAME]` | `WFL-VAL-CATALOG_LINT` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `DevOps Team` | Responsible team |
@@ -200,22 +125,7 @@ This standard applies to:
 - **Schedule:** Cron expression if scheduled
 - **Runs_On:** ubuntu-latest \| windows-latest \| self-hosted
 
----
-
-### 3.6 SCR - Script
-
-**Definition:** Executable scripts (PowerShell, Bash, Python, etc.) that automate tasks, setup, or operations.
-
-**Subtypes:**
-- **SCR-SETUP** = Setup/Installation Scripts
-- **SCR-SYNC** = Synchronization Scripts
-- **SCR-DEPLOY** = Deployment Scripts
-- **SCR-UTIL** = Utility Scripts
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `SCR-[TYPE]-[NAME]` | `SCR-SYNC-GIT_SYNC` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `DevOps Team` | Responsible team |
@@ -230,21 +140,7 @@ This standard applies to:
 - **Required_Permissions:** Admin \| User \| Elevated
 - **Execution_Context:** Local \| CI/CD \| Server
 
----
-
-### 3.7 IMG - Image/Diagram
-
-**Definition:** Visual assets including architecture diagrams, flowcharts, screenshots, and illustrations.
-
-**Subtypes:**
-- **IMG-ARCH** = Architecture Diagrams
-- **IMG-FLOW** = Flow Diagrams
-- **IMG-SCREEN** = Screenshots
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `IMG-[TYPE]-[NAME]` | `IMG-ARCH-SYS_INT_BLUEPRINT` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Enterprise Architecture Office (EAO)` | Responsible team |
@@ -257,36 +153,6 @@ This standard applies to:
 - **Image_Format:** PNG \| SVG \| JPEG
 - **Source_File:** Link to editable source (.drawio, .mmd, .pptx)
 - **Related_Documentation:** Which docs reference this image
-
----
-
-## 4. Common Metadata Fields (All Artifact Types)
-
-### 4.1 Always Required
-
-1. **ID** - Unique identifier following format conventions
-2. **Artifact_Name** - Human-readable filename
-3. **File_Path** - Exact relative path in repository
-4. **Artifact_Type** - DOC | TMP | GDL | VAL | WFL | SCR | IMG
-5. **Version** - Semantic versioning (v#.#)
-6. **Status** - Current state
-7. **Owner** - Responsible team/role
-8. **Last_Updated** - YYYY-MM-DD format
-9. **GitHub_URL** - Full blob URL to main branch
-10. **Description** - One-line purpose statement (1-2 sentences)
-
-### 4.2 Conditionally Required
-
-11. **Phase** - If phase-specific: Definition | Design | Development | Testing | Deployment | Operations | Change Management | Policy
-12. **Dependencies** - If depends on other artifacts (comma-separated IDs)
-
-### 4.3 Optional But Recommended
-
-13. **Linked_PR** - GitHub PR URL or number
-14. **Remarks** - Special notes, warnings, deprecation info
-15. **Tags** - Searchable keywords (comma-separated)
-
----
 
 ## 5. Catalog.csv Structure
 
@@ -320,22 +186,7 @@ This standard applies to:
 6. **Status Values** - Only: Draft | Active | Under Review | Deprecated | Archived
 7. **Phase Values** - Only: Policy | Definition | Design | Development | Testing | Deployment | Operations | Change Management
 
----
-
-### 3.8 CFG - Configuration
-
-**Definition:** Configuration files that define application settings, environment variables, and system parameters. NOT executable code.
-
-**Subtypes:**
-- **CFG-ENV** = Environment Configuration (.env templates, .yaml)
-- **CFG-APP** = Application Configuration (.json, .toml, .ini)
-- **CFG-INFRA** = Infrastructure Configuration (docker-compose.yml, k8s manifests)
-- **CFG-CI** = CI/CD Configuration (.github actions config, pipeline config)
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `CFG-[CONTEXT]-[NAME]` | `CFG-APP-DATABASE_CONFIG` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `DevOps Team` | Responsible team |
@@ -358,23 +209,7 @@ This standard applies to:
 - `CFG-INFRA-DOCKER_COMPOSE` → docker-compose.yml for local development
 - `CFG-CI-BUILD_MATRIX` → CI build matrix configuration
 
----
-
-### 3.9 TST - Test Artifact
-
-**Definition:** Test-related files including test plans, test cases, test data, and test automation scripts.
-
-**Subtypes:**
-- **TST-PLAN** = Test Plans (strategy, scope, approach)
-- **TST-CASE** = Test Cases (manual or automated test scripts)
-- **TST-DATA** = Test Data (fixtures, mocks, sample data)
-- **TST-REPORT** = Test Reports (execution results, coverage reports)
-- **TST-SCRIPT** = Test Automation Scripts (Selenium, Playwright, etc.)
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `TST-[TYPE]-[NAME]` | `TST-CASE-USER_LOGIN` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `QA Team` | Responsible team |
@@ -400,23 +235,7 @@ This standard applies to:
 - `TST-SCRIPT-E2E_CHECKOUT` → End-to-end checkout flow automation
 - `TST-REPORT-COVERAGE` → Code coverage report template
 
----
-
-### 3.10 DAT - Data File
-
-**Definition:** Data files used for reference, lookup, seed data, or reporting. NOT configuration files or test data.
-
-**Subtypes:**
-- **DAT-REF** = Reference Data (lookup tables, code lists)
-- **DAT-SEED** = Seed Data (initial database population)
-- **DAT-SAMPLE** = Sample Data (examples, demonstrations)
-- **DAT-EXPORT** = Data Exports (reports, extracts)
-- **DAT-CATALOG** = Data Catalogs (artifact registries)
-
-**Mandatory Metadata Fields:**
-
-| Field | Format | Example | Description |
-|-------|--------|---------|-------------|
+----|--------|---------|-------------|
 | **Artifact ID** | `DAT-[TYPE]-[NAME]` | `DAT-CATALOG-ARTIFACTS` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Enterprise Architecture Office (EAO)` | Responsible team |
@@ -442,34 +261,7 @@ This standard applies to:
 - `DAT-SAMPLE-CUSTOMER_DATA` → Anonymized sample customer records
 - `DAT-EXPORT-MONTHLY_METRICS` → Monthly metrics export template
 
----
-
-## 6. Owner Assignment Standards
-
-### 6.1 Standardized Team/Role Names
-
-**Policy and Governance:**
-- `Enterprise Architecture Office (EAO)` - Architecture, strategy, standards
-- `IT Governance & PMO` - Compliance, audits, project management
-- `CTO Office` - Executive oversight, policy approval
-
-**Development Lifecycle:**
-- `Business Analysis Team` - Requirements, stakeholder management
-- `Solution Architecture Team` - Technical design, ADRs
-- `Development Team` - Code implementation
-- `QA Team` - Testing, quality assurance
-- `DevOps Team` - CI/CD, infrastructure, automation
-
-**Specialized Functions:**
-- `Security & Compliance Team` - Security, threats, vulnerabilities
-- `Data Governance Team` - Data quality, privacy, cataloging
-- `SRE Team` - Operations, monitoring, incident response
-- `UX Design Team` - User experience, accessibility
-
-### 6.2 Owner Assignment By Artifact Type
-
-| Artifact Type | Typical Owner |
-|---------------|---------------|
+------------|---------------|
 | **Policy Documents (DOC-POL)** | Enterprise Architecture Office (EAO) |
 | **Definition Templates (TMP-DEF)** | Business Analysis Team |
 | **Design Templates (TMP-DES)** | Solution Architecture Team |
@@ -481,27 +273,6 @@ This standard applies to:
 | **Operations Artifacts (TMP-OPS, GDL-OPS)** | SRE Team |
 | **Data Files (DAT)** | Data Governance Team or Enterprise Architecture Office (EAO) |
 | **Configuration Files (CFG)** | DevOps Team |
-
----
-
-## 7. Workflow Integration
-
-### 7.1 Automated Catalog Updates
-
-The `update-catalog.yml` workflow automatically:
-1. Scans repository for new/modified artifacts
-2. Extracts metadata from file headers
-3. Updates catalog.csv
-4. Validates against schema
-5. Creates PR with changes
-
-### 7.2 Validation Workflows
-
-- **lint-catalog.yml** - Validates catalog.csv format and consistency
-- **lint-doc-metadata.yml** - Validates document header metadata
-- **blueprint-guard.yml** - Validates blueprint structure compliance
-
----
 
 ## 8. Best Practices
 
@@ -531,17 +302,6 @@ All artifacts SHOULD include a metadata header:
 - Increment minor version for updates: `v1.1`, `v1.2`
 - Increment major version for breaking changes: `v2.0`
 - Update `Last_Updated` field on every change
-
----
-
-## 9. References
-
-- [ELA Development Policy](./ELA_Development_Policy.md)
-- [Template Migration Instructions](./Template_Migration_Instructions.md)
-- [GitHub Workflows](./.github/workflows/)
-- [catalog.csv](../catalog.csv)
-
----
 
 ## Version Control
 

@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: DOC-02-README
+Artifact_Name: Design Phase Guidelines
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: Design Phase Guidelines
+File_Path: 02_Design/Guidelines/README.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/02_Design/Guidelines/README.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Design
+Process_Group: Design
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # Design Phase Guidelines
 
 This folder contains guidelines and best practices for using the Design Phase templates.

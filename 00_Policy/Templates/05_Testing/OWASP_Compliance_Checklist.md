@@ -1,3 +1,26 @@
+## Metadata
+---
+Artifact_ID: VAL-00-OWASP_Compliance_Che
+Artifact_Name: OWASP COMPLIANCE CHECKLIST
+Artifact_Type: VAL
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: OWASP COMPLIANCE CHECKLIST
+File_Path: 00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: 
+Validation_Status: Pending
+Version: v1.0
+---
 # OWASP COMPLIANCE CHECKLIST
 
 ## Document Control
@@ -7,25 +30,6 @@
 | **Version** | 1.0.0 |
 | **Assessed By** | [Name] |
 | **Date** | [YYYY-MM-DD] |
-
----
-
-## OWASP TOP 10 (2021) COMPLIANCE
-
-### A01:2021 – Broken Access Control
-- [ ] Authorization checks on every request
-- [ ] RBAC implemented
-- [ ] Default deny policy
-- [ ] Access control enforced server-side
-- [ ] Rate limiting on APIs
-- [ ] CORS properly configured
-- [ ] Directory listing disabled
-- [ ] Metadata and backup files not accessible
-
-**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
-**Notes:** []
-
----
 
 ### A02:2021 – Cryptographic Failures
 - [ ] TLS 1.3 enforced for data in transit
@@ -40,22 +44,6 @@
 **Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
 **Notes:** []
 
----
-
-### A03:2021 – Injection
-- [ ] Parameterized queries/prepared statements
-- [ ] Input validation (whitelist)
-- [ ] Output encoding
-- [ ] ORM/framework with injection protection
-- [ ] Stored procedures secured
-- [ ] NoSQL injection prevention
-- [ ] LDAP/OS command injection prevention
-
-**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
-**Notes:** []
-
----
-
 ### A04:2021 – Insecure Design
 - [ ] Threat modeling completed
 - [ ] Secure design patterns used
@@ -67,23 +55,6 @@
 
 **Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
 **Notes:** []
-
----
-
-### A05:2021 – Security Misconfiguration
-- [ ] Hardening guides applied
-- [ ] Unnecessary features disabled
-- [ ] Default credentials changed
-- [ ] Error messages don't leak info
-- [ ] Security headers configured
-- [ ] Patch management process
-- [ ] Cloud storage properly secured
-- [ ] Automated security scanning
-
-**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
-**Notes:** []
-
----
 
 ### A06:2021 – Vulnerable and Outdated Components
 - [ ] Inventory of components maintained
@@ -97,23 +68,6 @@
 **Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
 **Notes:** []
 
----
-
-### A07:2021 – Identification and Authentication Failures
-- [ ] MFA implemented
-- [ ] Strong password policy
-- [ ] Account lockout mechanism
-- [ ] Session management secure
-- [ ] No credentials in code
-- [ ] Brute force protection
-- [ ] Password reset secure
-- [ ] Session timeout configured
-
-**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
-**Notes:** []
-
----
-
 ### A08:2021 – Software and Data Integrity Failures
 - [ ] Code signing implemented
 - [ ] CI/CD pipeline secured
@@ -126,23 +80,6 @@
 **Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
 **Notes:** []
 
----
-
-### A09:2021 – Security Logging and Monitoring Failures
-- [ ] Security events logged
-- [ ] Centralized logging (SIEM)
-- [ ] Log integrity protected
-- [ ] Alerts for suspicious activity
-- [ ] Logs retained (90+ days)
-- [ ] Incident response plan
-- [ ] Real-time monitoring
-- [ ] Log review process
-
-**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
-**Notes:** []
-
----
-
 ### A10:2021 – Server-Side Request Forgery (SSRF)
 - [ ] URL validation (whitelist)
 - [ ] Network segmentation
@@ -154,12 +91,7 @@
 **Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
 **Notes:** []
 
----
-
-## COMPLIANCE SUMMARY
-
-| Category | Status | Score |
-|----------|--------|-------|
+-------|--------|-------|
 | A01 - Broken Access Control | [ ] | __/8 |
 | A02 - Cryptographic Failures | [ ] | __/8 |
 | A03 - Injection | [ ] | __/7 |
@@ -173,21 +105,11 @@
 
 **Overall Compliance:** ___%
 
----
-
-## ACTION ITEMS
-
-| Priority | Item | Owner | Due Date | Status |
-|----------|------|-------|----------|--------|
+-------|------|-------|----------|--------|
 | Critical | [Action 1] | [Name] | [Date] | [ ] |
 | High | [Action 2] | [Name] | [Date] | [ ] |
 
----
-
-## APPROVAL
-
-| Role | Name | Date | Status |
-|------|------|------|--------|
+---|------|------|--------|
 | Security Lead | | | [ ] Approved |
 | CISO | | | [ ] Approved |
 
