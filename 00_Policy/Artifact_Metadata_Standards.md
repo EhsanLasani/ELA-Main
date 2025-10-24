@@ -21,6 +21,7 @@ This document defines the **mandatory metadata standards** and **artifact type c
 - **Discoverability** of templates, guidelines, and validation checklists
 - **Governance** through standardized metadata fields
 - **Automation** of catalog management via CI/CD workflows
+- - **Structured Documents** through standardized YAML front matter and type-specific sections (see [Document Structure Guidelines](./Document_Structure_Guidelines.md))
 
 ---
 
