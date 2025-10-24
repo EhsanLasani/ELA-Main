@@ -380,6 +380,7 @@ File headers must include:
 
 ## 9. References
 
+- [Artifact Metadata Standards](./Artifact_Metadata_Standards.md)
 - ISO/IEC 27001 (Information Security Management)
 - ISO/IEC 12207 (Software Lifecycle Processes)
 - ISO/IEC 25010:2023 (Software Product Quality)
