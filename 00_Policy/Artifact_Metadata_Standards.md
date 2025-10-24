@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Artifact Metadata Standards and Catalog Guidelines
 
 ## 0. Metadata
@@ -42,7 +44,7 @@ This standard applies to:
 - **All project teams** creating or maintaining ELA artifacts
 - **Automated workflows** that validate and update the catalog
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `DOC-[PHASE]-[NAME]` | `DOC-POL-ELA_DEV` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v2.0` | Version number |
 | **Owner** | Role name | `Enterprise Architecture Office (EAO)` | Responsible team |
@@ -61,7 +63,7 @@ This standard applies to:
 - **Approved_By:** Role/person who approved
 - **Linked_PR:** PR number or GitHub URL
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `TMP-[PHASE]-[NAME]` | `TMP-DEF-PROJECT_PLAN` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Business Analysis Team` | Responsible team |
@@ -78,7 +80,7 @@ This standard applies to:
 - **Completion_Time:** Estimated minutes/hours
 - **Required_Tools:** Software needed
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `GDL-[PHASE]-[NAME]` | `GDL-DEF-NFR_GUIDELINES` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Solution Architecture Team` | Responsible team |
@@ -94,7 +96,7 @@ This standard applies to:
 - **Mandatory:** Yes \| No \| Conditional
 - **Related_Standards:** ISO, OWASP, NIST references
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `VAL-[PHASE]-[NAME]` | `VAL-DEF-EXIT_CHECKLIST` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `QA Team` | Responsible team |
@@ -110,7 +112,7 @@ This standard applies to:
 - **Pass_Criteria:** Percentage or count required
 - **Responsible_Roles:** Who performs validation
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `WFL-[TYPE]-[NAME]` | `WFL-VAL-CATALOG_LINT` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `DevOps Team` | Responsible team |
@@ -125,7 +127,7 @@ This standard applies to:
 - **Schedule:** Cron expression if scheduled
 - **Runs_On:** ubuntu-latest \| windows-latest \| self-hosted
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `SCR-[TYPE]-[NAME]` | `SCR-SYNC-GIT_SYNC` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `DevOps Team` | Responsible team |
@@ -140,7 +142,7 @@ This standard applies to:
 - **Required_Permissions:** Admin \| User \| Elevated
 - **Execution_Context:** Local \| CI/CD \| Server
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `IMG-[TYPE]-[NAME]` | `IMG-ARCH-SYS_INT_BLUEPRINT` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Enterprise Architecture Office (EAO)` | Responsible team |
@@ -186,7 +188,7 @@ This standard applies to:
 6. **Status Values** - Only: Draft | Active | Under Review | Deprecated | Archived
 7. **Phase Values** - Only: Policy | Definition | Design | Development | Testing | Deployment | Operations | Change Management
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `CFG-[CONTEXT]-[NAME]` | `CFG-APP-DATABASE_CONFIG` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `DevOps Team` | Responsible team |
@@ -209,7 +211,7 @@ This standard applies to:
 - `CFG-INFRA-DOCKER_COMPOSE` → docker-compose.yml for local development
 - `CFG-CI-BUILD_MATRIX` → CI build matrix configuration
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `TST-[TYPE]-[NAME]` | `TST-CASE-USER_LOGIN` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `QA Team` | Responsible team |
@@ -235,7 +237,7 @@ This standard applies to:
 - `TST-SCRIPT-E2E_CHECKOUT` → End-to-end checkout flow automation
 - `TST-REPORT-COVERAGE` → Code coverage report template
 
-----|--------|---------|-------------|
+------|-------------|
 | **Artifact ID** | `DAT-[TYPE]-[NAME]` | `DAT-CATALOG-ARTIFACTS` | Unique identifier |
 | **Version** | Semantic (v#.#) | `v1.0` | Version number |
 | **Owner** | Role name | `Enterprise Architecture Office (EAO)` | Responsible team |
@@ -261,7 +263,7 @@ This standard applies to:
 - `DAT-SAMPLE-CUSTOMER_DATA` → Anonymized sample customer records
 - `DAT-EXPORT-MONTHLY_METRICS` → Monthly metrics export template
 
-------------|---------------|
+|---------------|
 | **Policy Documents (DOC-POL)** | Enterprise Architecture Office (EAO) |
 | **Definition Templates (TMP-DEF)** | Business Analysis Team |
 | **Design Templates (TMP-DES)** | Solution Architecture Team |

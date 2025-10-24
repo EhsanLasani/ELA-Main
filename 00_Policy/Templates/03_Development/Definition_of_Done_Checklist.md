@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # DEFINITION OF DONE (DoD) CHECKLIST
 
 ## Document Control
@@ -215,7 +217,7 @@ Version: v1.0
 - [ ] **Documentation standards** met
 - [ ] **Change management** process followed
 
-----|---------------|------|------|--------|
+------|------|------|--------|
 | Definition | Product Owner | | | [ ] Approved |
 | Design | Solution Architect | | | [ ] Approved |
 | Development | Tech Lead | | | [ ] Approved |

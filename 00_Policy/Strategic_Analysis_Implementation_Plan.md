@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # ELA-Main Governance Framework
 # Strategic Analysis and Implementation Plan
 
@@ -43,7 +45,7 @@ Version: v1.0
 9. [Quality Gates and Success Criteria](#9-quality-gates-and-success-criteria)
 10. [Appendices](#10-appendices)
 
------------|--------------|-----------------|------------|-------------|
+-----------|-----------------|------------|-------------|
 | ISS-001 | Duplication | `04_Testing` AND `05_Validation_Testing` folders exist | Confusion, inconsistency | **High** |
 | ISS-002 | Incomplete Coverage | Missing distinct Deployment and Operations phases | Incomplete SDLC | **High** |
 | ISS-003 | Template Distribution | Templates scattered across phase folders AND 00_Policy | No single source of truth | **High** |
@@ -156,7 +158,7 @@ ci-cd-pipeline/                   ← Cross-cutting Automation
 └── README.md
 ```
 
----------|----------------------|------------------------------|
+-------------------|------------------------------|
 | **Focus** | Processes, plans, baselines, schedules | Product specifications, features, code |
 | **ELA-Main Context** | Framework evolution, policy updates | Per-project (product configuration) |
 | **Controls** | Change requests, approvals, impact assessments | Version control, baselines, CIs |
@@ -239,7 +241,7 @@ ci-cd-pipeline/                   ← Cross-cutting Automation
 | Timeline delays | Medium | Medium | Phased approach allows flexibility |
 | Incomplete adoption | Medium | Medium | Executive sponsorship, clear benefits communication |
 
-------------------|---------------------|-------------------------|
+------|---------------------|-------------------------|
 | NFR & Architecture | 00_Policy/Templates/01_NFR_and_Architecture/ | 01, 02 |
 | Definition | 00_Policy/Templates/02_Definition/ | 01 |
 | Design | 00_Policy/Templates/03_Design/ | 02 |
@@ -315,7 +317,7 @@ ci-cd-pipeline/                   ← Cross-cutting Automation
 - ≤ 5% framework change requests
 - Measurable reduction in project failures
 
--------|----------------|
+-|----------------|
 | **Template** | Master copy of a standardized document format |
 | **Guideline** | Phase-specific instructions on how to complete templates |
 | **Validation** | Proof of phase completion through filled templates and checklists |

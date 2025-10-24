@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Deployment Plan Template
 
 ## 0. Metadata
@@ -35,7 +37,7 @@ Version: v1.0
 - **Versioning scheme:** (SemVer, build number, git tag)
 - **SBOM / provenance:** (how/where generated & stored)
 
------|----------|----------------|-------------|-----------|-----------|
+-|----------------|-------------|-----------|-----------|
 | Dev    |          |                |             |           |           |
 | QA     |          |                |             |           |           |
 | UAT    |          |                |             |           |           |

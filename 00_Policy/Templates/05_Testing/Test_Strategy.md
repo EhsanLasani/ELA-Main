@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 ## 0. Metadata
 - **Artifact ID (catalog.csv):** TMP-VAL-TEST-STRATEG
 - **Version:** v1.0

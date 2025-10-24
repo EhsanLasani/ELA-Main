@@ -21,49 +21,12 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # ARCHITECTURE DESIGN DOCUMENT (ADD)
 ## Software Architecture Specification
 
-----|-------|
-| **Project Name** | [Enter Project Name] |
-| **Project ID** | [ELA-XXXX] |
-| **Document Version** | 1.0.0 |
-| **Created By** | [Architect Name] |
-| **Creation Date** | [YYYY-MM-DD] |
-| **Last Updated** | [YYYY-MM-DD] |
-| **Reviewed By** | [Reviewer Name] |
-| **Approved By** | [Approver Name] |
-| **Status** | [Draft / In Review / Approved] |
-| **Classification** | [Internal / Confidential] |
-
-## 1. INTRODUCTION
-
-### 1.1 Purpose
-
-This Architecture Design Document (ADD) describes the software architecture for [Project Name]. It defines the architectural decisions, patterns, components, and their relationships that guide the implementation of the system.
-
-**Intended Audience:**
-- Development Team
-- System Architects
-- Technical Leads
-- DevOps Engineers
-- Security Team
-- Technical Stakeholders
-
-### 1.2 Scope
-
-This document covers:
-- High-level and detailed architecture views
-- Architectural patterns and styles
-- Component and module organization
-- Data flow and storage strategies
-- Deployment and infrastructure architecture
-- Technology choices and rationale
-
-### 1.3 References
-
-| Document | Version | Location |
-|----------|---------|----------|
+-------|---------|----------|
 | Functional Requirements (SRS) | 1.0.0 | 00_Policy/Templates/01_NFR_and_Architecture/Functional_Requirements_SRS_Template.md |
 | NFR Specification | 2.0.0 | 00_Policy/Templates/01_NFR_and_Architecture/NFR_Specification_Template.md |
 | Architecture Decision Records | Various | [ADR Repository] |
@@ -160,7 +123,7 @@ This document covers:
 | Observer | Event Handling | Decouples event producers from consumers |
 | [Add more] | [Context] | [Reason] |
 
---------|---------------|------------|
+--|---------------|------------|
 | Web Application | User Interface | [React/Angular/Vue] |
 | API Gateway | Request routing, Auth | [Kong/AWS API Gateway] |
 | Auth Service | Authentication/Authorization | [OAuth 2.0/JWT] |
@@ -206,7 +169,7 @@ Client ─> API Gateway ─> Auth ─> Service ─> Database
                    └─> Queue ─> Worker ─> Storage
 ```
 
---------|---------|--------|
+--|---------|--------|
 | Transactional | PostgreSQL | ACID compliance required |
 | Session Data | Redis | Fast read/write, TTL support |
 | Documents | MongoDB | Flexible schema |
@@ -230,7 +193,7 @@ Client ─> API ─> Service ─> Cache (Check)
 - **Data Partitioning**: By date and tenant
 - **Replication**: Multi-region for disaster recovery
 
-----|------------------|
+---------|
 | Network | Firewall, VPN, DDoS protection |
 | Application | OAuth 2.0, JWT, Input validation |
 | Data | Encryption at rest and in transit |
@@ -262,7 +225,7 @@ User ─> Login ─> Auth Service ─> JWT Token ─> API Access
 - **Security Audits**: Quarterly reviews
 - **Incident Response**: 24/7 SOC monitoring
 
-----------|---------|---------------|
+------|---------------|
 | Development | Local development | Minimal resources, mock services |
 | Testing | Automated tests | Mirrors production, test data |
 | Staging | Pre-production | Identical to production |
@@ -370,7 +333,7 @@ Code Commit ─> Build ─> Test ─> Security Scan ─> Deploy to Staging ─> 
 - [External system/service 1]
 - [External system/service 2]
 
----|------------|
+---|
 | API Gateway | Entry point for all client requests |
 | Circuit Breaker | Pattern to prevent cascading failures |
 | Load Balancer | Distributes traffic across multiple servers |

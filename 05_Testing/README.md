@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # 04 - Testing
 
 Collect all verification artifacts and evidence that demonstrate solution quality.

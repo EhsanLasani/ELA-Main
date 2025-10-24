@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # API SPECIFICATION
 
 ## Document Control
@@ -58,7 +60,7 @@ grant_type=client_credentials
 Authorization: Bearer {access_token}
 ```
 
---------|------|----------|-------------|
+--|------|----------|-------------|
 | page | integer | No | Page number (default: 1) |
 | limit | integer | No | Items per page (default: 20, max: 100) |
 | sort | string | No | Sort field (e.g., "created_at") |
@@ -122,7 +124,7 @@ curl -X GET "https://api.example.com/v1/users?page=1&limit=20" \
 
 **Response (204 No Content)**
 
-----------|------|-------------|
+---|-------------|
 | 400 | VALIDATION_ERROR | Invalid input |
 | 401 | UNAUTHORIZED | Missing/invalid token |
 | 403 | FORBIDDEN | Insufficient permissions |

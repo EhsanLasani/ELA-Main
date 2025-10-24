@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 Design_Phase_Process_Overview.md  # Design Phase – Process Overview & Template Assignment
 
 ## Purpose

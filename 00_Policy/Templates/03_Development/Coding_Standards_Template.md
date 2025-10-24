@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 ## 0. Metadata
 - **Artifact ID (catalog.csv):** TMP-DEV-CODING-STAND
 - **Version:** v1.0

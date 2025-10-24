@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Deployment Log Template
 
 | Timestamp | Environment | Version | Result | Notes | Owner |

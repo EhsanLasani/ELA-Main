@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # PERFORMANCE TESTING PLAN
 
 ## Document Control
@@ -31,7 +33,7 @@ Version: v1.0
 | **Performance Engineer** | [Name] |
 | **Date** | [YYYY-MM-DD] |
 
-----------|--------|----------------|
+-----|----------------|
 | Page Load | < 2s | < 5s |
 | API Response | < 500ms | < 2s |
 | Database Query | < 100ms | < 1s |

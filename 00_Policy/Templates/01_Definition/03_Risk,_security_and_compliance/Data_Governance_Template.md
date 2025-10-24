@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # DATA GOVERNANCE TEMPLATE
 
 ## Document Control
@@ -32,7 +34,7 @@ Version: v1.0
 | **Version** | 1.0.0 |
 | **Date** | [YYYY-MM-DD] |
 
------------|----------------|-------------|-----------|-------|
+-------------|-------------|-----------|-------|
 | Customer Name | PII | High | 7 years | [Name] |
 | Email | PII | High | 7 years | [Name] |
 | Credit Card | PCI-DSS | Critical | Per PCI | [Name] |
@@ -55,7 +57,7 @@ Version: v1.0
 | Timeliness | Data is current | Lag time | < 24hrs |
 | Validity | Conforms to rules | Validation failures | < 0.5% |
 
----|------|--------|--------|--------|--------|
+-----|--------|--------|--------|
 | Admin | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Data Analyst | ✓ | ✗ | ✗ | ✗ | ✓ |
 | Business User | ✓ | ✗ | ✗ | ✗ | ✗ |

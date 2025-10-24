@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 Environment_Configuration_Template.md# Environment Configuration Template
 
 ## Document Control

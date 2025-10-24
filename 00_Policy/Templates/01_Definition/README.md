@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Definition Phase Templates
 
 ## Overview
@@ -119,7 +121,7 @@ Before proceeding to **03_Design Phase**, verify:
 - [ ] Document approval recorded in 06_Change_Management/changelog.md
 - [ ] Traceability matrix established (requirements → design → code → tests)
 
--------|---------------------------|----------|
+-|---------------------------|----------|
 | Requirements_Document_Template.md | 03_Design, 04_Development, 06_Testing | Source of truth for WHAT needs to be built |
 | Architecture_Decision_Record_Template.md | 03_Design | Records WHY decisions were made |
 | Compliance_Matrix_ISO_IEEE_OWASP.md | 04_Development, 06_Testing | Ensures standards adherence |

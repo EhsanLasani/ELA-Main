@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # THREAT MODELING TEMPLATE
 
 ## Document Control
@@ -104,7 +106,7 @@ Version: v1.0
 - [ ] Automated rollback
 - [ ] Backup and recovery
 
-------|-------------|-------------------|------------|
+|-------------|-------------------|------------|
 | R-001 | [Risk description] | [Low/Medium] | [Accepted/Mitigate further] |
 
 ## 9. REVIEW & UPDATES
@@ -112,7 +114,7 @@ Version: v1.0
 - **Next Review Date:** [YYYY-MM-DD]
 - **Review Frequency:** Quarterly or after major changes
 
----|------|------|--------|
+---|--------|
 | Security Lead | | | [ ] Approved |
 | Solution Architect | | | [ ] Approved |
 | CISO | | | [ ] Approved |

@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Architecture Decision Record (ADR) Usage Guidelines
 
 ## 1. Purpose

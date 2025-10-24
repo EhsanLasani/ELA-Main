@@ -1,12 +1,12 @@
 ## Metadata
 ---
 Artifact_ID: DOC-00-Requirements_Documen
-Artifact_Name: Requirements Document
+Artifact_Name: Untitled Document
 Artifact_Type: DOC
 Comments: Auto-generated on 2025-10-25
 Dependencies: None
 Derived_From: 
-Description: Requirements Document
+Description: Untitled Document
 File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
 Filled_By: 
 GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 ## 0. Metadata
 
 **Artifact ID (catalog.csv):** TMP-DEF-REQUIREMENTS  
@@ -30,7 +32,7 @@ Version: v1.0
 **Last Updated:** YYYY-MM-DD  
 **Status:** TEMPLATE
 
---------|-------------|
+--|-------------|
 | **Project Name** | [Project Name] |
 | **Project Code** | [Code] |
 | **Document Version** | 1.0.0 |
@@ -117,7 +119,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 - Company policies and procedures
 - [Additional reference documents]
 
---------------|----------|--------------|---------------|-------------------------|
+--|----------|--------------|---------------|-------------------------|
 | [Name] | Executive Sponsor | High | High | Weekly executive briefings |
 | [Name] | Product Owner | High | High | Daily standups, backlog refinement |
 | [Name] | Business Analyst | High | Medium | Requirements workshops, validation |
@@ -152,7 +154,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 - **Technical Proficiency:** [Low/Medium/High]
 - **Key Requirements:** [Primary needs]
 
----------|----------------------------|----------------|--------------|------------|
+-------------------------|----------------|--------------|------------|
 | REQ-001 | The system shall allow users to [specific action] | As a [user type], I want to [action] so that [benefit] | Must Have | Draft |
 | REQ-002 | The system shall provide [functionality] | As a [user type], I want to [action] so that [benefit] | Must Have | Draft |
 | REQ-003 | The system shall enable [capability] | As a [user type], I want to [action] so that [benefit] | Should Have | Draft |
@@ -205,7 +207,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 | REQ-RPT-002 | [Report Name] | [Description] | On-demand | Should Have | Draft |
 | REQ-RPT-003 | [Report Name] | [Description] | Quarterly | Could Have | Draft |
 
----------|-----------------|-------------------|--------------|------------|
+--------------|-------------------|--------------|------------|
 | NFR-PERF-001 | System response time for user interactions | < 2 seconds for 95% of requests | Must Have | Draft |
 | NFR-PERF-002 | Page load time | < 3 seconds on standard broadband | Must Have | Draft |
 | NFR-PERF-003 | API response time | < 500ms for 99% of calls | Must Have | Draft |
@@ -258,7 +260,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 | NFR-PORT-002 | Mobile platform support | iOS 14+, Android 10+ | Must Have | Draft |
 | NFR-PORT-003 | Cloud portability | Deployable on AWS, Azure, or GCP | Should Have | Draft |
 
---------------|-----------------|-------------------|----------------------|
+--|-----------------|-------------------|----------------------|
 | [Entity 1] | [Description] | [Attribute 1, Attribute 2, Attribute 3] | [X] records |
 | [Entity 2] | [Description] | [Attribute 1, Attribute 2] | [X] records |
 | [Entity 3] | [Description] | [Attribute 1, Attribute 2, Attribute 3] | [X] records |
@@ -320,7 +322,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 | [Legacy System 1] | [X] GB | Phased migration | Row-by-row validation | Database snapshot |
 | [Legacy System 2] | [X] GB | Big-bang cutover | Sample-based validation | Full backup |
 
----------|-------------------------|-------------------|--------------|------------|
+----------------------|-------------------|--------------|------------|
 | SEC-AUTH-001 | Multi-factor authentication (MFA) | Support MFA for all user accounts | Must Have | Draft |
 | SEC-AUTH-002 | Role-based access control (RBAC) | Implement granular role-based permissions | Must Have | Draft |
 | SEC-AUTH-003 | Password policy | Min 12 chars, complexity requirements, 90-day expiration | Must Have | Draft |
@@ -395,7 +397,7 @@ This document defines the complete set of requirements for [Project Name], inclu
 | OWASP Top 10 | Address all OWASP Top 10 vulnerabilities | Must Have | Draft |
 | NIST Cybersecurity Framework | Align security controls with NIST CSF | Should Have | Draft |
 
-----------------|----------------|----------------------|----------------------|----------|
+----|----------------|----------------------|----------------------|----------|
 | ASM-001 | [Assumption about resources] | [Impact description] | [How to validate] | [Name] |
 | ASM-002 | [Assumption about technology] | [Impact description] | [How to validate] | [Name] |
 | ASM-003 | [Assumption about users/stakeholders] | [Impact description] | [How to validate] | [Name] |
@@ -475,7 +477,7 @@ Constraints are limitations that restrict options or impose specific conditions 
 | CON-REG-002 | Data must remain in [Geographic Region] | Infrastructure location | Regional cloud deployment |
 | CON-REG-003 | Must pass [Security Audit] | Security requirements | Security-first development |
 
----------------|-------------------------|------------------------|-----------|------------|
+---|-------------------------|------------------------|-----------|------------|
 | AC-001 | All Must Have functional requirements (REQ-xxx) implemented and tested | Requirements traceability matrix, test results | [Name] | Pending |
 | AC-002 | All Must Have non-functional requirements (NFR-xxx) met | Performance testing, load testing | [Name] | Pending |
 | AC-003 | Security requirements satisfied and passed security audit | Security audit report | [Name] | Pending |
@@ -559,7 +561,7 @@ Formal approval required from the following stakeholders before go-live:
 | [Name] | Operations Lead | Operational readiness | Pending | |
 | [Name] | Compliance Officer | Regulatory compliance | Pending | |
 
--------|----------------|
+-|----------------|
 | [Term 1] | [Definition] |
 | [Term 2] | [Definition] |
 | API | Application Programming Interface - a set of protocols and tools for building software applications |

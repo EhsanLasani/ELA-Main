@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # OWASP COMPLIANCE CHECKLIST
 
 ## Document Control
@@ -91,7 +93,7 @@ Version: v1.0
 **Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
 **Notes:** []
 
--------|--------|-------|
+-|--------|-------|
 | A01 - Broken Access Control | [ ] | __/8 |
 | A02 - Cryptographic Failures | [ ] | __/8 |
 | A03 - Injection | [ ] | __/7 |
@@ -105,11 +107,11 @@ Version: v1.0
 
 **Overall Compliance:** ___%
 
--------|------|-------|----------|--------|
+-|------|-------|----------|--------|
 | Critical | [Action 1] | [Name] | [Date] | [ ] |
 | High | [Action 2] | [Name] | [Date] | [ ] |
 
----|------|------|--------|
+---|--------|
 | Security Lead | | | [ ] Approved |
 | CISO | | | [ ] Approved |
 

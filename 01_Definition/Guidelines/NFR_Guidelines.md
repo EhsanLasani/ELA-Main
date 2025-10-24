@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Non-Functional Requirements (NFR) Implementation Guidelines
 
 ## 0. Metadata
@@ -277,5 +279,5 @@ Consider:
 - AWS Well-Architected Framework
 - Google SRE Book (Service Level Objectives)
 
-------|------|---------|----------|
+|------|---------|----------|
 | v1.0 | 2025-10-23 | Initial NFR Guidelines | TBD |

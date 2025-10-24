@@ -21,77 +21,12 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
 ## Functional Requirements Document
 
-----|-------|
-| **Project Name** | [Enter Project Name] |
-| **Project ID** | [ELA-XXXX] |
-| **Document Version** | 1.0.0 |
-| **Created By** | [Author Name] |
-| **Creation Date** | [YYYY-MM-DD] |
-| **Last Updated** | [YYYY-MM-DD] |
-| **Reviewed By** | [Reviewer Name] |
-| **Approved By** | [Approver Name] |
-| **Status** | [Draft / In Review / Approved] |
-| **Classification** | [Internal / Confidential] |
-
-## 1. INTRODUCTION
-
-### 1.1 Purpose
-
-This Software Requirements Specification (SRS) defines the functional requirements for [Project Name]. This document specifies what the system will do - the features, functions, and capabilities that must be present in the software product.
-
-**Intended Audience:**
-- Development Team
-- Project Managers
-- Quality Assurance Team
-- Business Stakeholders
-- System Architects
-- End Users (for review)
-
-### 1.2 Document Conventions
-
-**Priority Levels:**
-- **High**: Essential functionality, system cannot operate without it
-- **Medium**: Important functionality, system can operate with workarounds
-- **Low**: Desirable functionality, enhances user experience
-
-**Requirement Notation:**
-- **SHALL**: Mandatory requirement
-- **SHOULD**: Highly desirable requirement
-- **MAY**: Optional requirement
-
-**Requirement ID Format:** `REQ-[Category]-[Number]`
-- Example: REQ-AUTH-001, REQ-USER-001
-
-### 1.3 Intended Audience and Reading Suggestions
-
-This document is organized to serve different stakeholders:
-- **Developers**: Focus on Sections 3, 4, and 5
-- **Testers**: Focus on Sections 3 and 5
-- **Project Managers**: Focus on Sections 1, 2, and 3
-- **Business Stakeholders**: Focus on Sections 1 and 2
-
-### 1.4 Product Scope
-
-**Product Overview:**
-[Provide a short description of the software being specified and its purpose]
-
-**Business Goals:**
-- [Goal 1]
-- [Goal 2]
-- [Goal 3]
-
-**Benefits:**
-- [Benefit 1]
-- [Benefit 2]
-- [Benefit 3]
-
-### 1.5 References
-
-| Document | Version | Location |
-|----------|---------|----------|
+-------|---------|----------|
 | Business Requirements Document (BRD) | [X.X] | [Link/Path] |
 | NFR Specification | [X.X] | 00_Policy/Templates/01_NFR_and_Architecture/NFR_Specification_Template.md |
 | Architecture Design Document | [X.X] | [Link/Path] |
@@ -112,7 +47,7 @@ This document is organized to serve different stakeholders:
 | MFA | Multi-Factor Authentication |
 | [Add project-specific terms] | [Definition] |
 
----------|-------------|---------------------|---------------|------------------|
+----------|---------------------|---------------|------------------|
 | Administrator | System administrators | High | System configuration, user management | Daily |
 | Power User | Advanced users | Medium | Complex workflows, reporting | Daily |
 | Standard User | Regular end users | Low | Basic operations | Daily |
@@ -276,7 +211,7 @@ The system SHALL implement role-based access control with the following roles:
 - Communication (Email, Chat, etc.)
 - Settings and Configuration
 
--------|---------|---------|----------------|
+-|---------|---------|----------------|
 | [API 1] | [Purpose] | [v1.0] | [OAuth 2.0] |
 | [API 2] | [Purpose] | [v2.0] | [API Key] |
 

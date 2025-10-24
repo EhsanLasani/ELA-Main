@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # 0. Metadata
 
 - **Artifact ID (catalog.csv):** DOC-POL-ELA-DEVELOPM
@@ -42,7 +44,7 @@ This policy applies to:
 - **All environments:** Local development, CI/CD, Dev, Test, Staging, Production
 - **All phases:** Definition, Design, Development, Testing, Deployment, Operations, Change Management, and Continuous Improvement
 
----|------------------|
+---------|
 | **Chief Technology Officer (CTO)** | Approves policy and exceptions; resolves escalations; owns strategic technical direction |
 | **Enterprise Architecture Office (EAO)** | Maintains ELA-Main structure and shared assets; conducts architecture reviews; enforces standards; maintains ADR repository |
 | **Security Office** | Defines security baselines and threat modeling standards; reviews security architecture; manages vulnerability remediation; owns incident response procedures |
@@ -55,7 +57,7 @@ This policy applies to:
 | **Data Steward** | Oversees data classification, lineage, cataloging, retention policies, and data quality monitoring |
 | **QA / Test Engineer** | Develops test strategies and automation; validates NFRs; conducts accessibility and performance testing |
 
--------|----------|-------------|
+-|----------|-------------|
 | **Performance** | Response time (p50, p95, p99), Throughput (RPS/TPS) | Load testing, APM |
 | **Availability** | Uptime SLO (99.9%), RTO, RPO | Synthetic monitoring |
 | **Scalability** | Concurrent users, Data volume growth | Load testing, capacity planning |

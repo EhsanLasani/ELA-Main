@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # VS Code – Codex Blueprint Generator
 
 Place this file at `.codex/blueprint-generator.md`. Use your Codex/ChatGPT extension to run it as a prompt for generating the **Systems Integration Blueprint** artifacts.

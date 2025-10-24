@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Release Readiness Checklist
 
 | Item | Description | Owner | Completed (Y/N) | Evidence |

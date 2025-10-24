@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # 0. Metadata
 
 - **Artifact ID (catalog.csv):** DOC-POL-SYSTEMS-INTE
@@ -191,7 +193,7 @@ Example: v2.1.3
 - Document lessons learned
 - Update runbooks based on findings
 
------------|-------|-----------|-------------|----------|-------------------|
+----|-----------|-------------|----------|-------------------|
 | **Access Control** | CC6.1 | A.9.1.1 | AC-2 | N/A | Azure AD logs, GitHub audit |
 | **Change Management** | CC8.1 | A.12.1.2 | CM-3 | N/A | GitHub PRs, CAB minutes |
 | **Vulnerability Mgmt** | CC7.1 | A.12.6.1 | RA-5 | N/A | Snyk reports, SAST findings |
@@ -276,7 +278,7 @@ flowchart LR
     IdP --> Env
 ```
 
-------|------|-------------|--------|
+|------|-------------|--------|
 | v1.0 | 2025-10-21 | Initial Release | EAO |
 | v2.0 | 2025-10-23 | Enhanced with detailed provisioning, CI/CD stages, observability, compliance mapping, DR/BCP procedures, and AI integration | EAO |
 

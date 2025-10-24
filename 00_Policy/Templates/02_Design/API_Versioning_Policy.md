@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # API VERSIONING POLICY
 
 ## 1. VERSIONING STRATEGY
@@ -33,7 +35,7 @@ Version: v1.0
 - **MINOR:** New features (backward compatible)
 - **PATCH:** Bug fixes (backward compatible)
 
-----|----------|---------------|
+-|---------------|
 | Current | Indefinite | Full support, new features |
 | Supported | 12 months | Bug fixes, security patches |
 | Deprecated | 6 months | Security patches only |

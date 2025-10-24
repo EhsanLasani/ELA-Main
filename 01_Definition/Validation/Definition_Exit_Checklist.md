@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Definition Phase Exit Checklist
 
 ## 0. Metadata
@@ -147,7 +149,7 @@ Version: v1.0
 - Any deviations from the above require CTO approval with documented risk assessment and compensating controls
 - Exception tracking: [Link to exceptions register]
 
----|------|-----------|------|----------|
+--------|------|----------|
 | **Technical Lead** | | | | |
 | **Product Owner** | | | | |
 | **Security Office** (if applicable) | | | | |

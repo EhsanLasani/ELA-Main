@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Design Phase Guidelines
 
 This folder contains guidelines and best practices for using the Design Phase templates.

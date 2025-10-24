@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # 05 - Deployment & CI/CD
 
 Define and store automation assets that package, release, and monitor the application.

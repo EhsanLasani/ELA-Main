@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # UX DESIGN STANDARDS CHECKLIST
 
 ## Document Control

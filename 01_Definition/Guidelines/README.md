@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Guidelines Documentation
 
 This folder contains comprehensive guidelines and templates for the ELA (Enterprise-Level Architecture) project Definition phase.

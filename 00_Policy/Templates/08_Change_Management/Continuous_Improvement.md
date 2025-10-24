@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Continuous Improvement Backlog
 
 | Item | Description | Owner | Due Date | Status |

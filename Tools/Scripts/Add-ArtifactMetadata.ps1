@@ -415,9 +415,19 @@ function Update-CatalogEntry {
         $catalog = @($catalog) + $newEntry
     }
     
-    # Export updated catalog
-    $catalog | Export-Csv $CatalogPath -NoTypeInformation -Force
-    Write-Host "  Catalog updated successfully" -ForegroundColor Green
+    # Deduplicate: keep only the latest entry for each unique (ID, File Path) pair
+    $deduped = @()
+    $seen = @{}
+    foreach ($entry in [System.Collections.Generic.List[object]]($catalog | Sort-Object 'Last Updated' -Descending)) {
+        $key = "$($entry.ID)|$($entry.'File Path')"
+        if (-not $seen.ContainsKey($key)) {
+            $deduped += $entry
+            $seen[$key] = $true
+        }
+    }
+    $deduped = $deduped | Sort-Object 'ID'
+    $deduped | Export-Csv $CatalogPath -NoTypeInformation -Force
+    Write-Host "  Catalog updated successfully (deduplicated by ID and File Path)" -ForegroundColor Green
 }
 
 # Main script execution

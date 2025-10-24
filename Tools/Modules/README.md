@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # ELA PowerShell Modules
 
 This directory contains reusable PowerShell modules that provide core functionality for the ELA Framework.

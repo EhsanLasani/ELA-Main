@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Testing Phase Guidelines
 
 *Guidelines will be added as part of Phase 3: Guidelines Creation*

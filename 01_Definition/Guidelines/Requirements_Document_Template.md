@@ -21,13 +21,15 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # Requirements Document Template
 
 **Document Version:** 1.0  
 **Last Updated:** Phase 2 (Week 3-4)  
 **Template Status:** Enhanced with traceability, NFRs, and compliance
 
-------|------|---------|--------|
+|------|---------|--------|
 | 1.0 | [Date] | Initial requirements document | [Author] |
 
 ## 1. Executive Summary
@@ -140,7 +142,7 @@ Version: v1.0
 - [List key assumptions made during requirements gathering]
 - [Dependencies on external factors]
 
-------|-------------|------------------|---------------------|-----------|---------|
+|-------------|------------------|---------------------|-----------|---------|
 | REQ-F-001 | [Functional req] | [Design element] | [Architecture doc ref] | TC-001 | [Status] |
 | NFR-P-001 | [Performance req] | [System component] | [Performance design] | PT-001 | [Status] |
 
@@ -160,7 +162,7 @@ Version: v1.0
 ### Appendix C: Architecture Decisions
 [Link to ADRs (Architecture Decision Records)]
 
----|------|-----------|------|
+--------|------|
 | Product Owner | [Name] | [Signature] | [Date] |
 | Technical Lead | [Name] | [Signature] | [Date] |
 | Security Lead | [Name] | [Signature] | [Date] |

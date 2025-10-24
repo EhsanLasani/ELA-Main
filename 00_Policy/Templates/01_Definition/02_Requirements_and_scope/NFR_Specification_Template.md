@@ -21,6 +21,8 @@ Template_Source: ELA-Template
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
 
 ## Document Control
@@ -38,7 +40,7 @@ Version: v1.0
 | **Status** | [Draft / In Review / Approved] |
 | **Classification** | [Internal / Confidential] |
 
--------|---------|----------|
+-|---------|----------|
 | ELA Development Policy | 2.0 | 00_Policy/ELA_Development_Policy.md |
 | Systems Integration Blueprint | 2.0 | 00_Policy/Systems_Integration_Blueprint.md |
 | Functional Requirements (SRS) | [X.X] | [Link/Path] |
@@ -60,7 +62,7 @@ Version: v1.0
 | APM | Application Performance Monitoring |
 | WCAG | Web Content Accessibility Guidelines |
 
----------------|---------------------|--------------------|--------------------|
+---|---------------------|--------------------|--------------------|
 | Page Load (UI) | < 2 seconds | < 5 seconds | Real User Monitoring |
 | API Response | < 500ms | < 2 seconds | Application Performance Monitoring |
 | Database Query | < 100ms | < 1 second | Query Performance Monitoring |

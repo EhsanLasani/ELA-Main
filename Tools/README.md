@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # ELA-Main Tools
 
 Automation tools for managing ELA framework artifacts, metadata, and document structures.

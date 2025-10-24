@@ -1,12 +1,12 @@
 ## Metadata
 ---
 Artifact_ID: VAL-01-Review_Checklist
-Artifact_Name: Definition Phase Review Checklist v2.0
+Artifact_Name: Untitled Document
 Artifact_Type: VAL
 Comments: Auto-generated on 2025-10-25
 Dependencies: None
 Derived_From: 
-Description: Definition Phase Review Checklist v2.0
+Description: Untitled Document
 File_Path: 01_Definition/Validation/Review_Checklist.md
 Filled_By: 
 GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Validation/Review_Checklist.md
@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 ## 0. Metadata
 - **Artifact ID (catalog.csv):** DOC-DEF-REVIEW-CHECK
 - **Version:** v2.0

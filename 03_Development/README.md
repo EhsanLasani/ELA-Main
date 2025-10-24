@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # 03 – Development
 
 This phase contains the working source code, automation hooks, and AI prompts.  

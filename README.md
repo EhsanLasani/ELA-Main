@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # 🏗️ ELA-Main  
 ### Enterprise-Level Application Development Framework (Main Repository)
 
@@ -28,7 +30,6 @@ Version: v1.0
 It defines the standardized structure, policies, automation pipelines, and AI-assisted development workflows used across the organization.
 
 --
-------
 ## 📘 Purpose
 
 The purpose of **ELA-Main** is to:

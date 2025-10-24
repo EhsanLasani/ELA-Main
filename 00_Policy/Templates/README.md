@@ -21,6 +21,8 @@ Template_Source:
 Validation_Status: Pending
 Version: v1.0
 ---
+## Metadata
+## Metadata
 # ELA-Main Policy Templates
 
 This folder contains enterprise-ready templates and checklists for implementing ELA Development Policy standards.
