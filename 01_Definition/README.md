@@ -5,7 +5,7 @@
 - **Linked Ticket / PR:** 
 - 555
 ﻿# Definition Phase
-
+yyyyyy
 This folder contains the Definition phase artifacts for the ELA framework.
 It defines what will be built, why, by whom, and under what constraints.
 
