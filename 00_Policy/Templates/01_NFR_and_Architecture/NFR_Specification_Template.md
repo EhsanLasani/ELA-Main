@@ -31,6 +31,7 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 - Availability and reliability requirements
 - Usability and accessibility requirements
 - Operational and maintenance requirements
+- Compatibility and portability requirements
 
 **Out of Scope:**
 - Functional requirements (documented separately in SRS)
@@ -44,6 +45,7 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 | Systems Integration Blueprint | 2.0 | 00_Policy/Systems_Integration_Blueprint.md |
 | Functional Requirements (SRS) | [X.X] | [Link/Path] |
 | Architecture Design Document | [X.X] | [Link/Path] |
+| ISO/IEC 25010:2023 Standard | Latest | https://iso25000.com/index.php/en/iso-25000-standards/iso-25010 |
 
 ### 1.4 Definitions & Acronyms
 
@@ -55,6 +57,10 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 | RPO | Recovery Point Objective |
 | MTBF | Mean Time Between Failures |
 | MTTR | Mean Time To Recovery |
+| QPS | Queries Per Second |
+| TPS | Transactions Per Second |
+| APM | Application Performance Monitoring |
+| WCAG | Web Content Accessibility Guidelines |
 
 ---
 
@@ -68,22 +74,33 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 | API Response | < 500ms | < 2 seconds | Application Performance Monitoring |
 | Database Query | < 100ms | < 1 second | Query Performance Monitoring |
 | Search Results | < 1 second | < 3 seconds | Synthetic Monitoring |
-| Batch Processing | [Define] | [Define] | Job Execution Logs |
+| Report Generation | < 5 seconds | < 15 seconds | Job Execution Logs |
+| Batch Processing | [Define SLA] | [Define Maximum] | Job Execution Logs |
 
 ### 2.2 Throughput
 
 | Metric | Target | Peak Load | Measurement |
 |--------|--------|-----------|-------------|
-| Concurrent Users | [e.g., 1,000] | [e.g., 5,000] | Load Testing |
+| Concurrent Users | [e.g., 1,000] | [e.g., 5,000] | Load testing |
 | Transactions Per Second (TPS) | [e.g., 500] | [e.g., 2,000] | APM Tools |
 | API Calls Per Minute | [e.g., 10,000] | [e.g., 50,000] | API Gateway Metrics |
+| Data Processing Rate | [e.g., 100 GB/hour] | [e.g., 500 GB/hour] | Pipeline Monitoring |
 
 ### 2.3 Capacity
 
-- **Data Volume:** System must handle [X GB/TB] of data
-- **User Growth:** Support [X%] annual user growth
-- **Storage:** [X TB] initial capacity with [X%] annual growth
-- **Network Bandwidth:** Minimum [X Mbps/Gbps]
+**Data Volume:** System must handle [X GB/TB] of data
+**User Growth:** Support [XX%] annual user growth
+**Storage:** [X TB] initial capacity with [XX%] annual growth
+**Network Bandwidth:** Minimum [X Mbps/Gbps]
+
+### 2.4 Resource Utilization
+
+| Resource | Normal Load | Peak Load | Action Threshold |
+|----------|-------------|-----------|------------------|
+| CPU Usage | < 60% | < 80% | Alert at 85% |
+| Memory Usage | < 70% | < 85% | Alert at 90% |
+| Disk I/O | < 70% | < 85% | Alert at 90% |
+| Network Bandwidth | < 60% | < 80% | Alert at 85% |
 
 ---
 
@@ -98,251 +115,300 @@ This document defines the non-functional requirements (NFRs) for [Project Name].
 
 ### 3.2 Vertical Scaling
 
-- Minimum instance size: [e.g., 2 vCPU, 4GB RAM]
-- Maximum instance size: [e.g., 16 vCPU, 64GB RAM]
-- Upgrade path defined without service interruption
+- System must support vertical scaling without downtime (where applicable)
+- Database tier should support read replicas for scaling read operations
 
-### 3.3 Database Scaling
+### 3.3 Load Distribution
 
-- Read replicas: Minimum [X] replicas for read operations
-- Sharding strategy: [Horizontal/Vertical] based on [partition key]
-- Connection pooling: [Min/Max connections]
+- Load balancer must distribute traffic across multiple instances
+- Support for session affinity/sticky sessions where required
+- Health checks every [30 seconds] with automatic failover
 
 ---
 
-## 4. AVAILABILITY & RELIABILITY REQUIREMENTS
+## 4. RELIABILITY REQUIREMENTS
 
-### 4.1 Uptime SLA
+### 4.1 Availability
 
-| Environment | Target Uptime | Allowed Downtime (Monthly) | Measurement Period |
-|-------------|---------------|---------------------------|--------------------|
-| Production | 99.9% | 43.2 minutes | 30 days rolling |
-| Staging | 99.5% | 3.6 hours | 30 days rolling |
-| Development | Best Effort | N/A | N/A |
+| Component | Availability Target | Acceptable Downtime | Measurement Period |
+|-----------|---------------------|---------------------|--------------------|
+| Production System | 99.9% (Three Nines) | 8.76 hours/year | Annual |
+| Critical Services | 99.95% | 4.38 hours/year | Annual |
+| Database | 99.99% | 52.56 minutes/year | Annual |
+
+**Planned Maintenance Windows:**
+- Maximum duration: [4 hours]
+- Frequency: [Monthly/Quarterly]
+- Notification: [48 hours] in advance
 
 ### 4.2 Fault Tolerance
 
-- **Single Point of Failure:** Zero SPOFs in production
-- **Redundancy:** N+1 redundancy for critical components
-- **Health Checks:** Liveness and readiness probes configured
-- **Circuit Breakers:** Implemented for all external dependencies
+- System must continue operating with degraded functionality in case of component failure
+- No single point of failure (SPOF) in production architecture
+- Automatic failover to backup systems within [30 seconds]
+- Circuit breaker pattern for external service calls
 
-### 4.3 Disaster Recovery
+### 4.3 Recoverability
 
-| Metric | Target | Rationale |
-|--------|--------|-----------|
-| RTO (Recovery Time Objective) | < 4 hours | Maximum acceptable downtime |
-| RPO (Recovery Point Objective) | < 15 minutes | Maximum acceptable data loss |
-| Backup Frequency | Every 6 hours | Automated backup schedule |
-| Geo-Redundancy | Multi-region | Disaster resilience |
+| Metric | Target | Maximum Acceptable |
+|--------|--------|--------------------|
+| **RTO** (Recovery Time Objective) | < 1 hour | < 4 hours |
+| **RPO** (Recovery Point Objective) | < 15 minutes | < 1 hour |
+| **MTBF** (Mean Time Between Failures) | > 720 hours | > 360 hours |
+| **MTTR** (Mean Time To Recovery) | < 30 minutes | < 2 hours |
+
+### 4.4 Data Integrity
+
+- Zero data loss for committed transactions
+- Database ACID compliance required
+- Automated backup verification and testing
+- Point-in-time recovery capability
 
 ---
 
 ## 5. SECURITY REQUIREMENTS
 
-### 5.1 Authentication & Authorization
+### 5.1 Authentication
 
-- **Authentication Method:** [OAuth 2.0 / SAML / Multi-factor]
-- **Session Management:** Secure, httpOnly, SameSite cookies
-- **Password Policy:** Minimum 12 characters, complexity requirements
-- **Account Lockout:** After [5] failed attempts for [30] minutes
-- **Role-Based Access Control (RBAC):** Implemented per principle of least privilege
+- Multi-factor authentication (MFA) required for [admin/all] users
+- Password complexity: Minimum 12 characters, alphanumeric + special characters
+- Password expiration: [90 days] for privileged accounts
+- Account lockout after [5] failed login attempts
+- Session timeout: [30 minutes] of inactivity
 
-### 5.2 Data Security
+### 5.2 Authorization
 
-| Security Control | Requirement | Standard/Protocol |
-|------------------|-------------|-------------------|
-| Data at Rest | AES-256 encryption | FIPS 140-2 |
-| Data in Transit | TLS 1.3 minimum | HTTPS enforced |
-| Sensitive Data Masking | PII/PHI masked in logs | GDPR/HIPAA |
-| Database Encryption | Transparent Data Encryption (TDE) | Enterprise standard |
-| Key Management | Cloud KMS / HSM | Automated rotation |
+- Role-Based Access Control (RBAC) implementation
+- Principle of least privilege enforced
+- Segregation of duties for critical operations
+- Regular access reviews: [Quarterly]
 
-### 5.3 Application Security
+### 5.3 Data Protection
 
-- **OWASP Top 10:** All vulnerabilities mitigated
-- **Security Scanning:** SAST/DAST in CI/CD pipeline
-- **Dependency Scanning:** Automated vulnerability checks
-- **Secrets Management:** No hardcoded secrets; use secure vaults
-- **API Security:** Rate limiting, API keys, JWT validation
+**Encryption:**
+- Data at rest: AES-256 encryption
+- Data in transit: TLS 1.2 or higher
+- Database: Transparent Data Encryption (TDE)
+- Sensitive fields: Application-level encryption
 
-### 5.4 Compliance
+**Data Classification:**
+- Public, Internal, Confidential, Restricted
+- PII/PHI handling per regulatory requirements
 
-- **Regulatory Requirements:** [GDPR / HIPAA / SOC2 / ISO 27001]
-- **Data Residency:** Data stored in [geographic region]
-- **Audit Logging:** All security events logged and retained for [X] years
-- **Privacy by Design:** Data minimization and purpose limitation
+### 5.4 Security Monitoring
 
----
+- Centralized logging of security events
+- Real-time intrusion detection/prevention
+- Security Information and Event Management (SIEM)
+- Automated vulnerability scanning: [Weekly]
+- Penetration testing: [Annually]
 
-## 6. USABILITY & ACCESSIBILITY REQUIREMENTS
+### 5.5 Compliance
 
-### 6.1 User Experience
-
-- **Browser Support:** Latest 2 versions of Chrome, Firefox, Safari, Edge
-- **Mobile Responsive:** Support iOS 14+, Android 10+
-- **Language Support:** [List supported languages]
-- **Time Zone Support:** UTC with user-specific timezone display
-
-### 6.2 Accessibility (WCAG 2.1)
-
-| Criterion | Level | Requirements |
-|-----------|-------|--------------|
-| Perceivable | AA | Alt text, captions, color contrast 4.5:1 |
-| Operable | AA | Keyboard navigation, no keyboard traps |
-| Understandable | AA | Clear labels, error identification |
-| Robust | AA | Valid HTML, ARIA attributes |
-
-### 6.3 Usability Metrics
-
-- **Learnability:** New users complete key tasks in < [X] minutes
-- **Error Rate:** < [X]% user errors in usability testing
-- **User Satisfaction:** SUS score > [X] / 100
+**Regulatory Requirements:**
+- [GDPR / HIPAA / SOC 2 / PCI-DSS / ISO 27001]
+- Data residency requirements: [Specify regions]
+- Right to erasure (RTBF) support
+- Audit trail retention: [7 years]
 
 ---
 
-## 7. MAINTAINABILITY & SUPPORTABILITY
+## 6. USABILITY REQUIREMENTS
 
-### 7.1 Code Quality
+### 6.1 User Interface
 
-- **Code Coverage:** Minimum 80% unit test coverage
-- **Code Complexity:** Cyclomatic complexity < 15 per function
-- **Technical Debt Ratio:** < 5% (SonarQube metric)
-- **Documentation:** All public APIs and modules documented
+- Intuitive navigation with maximum [3 clicks] to reach any function
+- Consistent UI/UX patterns across all modules
+- Responsive design supporting desktop, tablet, mobile
+- Support for [95%] of user tasks without training
 
-### 7.2 Monitoring & Observability
+### 6.2 Accessibility
 
-| Aspect | Requirement | Tool/Method |
-|--------|-------------|-------------|
-| Application Logs | Structured logging (JSON format) | ELK Stack / Splunk |
-| Metrics | Exposed via /metrics endpoint | Prometheus / DataDog |
-| Distributed Tracing | Trace ID propagation | Jaeger / OpenTelemetry |
-| Error Tracking | Real-time alerting | Sentry / Rollbar |
-| Dashboards | Real-time operational dashboards | Grafana / Azure Monitor |
+- WCAG 2.1 Level AA compliance
+- Screen reader compatibility
+- Keyboard navigation support
+- Color contrast ratios meeting accessibility standards
+- Support for assistive technologies
 
-### 7.3 Deployment & Rollback
+### 6.3 Learnability
 
-- **Deployment Frequency:** Support multiple deployments per day
-- **Deployment Time:** < 15 minutes for standard deployment
-- **Rollback Time:** < 5 minutes with zero data loss
-- **Blue-Green Deployment:** Supported for zero-downtime releases
+- New users should complete basic tasks within [30 minutes]
+- Context-sensitive help available
+- User documentation and training materials
+- In-app tooltips and guidance
 
----
+### 6.4 User Experience
 
-## 8. PORTABILITY & COMPATIBILITY
-
-### 8.1 Platform Independence
-
-- **Container Support:** Docker-compatible images
-- **Cloud Agnostic:** Avoid vendor lock-in where possible
-- **Database Portability:** Support migration between RDBMS
-
-### 8.2 Integration Compatibility
-
-- **API Versioning:** Semantic versioning enforced
-- **Backward Compatibility:** Minimum [2] versions supported
-- **Data Format:** Standard formats (JSON, XML, CSV)
+- Error messages must be clear and actionable
+- Confirmation required for destructive actions
+- Progress indicators for long-running operations
+- Undo/redo functionality where applicable
 
 ---
 
-## 9. OPERATIONAL REQUIREMENTS
+## 7. MAINTAINABILITY REQUIREMENTS
 
-### 9.1 Backup & Recovery
+### 7.1 Modularity
 
-- **Automated Backups:** Daily full + hourly incremental
-- **Backup Retention:** [30] days online, [7] years archived
-- **Backup Testing:** Monthly restore validation
-- **Backup Encryption:** AES-256 encryption at rest
+- Microservices/modular architecture with loosely coupled components
+- Clear separation of concerns
+- Well-defined APIs between components
 
-### 9.2 Capacity Planning
+### 7.2 Testability
 
-- **Resource Monitoring:** CPU, memory, disk, network tracked
-- **Capacity Alerts:** Trigger at 70% utilization
-- **Forecasting:** Quarterly capacity planning reviews
+- Minimum [80%] code coverage for unit tests
+- Automated integration and e2e test suites
+- Test environments mirroring production
+- Continuous integration/continuous deployment (CI/CD)
 
-### 9.3 Support Requirements
+### 7.3 Documentation
 
-- **Support Hours:** [24x7 / Business hours]
-- **Issue Response Time:**
-  - Critical (P1): 15 minutes
-  - High (P2): 1 hour
-  - Medium (P3): 4 hours
-  - Low (P4): Next business day
+- Code documentation standards enforced
+- API documentation (OpenAPI/Swagger)
+- Architecture Decision Records (ADRs)
+- Runbooks for operational procedures
 
----
+### 7.4 Monitoring & Observability
 
-## 10. ENVIRONMENTAL REQUIREMENTS
-
-### 10.1 Infrastructure
-
-- **Hosting Environment:** [Cloud / On-premise / Hybrid]
-- **Geographic Regions:** [List regions]
-- **Network Configuration:** [VPN / Direct Connect / Public]
-
-### 10.2 Third-Party Dependencies
-
-| Dependency | Version | Purpose | SLA Requirement |
-|------------|---------|---------|------------------|
-| [Service 1] | [X.X] | [Purpose] | [Uptime %] |
-| [Service 2] | [X.X] | [Purpose] | [Uptime %] |
+- Distributed tracing for request flows
+- Metrics collection (RED/USE methodology)
+- Log aggregation and search capability
+- Real-time dashboards for system health
 
 ---
 
-## 11. TESTING & VALIDATION
+## 8. COMPATIBILITY REQUIREMENTS
 
-### 11.1 Performance Testing
+### 8.1 Browser Compatibility
 
-- **Load Testing:** Simulate [X] concurrent users
-- **Stress Testing:** Test at 150% of peak capacity
-- **Soak Testing:** Run at normal load for [24] hours
-- **Spike Testing:** Simulate sudden traffic increases
+| Browser | Minimum Version | Support Level |
+|---------|----------------|---------------|
+| Chrome | Latest - 2 | Full Support |
+| Firefox | Latest - 2 | Full Support |
+| Safari | Latest - 2 | Full Support |
+| Edge | Latest - 2 | Full Support |
 
-### 11.2 Security Testing
+### 8.2 Platform Compatibility
 
-- **Penetration Testing:** Annually by third-party
-- **Vulnerability Scanning:** Weekly automated scans
-- **Security Code Review:** For all critical changes
+- Operating Systems: [Windows 10+, macOS 11+, Linux]
+- Mobile: iOS 14+, Android 10+
+- Cloud Platforms: [AWS / Azure / GCP]
 
-### 11.3 Acceptance Criteria
+### 8.3 Integration Compatibility
 
-All NFRs must be validated and pass acceptance testing before production deployment.
+- RESTful API support
+- Webhook support for event notifications
+- Standard data formats: JSON, XML, CSV
+- Integration with [list key systems]
 
----
+### 8.4 Backward Compatibility
 
-## 12. CONSTRAINTS & ASSUMPTIONS
-
-### 12.1 Constraints
-
-- Budget: [Specify if applicable]
-- Timeline: [Specify if applicable]
-- Technology Stack: [List mandated technologies]
-- Regulatory: [List compliance constraints]
-
-### 12.2 Assumptions
-
-- Infrastructure provisioning time: [X] days
-- Third-party API availability: [X]%
-- User training completion: [X] weeks before launch
+- API versioning strategy implemented
+- Breaking changes communicated [90 days] in advance
+- Support for N-1 API versions
 
 ---
 
-## 13. APPROVAL & SIGN-OFF
+## 9. PORTABILITY REQUIREMENTS
 
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
-| Enterprise Architect | | | |
-| Security Lead | | | |
-| Operations Lead | | | |
-| Project Manager | | | |
-| CTO (Approver) | | | |
+### 9.1 Platform Independence
+
+- Containerization (Docker) for application components
+- Infrastructure as Code (IaC) for deployment
+- Cloud-agnostic design where feasible
+
+### 9.2 Data Portability
+
+- Export functionality for all user data
+- Standard data formats for import/export
+- Migration tools and documentation
+
+### 9.3 Configuration Management
+
+- Externalized configuration
+- Environment-specific settings
+- Configuration as code versioned in Git
 
 ---
 
-## 14. REVISION HISTORY
+## 10. OPERATIONAL REQUIREMENTS
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0.0 | [YYYY-MM-DD] | [Author] | Initial version |
+### 10.1 Deployment
+
+- Zero-downtime deployment capability
+- Blue-green or canary deployment strategy
+- Automated rollback mechanism
+- Deployment frequency: [Daily/Weekly]
+
+### 10.2 Backup & Recovery
+
+**Backup Schedule:**
+- Database: Full backup [daily], incremental [hourly]
+- File storage: [Daily] with [30 days] retention
+- Configuration: Versioned in Git
+
+**Recovery Procedures:**
+- Documented and tested [quarterly]
+- Automated recovery scripts
+- Recovery drills: [Semi-annually]
+
+### 10.3 Disaster Recovery
+
+- DR site in different geographic region
+- DR testing: [Annually]
+- Runbooks for DR scenarios
+- Communication plan for incidents
+
+### 10.4 Support & Maintenance
+
+**Support Hours:**
+- Business hours: [9 AM - 5 PM local time]
+- On-call: 24/7 for Severity 1 issues
+
+**Maintenance Windows:**
+- Scheduled: [Every 1st Sunday, 2 AM - 6 AM]
+- Emergency: As needed with notification
+
+---
+
+## 11. LOCALIZATION & INTERNATIONALIZATION
+
+### 11.1 Language Support
+
+- Supported languages: [English, Spanish, French, etc.]
+- UTF-8 encoding throughout
+- Right-to-left (RTL) language support
+- Date/time format localization
+
+### 11.2 Regional Requirements
+
+- Currency formatting and conversion
+- Regional date/time formats
+- Time zone handling
+- Local regulatory compliance
+
+---
+
+## 12. ENVIRONMENTAL REQUIREMENTS
+
+### 12.1 Infrastructure
+
+- Production: [AWS/Azure/GCP] in [Region]
+- Staging: [Environment details]
+- Development: [Environment details]
+
+### 12.2 Network Requirements
+
+- Minimum bandwidth: [X Mbps]
+- Latency requirements: < [100ms] within region
+- Content Delivery Network (CDN) for static assets
+
+### 12.3 Third-Party Dependencies
+
+| Service/Library | Purpose | SLA Requirement |
+|----------------|---------|------------------|
+| [Service Name] | [Purpose] | [99.9%] |
+| [Library Name] | [Purpose] | [Latest stable] |
 
 ---
 
@@ -352,11 +418,11 @@ All NFRs must be validated and pass acceptance testing before production deploym
 
 Track the following KPIs in production:
 
-1. **Availability**: Uptime percentage (monthly)
-2. **Performance**: P95 response time (daily)
-3. **Throughput**: Transactions per second (hourly)
-4. **Error Rate**: Percentage of failed requests (real-time)
-5. **Security**: Number of security incidents (monthly)
+1. **Availability:** Uptime percentage (monthly)
+2. **Performance:** p95 response time (daily)
+3. **Throughput:** Transactions per second (hourly)
+4. **Error Rate:** Percentage of failed requests (real-time)
+5. **Security:** Number of security incidents (monthly)
 
 ### Monitoring Tools
 
@@ -371,7 +437,7 @@ Track the following KPIs in production:
 
 ### Example Scenario Template
 
-**Scenario ID:** NFR-PERF-001
+**Scenario ID:** [NFR-PERF-001]
 **Quality Attribute:** Performance
 **Stimulus:** User requests product search
 **Response:** System displays results
@@ -392,6 +458,6 @@ Track the following KPIs in production:
 ---
 
 **Document Status:** TEMPLATE
-**Template Version:** 1.0.0
-**Maintained By:** Enterprise Architecture Office
-**Last Template Update:** 2025-10-23
+**Template Version:** 2.0.0
+**Last Updated:** 2025-10-24
+**ISO 25010 Aligned:** Yes
