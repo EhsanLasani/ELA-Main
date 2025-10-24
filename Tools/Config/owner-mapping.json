@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "ELA Artifact Owner Mapping Rules",
+  "description": "Maps artifact types and phases to responsible teams based on Artifact Metadata Standards",
+  "version": "1.0",
+  "last_updated": "2025-10-24",
+  "owner_assignment_rules": [
+    {
+      "rule_id": "RULE-001",
+      "priority": 1,
+      "condition": {
+        "phase": "Policy"
+      },
+      "owner": "Enterprise Architecture Office (EAO)",
+      "description": "All policy-level artifacts owned by EAO"
+    },
+    {
+      "rule_id": "RULE-002",
+      "priority": 2,
+      "condition": {
+        "phase": "Definition"
+      },
+      "owner": "Business Analysis Team",
+      "description": "Definition phase artifacts owned by BA Team"
+    },
+    {
+      "rule_id": "RULE-003",
+      "priority": 2,
+      "condition": {
+        "phase": "Design"
+      },
+      "owner": "Solution Architecture Team",
+      "description": "Design phase artifacts owned by Solution Architects"
+    },
+    {
+      "rule_id": "RULE-004",
+      "priority": 2,
+      "condition": {
+        "phase": "Development"
+      },
+      "owner": "Development Team",
+      "description": "Development phase artifacts owned by Dev Team"
+    },
+    {
+      "rule_id": "RULE-005",
+      "priority": 2,
+      "condition": {
+        "phase": "Testing"
+      },
+      "owner": "QA Team",
+      "description": "Testing phase artifacts owned by QA"
+    },
+    {
+      "rule_id": "RULE-006",
+      "priority": 2,
+      "condition": {
+        "phase": "Deployment"
+      },
+      "owner": "DevOps Team",
+      "description": "Deployment artifacts owned by DevOps"
+    },
+    {
+      "rule_id": "RULE-007",
+      "priority": 2,
+      "condition": {
+        "phase": "Operations"
+      },
+      "owner": "SRE Team",
+      "description": "Operations phase artifacts owned by SRE"
+    },
+    {
+      "rule_id": "RULE-008",
+      "priority": 2,
+      "condition": {
+        "phase": "Change Management"
+      },
+      "owner": "Change Management Team",
+      "description": "Change management artifacts owned by CM Team"
+    },
+    {
+      "rule_id": "RULE-009",
+      "priority": 3,
+      "condition": {
+        "artifact_type": "WFL"
+      },
+      "owner": "DevOps Team",
+      "description": "All workflows owned by DevOps regardless of phase"
+    },
+    {
+      "rule_id": "RULE-010",
+      "priority": 3,
+      "condition": {
+        "artifact_type": "SCR"
+      },
+      "owner": "DevOps Team",
+      "description": "All scripts owned by DevOps"
+    },
+    {
+      "rule_id": "RULE-011",
+      "priority": 3,
+      "condition": {
+        "artifact_type": "CFG"
+      },
+      "owner": "DevOps Team",
+      "description": "All configuration files owned by DevOps"
+    },
+    {
+      "rule_id": "RULE-012",
+      "priority": 4,
+      "condition": {
+        "file_path_contains": "/00_Policy/"
+      },
+      "owner": "Enterprise Architecture Office (EAO)",
+      "description": "All artifacts in Policy folder owned by EAO"
+    },
+    {
+      "rule_id": "RULE-013",
+      "priority": 5,
+      "condition": {
+        "artifact_name_contains": "Security"
+      },
+      "owner": "Security & Compliance Team",
+      "description": "Security-related artifacts owned by Security Team"
+    },
+    {
+      "rule_id": "RULE-014",
+      "priority": 5,
+      "condition": {
+        "artifact_name_contains": "Compliance"
+      },
+      "owner": "Security & Compliance Team",
+      "description": "Compliance-related artifacts owned by Security Team"
+    }
+  ],
+  "default_owner": "Enterprise Architecture Office (EAO)",
+  "owner_teams": [
+    {
+      "team_name": "Enterprise Architecture Office (EAO)",
+      "abbreviation": "EAO",
+      "responsibilities": ["Policy documents", "Blueprints", "Framework standards"],
+      "contact": "eao@organization.com"
+    },
+    {
+      "team_name": "Business Analysis Team",
+      "abbreviation": "BA",
+      "responsibilities": ["Requirements", "Use cases", "Business process models"],
+      "contact": "ba-team@organization.com"
+    },
+    {
+      "team_name": "Solution Architecture Team",
+      "abbreviation": "SA",
+      "responsibilities": ["Solution design", "Architecture decisions", "Technical specifications"],
+      "contact": "solution-arch@organization.com"
+    },
+    {
+      "team_name": "Development Team",
+      "abbreviation": "DEV",
+      "responsibilities": ["Code", "Unit tests", "Development documentation"],
+      "contact": "dev-team@organization.com"
+    },
+    {
+      "team_name": "QA Team",
+      "abbreviation": "QA",
+      "responsibilities": ["Test plans", "Test cases", "Quality reports"],
+      "contact": "qa-team@organization.com"
+    },
+    {
+      "team_name": "DevOps Team",
+      "abbreviation": "DEVOPS",
+      "responsibilities": ["CI/CD", "Workflows", "Infrastructure automation"],
+      "contact": "devops@organization.com"
+    },
+    {
+      "team_name": "SRE Team",
+      "abbreviation": "SRE",
+      "responsibilities": ["Operations", "Monitoring", "Incident response"],
+      "contact": "sre@organization.com"
+    },
+    {
+      "team_name": "Security & Compliance Team",
+      "abbreviation": "SEC",
+      "responsibilities": ["Security standards", "Compliance validation", "Risk assessment"],
+      "contact": "security@organization.com"
+    },
+    {
+      "team_name": "Change Management Team",
+      "abbreviation": "CM",
+      "responsibilities": ["Change processes", "Release management", "Stakeholder communication"],
+      "contact": "change-mgmt@organization.com"
+    }
+  ],
+  "usage_notes": [
+    "Rules are evaluated in priority order (1 = highest)",
+    "First matching rule determines the owner",
+    "If no rules match, default_owner is assigned",
+    "Multiple conditions in a rule use AND logic",
+    "Scripts can override by explicitly setting owner field"
+  ]
+}
