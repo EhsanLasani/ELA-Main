@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "ELA Context Template",
+  "description": "Template for creating context files that guide document generation and track evolution",
+  "version": "1.0",
+  "context_id": "CTX-[PHASE]-[###]",
+  "version": "1.0",
+  "created_date": "YYYY-MM-DD",
+  "last_updated": "YYYY-MM-DD",
+  "status": "active",
+  "created_by": "",
+  "artifact_target": {
+    "artifact_type": "TMP|DOC|GDL|VAL|WFL|SCR|CFG|TST|DAT",
+    "phase": "Policy|Definition|Design|Development|Testing|Deployment|Operations|Change Management",
+    "process_group": "",
+    "process_step": "",
+    "suggested_name": "",
+    "target_location": ""
+  },
+  "content": {
+    "purpose": "",
+    "problem_statement": "",
+    "audience": "",
+    "scope": "",
+    "key_sections": [],
+    "required_elements": [],
+    "examples": [],
+    "references": [],
+    "related_artifacts": [],
+    "constraints": [],
+    "success_criteria": []
+  },
+  "generation_hints": {
+    "tone": "formal|technical|instructional",
+    "detail_level": "high|medium|low",
+    "include_examples": true,
+    "include_diagrams": false,
+    "ai_prompt_additions": ""
+  },
+  "evolution_history": [
+    {
+      "iteration": 1,
+      "date": "YYYY-MM-DD",
+      "changes": "Initial context creation",
+      "feedback": "",
+      "modified_by": "",
+      "document_generated": false,
+      "generation_quality_score": null
+    }
+  ],
+  "validation": {
+    "completeness_score": 0,
+    "missing_elements": [],
+    "quality_check": "pending|passed|failed",
+    "reviewer_notes": ""
+  },
+  "metadata": {
+    "tags": [],
+    "priority": "high|medium|low",
+    "estimated_effort_hours": null,
+    "actual_effort_hours": null,
+    "dependencies": [],
+    "blockers": []
+  }
+}
