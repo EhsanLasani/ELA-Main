@@ -1,42 +1,30 @@
 <#
 .SYNOPSIS
-    Adds metadata frontmatter to artifact files and updates Catalogue.csv
+    Automatically extracts and adds metadata to artifact files and updates Catalogue.csv
 
 .DESCRIPTION
-    This script adds YAML frontmatter metadata to document files and updates
-    the project's Catalogue.csv with artifact information. Supports the new
-    extended column structure.
+    This script automatically analyzes files to extract metadata without requiring manual input.
+    It intelligently determines artifact type, phase, and other properties from file location,
+    filename, and content analysis, then adds YAML frontmatter and updates Catalogue.csv.
 
 .PARAMETER FilePath
-    Path to the artifact file to add metadata to
-
-.PARAMETER ArtifactID
-    Unique identifier for the artifact (auto-generated if not provided)
-
-.PARAMETER ArtifactName
-    Human-readable name of the artifact
-
-.PARAMETER ArtifactType
-    Type of artifact (e.g., requirement, design-doc, test-plan)
-
-.PARAMETER Phase
-    Project phase (e.g., 00_Policy, 01_Definition, 02_Design)
-
-.PARAMETER Owner
-    Owner/author of the artifact
-
-.PARAMETER Status
-    Current status (draft, in-review, approved, completed)
+    Path to the artifact file to analyze and add metadata to
 
 .PARAMETER UpdateCatalog
-    If specified, updates the Catalogue.csv file
+    If specified, updates the Catalogue.csv file (default: true)
+
+.PARAMETER Recursive
+    Process all files in directory recursively
 
 .EXAMPLE
-    .\Add-ArtifactMetadata.ps1 -FilePath "./02_Design/System-Architecture.md" -ArtifactName "System Architecture" -ArtifactType "design-document" -Phase "02_Design" -Owner "John Doe" -Status "draft" -UpdateCatalog
+    .\Add-ArtifactMetadata.ps1 -FilePath "./02_Design/System-Architecture.md"
+    
+.EXAMPLE
+    .\Add-ArtifactMetadata.ps1 -FilePath "./03_Development" -Recursive
 
 .NOTES
     Author: ELA Framework Team
-    Version: 1.0.0
+    Version: 2.0.0 - Automated metadata extraction
 #>
 
 [CmdletBinding()]
@@ -45,62 +33,102 @@ param(
     [string]$FilePath,
     
     [Parameter(Mandatory = $false)]
-    [string]$ArtifactID,
-    
-    [Parameter(Mandatory = $true)]
-    [string]$ArtifactName,
-    
-    [Parameter(Mandatory = $true)]
-    [ValidateSet('requirement', 'design-document', 'test-plan', 'deployment-guide', 'policy', 'process-doc', 'technical-spec', 'user-guide', 'other')]
-    [string]$ArtifactType,
-    
-    [Parameter(Mandatory = $true)]
-    [string]$Phase,
+    [switch]$UpdateCatalog = $true,
     
     [Parameter(Mandatory = $false)]
-    [string]$Owner = $env:USERNAME,
-    
-    [Parameter(Mandatory = $false)]
-    [ValidateSet('draft', 'in-review', 'approved', 'completed', 'deprecated')]
-    [string]$Status = 'draft',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$Version = '1.0',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$Description = '',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$Dependencies = '',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$ProcessGroup = '',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$ProcessStep = '',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$TemplateSource = '',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$DerivedFrom = '',
-    
-    [Parameter(Mandatory = $false)]
-    [string]$ProjectName = '',
-    
-    [Parameter(Mandatory = $false)]
-    [switch]$UpdateCatalog
+    [switch]$Recursive
 )
 
-# Validate file exists
-if (-not (Test-Path $FilePath)) {
-    Write-Error "File not found: $FilePath"
-    exit 1
+# Function to determine artifact type from filename and content
+function Get-ArtifactType {
+    param([string]$filename, [string]$content)
+    
+    $filename = $filename.ToLower()
+    
+    # Analyze filename patterns
+    if ($filename -match 'requirement|req-|spec-') { return 'requirement' }
+    if ($filename -match 'design|architecture|arch-') { return 'design-document' }
+    if ($filename -match 'test|testing|test-plan') { return 'test-plan' }
+    if ($filename -match 'deploy|installation|setup') { return 'deployment-guide' }
+    if ($filename -match 'policy|governance|compliance') { return 'policy' }
+    if ($filename -match 'process|procedure|workflow') { return 'process-doc' }
+    if ($filename -match 'technical|tech-spec|api') { return 'technical-spec' }
+    if ($filename -match 'user-guide|manual|help') { return 'user-guide' }
+    if ($filename -match 'readme|documentation') { return 'documentation' }
+    
+    # Analyze content patterns
+    if ($content -match '(?i)(requirement|shall|must|should).*:') { return 'requirement' }
+    if ($content -match '(?i)(architecture|system design|component)') { return 'design-document' }
+    if ($content -match '(?i)(test case|test scenario|testing)') { return 'test-plan' }
+    
+    return 'other'
 }
 
-# Generate Artifact ID if not provided
-if (-not $ArtifactID) {
-    $prefix = switch ($ArtifactType) {
+# Function to extract phase from file path
+function Get-PhaseFromPath {
+    param([string]$filepath)
+    
+    if ($filepath -match '\\(\d{2}_[^\\]+)\\' -or $filepath -match '/(\d{2}_[^/]+)/') {
+        return $matches[1]
+    }
+    return 'unknown'
+}
+
+# Function to extract title from content
+function Get-DocumentTitle {
+    param([string]$content)
+    
+    # Look for H1 markdown title
+    if ($content -match '^#\s+(.+)$') {
+        return $matches[1].Trim()
+    }
+    
+    # Look for title in existing frontmatter
+    if ($content -match 'title:\s*(.+)$') {
+        return $matches[1].Trim()
+    }
+    
+    return ''
+}
+
+# Function to process a single file
+function Process-ArtifactFile {
+    param([string]$filepath)
+    
+    Write-Host "\nProcessing: $filepath" -ForegroundColor Cyan
+    
+    if (-not (Test-Path $filepath)) {
+        Write-Warning "File not found: $filepath"
+        return
+    }
+    
+    # Read file content
+    $content = Get-Content -Path $filepath -Raw -ErrorAction SilentlyContinue
+    if (-not $content) {
+        Write-Warning "Could not read file content: $filepath"
+        return
+    }
+    
+    # Skip if already has frontmatter
+    if ($content -match '^---\s*\n') {
+        Write-Host "  ✓ Already has metadata frontmatter" -ForegroundColor Green
+        
+        # Still update catalog if requested
+        if ($UpdateCatalog) {
+            Update-CatalogFromExistingMetadata -FilePath $filepath -Content $content
+        }
+        return
+    }
+    
+    # Extract information automatically
+    $fileInfo = Get-Item $filepath
+    $filename = $fileInfo.Name
+    $artifactType = Get-ArtifactType -filename $filename -content $content
+    $phase = Get-PhaseFromPath -filepath $filepath
+    $title = Get-DocumentTitle -content $content
+    
+    # Generate artifact ID
+    $prefix = switch ($artifactType) {
         'requirement' { 'REQ' }
         'design-document' { 'DES' }
         'test-plan' { 'TST' }
@@ -109,76 +137,107 @@ if (-not $ArtifactID) {
         'process-doc' { 'PROC' }
         'technical-spec' { 'SPEC' }
         'user-guide' { 'UG' }
+        'documentation' { 'DOC' }
         default { 'ART' }
     }
+    
     $timestamp = Get-Date -Format 'yyyyMMddHHmmss'
-    $ArtifactID = "$prefix-$timestamp"
-}
-
-# Read existing file content
-$fileContent = Get-Content -Path $FilePath -Raw
-
-# Check if file already has frontmatter
-$hasFrontmatter = $fileContent -match '^---\s*\n'
-
-if ($hasFrontmatter) {
-    Write-Warning "File already contains frontmatter metadata. Skipping metadata addition."
-    Write-Host "Use -Force parameter to overwrite existing metadata (not yet implemented)." -ForegroundColor Yellow
-}
-else {
+    $artifactID = "$prefix-$timestamp"
+    
+    # Use extracted title or generate from filename
+    $artifactName = if ($title) { $title } else { $filename -replace '\.[^.]+$', '' -replace '[_-]', ' ' }
+    
+    # Determine process group based on phase
+    $processGroup = switch ($phase) {
+        {$_ -match '00_Policy'} { 'Governance' }
+        {$_ -match '01_Definition'} { 'Analysis' }
+        {$_ -match '02_Design'} { 'Architecture' }
+        {$_ -match '03_Development'} { 'Implementation' }
+        {$_ -match '04_Systems_Integration'} { 'Integration' }
+        {$_ -match '05_Testing'} { 'Quality Assurance' }
+        {$_ -match '06_Deployment'} { 'Delivery' }
+        {$_ -match '07_Operations'} { 'Operations' }
+        {$_ -match '08_Change_Management'} { 'Change Control' }
+        default { 'General' }
+    }
+    
     # Create metadata frontmatter
     $metadata = @"
 ---
-artifact-id: $ArtifactID
-artifact-name: $ArtifactName
-artifact-type: $ArtifactType
-phase: $Phase
-version: $Version
-status: $Status
-owner: $Owner
+artifact-id: $artifactID
+artifact-name: $artifactName
+artifact-type: $artifactType
+phase: $phase
+version: 1.0
+status: draft
+owner: $env:USERNAME
 last-updated: $(Get-Date -Format 'yyyy-MM-dd')
-description: $Description
-dependencies: $Dependencies
-process-group: $ProcessGroup
-process-step: $ProcessStep
-template-source: $TemplateSource
-derived-from: $DerivedFrom
-project-name: $ProjectName
+description: Auto-generated metadata
+process-group: $processGroup
+project-name: ELA-Main
 ---
 
 "@
-
-    # Add metadata to file
-    $newContent = $metadata + $fileContent
-    $newContent | Out-File -FilePath $FilePath -Encoding UTF8 -NoNewline
     
-    Write-Host "\nMetadata added successfully to: $FilePath" -ForegroundColor Green
-    Write-Host "Artifact ID: $ArtifactID" -ForegroundColor Cyan
+    # Add metadata to file
+    $newContent = $metadata + $content
+    $newContent | Out-File -FilePath $filepath -Encoding UTF8 -NoNewline
+    
+    Write-Host "  ✓ Added metadata:" -ForegroundColor Green
+    Write-Host "    - ID: $artifactID" -ForegroundColor White
+    Write-Host "    - Type: $artifactType" -ForegroundColor White
+    Write-Host "    - Phase: $phase" -ForegroundColor White
+    Write-Host "    - Name: $artifactName" -ForegroundColor White
+    
+    # Update catalog
+    if ($UpdateCatalog) {
+        Update-CatalogEntry -FilePath $filepath -ArtifactID $artifactID -ArtifactName $artifactName -ArtifactType $artifactType -Phase $phase -ProcessGroup $processGroup
+    }
 }
 
-# Update Catalogue.csv if requested
-if ($UpdateCatalog) {
+# Function to update catalog from existing metadata
+function Update-CatalogFromExistingMetadata {
+    param([string]$FilePath, [string]$Content)
+    
+    # Extract metadata from existing frontmatter
+    if ($Content -match '---\s*\n([\s\S]*?)\n---') {
+        $frontmatter = $matches[1]
+        
+        $artifactID = if ($frontmatter -match 'artifact-id:\s*(.+)') { $matches[1].Trim() } else { 'UNKNOWN' }
+        $artifactName = if ($frontmatter -match 'artifact-name:\s*(.+)') { $matches[1].Trim() } else { 'Unknown' }
+        $artifactType = if ($frontmatter -match 'artifact-type:\s*(.+)') { $matches[1].Trim() } else { 'other' }
+        $phase = if ($frontmatter -match 'phase:\s*(.+)') { $matches[1].Trim() } else { 'unknown' }
+        $processGroup = if ($frontmatter -match 'process-group:\s*(.+)') { $matches[1].Trim() } else { 'General' }
+        
+        Update-CatalogEntry -FilePath $FilePath -ArtifactID $artifactID -ArtifactName $artifactName -ArtifactType $artifactType -Phase $phase -ProcessGroup $processGroup
+    }
+}
+
+# Function to update catalog entry
+function Update-CatalogEntry {
+    param($FilePath, $ArtifactID, $ArtifactName, $ArtifactType, $Phase, $ProcessGroup)
+    
     $catalogPath = Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) "Catalogue.csv"
     
     if (-not (Test-Path $catalogPath)) {
-        Write-Error "Catalogue.csv not found at: $catalogPath"
-        exit 1
+        Write-Warning "Catalogue.csv not found at: $catalogPath"
+        return
     }
     
-    Write-Host "\nUpdating Catalogue.csv..." -ForegroundColor Yellow
-    
     # Read existing catalog
-    $catalog = Import-Csv -Path $catalogPath
+    $catalog = Import-Csv -Path $catalogPath -ErrorAction SilentlyContinue
+    if (-not $catalog) {
+        Write-Warning "Could not read Catalogue.csv"
+        return
+    }
     
-    # Get absolute file path
-    $absolutePath = (Resolve-Path $FilePath).Path
     $relativePath = $FilePath
     
-    # Check if entry already exists
+    # Check if entry exists
     $existingEntry = $catalog | Where-Object { $_.ID -eq $ArtifactID -or $_.'File Path' -eq $relativePath }
     
     if ($existingEntry) {
-        Write-Host "Entry already exists in catalog. Updating..." -ForegroundColor Yellow
+        Write-Host "    - Updated existing catalog entry" -ForegroundColor Yellow
         
         # Update existing entry
         $catalog = $catalog | ForEach-Object {
@@ -187,26 +246,17 @@ if ($UpdateCatalog) {
                 $_.'Artifact Name' = $ArtifactName
                 $_.'File Path' = $relativePath
                 $_.'Artifact Type' = $ArtifactType
-                $_.Version = $Version
-                $_.Status = $Status
-                $_.Owner = $Owner
                 $_.'Last Updated' = Get-Date -Format 'yyyy-MM-dd'
-                $_.Description = $Description
                 $_.Phase = $Phase
-                $_.Dependencies = $Dependencies
                 $_.'Process Group' = $ProcessGroup
-                $_.'Process Step' = $ProcessStep
-                $_.'Template Source' = $TemplateSource
-                $_.'Derived From' = $DerivedFrom
-                $_.'Project Name' = $ProjectName
-                $_.'Filled By' = $Owner
+                $_.'Filled By' = $env:USERNAME
                 $_.'Validation Status' = 'pending'
             }
             $_
         }
     }
     else {
-        Write-Host "Adding new entry to catalog..." -ForegroundColor Green
+        Write-Host "    - Added new catalog entry" -ForegroundColor Green
         
         # Create new entry
         $newEntry = [PSCustomObject]@{
@@ -214,43 +264,68 @@ if ($UpdateCatalog) {
             'Artifact Name' = $ArtifactName
             'File Path' = $relativePath
             'Artifact Type' = $ArtifactType
-            'Version' = $Version
-            'Status' = $Status
-            'Owner' = $Owner
+            'Version' = '1.0'
+            'Status' = 'draft'
+            'Owner' = $env:USERNAME
             'Last Updated' = Get-Date -Format 'yyyy-MM-dd'
             'GitHub URL' = ''
-            'Description' = $Description
+            'Description' = 'Auto-generated metadata'
             'Phase' = $Phase
-            'Dependencies' = $Dependencies
+            'Dependencies' = ''
             'Process Group' = $ProcessGroup
-            'Process Step' = $ProcessStep
-            'Template Source' = $TemplateSource
-            'Derived From' = $DerivedFrom
-            'Project Name' = $ProjectName
-            'Filled By' = $Owner
+            'Process Step' = ''
+            'Template Source' = ''
+            'Derived From' = ''
+            'Project Name' = 'ELA-Main'
+            'Filled By' = $env:USERNAME
             'Validation Status' = 'pending'
-            'Comments' = ''
+            'Comments' = 'Auto-generated by Add-ArtifactMetadata.ps1'
         }
         
         $catalog += $newEntry
     }
     
     # Save updated catalog
-    $catalog | Export-Csv -Path $catalogPath -NoTypeInformation -Encoding UTF8
-    Write-Host "Catalogue.csv updated successfully!" -ForegroundColor Green
+    try {
+        $catalog | Export-Csv -Path $catalogPath -NoTypeInformation -Encoding UTF8
+    }
+    catch {
+        Write-Warning "Failed to update catalog: $_"
+    }
 }
 
-Write-Host "\n" + ("=" * 60) -ForegroundColor Cyan
-Write-Host "SUMMARY" -ForegroundColor Cyan
-Write-Host ("=" * 60) -ForegroundColor Cyan
-Write-Host "File: $FilePath" -ForegroundColor White
-Write-Host "Artifact ID: $ArtifactID" -ForegroundColor White
-Write-Host "Artifact Name: $ArtifactName" -ForegroundColor White
-Write-Host "Type: $ArtifactType" -ForegroundColor White
-Write-Host "Phase: $Phase" -ForegroundColor White
-Write-Host "Status: $Status" -ForegroundColor White
-Write-Host "Owner: $Owner" -ForegroundColor White
-if ($UpdateCatalog) {
-    Write-Host "Catalog Updated: Yes" -ForegroundColor Green
+# Main execution
+Write-Host "\n" + ("=" * 70) -ForegroundColor Cyan
+Write-Host "ELA Automated Metadata Extraction Tool" -ForegroundColor Cyan
+Write-Host ("=" * 70) + "\n" -ForegroundColor Cyan
+
+if (Test-Path $FilePath -PathType Container) {
+    # Directory processing
+    Write-Host "Processing directory: $FilePath" -ForegroundColor Yellow
+    
+    $searchParams = @{
+        Path = $FilePath
+        Include = @('*.md', '*.txt')
+        File = $true
+    }
+    
+    if ($Recursive) {
+        $searchParams.Recurse = $true
+        Write-Host "Mode: Recursive" -ForegroundColor Yellow
+    }
+    
+    $files = Get-ChildItem @searchParams
+    Write-Host "Found $($files.Count) files to process\n" -ForegroundColor White
+    
+    foreach ($file in $files) {
+        Process-ArtifactFile -filepath $file.FullName
+    }
 }
-Write-Host ("=" * 60) + "\n" -ForegroundColor Cyan
+else {
+    # Single file processing
+    Process-ArtifactFile -filepath $FilePath
+}
+
+Write-Host "\n" + ("=" * 70) -ForegroundColor Cyan
+Write-Host "Processing completed!" -ForegroundColor Green
+Write-Host ("=" * 70) + "\n" -ForegroundColor Cyan
