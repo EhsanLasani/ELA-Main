@@ -1,127 +1,103 @@
-## Metadata
+ 
+# ARCHITECTURE DESIGN DOCUMENT (ADD)
+
 ---
+```yaml
 Artifact_ID: DOC-00-Architecture_Design_
 Artifact_Name: ARCHITECTURE DESIGN DOCUMENT (ADD)
 Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: ARCHITECTURE DESIGN DOCUMENT (ADD)
-File_Path: 00_Policy/Templates/02_Design/Architecture_Design_Document_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/02_Design/Architecture_Design_Document_Template.md
-Last_Updated: 2025-10-25
+Version: v1.0
+Status: Draft
 Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Template for documenting architecture design in ELA projects
+File_Path: 00_Policy/Templates/02_Design/Architecture_Design_Document_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/02_Design/Architecture_Design_Document_Template.md
 Phase: Policy
+Dependencies: None
 Process_Group: Policy
 Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
+Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**           | **Value**                                                                 |
+|---------------------|---------------------------------------------------------------------------|
+| Artifact ID         | DOC-00-Architecture_Design_                                               |
+| Artifact Name       | ARCHITECTURE DESIGN DOCUMENT (ADD)                                        |
+| Artifact Type       | DOC                                                                       |
+| Version             | v1.0                                                                      |
+| Status              | Draft                                                                     |
+| Owner               | Enterprise Architecture Office (EAO)                                      |
+| Last Updated        | 2025-10-25                                                                |
+| Description         | Template for documenting architecture design in ELA projects              |
+| File Path           | 00_Policy/Templates/02_Design/Architecture_Design_Document_Template.md    |
+| GitHub URL          | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/02_Design/Architecture_Design_Document_Template.md |
+| Phase               | Policy                                                                    |
+| Dependencies        | None                                                                      |
+| Process Group       | Policy                                                                    |
+| Process Step        | N/A                                                                       |
+| Template Source     | ELA-Template                                                              |
+| Validation Status   | Pending                                                                   |
+| Comments            | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# ARCHITECTURE DESIGN DOCUMENT (ADD)
-## Software Architecture Specification
 
--------|---------|----------|
-| Functional Requirements (SRS) | 1.0.0 | 00_Policy/Templates/01_NFR_and_Architecture/Functional_Requirements_SRS_Template.md |
-| NFR Specification | 2.0.0 | 00_Policy/Templates/01_NFR_and_Architecture/NFR_Specification_Template.md |
-| Architecture Decision Records | Various | [ADR Repository] |
-| ELA Development Policy | 2.0 | 00_Policy/ELA_Development_Policy.md |
-| Systems Integration Blueprint | 2.0 | 00_Policy/Systems_Integration_Blueprint.md |
+## 1. Introduction
+Describe the purpose, scope, and intended audience of this document. Reference related documents (SRS, NFR, ADRs, policies, blueprints) as needed.
 
-### 1.4 Definitions and Acronyms
+### Definitions and Acronyms
+| Term         | Definition                                 |
+|--------------|--------------------------------------------|
+| ADD          | Architecture Design Document               |
+| ADR          | Architecture Decision Record               |
+| API          | Application Programming Interface          |
+| CQRS         | Command Query Responsibility Segregation   |
+| DDD          | Domain-Driven Design                       |
+| DTO          | Data Transfer Object                       |
+| IaC          | Infrastructure as Code                     |
+| Microservice | Independent, deployable service component  |
+| Monolith     | Single-tiered application architecture     |
+| SOA          | Service-Oriented Architecture              |
 
-| Term | Definition |
-|------|------------|
-| ADD | Architecture Design Document |
-| ADR | Architecture Decision Record |
-| API | Application Programming Interface |
-| CQRS | Command Query Responsibility Segregation |
-| DDD | Domain-Driven Design |
-| DTO | Data Transfer Object |
-| IaC | Infrastructure as Code |
-| Microservice | Independent, deployable service component |
-| Monolith | Single-tiered application architecture |
-| SOA | Service-Oriented Architecture |
 
-## 3. SYSTEM CONTEXT AND SCOPE
+## 2. System Context and Scope
+### 2.1 System Context Diagram
+Provide a high-level diagram showing the system and its interactions with external actors, systems, and data stores.
 
-### 3.1 System Context Diagram
+### 2.2 External Interfaces
+| Interface        | Type   | Protocol        | Purpose         |
+|------------------|--------|----------------|-----------------|
+| [External API]   | REST   | HTTPS/JSON     | [Purpose]       |
+| [Database]       | SQL    | TCP/PostgreSQL | [Purpose]       |
+| [Message Queue]  | Async  | AMQP           | [Purpose]       |
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     External Context                         │
-│                                                              │
-│  ┌──────────┐         ┌──────────────┐      ┌───────────┐  │
-│  │   Users  │────────>│   [System]   │<─────│  Admin    │  │
-│  └──────────┘         └──────────────┘      └───────────┘  │
-│                              │                               │
-│                              │                               │
-│              ┌───────────────┼───────────────┐              │
-│              │               │               │              │
-│              ▼               ▼               ▼              │
-│      ┌──────────────┐ ┌──────────┐  ┌──────────────┐       │
-│      │   Database   │ │   Cache  │  │  External    │       │
-│      │              │ │          │  │  APIs        │       │
-│      └──────────────┘ └──────────┘  └──────────────┘       │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### 3.2 External Interfaces
-
-| Interface | Type | Protocol | Purpose |
-|-----------|------|----------|---------|
-| [External API] | REST | HTTPS/JSON | [Purpose] |
-| [Database] | SQL | TCP/PostgreSQL | [Purpose] |
-| [Message Queue] | Async | AMQP | [Purpose] |
-
-### 3.3 System Boundaries
-
+### 2.3 System Boundaries
 **In Scope:**
 - [List components and features within system boundary]
 
 **Out of Scope:**
 - [List components handled by external systems]
 
-## 5. ARCHITECTURAL DECISIONS
 
-### 5.1 Key Architectural Decisions
+## 3. Architectural Decisions
+Document key architectural decisions, their context, rationale, and consequences. Reference ADRs as needed.
 
-#### ADR-001: [Decision Title]
+### Example Decision Record
+| Decision ID | Title              | Status    | Context/Reasoning         | Consequences/Notes         |
+|-------------|--------------------|-----------|--------------------------|----------------------------|
+| ADR-001     | Use Microservices  | Accepted  | Scalability, flexibility  | Increased complexity       |
 
-**Status:** [Proposed / Accepted / Deprecated / Superseded]
 
-**Context:**
-[Describe the circumstances and forces at play]
-
-**Decision:**
-[Describe the architecture decision]
-
-**Consequences:**
-- **Positive:**
-  - [Benefit 1]
-  - [Benefit 2]
-- **Negative:**
-  - [Drawback 1]
-  - [Drawback 2]
-
-**Alternatives Considered:**
-- [Alternative 1]: [Why rejected]
-- [Alternative 2]: [Why rejected]
-
-### 5.2 Design Patterns Used
-
-| Pattern | Application | Rationale |
-|---------|-------------|--------|
-| Repository | Data Access | Decouples domain from data layer |
-| Factory | Object Creation | Centralizes complex object creation |
-| Strategy | Business Logic | Enables algorithm selection at runtime |
-| Observer | Event Handling | Decouples event producers from consumers |
-| [Add more] | [Context] | [Reason] |
+### 3.1 Design Patterns Used
+| Pattern    | Application         | Rationale                                 |
+|------------|--------------------|--------------------------------------------|
+| Repository | Data Access        | Decouples domain from data layer           |
+| Factory    | Object Creation    | Centralizes complex object creation        |
+| Strategy   | Business Logic     | Enables algorithm selection at runtime     |
+| Observer   | Event Handling     | Decouples event producers from consumers   |
+| [Add more] | [Context]          | [Reason]                                  |
 
 --|---------------|------------|
 | Web Application | User Interface | [React/Angular/Vue] |
@@ -132,42 +108,18 @@ Version: v1.0
 | Cache Layer | Performance optimization | [Redis/Memcached] |
 | Message Queue | Async communication | [RabbitMQ/Kafka] |
 
-### 6.2 Component Descriptions
 
-#### 6.2.1 [Component Name]
+## 4. Component Architecture
+Describe each major component, its responsibilities, interfaces, dependencies, and scaling strategy.
 
-**Purpose:** [Description]
+### Example Component
+| Component Name | Purpose         | Responsibilities         | Interfaces (In/Out) | Dependencies         | Scaling Strategy |
+|---------------|----------------|-------------------------|---------------------|---------------------|-----------------|
+| API Gateway   | Entry point    | Routing, auth, logging  | HTTP (in/out)       | Auth, services      | Horizontal      |
 
-**Responsibilities:**
-- [Responsibility 1]
-- [Responsibility 2]
 
-**Interfaces:**
-- **Input:** [What it receives]
-- **Output:** [What it produces]
-
-**Dependencies:**
-- [Component/Service it depends on]
-
-**Scaling Strategy:**
-- [Horizontal/Vertical/Both]
-
-### 6.3 Communication Patterns
-
-**Synchronous:**
-- REST APIs for request/response
-- gRPC for service-to-service (optional)
-
-**Asynchronous:**
-- Message queues for background jobs
-- Event streams for real-time updates
-
-**Communication Flow:**
-```
-Client ─> API Gateway ─> Auth ─> Service ─> Database
-                   │
-                   └─> Queue ─> Worker ─> Storage
-```
+### 4.1 Communication Patterns
+Describe how components interact (synchronous, asynchronous, event-driven, etc.). Include diagrams or flowcharts as needed.
 
 --|---------|--------|
 | Transactional | PostgreSQL | ACID compliance required |
@@ -176,15 +128,9 @@ Client ─> API Gateway ─> Auth ─> Service ─> Database
 | Files | Object Storage (S3) | Scalable, cost-effective |
 | Logs | Elasticsearch | Full-text search capability |
 
-### 7.3 Data Flow
 
-```
-Client ─> API ─> Service ─> Cache (Check)
-                        │
-                        └─> Database (if cache miss)
-                        │
-                        └─> Cache (Update)
-```
+## 5. Data Architecture
+Describe data flow, storage, management, and backup/retention strategies. Include diagrams as needed.
 
 ### 7.4 Data Management
 
@@ -199,17 +145,9 @@ Client ─> API ─> Service ─> Cache (Check)
 | Data | Encryption at rest and in transit |
 | Infrastructure | IAM, Security groups, Audit logs |
 
-### 8.2 Authentication & Authorization
 
-**Authentication Flow:**
-```
-User ─> Login ─> Auth Service ─> JWT Token ─> API Access
-```
-
-**Authorization Model:**
-- Role-Based Access Control (RBAC)
-- Permission matrix by role
-- Token-based session management
+## 6. Security Architecture
+Describe authentication, authorization, encryption, key management, audit logging, and security monitoring practices.
 
 ### 8.3 Data Security
 
@@ -231,13 +169,9 @@ User ─> Login ─> Auth Service ─> JWT Token ─> API Access
 | Staging | Pre-production | Identical to production |
 | Production | Live system | Full resources, monitoring |
 
-### 9.3 Infrastructure as Code
 
-**Tools:**
-- **Provisioning**: Terraform / CloudFormation
-- **Configuration**: Ansible / Chef
-- **Containers**: Docker
-- **Orchestration**: Kubernetes / ECS
+## 7. Infrastructure & DevOps
+Describe infrastructure as code, CI/CD pipeline, environments, and monitoring/logging tools.
 
 ### 9.4 CI/CD Pipeline
 
@@ -256,82 +190,27 @@ Code Commit ─> Build ─> Test ─> Security Scan ─> Deploy to Staging ─> 
 8. Deploy to production (blue-green)
 9. Health check and rollback if needed
 
-## 11. TECHNOLOGY STACK
 
-### 11.1 Frontend
+## 8. Technology Stack
+List all major technologies used for frontend, backend, database, infrastructure, and DevOps/monitoring.
 
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| [React/Angular/Vue] | UI Framework | [Latest] |
-| [TypeScript] | Type safety | [Latest] |
-| [Tailwind/MUI] | UI Components | [Latest] |
+| Layer         | Technology Examples           | Purpose/Notes                |
+|---------------|------------------------------|------------------------------|
+| Frontend      | React, Angular, Vue, TS      | UI, type safety, components  |
+| Backend       | Node.js, Java, Python        | Runtime, frameworks, APIs    |
+| Database      | PostgreSQL, Redis, MongoDB   | Relational, cache, document  |
+| Infrastructure| Docker, K8s, Terraform, AWS  | Container, IaC, cloud        |
+| DevOps/Mon    | Jenkins, Prometheus, Grafana | CI/CD, metrics, logging      |
 
-### 11.2 Backend
 
-| Technology | Purpose | Version |
-|------------|---------|---------|  
-| [Node.js/Java/Python] | Runtime/Language | [LTS] |
-| [Express/Spring/Django] | Framework | [Latest] |
-| [GraphQL/REST] | API Layer | [Latest] |
+## 9. Risks, Technical Debt, and Assumptions
+Document key architecture risks, mitigation strategies, known technical debt, and major assumptions/dependencies.
 
-### 11.3 Database
-
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| PostgreSQL/MySQL | Relational DB | [Latest] |
-| Redis | Cache/Session | [Latest] |
-| MongoDB | Document Store | [Latest] |
-
-### 11.4 Infrastructure
-
-| Technology | Purpose | Version |
-|------------|---------|---------|  
-| Docker | Containerization | [Latest] |
-| Kubernetes | Orchestration | [Latest] |
-| Terraform | IaC | [Latest] |
-| [AWS/Azure/GCP] | Cloud Provider | N/A |
-
-### 11.5 DevOps & Monitoring
-
-| Technology | Purpose | Version |
-|------------|---------|---------|  
-| Jenkins/GitLab CI | CI/CD | [Latest] |
-| Prometheus | Metrics | [Latest] |
-| Grafana | Visualization | [Latest] |
-| ELK Stack | Logging | [Latest] |
-
-## 13. ARCHITECTURE RISKS AND MITIGATION
-
-### 13.1 Risk Register
-
-| Risk ID | Description | Impact | Probability | Mitigation Strategy |
-|---------|-------------|--------|-------------|--------------------|
-| ARCH-001 | Single point of failure in database | High | Medium | Implement read replicas and failover |
-| ARCH-002 | Scalability bottleneck in monolith | High | High | Migrate to microservices architecture |
-| ARCH-003 | External API dependency failure | Medium | Medium | Implement circuit breaker and fallback |
-| ARCH-004 | Data consistency across services | Medium | High | Implement event sourcing or 2PC |
-| ARCH-005 | Security vulnerability in dependencies | High | Medium | Automated vulnerability scanning |
-
-### 13.2 Technical Debt
-
-**Known Debt:**
-- [Item 1]: [Plan to address]
-- [Item 2]: [Plan to address]
-
-**Debt Management:**
-- Regular technical debt review sessions
-- Allocate 20% of sprint capacity for debt reduction
-- Document all architectural compromises
-
-### 13.3 Assumptions and Dependencies
-
-**Assumptions:**
-- [Assumption 1]
-- [Assumption 2]
-
-**Dependencies:**
-- [External system/service 1]
-- [External system/service 2]
+### Example Risk Register
+| Risk ID   | Description                        | Impact | Probability | Mitigation                  |
+|-----------|------------------------------------|--------|-------------|-----------------------------|
+| ARCH-001  | Single point of failure in DB      | High   | Medium      | Add replicas, failover      |
+| ARCH-002  | Scalability bottleneck in monolith | High   | High        | Migrate to microservices    |
 
 ---|
 | API Gateway | Entry point for all client requests |
@@ -353,12 +232,13 @@ Refer to ADR repository: [Link to ADR repository]
 - Deployment Runbooks
 - Incident Response Procedures
 
-### Appendix D: Revision History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|----------|
-| 1.0.0 | [Date] | [Author] | Initial version |
-| 1.1.0 | [Date] | [Author] | Added [section/change] |
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
 ### Appendix E: Review and Approval
 
