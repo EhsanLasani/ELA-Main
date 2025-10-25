@@ -1,29 +1,68 @@
-## 0. Metadata
-- **Artifact ID (catalog.csv):** TMP-DEV-PIPELINE-TEM
-- **Version:** v1.0
-- **Owner:** 
-- **Linked Ticket / PR:** 
 
-# 03_Development/Templates/Pipeline_Template.yml
-# Purpose: Baseline CI/CD pipeline for ELA projects (GitHub Actions).
-# Customize matrix, language-specific steps, and deployment logic per service.
+# PIPELINE TEMPLATE (CI/CD)
 #
-# Metadata
-# - Artifact ID (catalog.csv): TMP-CI
-# - Version: v1.0
-# - Owner:
-# - Linked Ticket / PR:
+# ---
+# ELA Metadata Block
+"""
+Artifact_ID: TMP-DEV-PIPELINE-TEM
+Artifact_Name: PIPELINE TEMPLATE (CI/CD)
+Artifact_Type: TMP
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Baseline CI/CD pipeline template for ELA projects (GitHub Actions)
+File_Path: 00_Policy/Templates/03_Development/Pipeline_Template.yml
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Pipeline_Template.yml
+Phase: Development
+Dependencies: None
+Process_Group: Development
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+"""
+#
+# | Field           | Value                                                                |
+# |-----------------|---------------------------------------------------------------------|
+# | Artifact ID     | TMP-DEV-PIPELINE-TEM                                                |
+# | Artifact Name   | PIPELINE TEMPLATE (CI/CD)                                           |
+# | Artifact Type   | TMP                                                                 |
+# | Version         | v1.0                                                                |
+# | Status          | Draft                                                               |
+# | Owner           | Enterprise Architecture Office (EAO)                                 |
+# | Last Updated    | 2025-10-25                                                          |
+# | Description     | Baseline CI/CD pipeline template for ELA projects (GitHub Actions)   |
+# | File Path       | 00_Policy/Templates/03_Development/Pipeline_Template.yml             |
+# | GitHub URL      | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Pipeline_Template.yml |
+# | Phase           | Development                                                         |
+# | Dependencies    | None                                                                |
+# | Process Group   | Development                                                         |
+# | Process Step    | N/A                                                                 |
+# | Template Source | ELA-Template                                                        |
+# | Validation Stat | Pending                                                             |
+# | Comments        | Auto-generated on 2025-10-25                                        |
+# ---
+#
+# How to Use:
+# - Use this as a baseline for all ELA project CI/CD pipelines.
+# - Customize the matrix, language-specific steps, and deployment logic per service.
+# - Reference this template in project documentation and link to filled instances.
+
+
+
+
 
 name: ci-cd
 
-on:
+        uses: actions/cache@v4
   push:
     branches: [ main, release/*, hotfix/* ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
 
-env:
+        with:
   ORG_NAME: your-org
   APP_NAME: your-app
   CACHE_VERSION: v1
@@ -38,10 +77,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-jobs:
-  # ----------------------------
-  # 1) Static checks & unit tests
-  # ----------------------------
+          path: |
   build_test:
     name: Build & Test
     runs-on: ubuntu-latest
@@ -80,6 +116,22 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
+            ~/.npm
+            ~/.cache/pip
+          key: ${{ matrix.cache_key }}
+
+      - name: Run tests
+        run: |
+          ${{ matrix.test }}
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-results/
+
+  # Add additional jobs for build, deploy, security scan, etc. as needed
             ~/.npm
             ~/.cache/pip
             .venv

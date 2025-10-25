@@ -1,29 +1,127 @@
-## Metadata
+
+# OWASP COMPLIANCE CHECKLIST
+
 ---
+```yaml
 Artifact_ID: VAL-00-OWASP_Compliance_Che
 Artifact_Name: OWASP COMPLIANCE CHECKLIST
 Artifact_Type: VAL
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: OWASP COMPLIANCE CHECKLIST
-File_Path: 00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
 Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Checklist template for OWASP compliance in ELA projects
+File_Path: 00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md
+Phase: Testing
+Dependencies: None
+Process_Group: Testing
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | VAL-00-OWASP_Compliance_Che                                               |
+| Artifact Name     | OWASP COMPLIANCE CHECKLIST                                                |
+| Artifact Type     | VAL                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Checklist template for OWASP compliance in ELA projects                   |
+| File Path         | 00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md              |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/OWASP_Compliance_Checklist.md |
+| Phase             | Testing                                                                   |
+| Dependencies      | None                                                                      |
+| Process Group     | Testing                                                                   |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# OWASP COMPLIANCE CHECKLIST
+
+## How to Use This Template
+- Use this checklist to assess and document OWASP compliance for your ELA project.
+- Complete all sections and update status/notes for each control.
+- Review and update with security, QA, and development teams.
+
+---
+
+## Document Control
+| Field         | Value              |
+|---------------|-------------------|
+| Project       | [Enter Project Name] |
+| Version       | 1.0.0             |
+| Assessed By   | [Name]            |
+| Date          | [YYYY-MM-DD]      |
+
+---
+
+## 1. Cryptographic Failures (A02:2021)
+- [ ] TLS 1.3 enforced for data in transit
+- [ ] AES-256 for data at rest
+- [ ] No sensitive data in URLs
+- [ ] Proper key management (KMS/HSM)
+- [ ] Key rotation automated
+- [ ] No deprecated crypto algorithms
+- [ ] Passwords hashed with bcrypt/Argon2
+- [ ] Salted hashes for passwords
+
+**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
+**Notes:** []
+
+---
+
+## 2. Insecure Design (A04:2021)
+- [ ] Threat modeling completed
+- [ ] Secure design patterns used
+- [ ] Security requirements defined
+- [ ] Secure SDLC followed
+- [ ] Design peer review conducted
+- [ ] Attack surface minimized
+- [ ] Separation of concerns
+
+**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
+**Notes:** []
+
+---
+
+## 3. Vulnerable and Outdated Components (A06:2021)
+- [ ] Inventory of components maintained
+- [ ] Dependencies scanned regularly
+- [ ] No known vulnerable libraries
+- [ ] Components from official sources
+- [ ] Unmaintained components removed
+- [ ] Automated vulnerability alerts
+- [ ] Patch/update process defined
+
+**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
+**Notes:** []
+
+---
+
+## 4. Software and Data Integrity Failures (A08:2021)
+- [ ] Code signing implemented
+- [ ] CI/CD pipeline secured
+- [ ] Dependency integrity checks
+- [ ] Subresource Integrity (SRI)
+- [ ] Digital signatures verified
+- [ ] Untrusted data separated
+- [ ] Deserialization secured
+
+**Status:** [ ] Compliant [ ] Partial [ ] Non-Compliant  
+**Notes:** []
+
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
 ## Document Control
 | Field | Value |

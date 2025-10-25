@@ -1,29 +1,162 @@
-## Metadata
+
+# ENVIRONMENT CONFIGURATION TEMPLATE
+
 ---
+```yaml
 Artifact_ID: TMP-00-Environment_Configur
-Artifact_Name: Untitled Document
+Artifact_Name: ENVIRONMENT CONFIGURATION TEMPLATE
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Untitled Document
-File_Path: 00_Policy/Templates/03_Development/Environment_Configuration_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Environment_Configuration_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Template for standardizing environment configuration in ELA projects
+File_Path: 00_Policy/Templates/03_Development/Environment_Configuration_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Environment_Configuration_Template.md
+Phase: Development
+Dependencies: None
+Process_Group: Development
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | TMP-00-Environment_Configur                                               |
+| Artifact Name     | ENVIRONMENT CONFIGURATION TEMPLATE                                        |
+| Artifact Type     | TMP                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Template for standardizing environment configuration in ELA projects      |
+| File Path         | 00_Policy/Templates/03_Development/Environment_Configuration_Template.md   |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Environment_Configuration_Template.md |
+| Phase             | Development                                                               |
+| Dependencies      | None                                                                      |
+| Process Group     | Development                                                               |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-Environment_Configuration_Template.md# Environment Configuration Template
+
+## How to Use This Template
+- Use this template to define, document, and standardize environment configuration for all stages of your ELA project.
+- Complete all sections for each environment (Dev, QA, UAT, Staging, Prod, DR).
+- Review and update with DevOps, Security, and Platform teams before go-live.
+
+---
+
+## Document Control
+| Field            | Value                        |
+|------------------|-----------------------------|
+| Document ID      | ELA-ENV-CONFIG-001          |
+| Version          | 1.0.0                       |
+| Created Date     | 2025-10-25                  |
+| Last Updated     | 2025-10-25                  |
+| Owner            | DevOps Team                 |
+| Reviewers        | Security Team, Platform Team|
+| Approval Status  | [Draft/Review/Approved]     |
+
+---
+
+## 1. Purpose and Scope
+Define the standard configuration requirements and procedures for setting up and maintaining application environments across the development lifecycle.
+
+### 1.1 Purpose
+- Ensure consistency, security, and compliance across all environments.
+
+### 1.2 Scope
+- Development, QA, UAT, Staging, Production, and Disaster Recovery environments.
+
+### 1.3 Audience
+- DevOps, Platform, Development, Security, and Operations Teams.
+
+---
+
+## 2. Environment Classification
+
+### 2.1 Environment Types
+| Environment | Purpose                  | Data Classification     | Access Level   |
+|-------------|--------------------------|------------------------|---------------|
+| Development | Feature development      | Non-sensitive          | Developer     |
+| QA/Test     | Quality assurance        | Synthetic/Masked       | QA Team       |
+| UAT         | User acceptance testing  | Masked production-like | Business Users|
+| Staging     | Pre-prod validation      | Production-like masked | Limited       |
+| Production  | Live application         | Production             | Restricted    |
+| DR          | Disaster recovery        | Production backup      | Emergency     |
+
+### 2.2 Environment Characteristics
+- [ ] Resource sizing appropriate for purpose
+- [ ] Data handling compliance (GDPR, CCPA, etc.)
+- [ ] Security controls aligned with data classification
+- [ ] Monitoring and logging configured
+- [ ] Backup and recovery procedures defined
+
+---
+
+## 3. Infrastructure Configuration
+
+### 3.1 Compute Resources
+| Component | Development | QA/UAT | Staging | Production |
+|-----------|-------------|--------|---------|------------|
+| CPU       |             |        |         |            |
+| Memory    |             |        |         |            |
+| Storage   |             |        |         |            |
+| Network   |             |        |         |            |
+
+### 3.2 Network & Security
+- [ ] Network segmentation (VPC, subnets)
+- [ ] Firewall rules and security groups
+- [ ] VPN/Private connectivity as required
+- [ ] Secrets management (vaults, KMS)
+
+### 3.3 Platform Services
+- [ ] Database configuration (type, version, HA, backup)
+- [ ] Message queues, caches, object storage
+- [ ] Service mesh, API gateways
+
+---
+
+## 4. Configuration Management
+- [ ] All configuration managed as code (IaC)
+- [ ] Parameterize environment-specific values
+- [ ] Store secrets securely (never in code)
+- [ ] Version control for all configuration files
+
+---
+
+## 5. Monitoring, Logging, and Alerting
+- [ ] Monitoring tools configured (links)
+- [ ] Log aggregation and retention policies
+- [ ] Alerting thresholds and escalation paths
+
+---
+
+## 6. Backup and Recovery
+- [ ] Backup schedules and retention defined
+- [ ] Recovery procedures documented and tested
+- [ ] DR drills scheduled and results recorded
+
+---
+
+## 7. Environment Validation Checklist
+- [ ] All required resources provisioned
+- [ ] Security and compliance checks passed
+- [ ] Connectivity and access validated
+- [ ] Monitoring and alerting tested
+- [ ] Documentation updated
+
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
 ## Document Control
 | Field | Value |

@@ -1,29 +1,171 @@
-## Metadata
+
+# DEFINITION OF DONE (DoD) CHECKLIST
+
 ---
+```yaml
 Artifact_ID: VAL-00-Definition_of_Done_C
 Artifact_Name: DEFINITION OF DONE (DoD) CHECKLIST
 Artifact_Type: VAL
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: DEFINITION OF DONE (DoD) CHECKLIST
-File_Path: 00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
 Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Checklist template for Definition of Done (DoD) in ELA projects
+File_Path: 00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md
+Phase: Development
+Dependencies: None
+Process_Group: Development
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | VAL-00-Definition_of_Done_C                                               |
+| Artifact Name     | DEFINITION OF DONE (DoD) CHECKLIST                                        |
+| Artifact Type     | VAL                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Checklist template for Definition of Done (DoD) in ELA projects           |
+| File Path         | 00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md         |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Definition_of_Done_Checklist.md |
+| Phase             | Development                                                               |
+| Dependencies      | None                                                                      |
+| Process Group     | Development                                                               |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# DEFINITION OF DONE (DoD) CHECKLIST
+
+## How to Use This Template
+- Use this checklist to define and verify the Definition of Done (DoD) for each phase of your ELA project.
+- Customize for your project, sprint, or release as needed.
+- All items must be checked and signed off before phase exit.
+
+---
+
+## Document Control
+
+| Field               | Value                        |
+|---------------------|-----------------------------|
+| Project Name        | [Enter Project Name]         |
+| Project ID          | [ELA-XXXX]                   |
+| Document Version    | 1.0.0                        |
+| Phase               | [Definition/Design/Dev/etc.] |
+| Sprint/Iteration    | [If applicable]              |
+| Reviewed By         | [Name]                       |
+| Date                | [YYYY-MM-DD]                 |
+
+---
+
+## 1. DEFINITION PHASE - DEFINITION OF DONE
+
+### Requirements
+- [ ] Business requirements documented and approved by stakeholders
+- [ ] Functional requirements (SRS) complete and reviewed
+- [ ] Non-functional requirements (NFR) documented using template
+- [ ] User stories created with acceptance criteria
+- [ ] Requirements traceability matrix created
+- [ ] Success metrics and KPIs defined
+
+### Architecture & Design
+- [ ] High-level architecture documented
+- [ ] Technology stack approved
+- [ ] Integration points identified
+- [ ] Data model (conceptual) defined
+- [ ] Security requirements identified
+- [ ] ADRs (Architecture Decision Records) initiated
+
+### Security & Compliance
+- [ ] Security requirements documented
+- [ ] Compliance requirements identified (GDPR, HIPAA, etc.)
+- [ ] Threat model initiated
+- [ ] Data classification completed
+
+### Approval & Sign-off
+- [ ] Requirements review conducted with stakeholders
+- [ ] Architecture review approved by Enterprise Architect
+- [ ] Phase sign-off obtained from sponsor/CTO
+- [ ] Risk register created and reviewed
+
+**Phase Exit Criteria:** All checklist items completed and signed off.
+
+---
+
+## 2. DEVELOPMENT/CODING PHASE - DEFINITION OF DONE
+
+### Code Quality
+- [ ] Code written following coding standards
+- [ ] Code reviewed by at least one peer
+- [ ] Unit tests written with ≥80% code coverage
+- [ ] Code complexity within acceptable limits (cyclomatic < 15)
+- [ ] No critical/high severity code quality issues (SonarQube or equivalent)
+- [ ] Linting rules passed
+
+### Documentation
+- [ ] Technical documentation updated (API, architecture, etc.)
+- [ ] Inline code comments for complex logic
+- [ ] README and usage instructions updated
+
+### Testing
+- [ ] All tests pass in CI pipeline
+- [ ] Integration tests for major flows
+- [ ] Regression tests for bug fixes
+
+### Security & Compliance
+- [ ] Static analysis for security vulnerabilities
+- [ ] Sensitive data handling reviewed
+- [ ] Compliance checks (as required)
+
+### Deployment Readiness
+- [ ] Deployment scripts/configuration updated
+- [ ] Rollback plan documented
+- [ ] Monitoring/alerting configured
+
+### Approval & Sign-off
+- [ ] Code review approved by lead
+- [ ] QA sign-off
+- [ ] Product Owner/Stakeholder sign-off
+
+**Phase Exit Criteria:** All checklist items completed and signed off.
+
+---
+
+## 3. TESTING/DEPLOYMENT PHASE - DEFINITION OF DONE
+
+### Testing
+- [ ] All test cases executed and passed
+- [ ] User acceptance testing (UAT) completed
+- [ ] Performance/load testing completed
+- [ ] Security testing completed
+
+### Deployment
+- [ ] Deployment to production environment successful
+- [ ] Rollback tested
+- [ ] Monitoring/alerting validated
+
+### Documentation
+- [ ] Release notes published
+- [ ] Support documentation updated
+
+### Approval & Sign-off
+- [ ] Final sign-off from all stakeholders
+
+**Phase Exit Criteria:** All checklist items completed and signed off.
+
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
 ## Document Control
 

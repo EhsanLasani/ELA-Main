@@ -1,29 +1,163 @@
-## Metadata
+
+# TECHNICAL DOCUMENTATION TEMPLATE
+
 ---
+```yaml
 Artifact_ID: TMP-00-Technical_Documentat
-Artifact_Name: Technical Documentation Template
+Artifact_Name: TECHNICAL DOCUMENTATION TEMPLATE
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Technical Documentation Template
-File_Path: 00_Policy/Templates/03_Development/Technical_Documentation_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Technical_Documentation_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Template for technical documentation in ELA projects
+File_Path: 00_Policy/Templates/03_Development/Technical_Documentation_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Technical_Documentation_Template.md
+Phase: Development
+Dependencies: None
+Process_Group: Development
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | TMP-00-Technical_Documentat                                               |
+| Artifact Name     | TECHNICAL DOCUMENTATION TEMPLATE                                          |
+| Artifact Type     | TMP                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Template for technical documentation in ELA projects                      |
+| File Path         | 00_Policy/Templates/03_Development/Technical_Documentation_Template.md     |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/03_Development/Technical_Documentation_Template.md |
+| Phase             | Development                                                               |
+| Dependencies      | None                                                                      |
+| Process Group     | Development                                                               |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# Technical Documentation Template
+
+## How to Use This Template
+- Use this template to create comprehensive technical documentation for your ELA project.
+- Complete all sections with actionable, clear, and detailed information.
+- Update and review with engineering, architecture, and operations teams.
+
+---
+
+## Document Control
+| Field            | Value                        |
+|------------------|-----------------------------|
+| Document ID      | ELA-DOC-TECH-001            |
+| Version          | 1.0.0                       |
+| Created Date     | 2025-10-25                  |
+| Last Updated     | 2025-10-25                  |
+| Owner            | [Team/Individual Name]       |
+| Reviewers        | [Reviewer Names]             |
+| Approval Status  | [Draft/Review/Approved]      |
+
+---
+
+## 1. Document Overview
+
+### 1.1 Purpose
+Describe the purpose of this technical document and what it aims to achieve.
+
+### 1.2 Scope
+- System/component boundaries
+- Included features and functionality
+- Excluded items
+- Target audience
+
+### 1.3 Audience
+- Software Engineers
+- System Architects
+- Operations Team
+- Quality Assurance
+- Technical Support
+- External Integrators
+
+### 1.4 Prerequisites
+- Required knowledge or skills
+- System access requirements
+- Tools and software needed
+- Related documentation
+
+---
+
+## 2. System Architecture
+
+### 2.1 High-Level Architecture
+Provide an architectural diagram and description.
+
+```mermaid
+flowchart TD
+  A[User] -->|Request| B[API Gateway]
+  B -->|Routes| C[Service Layer]
+  C -->|Data| D[Database]
+```
+
+### 2.2 Component Overview
+| Component | Purpose | Technology | Owner |
+|-----------|---------|------------|-------|
+| [Name]    | [Description] | [Tech stack] | [Team] |
+
+### 2.3 System Dependencies
+- External APIs and services
+- Internal services
+- Third-party libraries
+
+---
+
+## 3. Data Model & Interfaces
+
+### 3.1 Data Model
+Describe the main data entities, relationships, and storage mechanisms.
+
+### 3.2 API/Interface Specifications
+| Endpoint | Method | Description | Auth | Request | Response |
+|----------|--------|-------------|------|---------|----------|
+| /api/foo | GET    | Get foo     | Yes  | -       | Foo[]    |
+
+---
+
+## 4. Configuration & Deployment
+
+### 4.1 Configuration
+- Environment variables
+- Secrets management
+- Feature flags
+
+### 4.2 Deployment Process
+- CI/CD pipeline overview
+- Rollback and recovery steps
+
+---
+
+## 5. Security & Compliance
+- Authentication and authorization
+- Data protection and encryption
+- Compliance requirements (GDPR, HIPAA, etc.)
+
+---
+
+## 6. Monitoring & Support
+- Monitoring and alerting setup
+- Logging and tracing
+- Support and escalation procedures
+
+---
+
+## 7. Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
 ## Document Control
 | Field | Value |

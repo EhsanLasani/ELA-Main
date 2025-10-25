@@ -1,29 +1,117 @@
-## Metadata
+
+# SYSTEMS INTEGRATION PHASE TEMPLATES
+
 ---
+```yaml
 Artifact_ID: DOC-00-README
-Artifact_Name: Systems Integration Phase Templates
+Artifact_Name: SYSTEMS INTEGRATION PHASE TEMPLATES
 Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Systems Integration Phase Templates
-File_Path: 00_Policy/Templates/04_Systems_Integration/README.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/04_Systems_Integration/README.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
 Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Overview and usage of master templates for the Systems Integration Phase in ELA projects
+File_Path: 00_Policy/Templates/04_Systems_Integration/README.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/04_Systems_Integration/README.md
+Phase: Systems Integration
+Dependencies: None
+Process_Group: Systems Integration
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | DOC-00-README                                                             |
+| Artifact Name     | SYSTEMS INTEGRATION PHASE TEMPLATES                                       |
+| Artifact Type     | DOC                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Overview and usage of master templates for the Systems Integration Phase in ELA projects |
+| File Path         | 00_Policy/Templates/04_Systems_Integration/README.md                      |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/04_Systems_Integration/README.md |
+| Phase             | Systems Integration                                                       |
+| Dependencies      | None                                                                      |
+| Process Group     | Systems Integration                                                       |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# Systems Integration Phase Templates
+
+## Overview
+This folder contains master templates for the Systems Integration Phase (`04_Systems_Integration`) of the ELA-Main governance framework.
+
+## Purpose
+The Systems Integration Phase focuses on **connecting** system components through integration testing, API testing, and interface validation to ensure seamless interaction between different modules and services. These templates ensure consistency, quality, and compliance with ELA standards.
+
+---
+
+## Templates Included
+
+### Integration Testing Templates
+- `Integration_Test_Plan_Template.md`: Comprehensive planning for integration testing activities
+- `Integration_Test_Cases_Template.md`: Detailed test cases for component integration
+- `API_Testing_Template.md`: REST/SOAP API testing specifications
+- `Interface_Testing_Checklist.md`: Verification checklist for system interfaces
+
+### Systems Design Templates
+- `System_Integration_Design_Template.md`: Architecture for system integrations
+- `Interface_Specifications_Template.md`: Detailed interface contracts and protocols
+- `Data_Flow_Diagram_Template.md`: Visual representation of data movement
+- `Integration_Architecture_Document.md`: Overall integration architecture
+
+### Validation Templates
+- `End_to_End_Test_Scenarios.md`: Complete workflow testing scenarios
+- `Integration_Validation_Report.md`: Results documentation
+- `Performance_Integration_Testing.md`: Load and performance testing for integrated systems
+
+---
+
+## Usage
+These are **master templates**—the single source of truth for the Systems Integration Phase.
+
+### How to Use
+1. **DO NOT edit these master templates directly.**
+2. Copy the template to your phase folder (`04_Systems_Integration/`).
+3. Reference the Guidelines folder for specific instructions.
+4. Complete the template following validation checklists.
+5. Review using validation criteria before finalizing.
+
+**Template Principle:**
+```
+TEMPLATES (Master Copy - Single Source of Truth)
+    ↓
+00_Policy/Templates/04_Systems_Integration/
+    ↓
+    ├→ GUIDELINES (Phase-Specific Instructions)
+    │   04_Systems_Integration/Guidelines/
+    │   - How to use these templates
+    │   - Best practices for integration
+    │   - Standards and conventions
+    ↓
+    └→ VALIDATION (Quality Assurance)
+        04_Systems_Integration/Validation/
+        - Checklists for template completion
+        - Review criteria
+        - Approval workflows
+```
+
+---
+
+## Maintenance
+| Field           | Value                        |
+|-----------------|-----------------------------|
+| Template Version| 1.0.0                        |
+| Last Updated    | 2025-10-25                  |
+| Owner           | Enterprise Architecture Office|
+
+---
 
 ## Overview
 This folder contains master templates for the Systems Integration Phase (04_Systems_Integration) of the ELA-Main governance framework.

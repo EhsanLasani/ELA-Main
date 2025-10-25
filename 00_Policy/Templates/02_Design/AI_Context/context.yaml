@@ -1,15 +1,80 @@
-context_sources:
-  - "../ELA-Main/architecture/"
-  - "../ELA-Main/shared-libs/"
-  - "./01_Definition/"
-  - "./03_Coding/AI_Prompts/"
 
-settings:
-  max_tokens: 800
-  temperature: 0.2
-  reviewers:
-    - name: Lead Developer
-      email: lead.dev@example.com
-notes:
-  - Update sources when shared libraries change version.
-  - Store actual API credentials in Key Vault.
+# AI CONTEXT CONFIGURATION
+
+---
+```yaml
+Artifact_ID: CFG-00-AI_Context
+Artifact_Name: AI CONTEXT CONFIGURATION
+Artifact_Type: CFG
+Version: v1.0
+Status: Draft
+Owner: Lead Developer
+Last_Updated: 2025-10-25
+Description: Configuration for AI context sources and settings in ELA projects
+File_Path: 00_Policy/Templates/02_Design/AI_Context/context.yaml
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/02_Design/AI_Context/context.yaml
+Phase: Design
+Dependencies: None
+Process_Group: Design
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**           | **Value**                                                                 |
+|---------------------|---------------------------------------------------------------------------|
+| Artifact ID         | CFG-00-AI_Context                                                         |
+| Artifact Name       | AI CONTEXT CONFIGURATION                                                  |
+| Artifact Type       | CFG                                                                       |
+| Version             | v1.0                                                                      |
+| Status              | Draft                                                                     |
+| Owner               | Lead Developer                                                            |
+| Last Updated        | 2025-10-25                                                                |
+| Description         | Configuration for AI context sources and settings in ELA projects         |
+| File Path           | 00_Policy/Templates/02_Design/AI_Context/context.yaml                     |
+| GitHub URL          | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/02_Design/AI_Context/context.yaml |
+| Phase               | Design                                                                    |
+| Dependencies        | None                                                                      |
+| Process Group       | Design                                                                    |
+| Process Step        | N/A                                                                       |
+| Template Source     | ELA-Template                                                              |
+| Validation Status   | Pending                                                                   |
+| Comments            | Auto-generated on 2025-10-25                                              |
+
+---
+
+## How to Use This Configuration
+- Update `context_sources` when shared libraries or architecture sources change.
+- Store actual API credentials in a secure Key Vault, not in this file.
+- Review and update settings (max_tokens, temperature) as needed for your AI use case.
+
+---
+
+## Context Sources
+- ../ELA-Main/architecture/
+- ../ELA-Main/shared-libs/
+- ./01_Definition/
+- ./03_Coding/AI_Prompts/
+
+## Settings
+| Setting      | Value         |
+|--------------|--------------|
+| max_tokens   | 800          |
+| temperature  | 0.2          |
+
+## Reviewers
+| Name           | Email                |
+|----------------|---------------------|
+| Lead Developer | lead.dev@example.com|
+
+## Notes
+- Update sources when shared libraries change version.
+- Store actual API credentials in Key Vault.
+
+---
+
+## Revision History
+| Version | Date       | Author         | Changes         |
+|---------|------------|---------------|-----------------|
+| 1.0.0   | 2025-10-25 | Lead Developer| Initial template|

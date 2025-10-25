@@ -1,48 +1,83 @@
-## Metadata
----
-Artifact_ID: DOC-00-Performance_Benchmar
-Artifact_Name: Performance Benchmark Template
-Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Performance Benchmark Template
-File_Path: 00_Policy/Templates/05_Testing/Performance_Benchmark.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/Performance_Benchmark.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
-## 0. Metadata
-- **Artifact ID (catalog.csv):** TMP-VAL-PERFORMANCE
-- **Version:** v1.0
-- **Owner:** 
-- **Linked Ticket / PR:** 
 
-# Performance Benchmark Template
+# PERFORMANCE BENCHMARK TEMPLATE
+
+---
+```yaml
+Artifact_ID: DOC-00-Performance_Benchmar
+Artifact_Name: PERFORMANCE BENCHMARK TEMPLATE
+Artifact_Type: DOC
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Template for documenting performance benchmarks in ELA projects
+File_Path: 00_Policy/Templates/05_Testing/Performance_Benchmark.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/Performance_Benchmark.md
+Phase: Testing
+Dependencies: None
+Process_Group: Testing
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | DOC-00-Performance_Benchmar                                               |
+| Artifact Name     | PERFORMANCE BENCHMARK TEMPLATE                                            |
+| Artifact Type     | DOC                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Template for documenting performance benchmarks in ELA projects           |
+| File Path         | 00_Policy/Templates/05_Testing/Performance_Benchmark.md                   |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/Performance_Benchmark.md |
+| Phase             | Testing                                                                   |
+| Dependencies      | None                                                                      |
+| Process Group     | Testing                                                                   |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
+---
+
+## How to Use This Template
+- Use this template to document and track performance benchmarks for your ELA project.
+- Complete all sections for each scenario and test run.
+- Review and update with QA, development, and performance teams.
+
+---
 
 ## Scenario Summary
-- Description
-- Data set
-- Environment
+| Field       | Value           |
+|-------------|----------------|
+| Description | [Describe]      |
+| Data Set    | [Data set]      |
+| Environment | [Environment]   |
 
-## Results
-| Metric | Baseline | Current | Target | Status |
-|--------|----------|---------|--------|--------|
+---
 
-## Observations
+## 1. Results
+| Metric  | Baseline | Current | Target | Status |
+|---------|----------|---------|--------|--------|
 
-## Actions
-- Tuning tasks
-- Follow-up owners
+---
+
+## 2. Observations
+- [Add key findings, anomalies, or trends]
+
+---
+
+## 3. Actions
+- [List tuning tasks, follow-up owners, and next steps]
+
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
