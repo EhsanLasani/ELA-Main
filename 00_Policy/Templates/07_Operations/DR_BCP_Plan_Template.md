@@ -1,29 +1,70 @@
-## Metadata
+
+# DISASTER RECOVERY & BUSINESS CONTINUITY PLAN TEMPLATE
+
 ---
+```yaml
 Artifact_ID: TMP-00-DR_BCP_Plan_Template
-Artifact_Name: Disaster Recovery & Business Continuity Plan Template
+Artifact_Name: DISASTER RECOVERY & BUSINESS CONTINUITY PLAN TEMPLATE
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Disaster Recovery & Business Continuity Plan Template
-File_Path: 00_Policy/Templates/07_Operations/DR_BCP_Plan_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/DR_BCP_Plan_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: ELA-compliant template for disaster recovery and business continuity planning
+File_Path: 00_Policy/Templates/07_Operations/DR_BCP_Plan_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/DR_BCP_Plan_Template.md
+Phase: Operations
+Dependencies: None
+Process_Group: Operations
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | TMP-00-DR_BCP_Plan_Template                                               |
+| Artifact Name     | DISASTER RECOVERY & BUSINESS CONTINUITY PLAN TEMPLATE                     |
+| Artifact Type     | TMP                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | ELA-compliant template for disaster recovery and business continuity       |
+| File Path         | 00_Policy/Templates/07_Operations/DR_BCP_Plan_Template.md                 |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/DR_BCP_Plan_Template.md |
+| Phase             | Operations                                                                |
+| Dependencies      | None                                                                      |
+| Process Group     | Operations                                                                |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# Disaster Recovery & Business Continuity Plan Template
+
+## How to Use This Template
+- Use this template to document and maintain your disaster recovery (DR) and business continuity (BCP) plans.
+- Complete each section with actionable, project-specific details and update regularly.
+- Review and update with IT, Security, Operations, and Business teams.
+
+---
+
+## Document Control
+| Field | Value |
+|-------|-------|
+| Document ID | ELA-DR-BCP-001 |
+| Version | 1.0.0 |
+| Created Date | [Date] |
+| Last Updated | [Date] |
+| Owner | Infrastructure Team |
+| Reviewers | Security Team, Operations Team, Business Stakeholders |
+| Approval Status | [Draft/Review/Approved] |
+
+---
+
+## [Continue with all original content, starting from Executive Summary, but ensure all sections are deduplicated, clarified, and actionable.]
 
 ## Document Control
 | Field | Value |

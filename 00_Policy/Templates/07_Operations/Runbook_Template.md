@@ -1,29 +1,57 @@
-## Metadata
+
+# RUNBOOK TEMPLATE
+
 ---
+```yaml
 Artifact_ID: TMP-00-Runbook_Template
-Artifact_Name: Runbook Template
+Artifact_Name: RUNBOOK TEMPLATE
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Runbook Template
-File_Path: 00_Policy/Templates/07_Operations/Runbook_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Runbook_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: ELA-compliant template for documenting and executing operational runbooks
+File_Path: 00_Policy/Templates/07_Operations/Runbook_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Runbook_Template.md
+Phase: Operations
+Dependencies: None
+Process_Group: Operations
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | TMP-00-Runbook_Template                                                   |
+| Artifact Name     | RUNBOOK TEMPLATE                                                          |
+| Artifact Type     | TMP                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | ELA-compliant template for documenting and executing operational runbooks  |
+| File Path         | 00_Policy/Templates/07_Operations/Runbook_Template.md                     |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Runbook_Template.md |
+| Phase             | Operations                                                                |
+| Dependencies      | None                                                                      |
+| Process Group     | Operations                                                                |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# Runbook Template
+
+## How to Use This Template
+- Use this template to document, execute, and maintain operational runbooks for your ELA project or service.
+- Complete each section with actionable, project-specific details and update regularly.
+- Review and update with Operations, DevOps, and Service Owner teams.
+
+---
+
+## [Continue with all original content, starting from Document Control, but ensure all sections are deduplicated, clarified, and actionable.]
 
 ## Document Control
 | Field | Value |

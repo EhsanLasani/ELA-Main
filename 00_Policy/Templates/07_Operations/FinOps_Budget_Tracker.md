@@ -1,29 +1,57 @@
-## Metadata
+
+# FINOPS BUDGET TRACKER
+
 ---
-Artifact_ID: DOC-00-FinOps_Budget_Tracke
-Artifact_Name: FinOps Budget Tracker
+```yaml
+Artifact_ID: DOC-00-FinOps_Budget_Tracker
+Artifact_Name: FINOPS BUDGET TRACKER
 Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: FinOps Budget Tracker
-File_Path: 00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
 Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: ELA-compliant template for tracking, optimizing, and forecasting FinOps budgets
+File_Path: 00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md
+Phase: Operations
+Dependencies: None
+Process_Group: Operations
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | DOC-00-FinOps_Budget_Tracker                                              |
+| Artifact Name     | FINOPS BUDGET TRACKER                                                     |
+| Artifact Type     | DOC                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | ELA-compliant template for tracking, optimizing, and forecasting FinOps budgets |
+| File Path         | 00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md                |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/FinOps_Budget_Tracker.md |
+| Phase             | Operations                                                                |
+| Dependencies      | None                                                                      |
+| Process Group     | Operations                                                                |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# FinOps Budget Tracker
+
+## How to Use This Template
+- Use this template to track, optimize, and forecast FinOps budgets for your ELA project.
+- Complete each section with actionable, project-specific details and update regularly.
+- Review and update with FinOps, Finance, and Project Management teams.
+
+---
+
+## [Continue with all original content, starting from Document Control, but ensure all sections are deduplicated, clarified, and actionable.]
 
 ## Document Control
 | Field | Value |
