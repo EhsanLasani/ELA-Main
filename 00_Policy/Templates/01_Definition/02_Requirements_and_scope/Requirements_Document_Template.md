@@ -1,29 +1,48 @@
-## Metadata
+# REQUIREMENTS DOCUMENT (TEMPLATE)
+
 ---
-Artifact_ID: DOC-00-Requirements_Documen
-Artifact_Name: Untitled Document
+## Metadata
+```yaml
+Artifact_ID: DOC-00-Requirements_Document
+Artifact_Name: Requirements Document (Template)
 Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Untitled Document
-File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
 Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Requirements Document Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+Phase: Definition
+Dependencies: None
+Process_Group: Definition
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
 ---
-## Metadata
-## Metadata
-## 0. Metadata
+
+| Field | Value |
+|-------|-------|
+| **Artifact ID** | DOC-00-Requirements_Document |
+| **Artifact Name** | Requirements Document (Template) |
+| **Artifact Type** | DOC |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Requirements Document Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md |
+| **Phase** | Definition |
+| **Dependencies** | None |
+| **Process Group** | Definition |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
+
+---
 
 **Artifact ID (catalog.csv):** TMP-DEF-REQUIREMENTS  
 **Version:** v2.0.0  
@@ -32,7 +51,6 @@ Version: v1.0
 **Last Updated:** YYYY-MM-DD  
 **Status:** TEMPLATE
 
---|-------------|
 | **Project Name** | [Project Name] |
 | **Project Code** | [Code] |
 | **Document Version** | 1.0.0 |
@@ -80,8 +98,6 @@ This document defines the complete set of requirements for [Project Name], inclu
 [Explain the business case and expected benefits]
 
 **Project Scope:**  
-- **In Scope:** [List what is included]
-- **Out of Scope:** [List what is explicitly excluded]
 
 ### 1.3 Business Context
 
@@ -98,8 +114,184 @@ This document defines the complete set of requirements for [Project Name], inclu
 
 | **Objective ID** | **Objective Description** | **Success Criteria** | **Priority** |
 |------------------|---------------------------|----------------------|--------------|
-| OBJ-001 | [Objective] | [Measurable success criteria] | High/Medium/Low |
-| OBJ-002 | [Objective] | [Measurable success criteria] | High/Medium/Low |
+
+# REQUIREMENTS DOCUMENT (TEMPLATE)
+
+---
+```yaml
+Artifact_ID: DOC-00-Requirements_Document
+Artifact_Name: Requirements Document (Template)
+Artifact_Type: DOC
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Requirements Document Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+Phase: Definition
+Dependencies: None
+Process_Group: Definition
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+Artifact_ID: DOC-00-Requirements_Document
+Artifact_Name: Requirements Document (Template)
+Artifact_Type: DOC
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Requirements Document Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md
+Phase: Definition
+Dependencies: None
+Process_Group: Definition
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| Field | Value |
+|-------|-------|
+| **Artifact ID** | DOC-00-Requirements_Document |
+| **Artifact Name** | Requirements Document (Template) |
+| **Artifact Type** | DOC |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Requirements Document Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/Requirements_Document_Template.md |
+| **Phase** | Definition |
+| **Dependencies** | None |
+| **Process Group** | Definition |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
+
+---
+
+## Table of Contents
+1. Introduction & Context
+2. Project Overview
+3. Business Context
+4. Project Objectives
+5. Requirements (Functional, Non-Functional, Data, Security, Compliance)
+6. Related Documents
+7. Revision History
+
+---
+
+## 1. Introduction & Context
+This section provides the foundational context for the requirements document. Clearly state the document’s purpose, intended audience, and its role in the project lifecycle.
+
+**Purpose:**
+- Define the scope, objectives, and boundaries of the project.
+- Serve as the primary reference for all stakeholders throughout the project.
+
+**Audience:**
+- Project sponsors, business analysts, developers, testers, end users, and auditors.
+
+**How to Use:**
+- Reference this document during planning, development, testing, and acceptance.
+
+## 2. Project Overview
+Summarize the project’s background, business drivers, and justification. Clearly define the project scope, including what is in and out of scope.
+
+**Background:**
+- Provide context about the business problem or opportunity.
+
+**Business Justification:**
+- Explain the value, benefits, and expected outcomes.
+
+**Scope:**
+- List in-scope and out-of-scope items.
+- Include a high-level timeline and key milestones.
+
+## 3. Business Context
+Detail the business environment, current processes, and the desired future state. Perform a gap analysis to identify what needs to change.
+
+**Current State:**
+- Describe existing systems, workflows, and pain points.
+
+**Desired Future State:**
+- Outline the target state after project completion.
+
+**Gap Analysis:**
+- Identify gaps between current and future states, and how the project will address them.
+
+## 4. Project Objectives
+List the measurable objectives for the project. Each objective should be SMART (Specific, Measurable, Achievable, Relevant, Time-bound).
+
+| Objective ID | Objective Description | Success Criteria | Priority |
+|--------------|----------------------|------------------|----------|
+| OBJ-001 | [Example: Reduce manual data entry by 50%] | Data entry time reduced by half | High |
+| OBJ-002 | [Example: Achieve 99.9% system uptime] | Uptime monitoring reports | High |
+
+## 5. Requirements
+This section details all requirements for the project. Organize requirements by type and ensure each is clear, testable, and traceable.
+
+### 5.1 Functional Requirements
+Describe the system’s features and functions. For each requirement, include:
+- Unique ID (e.g., REQ-001)
+- Description
+- User story (if applicable)
+- Acceptance criteria
+- Priority
+
+**Example:**
+| Req ID | Description | User Story | Acceptance Criteria | Priority |
+|--------|-------------|------------|--------------------|----------|
+| REQ-001 | The system shall allow users to reset passwords via email. | As a user, I want to reset my password so I can regain access. | Password reset email sent within 2 minutes; link expires in 1 hour. | Must Have |
+
+### 5.2 Non-Functional Requirements
+Specify quality attributes such as performance, reliability, usability, scalability, and maintainability. Include measurable targets.
+
+**Example:**
+- System response time < 2 seconds for 95% of requests.
+- 99.9% uptime over a rolling 12-month period.
+
+### 5.3 Data Requirements
+Define data inputs, outputs, sources, storage, and flows. Include data quality, retention, and privacy requirements.
+
+**Example:**
+- All user data must be encrypted at rest and in transit.
+- Data retention: 7 years for financial records.
+
+### 5.4 Security & Compliance Requirements
+List all security, privacy, and regulatory requirements. Reference relevant standards (e.g., GDPR, HIPAA, PCI-DSS).
+
+**Example:**
+- Multi-factor authentication required for all users.
+- System must log all access to sensitive data.
+
+## 6. Related Documents
+Reference all supporting and related documents. Provide version numbers and locations/links.
+
+| Document | Version | Location |
+|----------|---------|----------|
+| Stakeholder Register | [X.X] | 01_Definition/Templates/Stakeholder_Register_Template.md |
+| Functional Requirements (SRS) | [X.X] | 00_Policy/Templates/01_NFR_and_Architecture/Functional_Requirements_SRS_Template.md |
+| NFR Specification | [X.X] | 00_Policy/Templates/01_NFR_and_Architecture/NFR_Specification_Template.md |
+| Architecture Design Document | [X.X] | 00_Policy/Templates/01_NFR_and_Architecture/Architecture_Design_Document_Template.md |
+| Security Requirements | [X.X] | 01_Definition/Templates/Security_Requirements_Template.md |
+| Risk Assessment | [X.X] | 01_Definition/Templates/Risk_Assessment_Template.csv |
+| Project Plan | [X.X] | 01_Definition/Templates/Project_Plan_Template.md |
+
+## 7. Revision History
+Track all changes to this document. Include version, date, author, and a summary of changes.
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template |
+| 1.1.0   | [YYYY-MM-DD] | [Author] | [Describe changes] |
 
 ### 1.5 Definitions, Acronyms, and Abbreviations
 

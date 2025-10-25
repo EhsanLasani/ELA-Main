@@ -1,31 +1,58 @@
-## Metadata
----
-Artifact_ID: TST-00-Test_Strategy_Templa
-Artifact_Name: TEST STRATEGY
-Artifact_Type: TST
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: TEST STRATEGY
-File_Path: 00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
+
 # TEST STRATEGY
 
-## Document Control
+---
+## Metadata
+```yaml
+Artifact_ID: TST-00-Test_Strategy_Template
+Artifact_Name: Test Strategy
+Artifact_Type: TST
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Test Strategy Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md
+Phase: Quality Planning
+Dependencies: None
+Process_Group: Quality
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+---
+
+| Field | Value |
+|-------|-------|
+| **Artifact ID** | TST-00-Test_Strategy_Template |
+| **Artifact Name** | Test Strategy |
+| **Artifact Type** | TST |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Test Strategy Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/05_Quality_planning/Test_Strategy_Template.md |
+| **Phase** | Quality Planning |
+| **Dependencies** | None |
+| **Process Group** | Quality |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
+
+---
+
+## How to Use This Template
+- Use this template to define, document, and manage the test strategy for your project.
+- Complete all sections and update as requirements, risks, or tools change.
+- Attach supporting evidence for each test activity.
+
+---
+
+## 1. Document Control
 | Field | Value |
 |-------|-------|
 | **Project** | [Name] |
@@ -33,7 +60,11 @@ Version: v1.0
 | **QA Lead** | [Name] |
 | **Date** | [YYYY-MM-DD] |
 
-## 2. TEST LEVELS
+---
+
+## 2. Test Levels
+**Instructions:**
+- Define all levels of testing, their scope, tools, responsibilities, and automation targets.
 
 ### Unit Testing
 - **Coverage Target:** ≥80%
@@ -53,13 +84,17 @@ Version: v1.0
 - **Responsibility:** QA Team
 - **Automation:** 80%
 
-### UAT
+### User Acceptance Testing (UAT)
 - **Scope:** Business scenarios
 - **Participants:** Business users
 - **Duration:** 2 weeks
 - **Automation:** Manual
 
-## 4. TEST ENVIRONMENTS
+---
+
+## 3. Test Environments
+**Instructions:**
+- List all environments, their purpose, data, and access controls.
 
 | Environment | Purpose | Data | Access |
 |-------------|---------|------|--------|
@@ -68,7 +103,11 @@ Version: v1.0
 | STAGING | UAT, integration | Production-like | Stakeholders |
 | PRODUCTION | Smoke tests only | Real | Ops Team |
 
-## 6. DEFECT MANAGEMENT
+---
+
+## 4. Defect Management
+**Instructions:**
+- Define severity levels, response times, and workflow for defect management.
 
 ### Severity Classification
 | Level | Description | Response Time |
@@ -85,7 +124,11 @@ Version: v1.0
 4. QA verification
 5. Close
 
-## 8. AUTOMATION STRATEGY
+---
+
+## 5. Automation Strategy
+**Instructions:**
+- Define the automation framework, CI/CD integration, and automation coverage targets.
 
 **Framework:** Selenium + Cucumber
 **CI/CD Integration:** Jenkins/GitHub Actions
@@ -93,7 +136,9 @@ Version: v1.0
 
 ---
 
-## 9. METRICS
+## 6. Metrics
+**Instructions:**
+- Track and report on key quality metrics.
 
 - Test coverage
 - Defect density
@@ -101,4 +146,10 @@ Version: v1.0
 - Pass/fail ratio
 - Defect aging
 
-**Template Version:** 1.0.0
+---
+
+## Best Practices
+- Review and update this strategy regularly as requirements or risks change.
+- Engage QA, development, and business teams in all test planning activities.
+- Document all decisions and attach supporting evidence for audits.
+- Use this template as a living document for ongoing quality management.

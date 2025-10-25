@@ -1,2 +1,19 @@
-﻿Risk ID,Description,Probability,Impact,Mitigation,Owner,Status
-R-001,,Low/Med/High,Low/Med/High,,,
+﻿
+# Risk Assessment Template (ELA Standard)
+# Guidance: Each row represents a risk. Fill in all columns. Use clear, actionable descriptions and mitigation steps. Review and update regularly.
+# Best Practices:
+# - Use consistent risk IDs (e.g., R-001, R-002)
+# - Describe risks specifically (e.g., "Unauthorized access to customer data")
+# - Assign realistic probability and impact (Low/Medium/High)
+# - Define clear, actionable mitigation steps
+# - Assign an accountable owner for each risk
+# - Track status (Open, In Progress, Mitigated, Accepted)
+# - Review and update risks at each project milestone
+
+Risk ID,Description,Probability,Impact,Mitigation,Owner,Status
+R-001,Unauthorized access to customer data,High,Critical,Implement MFA and access controls,Security Lead,Open
+R-002,Data loss due to system failure,Medium,High,Regular backups and disaster recovery plan,IT Manager,In Progress
+R-003,Non-compliance with GDPR,Low,High,Annual compliance audit and staff training,Compliance Officer,Open
+R-004,Phishing attack on employees,Medium,Medium,Security awareness training,HR,Mitigated
+R-005,Service downtime during deployment,Low,Medium,Blue-green deployment and rollback plan,DevOps,Accepted
+# Add more risks as needed

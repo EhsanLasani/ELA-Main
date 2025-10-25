@@ -1,63 +1,118 @@
-## Metadata
+# DATA CLASSIFICATION & GOVERNANCE PLAN
+
 ---
+## Metadata
+```yaml
 Artifact_ID: TMP-00-Data_Classification_
 Artifact_Name: Data Classification & Governance Plan
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Data Classification & Governance Plan
-File_Path: 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Classification_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Classification_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Data Classification & Governance Plan Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Classification_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Classification_Template.md
+Phase: Risk, Security & Compliance
+Dependencies: None
+Process_Group: Risk, Security & Compliance
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
 ---
-## Metadata
-## Metadata
-# Data Classification & Governance Plan
 
-## 0. Metadata
-- **Artifact ID (catalog.csv):** TMP-DEF-DATA-CLASS
-- **Version:** v1.0
-- **Owner:**
-- **Data Steward:**
-- **Linked Ticket / PR:**
-- **Project ID:**
-- **Date:**
+| Field | Value |
+|-------|-------|
+| **Artifact ID** | TMP-00-Data_Classification_ |
+| **Artifact Name** | Data Classification & Governance Plan |
+| **Artifact Type** | TMP |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Data Classification & Governance Plan Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Classification_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Classification_Template.md |
+| **Phase** | Risk, Security & Compliance |
+| **Dependencies** | None |
+| **Process Group** | Risk, Security & Compliance |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
 
--------------|-----------|---------|------------|--------|-------|-----------|--------------|
+---
+
+## How to Use This Template
+- Use this template to classify, govern, and protect all data assets in your project.
+- Complete all sections and update as data types, regulations, or business needs change.
+- Attach supporting evidence for each classification and control.
+
+---
+
+## 1. Data Inventory & Classification
+**Instructions:**
+- List all data assets, their classification, type, sensitivity, and applicable regulations.
+- Assign data stewards and define retention periods.
+
+| Data Asset | Classification | Type | Sensitivity | Regulation | Source/System | Data Steward | Retention | Access Notes |
+|-----------|----------------|------|-------------|------------|--------------|-------------|----------|-------------|
 | User Email | Restricted | String | PII | GDPR Art. 5 | User Registration | Data Steward | 7 years post-closure | Role: User Admin |
 | User Password Hash | Restricted | String | Auth | NIST 800-63B | Auth Service | Security Office | Account lifetime | System only |
 | User Name | Confidential | String | PII | GDPR Art. 5 | User Profile | Data Steward | 7 years | Role: Support, Admin |
 | Session Logs | Internal | JSON | No | None | App Server | DevOps | 90 days | Role: DevOps, Support |
 | Payment Card (tokenized) | Restricted | Token | Payment | PCI-DSS | Payment Gateway | Finance IT | 3 years | System only |
+| [Add more] | | | | | | | | |
 
----|----------|-------------------|
-| **Public** | Information freely shareable with the public | Marketing materials, public docs | None required |
-| **Internal** | Company confidential, internal use only | Internal communications, project plans | Access control |
-| **Confidential** | Business-critical, limited distribution | Customer data, financial records | Encryption, audit logging, RBAC |
-| **Restricted** | Highly sensitive, strict need-to-know | PII, PHI, payment data, credentials | Strong encryption (AES-256), MFA, strict RBAC, audit trails, DLP |
+---
 
-------------|-----------------|------------------|-----------|----------------|
+## 2. Classification Levels & Controls
+**Instructions:**
+- Define all classification levels and required controls for each.
+
+| Level | Description | Example Data | Required Controls |
+|-------|-------------|-------------|------------------|
+| Public | Information freely shareable with the public | Marketing materials, public docs | None required |
+| Internal | Company confidential, internal use only | Internal communications, project plans | Access control |
+| Confidential | Business-critical, limited distribution | Customer data, financial records | Encryption, audit logging, RBAC |
+| Restricted | Highly sensitive, strict need-to-know | PII, PHI, payment data, credentials | Strong encryption (AES-256), MFA, strict RBAC, audit trails, DLP |
+
+---
+
+## 3. Data Flow & Processing Map
+**Instructions:**
+- Map how data moves through the system, including sources, processing, storage, and consumers.
+
+| Data Asset | Source | Processing | Storage | Consumers | Frequency |
+|-----------|--------|------------|---------|-----------|-----------|
 | User Email | Registration API | Validation, normalization | PostgreSQL: users.email | Auth Service, Notification Service | Real-time |
 | Order Total | Order API | Currency conversion, tax calc | PostgreSQL: orders.total | Billing, Analytics | Real-time |
+| [Add more] | | | | | |
 
-|------------------|-----------|-----------------|--------------|
+---
+
+## 4. Retention, Deletion & Compliance
+**Instructions:**
+- Define retention periods, deletion workflows, and compliance requirements for each data type.
+
+| Data Asset | Retention | Regulation/Reason | Deletion Method | Audit/Validation |
+|------------|----------|-------------------|-----------------|-----------------|
 | User PII | 7 years post-account closure | GDPR, legal requirements | Automated deletion job | Monthly audit report |
 | Financial Transactions | 10 years | Tax regulations, auditing | Automated archival → cold storage | Annual audit |
 | Application Logs | 90 days (non-prod), 1 year (prod) | Troubleshooting, security | Automated log rotation | Dashboard monitoring |
+| [Add more] | | | | |
 
 ### 4.2 Right to Deletion (GDPR/CCPA)
 - [ ] User deletion workflow implemented
+
+---
+
+## Best Practices
+- Review and update this plan regularly as data assets or regulations change.
+- Engage data stewards and compliance officers in all classification and governance activities.
+- Document all decisions and attach supporting evidence for audits.
+- Use this template as a living document for ongoing compliance and risk management.
 - [ ] Deletion cascades to all systems
 - [ ] Verification report generated
 - [ ] 30-day completion SLA

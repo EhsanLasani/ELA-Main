@@ -1,35 +1,90 @@
-## Metadata
+
+
+# STAKEHOLDER REGISTER (TEMPLATE)
+
+This template provides a structured register for identifying, analyzing, and managing project stakeholders in ELA projects. Use the guidance and examples below to ensure all stakeholders are properly engaged and managed throughout the project lifecycle.
+
 ---
+## Metadata
+```yaml
 Artifact_ID: TMP-00-Stakeholder_Register
-Artifact_Name: Untitled Document
+Artifact_Name: Stakeholder Register (Template)
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Untitled Document
-File_Path: 00_Policy/Templates/01_Definition/01_Initiation_and_governance/Stakeholder_Register_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/01_Initiation_and_governance/Stakeholder_Register_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Stakeholder Register Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/01_Initiation_and_governance/Stakeholder_Register_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/01_Initiation_and_governance/Stakeholder_Register_Template.md
+Phase: Definition
+Dependencies: None
+Process_Group: Definition
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
-## 0. Metadata
-- **Artifact ID (catalog.csv):** TMP-DEF-STAKEHOLDER
-- **Version:** v1.0
-- **Owner:** 
-- **Linked Ticket / PR:** 
+Comments: Auto-generated on 2025-10-25
+```
 
-﻿# Stakeholder Register (Template)
-| Name | Role | Dept | Influence | Interest | Communication Strategy |
-|------|------|------|-----------|----------|------------------------|
-|      |      |      | High/Med/Low | High/Med/Low |                    |
+| Field | Value |
+|-------|-------|
+| **Artifact ID** | TMP-00-Stakeholder_Register |
+| **Artifact Name** | Stakeholder Register (Template) |
+| **Artifact Type** | TMP |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Stakeholder Register Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/01_Initiation_and_governance/Stakeholder_Register_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/01_Initiation_and_governance/Stakeholder_Register_Template.md |
+| **Phase** | Definition |
+| **Dependencies** | None |
+| **Process Group** | Definition |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
+
+---
+
+## How to Use This Register
+- List all stakeholders relevant to the project.
+- For each, specify their role, department, level of influence and interest, and the planned communication strategy.
+- Update this register throughout the project lifecycle as stakeholders or their roles change.
+- Use this register to plan engagement, manage expectations, and track communication.
+
+---
+
+## Stakeholder Register
+
+| Name           | Role              | Department      | Influence | Interest | Communication Strategy         |
+|----------------|-------------------|-----------------|-----------|----------|-------------------------------|
+| Jane Smith     | Project Sponsor   | Executive       | High      | High     | Weekly executive briefings     |
+| John Doe       | Product Owner     | Product         | High      | High     | Daily standups, backlog review |
+| Priya Patel    | Business Analyst  | PMO             | Medium    | High     | Requirements workshops         |
+| Alex Kim       | QA Lead           | QA              | Medium    | Medium   | Test planning, defect triage   |
+| [Add more]     |                   |                 |           |          |                               |
+
+---
+
+## Stakeholder Analysis Guidance
+- **Influence:** Ability to impact project decisions or outcomes (High/Medium/Low).
+- **Interest:** Level of concern or involvement in project success (High/Medium/Low).
+- **Communication Strategy:** Frequency, format, and channel for updates (e.g., weekly email, monthly meeting).
+
+**Best Practices:**
+- Engage high-influence, high-interest stakeholders early and often.
+- Tailor communication strategies to each stakeholder’s needs.
+- Document all key interactions and decisions.
+- Review and update the register at each project phase.
+
+**Example Communication Strategies:**
+- Weekly executive briefings
+- Daily standups
+- Monthly stakeholder meetings
+- Ad hoc emails for urgent issues
+
+**Tips:**
+- Use this register as a living document—update as the project evolves.
+- Link this register to the project plan and communication plan for traceability.

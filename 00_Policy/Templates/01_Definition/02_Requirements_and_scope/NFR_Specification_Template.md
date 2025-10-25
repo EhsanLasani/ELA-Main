@@ -1,31 +1,32 @@
-## Metadata
----
-Artifact_ID: TMP-00-NFR_Specification_Te
-Artifact_Name: NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
-Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
-File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: ELA-Template
-Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
+
+
 # NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
 
+
+---
+## Metadata
+```yaml
+Artifact_ID: TMP-00-NFR_Specification_Template
+Artifact_Name: Non-Functional Requirements (NFR) Specification
+Artifact_Type: TMP
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Non-Functional Requirements Specification Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
+Phase: Definition
+Dependencies: None
+Process_Group: Definition
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+---
+
 ## Document Control
+Provide key metadata for this document. Update as the document evolves.
 
 | Field | Value |
 |-------|-------|
@@ -40,7 +41,11 @@ Version: v1.0
 | **Status** | [Draft / In Review / Approved] |
 | **Classification** | [Internal / Confidential] |
 
--|---------|----------|
+## References
+List all documents referenced in this NFR specification. Include version numbers and links/locations.
+
+| Document | Version | Location |
+|----------|---------|----------|
 | ELA Development Policy | 2.0 | 00_Policy/ELA_Development_Policy.md |
 | Systems Integration Blueprint | 2.0 | 00_Policy/Systems_Integration_Blueprint.md |
 | Functional Requirements (SRS) | [X.X] | [Link/Path] |
@@ -48,6 +53,7 @@ Version: v1.0
 | ISO/IEC 25010:2023 Standard | Latest | https://iso25000.com/index.php/en/iso-25000-standards/iso-25010 |
 
 ### 1.4 Definitions & Acronyms
+Define all terms, acronyms, and abbreviations used in this document. Add project-specific terms as needed.
 
 | Term | Definition |
 |------|------------|
@@ -61,8 +67,51 @@ Version: v1.0
 | TPS | Transactions Per Second |
 | APM | Application Performance Monitoring |
 | WCAG | Web Content Accessibility Guidelines |
+## 2. NFR Categories & Guidance
+Organize NFRs by category. For each, provide detailed guidance, examples, and measurable targets.
 
----|---------------------|--------------------|--------------------|
+### 2.1 Performance
+- Response time, throughput, scalability, resource usage.
+- **Example:** System response time < 2 seconds for 95% of requests.
+
+### 2.2 Reliability & Availability
+- Uptime, failover, backup, disaster recovery.
+- **Example:** 99.9% uptime, daily automated backups, RTO < 1 hour.
+
+### 2.3 Security
+- Authentication, authorization, encryption, audit logging.
+- **Example:** All data encrypted at rest and in transit; MFA required for all users.
+
+### 2.4 Usability
+- Accessibility, learnability, error rates, user satisfaction.
+- **Example:** 80% of users complete key tasks within 15 minutes; WCAG 2.1 AA compliance.
+
+### 2.5 Maintainability
+- Modularity, code documentation, deployment frequency, bug fix turnaround.
+- **Example:** 80% code coverage with inline documentation; critical bugs fixed within 24 hours.
+
+### 2.6 Portability
+- Browser compatibility, mobile support, cloud portability.
+- **Example:** Support Chrome, Firefox, Safari, Edge (latest 2 versions); deployable on AWS, Azure, or GCP.
+
+### 2.7 Compliance
+- Regulatory, legal, and industry standards.
+- **Example:** GDPR, HIPAA, PCI-DSS compliance; address all OWASP Top 10 vulnerabilities.
+## 3. NFR Traceability Matrix
+Map each NFR to its source, design element, test case, and implementation status.
+
+| NFR ID | Category | Description | Source | Design Doc | Test Case(s) | Status |
+|--------|----------|-------------|--------|------------|--------------|--------|
+| NFR-PERF-001 | Performance | System response time < 2s | BR-001 | Design-001 | TC-001 | Implemented |
+| NFR-SEC-001 | Security | All data encrypted at rest | BR-002 | Design-002 | TC-002 | In Progress |
+## 4. Revision History
+Track all changes to this document. Include version, date, author, and a summary of changes.
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template |
+| 1.1.0   | [YYYY-MM-DD] | [Author] | [Describe changes] |
+
 | Page Load (UI) | < 2 seconds | < 5 seconds | Real User Monitoring |
 | API Response | < 500ms | < 2 seconds | Application Performance Monitoring |
 | Database Query | < 100ms | < 1 second | Query Performance Monitoring |
@@ -98,6 +147,137 @@ Version: v1.0
 ## 4. RELIABILITY REQUIREMENTS
 
 ### 4.1 Availability
+
+# NON-FUNCTIONAL REQUIREMENTS (NFR) SPECIFICATION
+
+---
+This template provides a comprehensive structure for documenting all non-functional requirements for ELA projects, ensuring clarity, completeness, and standards compliance.
+
+---
+## Metadata
+```yaml
+Artifact_ID: TMP-00-NFR_Specification_Template
+Artifact_Name: Non-Functional Requirements (NFR) Specification
+Artifact_Type: TMP
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Non-Functional Requirements Specification Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md
+Phase: Definition
+Dependencies: None
+Process_Group: Definition
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| Field | Value |
+|-------|-------|
+| **Artifact ID** | TMP-00-NFR_Specification_Template |
+| **Artifact Name** | Non-Functional Requirements (NFR) Specification |
+| **Artifact Type** | TMP |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Non-Functional Requirements Specification Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/02_Requirements_and_scope/NFR_Specification_Template.md |
+| **Phase** | Definition |
+| **Dependencies** | None |
+| **Process Group** | Definition |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
+
+---
+
+## Table of Contents
+1. Introduction
+2. References
+3. Definitions & Acronyms
+4. Performance Requirements
+5. Capacity & Scalability
+6. Resource Utilization
+7. Reliability Requirements
+8. Security & Compliance
+9. Usability & Accessibility
+10. Maintainability & Support
+11. Revision History
+
+---
+
+## 1. Introduction
+Describe the purpose, scope, and intended audience of this NFR document.
+
+## 2. References
+| Document | Version | Location |
+|----------|---------|----------|
+| ELA Development Policy | 2.0 | 00_Policy/ELA_Development_Policy.md |
+| Systems Integration Blueprint | 2.0 | 00_Policy/Systems_Integration_Blueprint.md |
+| Functional Requirements (SRS) | [X.X] | [Link/Path] |
+| Architecture Design Document | [X.X] | [Link/Path] |
+| ISO/IEC 25010:2023 Standard | Latest | https://iso25000.com/index.php/en/iso-25000-standards/iso-25010 |
+
+## 3. Definitions & Acronyms
+| Term | Definition |
+|------|------------|
+| NFR | Non-Functional Requirement |
+| SLA | Service Level Agreement |
+| RTO | Recovery Time Objective |
+| RPO | Recovery Point Objective |
+| MTBF | Mean Time Between Failures |
+| MTTR | Mean Time To Recovery |
+| QPS | Queries Per Second |
+| TPS | Transactions Per Second |
+| APM | Application Performance Monitoring |
+| WCAG | Web Content Accessibility Guidelines |
+
+## 4. Performance Requirements
+| Metric | Target | Peak Load | Measurement |
+|--------|--------|-----------|-------------|
+| Page Load (UI) | < 2 seconds | < 5 seconds | Real User Monitoring |
+| API Response | < 500ms | < 2 seconds | Application Performance Monitoring |
+| Database Query | < 100ms | < 1 second | Query Performance Monitoring |
+| Search Results | < 1 second | < 3 seconds | Synthetic Monitoring |
+| Report Generation | < 5 seconds | < 15 seconds | Job Execution Logs |
+| Batch Processing | [Define SLA] | [Define Maximum] | Job Execution Logs |
+
+## 5. Capacity & Scalability
+**Data Volume:** System must handle [X GB/TB] of data  
+**User Growth:** Support [XX%] annual user growth  
+**Storage:** [X TB] initial capacity with [XX%] annual growth  
+**Network Bandwidth:** Minimum [X Mbps/Gbps]
+
+## 6. Resource Utilization
+| Resource | Normal Load | Peak Load | Action Threshold |
+|----------|-------------|-----------|------------------|
+| CPU Usage | < 60% | < 80% | Alert at 85% |
+| Memory Usage | < 70% | < 85% | Alert at 90% |
+| Disk I/O | < 70% | < 85% | Alert at 90% |
+| Network Bandwidth | < 60% | < 80% | Alert at 85% |
+
+## 7. Reliability Requirements
+Describe availability, failover, backup, and disaster recovery requirements.
+
+## 8. Security & Compliance
+Describe security, privacy, and regulatory compliance requirements (e.g., GDPR, HIPAA).
+
+## 9. Usability & Accessibility
+Describe usability, accessibility, and user experience requirements (e.g., WCAG compliance).
+
+## 10. Maintainability & Support
+Describe requirements for maintainability, support, monitoring, and documentation.
+
+## 11. Revision History
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template |
 
 | Component | Availability Target | Acceptable Downtime | Measurement Period |
 |-----------|---------------------|---------------------|--------------------|

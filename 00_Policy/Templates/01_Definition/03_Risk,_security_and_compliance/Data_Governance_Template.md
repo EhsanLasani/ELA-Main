@@ -1,63 +1,116 @@
-## Metadata
----
-Artifact_ID: TMP-00-Data_Governance_Temp
-Artifact_Name: DATA GOVERNANCE TEMPLATE
-Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: DATA GOVERNANCE TEMPLATE
-File_Path: 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Governance_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Governance_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: ELA-Template
-Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
 # DATA GOVERNANCE TEMPLATE
 
-## Document Control
+---
+## Metadata
+```yaml
+Artifact_ID: TMP-00-Data_Governance_Temp
+Artifact_Name: Data Governance Template
+Artifact_Type: TMP
+Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Data Governance Template for ELA projects
+File_Path: 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Governance_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Governance_Template.md
+Phase: Risk, Security & Compliance
+Dependencies: None
+Process_Group: Risk, Security & Compliance
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+---
+
 | Field | Value |
 |-------|-------|
-| **Project** | [Name] |
-| **Data Owner** | [Name] |
-| **Data Steward** | [Name] |
-| **Version** | 1.0.0 |
-| **Date** | [YYYY-MM-DD] |
+| **Artifact ID** | TMP-00-Data_Governance_Temp |
+| **Artifact Name** | Data Governance Template |
+| **Artifact Type** | TMP |
+| **Version** | v1.0 |
+| **Status** | Draft |
+| **Owner** | Enterprise Architecture Office (EAO) |
+| **Last Updated** | 2025-10-25 |
+| **Description** | Data Governance Template for ELA projects |
+| **File Path** | 00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Governance_Template.md |
+| **GitHub URL** | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/01_Definition/03_Risk,_security_and_compliance/Data_Governance_Template.md |
+| **Phase** | Risk, Security & Compliance |
+| **Dependencies** | None |
+| **Process Group** | Risk, Security & Compliance |
+| **Process Step** | N/A |
+| **Template Source** | ELA-Template |
+| **Validation Status** | Pending |
+| **Comments** | Auto-generated on 2025-10-25 |
 
--------------|-------------|-----------|-------|
+---
+
+## How to Use This Template
+- Use this template to define, document, and manage data governance for your project.
+- Complete all sections and update as data assets, owners, or regulations change.
+- Attach supporting evidence for each governance activity.
+
+---
+
+## 1. Data Ownership & Stewardship
+**Instructions:**
+- List all key data assets, their owners, stewards, classification, and retention.
+
+| Data Asset | Classification | Sensitivity | Retention | Owner/Steward |
+|------------|---------------|-------------|-----------|---------------|
 | Customer Name | PII | High | 7 years | [Name] |
 | Email | PII | High | 7 years | [Name] |
 | Credit Card | PCI-DSS | Critical | Per PCI | [Name] |
 | Health Records | PHI | Critical | Per HIPAA | [Name] |
 | [Add more] | | | | |
 
-**Classification Levels:**
+---
+
+## 2. Classification Levels
+**Instructions:**
+- Define all classification levels and their access restrictions.
+
 - **Public:** No restrictions
 - **Internal:** Company employees only
 - **Confidential:** Restricted access
 - **Restricted:** Highly sensitive (PII/PHI/PCI)
 
-## 3. DATA QUALITY
+---
 
-| Dimension | Requirement | Measurement | Target |
-|-----------|-------------|-------------|--------|
-| Accuracy | Data matches source | Error rate | < 1% |
-| Completeness | No missing fields | % complete | > 95% |
-| Consistency | Same across systems | Variance | < 2% |
-| Timeliness | Data is current | Lag time | < 24hrs |
-| Validity | Conforms to rules | Validation failures | < 0.5% |
+## 3. Data Quality Management
+**Instructions:**
+- Define quality dimensions, requirements, and targets for all data assets.
+- Assign responsibility for monitoring and reporting.
 
------|--------|--------|--------|
+| Dimension    | Requirement             | Measurement         | Target |
+|------------- |------------------------|---------------------|--------|
+| Accuracy     | Data matches source     | Error rate          | < 1%   |
+| Completeness | No missing fields       | % complete          | > 95%  |
+| Consistency  | Same across systems     | Variance            | < 2%   |
+| Timeliness   | Data is current         | Lag time            | < 24hrs|
+| Validity     | Conforms to rules       | Validation failures | < 0.5% |
+
+---
+
+## 4. Governance Activities & Best Practices
+**Instructions:**
+- List all governance activities (e.g., data quality reviews, audits, policy updates).
+- Assign responsibility and frequency for each activity.
+
+| Activity                | Frequency      | Responsible Party |
+|-------------------------|---------------|------------------|
+| Data quality review     | Quarterly     | Data Steward     |
+| Data retention audit    | Annually      | Compliance Lead  |
+| Policy update           | As needed     | Data Owner       |
+| Access review           | Semi-annual   | Security Officer |
+| [Add more]              |               |                  |
+
+---
+
+## Best Practices
+- Review and update this plan regularly as data assets or regulations change.
+- Engage data owners, stewards, and compliance officers in all governance activities.
+- Document all decisions and attach supporting evidence for audits.
+- Use this template as a living document for ongoing compliance and risk management.
 | Admin | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Data Analyst | ✓ | ✗ | ✗ | ✗ | ✓ |
 | Business User | ✓ | ✗ | ✗ | ✗ | ✗ |
