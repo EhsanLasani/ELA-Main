@@ -1,12 +1,15 @@
-## Metadata
+
+# Definition Phase – Process Overview & Template Assignment
+
 ---
-Artifact_ID: DOC-01-Definition_Phase_Pro
-Artifact_Name: Definition Phase - Process Overview & Template Assignment
-Artifact_Type: DOC
+# Legacy Metadata Block (for reference and backward compatibility)
+Artifact_ID: GDL-01-Definition_Phase_Process_Overview
+Artifact_Name: Definition Phase – Process Overview & Template Assignment
+Artifact_Type: Guideline
 Comments: Auto-generated on 2025-10-25
 Dependencies: None
 Derived_From: 
-Description: Definition Phase - Process Overview & Template Assignment
+Description: ELA-compliant Definition Phase workflow, template assignment, and validation criteria
 File_Path: 01_Definition/Guidelines/Definition_Phase_Process_Overview.md
 Filled_By: 
 GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/01_Definition/Guidelines/Definition_Phase_Process_Overview.md
@@ -17,29 +20,85 @@ Process_Group: Definition
 Process_Step: N/A
 Project_Name: 
 Status: Draft
-Template_Source: 
+Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Version: v2.0.0
 ---
-## Metadata
-## Metadata
-# Definition Phase - Process Overview & Template Assignment
+
+---
+# ELA YAML Metadata Block
+title: Definition Phase – Process Overview & Template Assignment
+version: 2.0.0
+maintained_by: Enterprise Architecture Office (EAO)
+classification: Internal Use
+template_type: Guideline
+ela_compliance: true
+last_updated: 2025-10-25
+---
+
+| Key              | Value                              |
+|------------------|------------------------------------|
+| Title            | Definition Phase – Process Overview & Template Assignment |
+| Version          | 2.0.0                              |
+| Maintained By    | Enterprise Architecture Office     |
+| Classification   | Internal Use                       |
+| Template Type    | Guideline                          |
+| ELA Compliance   | true                               |
+| Last Updated     | 2025-10-25                         |
+
+---
+
+
+
+## ELA Documentation Principles
+
+To ensure clarity, traceability, and compliance with ELA and international SDLC standards, the following documentation principles are applied throughout the repository:
+
+- **Templates**: All master templates are stored in `00_Policy/Templates/phasewise/`. These are the authoritative, phase-specific template files for all projects.
+- **Guides**: Each phase contains a `/Guidelines/` folder with guidance on how to use the templates, best practices, and actionable instructions.
+- **Instances**: Each phase contains a `/Validation/` folder where filled (completed) templates and phase deliverables are stored as evidence of compliance and project progress.
+
+This structure ensures that:
+- Templates are centrally managed and versioned.
+- Guidance is always available and phase-specific.
+- Completed artifacts are organized by phase for easy review and audit.
+
+---
+
+## Purpose & Scope
+
+This guideline provides a comprehensive, ELA-compliant overview of the Definition Phase workflow, template assignments, and validation criteria. It ensures all requirements, risks, and business processes are captured and aligned before progressing to design, referencing the ELA Artifact Metadata Standards and Document Structure Guidelines.
+
+---
 
 ## Purpose
 
 This document defines the **Definition Phase workflow**, assigns templates from `00_Policy/Templates/02_Definition/`, and clarifies when/how each template is used. The Definition phase establishes **WHAT** needs to be built through requirements, stakeholder analysis, and compliance frameworks.
 
+---
+
 ## Inputs from Previous Phase
 
-| Input Artifact | Source Template (Initiation) | What It Provides |
-|----------------|------------------------------|------------------|
-| Strategic Analysis | Strategic_Analysis_Implementation_Plan.md | Business goals, strategic imperatives |
-| Business Case | Business_Case_Template.md | Value proposition, ROI justification |
-| Stakeholder List | Stakeholder_Analysis_Template.md | Initial stakeholder identification |
-| Initial Scope | Project_Charter_Template.md | High-level project boundaries |
-| Risk Register | Risk_Assessment.csv | Known risks and constraints |
+
+| Input Artifact      | Source Template (Initiation)           | What It Provides                        | ELA Phase Placement         |
+|---------------------|----------------------------------------|-----------------------------------------|-----------------------------|
+| Strategic Analysis  | Strategic_Analysis_Implementation_Plan.md | Business goals, strategic imperatives   | Initiation                  |
+| Business Case       | Business_Case_Template.md              | Value proposition, ROI justification    | **Definition** (clarified)  |
+| Feasibility Study   | Feasibility_Study_Template.md          | Technical and operational feasibility   | **Definition** (clarified)  |
+| Gap Analysis        | Gap_Analysis_Template.md               | Current vs. target state, gaps          | **Definition** (clarified)  |
+| Project Charter     | Project_Charter_Template.md            | High-level project boundaries           | **Initiation** (clarified)  |
+| Stakeholder List    | Stakeholder_Analysis_Template.md       | Initial stakeholder identification      | Initiation/Definition       |
+| Risk Register       | Risk_Assessment.csv                    | Known risks and constraints             | Initiation/Definition       |
+
+
+---
+
+## Definition Phase Process Overview
+
+The Definition Phase is structured into the following key activities, each mapped to a specific template and actionable steps. All templates referenced are ELA-compliant and should be completed in sequence to ensure traceability and completeness.
 
 ### **Phase 2: Requirements Engineering**
+
 
 #### Step 2.1: Functional Requirements Specification
 **Template**: Functional_Requirements_SRS_Template.md
@@ -53,6 +112,7 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Owner**: Business Analyst / Product Owner
 - **Approver**: Product Owner / Business Sponsor
 
+
 #### Step 2.2: Non-Functional Requirements (NFRs)
 **Template**: Non_Functional_Requirements_Template.md
 - **Inputs**: SRS, architectural constraints, compliance needs
@@ -64,6 +124,7 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Outputs**: NFR document with measurable SLIs/SLOs
 - **Owner**: Solution Architect / Technical Lead
 - **Approver**: Enterprise Architecture Review Board (ARB)
+
 
 #### Step 2.3: Use Case Documentation
 **Template**: Use_Case_Template.md
@@ -77,6 +138,7 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Owner**: Business Analyst
 - **Approver**: Product Owner
 
+
 #### Step 2.4: User Stories & Acceptance Criteria
 **Template**: User_Story_Template.md
 - **Inputs**: Functional requirements, use cases
@@ -89,7 +151,9 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Owner**: Product Owner
 - **Approver**: Product Owner / Stakeholders
 
+
 ### **Phase 4: Risk & Threat Analysis**
+
 
 #### Step 4.1: Risk Assessment
 **Template**: Risk_Assessment_Template.md
@@ -102,6 +166,7 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Outputs**: Risk register with mitigation strategies
 - **Owner**: Risk Manager / Project Manager
 - **Approver**: Risk Committee / Steering Committee
+
 
 #### Step 4.2: Threat Modeling (STRIDE)
 **Template**: Threat_Modeling_Template.md
@@ -116,7 +181,9 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Owner**: Security Architect / AppSec Engineer
 - **Approver**: CISO
 
+
 ### **Phase 6: Business Process & Change Management**
+
 
 #### Step 6.1: Business Process Mapping
 **Template**: Business_Process_Mapping_Template.md
@@ -130,6 +197,7 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Owner**: Business Process Analyst
 - **Approver**: Business Unit Leaders
 
+
 #### Step 6.2: Change Management Plan
 **Template**: Change_Management_Plan_Template.md
 - **Inputs**: Business process changes, stakeholder analysis, organizational culture
@@ -142,9 +210,12 @@ This document defines the **Definition Phase workflow**, assigns templates from 
 - **Owner**: Change Manager / Organizational Change Management (OCM) Lead
 - **Approver**: Sponsor / HR Leadership
 
+
+---
+
 ## Validation Checklist (Exit Criteria)
 
-Before proceeding to Design Phase, verify:
+Before proceeding to the Design Phase, ensure the following criteria are met:
 
 ### ✅ Requirements Completeness
 - [ ] All functional requirements documented with acceptance criteria
@@ -181,6 +252,8 @@ Before proceeding to Design Phase, verify:
 - [ ] Documentation stored in version control
 - [ ] Phase gate approval obtained
 
+---
+
 ## Related Documentation
 
 - [Master Templates](../../00_Policy/Templates/02_Definition/)
@@ -192,6 +265,7 @@ Before proceeding to Design Phase, verify:
 
 ## Version History
 
+- **v2.0.0** (2025-10-25): ELA-compliant rewrite, clarified template-phase mapping, actionable guidance, legacy metadata block included
 - **v1.0.0** (2025-10-24): Initial Definition Phase Process Overview
 - **Owner**: Enterprise Architecture Office (EAO)
 - **Review Cycle**: Quarterly

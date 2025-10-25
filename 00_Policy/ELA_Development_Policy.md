@@ -1,5 +1,29 @@
 
+
 # ELA Development Policy
+
+---
+Artifact_ID: DOC-00-ELA_Development_Policy
+Artifact_Name: ELA Development Policy
+Artifact_Type: DOC
+Comments: Auto-generated on 2025-10-25
+Dependencies: None
+Derived_From: 
+Description: ELA development policy for all projects and repositories
+File_Path: 00_Policy/ELA_Development_Policy.md
+Filled_By: 
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/ELA_Development_Policy.md
+Last_Updated: 2025-10-25
+Owner: Enterprise Architecture Office (EAO)
+Phase: Policy
+Process_Group: Policy
+Process_Step: N/A
+Project_Name: 
+Status: Draft
+Template_Source: ELA-Template
+Validation_Status: Pending
+Version: v2.0.0
+---
 
 ---
 title: ELA Development Policy
