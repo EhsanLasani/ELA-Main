@@ -29,7 +29,7 @@ Version: v1.0
 **ELA-Main** is the **master governance and template repository** for all Enterprise-Level Application (ELA) projects.  
 It defines the standardized structure, policies, automation pipelines, and AI-assisted development workflows used across the organization.
 
----
+--
 
 ## New Project Quickstart
 
@@ -45,7 +45,7 @@ It defines the standardized structure, policies, automation pipelines, and AI-as
 5. **Merge & Tag**
    - Tag the release; archive docs per policy §16.4.
 
----
+--
 --
 ## 📘 Purpose
 
