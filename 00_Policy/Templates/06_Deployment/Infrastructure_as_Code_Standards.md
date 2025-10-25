@@ -1,29 +1,122 @@
-## Metadata
+
+# INFRASTRUCTURE AS CODE (IaC) STANDARDS
+
 ---
-Artifact_ID: DOC-00-Infrastructure_as_Co
-Artifact_Name: Infrastructure as Code (IaC) Standards
+```yaml
+Artifact_ID: DOC-00-Infrastructure_as_Code_Standards
+Artifact_Name: INFRASTRUCTURE AS CODE (IaC) STANDARDS
 Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Infrastructure as Code (IaC) Standards
-File_Path: 00_Policy/Templates/06_Deployment/Infrastructure_as_Code_Standards.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/06_Deployment/Infrastructure_as_Code_Standards.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
 Version: v1.0
+Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: ELA-compliant standards and actionable best practices for Infrastructure as Code (IaC) in all environments
+File_Path: 00_Policy/Templates/06_Deployment/Infrastructure_as_Code_Standards.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/06_Deployment/Infrastructure_as_Code_Standards.md
+Phase: Deployment
+Dependencies: None
+Process_Group: Deployment
+Process_Step: N/A
+Template_Source: ELA-Template
+Validation_Status: Pending
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | DOC-00-Infrastructure_as_Code_Standards                                   |
+| Artifact Name     | INFRASTRUCTURE AS CODE (IaC) STANDARDS                                    |
+| Artifact Type     | DOC                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | ELA-compliant standards and actionable best practices for IaC              |
+| File Path         | 00_Policy/Templates/06_Deployment/Infrastructure_as_Code_Standards.md      |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/06_Deployment/Infrastructure_as_Code_Standards.md |
+| Phase             | Deployment                                                                |
+| Dependencies      | None                                                                      |
+| Process Group     | Deployment                                                                |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# Infrastructure as Code (IaC) Standards
+
+## How to Use This Template
+- Use this template to define, document, and enforce Infrastructure as Code (IaC) standards for your ELA project.
+- Complete each section with actionable, project-specific details and ensure all standards are followed.
+- Review and update with DevOps, security, and architecture teams.
+
+---
+
+## 1. Purpose and Scope
+Define the objectives, scope, and intended outcomes of your IaC standards. Ensure all environments and teams are covered.
+
+## 2. Approved Tools and Technologies
+List and justify all approved IaC tools (e.g., Terraform, Ansible, Kubernetes). Include selection criteria and usage guidelines.
+
+| Tool Category              | Primary Tool | Secondary Tool | Use Case                |
+|----------------------------|--------------|----------------|-------------------------|
+
+## 3. Code Organization Standards
+Describe repository structure, naming conventions, and file organization. Provide directory tree and naming examples.
+
+## 4. Coding Standards and Best Practices
+Document required coding standards (indentation, comments, DRY, error handling, naming, etc.). Include tool-specific standards (e.g., Terraform provider pinning).
+
+## 5. Security and Compliance Standards
+List all security requirements (secrets management, encryption, least privilege, network security, compliance frameworks, scanning, etc.).
+
+## 6. Version Control and Change Management
+Define Git workflow, code review, change management, and approval processes. Include commit conventions and rollback planning.
+
+## 7. Testing and Validation Standards
+Describe required testing levels, tools, validation checklists, and automated pipeline integration.
+
+## 8. Environment Management
+Document environment strategy, configuration, promotion process, and isolation/access controls.
+
+## 9. State Management
+Specify state storage, security, best practices, and disaster recovery for IaC state files.
+
+## 10. Monitoring and Observability
+List monitoring, alerting, logging, and audit trail requirements for infrastructure.
+
+## 11. Cost Management and Optimization
+Describe cost monitoring, optimization strategies, and financial governance for IaC-managed resources.
+
+## 12. Documentation Standards
+Define required documentation, format, knowledge management, and review/update processes.
+
+## 13. Training and Skill Development
+List training requirements, skill assessment, and knowledge transfer practices for IaC teams.
+
+## 14. Disaster Recovery and Business Continuity
+Document backup, recovery, and business continuity planning for infrastructure managed as code.
+
+## 15. Compliance and Audit Requirements
+List compliance frameworks, audit preparation, and continuous compliance practices.
+
+## 16. Performance and Scalability
+Define performance standards, scalability planning, and monitoring requirements.
+
+## 17. Governance and Approval Process
+Describe approval workflow, change classification, and governance framework for IaC changes.
+
+## 18. Approval and Sign-off
+Provide a table for required approvals and signatures.
+
+| Role                      | Name   | Signature   | Date       |
+|---------------------------|--------|-------------|------------|
+
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
 ## Document Control
 | Field | Value |

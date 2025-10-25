@@ -1,31 +1,80 @@
-## Metadata
+
+# UAT CHECKLIST TEMPLATE
+
 ---
+```yaml
 Artifact_ID: TMP-00-UAT_Checklist_Templa
-Artifact_Name: Untitled Document
+Artifact_Name: UAT CHECKLIST TEMPLATE
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Untitled Document
-File_Path: 00_Policy/Templates/05_Testing/UAT_Checklist_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/UAT_Checklist_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: Template for planning and documenting user acceptance testing in ELA projects
+File_Path: 00_Policy/Templates/05_Testing/UAT_Checklist_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/UAT_Checklist_Template.md
+Phase: Testing
+Dependencies: None
+Process_Group: Testing
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | TMP-00-UAT_Checklist_Templa                                               |
+| Artifact Name     | UAT CHECKLIST TEMPLATE                                                    |
+| Artifact Type     | TMP                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | Template for planning and documenting user acceptance testing in ELA projects |
+| File Path         | 00_Policy/Templates/05_Testing/UAT_Checklist_Template.md                  |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/05_Testing/UAT_Checklist_Template.md |
+| Phase             | Testing                                                                   |
+| Dependencies      | None                                                                      |
+| Process Group     | Testing                                                                   |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-## 0. Metadata
-- **Artifact ID (catalog.csv):** TMP-VAL-UAT-CHECKLIS
-- **Version:** v1.0
-- **Owner:** 
-- **Linked Ticket / PR:** 
+
+## How to Use This Template
+- Use this checklist to plan, document, and validate user acceptance testing (UAT) for your ELA project.
+- Complete all sections and obtain required approvals before go-live.
+- Review and update with QA, business, and project teams.
+
+---
+
+## UAT Checklist
+| Step | Description                | Owner      | Status      | Notes         |
+|------|----------------------------|------------|-------------|---------------|
+| 1    | UAT plan approved          |            | [ ] Done    |               |
+| 2    | Test environment ready     |            | [ ] Done    |               |
+| 3    | Test data prepared         |            | [ ] Done    |               |
+| 4    | UAT scripts reviewed       |            | [ ] Done    |               |
+| 5    | UAT execution started      |            | [ ] Done    |               |
+| 6    | Defects logged/tracked     |            | [ ] Done    |               |
+| 7    | UAT sign-off received      |            | [ ] Done    |               |
+
+---
+
+## Approvals
+| Role            | Name | Date       | Status      |
+|-----------------|------|------------|-------------|
+| QA Lead         |      |            | [ ] Approved|
+| Business Owner  |      |            | [ ] Approved|
+| Project Manager |      |            | [ ] Approved|
+
+---
+
+## Revision History
+| Version | Date       | Author                  | Changes         |
+|---------|------------|-------------------------|-----------------|
+| 1.0.0   | 2025-10-25 | Enterprise Architecture | Initial template|
 
