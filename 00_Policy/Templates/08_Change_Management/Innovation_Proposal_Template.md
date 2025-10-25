@@ -1,29 +1,57 @@
-## Metadata
+
+# INNOVATION PROPOSAL TEMPLATE
+
 ---
-Artifact_ID: TMP-00-Innovation_Proposal_
-Artifact_Name: Innovation Proposal Template
+```yaml
+Artifact_ID: TMP-00-Innovation_Proposal_Template
+Artifact_Name: INNOVATION PROPOSAL TEMPLATE
 Artifact_Type: TMP
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Innovation Proposal Template
-File_Path: 00_Policy/Templates/08_Change_Management/Innovation_Proposal_Template.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/08_Change_Management/Innovation_Proposal_Template.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
+Version: v1.0
 Status: Draft
+Owner: Enterprise Architecture Office (EAO)
+Last_Updated: 2025-10-25
+Description: ELA-compliant template for submitting and evaluating innovation proposals
+File_Path: 00_Policy/Templates/08_Change_Management/Innovation_Proposal_Template.md
+GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/08_Change_Management/Innovation_Proposal_Template.md
+Phase: Change Management
+Dependencies: None
+Process_Group: Change Management
+Process_Step: N/A
 Template_Source: ELA-Template
 Validation_Status: Pending
-Version: v1.0
+Comments: Auto-generated on 2025-10-25
+```
+
+| **Field**         | **Value**                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| Artifact ID       | TMP-00-Innovation_Proposal_Template                                       |
+| Artifact Name     | INNOVATION PROPOSAL TEMPLATE                                              |
+| Artifact Type     | TMP                                                                       |
+| Version           | v1.0                                                                      |
+| Status            | Draft                                                                     |
+| Owner             | Enterprise Architecture Office (EAO)                                      |
+| Last Updated      | 2025-10-25                                                                |
+| Description       | ELA-compliant template for submitting and evaluating innovation proposals  |
+| File Path         | 00_Policy/Templates/08_Change_Management/Innovation_Proposal_Template.md   |
+| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/08_Change_Management/Innovation_Proposal_Template.md |
+| Phase             | Change Management                                                         |
+| Dependencies      | None                                                                      |
+| Process Group     | Change Management                                                         |
+| Process Step      | N/A                                                                       |
+| Template Source   | ELA-Template                                                              |
+| Validation Status | Pending                                                                   |
+| Comments          | Auto-generated on 2025-10-25                                              |
+
 ---
-## Metadata
-## Metadata
-# Innovation Proposal Template
+
+## How to Use This Template
+- Use this template to propose, evaluate, and track innovation initiatives for your ELA project or organization.
+- Complete each section with actionable, project-specific details and update status regularly.
+- Review and update with Innovation, Product, and Executive teams.
+
+---
+
+## [Continue with all original content, starting from Document Control, but ensure all sections are deduplicated, clarified, and actionable.]
 
 ## Document Control
 | Field | Value |
