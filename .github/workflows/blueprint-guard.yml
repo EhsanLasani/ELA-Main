@@ -1,39 +1,59 @@
 name: blueprint-guard
+
+
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+pull_request:
+branches: [ main, develop ]
+push:
+branches: [ main, develop ]
 
 jobs:
-  verify:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+  guard:
+	runs-on: ubuntu-latest
+	steps:
+	  - name: Checkout
+		uses: actions/checkout@v4
+	  - name: Verify blueprint files exist
+		run: |
+		  test -f "00_Policy/Systems_Integration_Blueprint.md" || { echo "Missing Systems_Integration_Blueprint.md"; exit 1; }
+		  test -f "00_Policy/Systems_Integration_Blueprint.png" || { echo "Missing Systems_Integration_Blueprint.png"; exit 1; }
+	  - name: Check freshness (30 days or since last tag)
+		shell: bash
+		run: |
+		  set -euo pipefail
+		  FILES=("00_Policy/Systems_Integration_Blueprint.md" "00_Policy/Systems_Integration_Blueprint.png")
 
-      - name: Verify required blueprint files
-        run: |
-          set -e
-          echo "🔍 Checking Systems Integration Blueprint artifacts..."
-          test -f Systems_Integration_Blueprint.md
-          test -f Systems_Integration_Blueprint.png
-          if [ -f ".codex/blueprint-generator.md" ] || [ -f "VSCode_Codex_Blueprint_Generator.md" ]; then
-            echo "✅ Codex prompt file found."
-          else
-            echo "❌ Missing Codex prompt file (.codex/blueprint-generator.md or VSCode_Codex_Blueprint_Generator.md)" >&2
-            exit 1
-          fi
-          echo "✅ All required files exist."
+		  # Get date of last tag if any
+		  LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+		  if [ -n "$LAST_TAG" ]; then
+			echo "Last tag: $LAST_TAG"
+			REF="$LAST_TAG"
+		  else
+			REF="HEAD~1"
+		  fi
 
-      # (Optional stricter rule)
-      - name: Ensure blueprint updated in this PR (optional)
-        run: |
-          set -e
-          echo "Checking if blueprint files were changed in this PR..."
-          CHANGED=$(git diff --name-only origin/main...HEAD | grep -E "Systems_Integration_Blueprint\.md|Systems_Integration_Blueprint\.png" || true)
-          if [ -z "$CHANGED" ]; then
-            echo "⚠️ Blueprint not modified in this PR."
-            echo "If you changed integrations, update blueprint files before merging."
-            # exit 1  # uncomment to enforce
-          else
-            echo "✅ Blueprint updated in this PR."
-          fi
+		  # Fail if no changes to blueprint files since REF and older than 30 days
+		  NOW=$(date +%s)
+		  STALE=0
+		  for f in "${FILES[@]}"; do
+			if git log -1 --format=%ct -- "$f" >/tmp/ts; then
+			  TS=$(cat /tmp/ts)
+			  AGE_DAYS=$(( (NOW - TS) / 86400 ))
+			  echo "$f last updated $AGE_DAYS day(s) ago"
+			  if [ $AGE_DAYS -gt 30 ]; then
+				STALE=1
+			  fi
+			else
+			  echo "No history for $f — marking as stale"
+			  STALE=1
+			fi
+		  done
+
+		  if [ $STALE -eq 1 ]; then
+			echo "::error::Systems Integration Blueprint is stale (>30 days) or not updated since last release."
+			exit 1
+		  fi
+
+	  - name: Summary
+		run: |
+		  echo "Blueprint guard passed." >> $GITHUB_STEP_SUMMARY

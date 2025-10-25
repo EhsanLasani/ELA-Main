@@ -1,122 +1,119 @@
-<#
+<#!
 .SYNOPSIS
-    Initializes a new ELA project with standard folder structure
+Scaffolds a new ELA project structure, seeds catalogue and README, and copies phase templates.
+
 
 .DESCRIPTION
-    Creates the complete ELA project structure including all phase folders,
-    configuration files, and basic templates.
+Creates standard SDLC folders, Validation subfolders, and optional Systems Integration blueprint stubs.
+
 
 .PARAMETER ProjectPath
-    Path where the project will be created
+Base path where the project will be scaffolded. Defaults to current directory.
+
 
 .PARAMETER ProjectName
-    Name of the ELA project
+Logical project name used in generated README and Catalogue.
+
 
 .EXAMPLE
-    .\Initialize-ELAProject.ps1 -ProjectPath "." -ProjectName "MyELAProject"
-
-.NOTES
-    Author: ELA Framework Team
-    Version: 1.0.0
+./Tools/Scripts/Initialize-ELAProject.ps1 -ProjectPath "." -ProjectName "MyELAProject"
 #>
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)]
-    [string]$ProjectPath,
-    
-    [Parameter(Mandatory = $true)]
-    [string]$ProjectName
+[string]$ProjectPath = ".",
+[Parameter(Mandatory=$true)][string]$ProjectName
 )
+$ErrorActionPreference = 'Stop'
 
-# Define ELA phase structure
-$phases = @(
-    "00_Policy",
-    "01_Definition",
-    "02_Design",
-    "03_Development",
-    "04_Systems_Integration",
-    "05_Testing",
-    "06_Deployment",
-    "07_Operations",
-    "08_Change_Management"
-)
 
-# Create project directory
-$projectRoot = Join-Path $ProjectPath $ProjectName
-if (Test-Path $projectRoot) {
-    Write-Error "Project directory already exists: $projectRoot"
-    exit 1
+function New-Dir($p) {
+if (-not (Test-Path $p)) { New-Item -Type Directory -Path $p | Out-Null }
 }
 
-Write-Host "\nInitializing ELA Project: $ProjectName" -ForegroundColor Cyan
-Write-Host "Location: $projectRoot\n" -ForegroundColor Yellow
 
-# Create project root
-New-Item -Path $projectRoot -ItemType Directory -Force | Out-Null
+# Normalize project root
+$root = Resolve-Path $ProjectPath
+Write-Host "Scaffolding ELA project at: $root"
 
-# Create phase folders
-Write-Host "Creating phase structure..." -ForegroundColor Green
-foreach ($phase in $phases) {
-    $phasePath = Join-Path $projectRoot $phase
-    New-Item -Path $phasePath -ItemType Directory -Force | Out-Null
-    Write-Host "  Created: $phase" -ForegroundColor White
+
+# Folder map
+$folders = @(
+"00_Policy",
+"00_Policy/Templates",
+"00_Policy/Templates/phasewise/01_Definition",
+"00_Policy/Templates/phasewise/02_Design",
+"00_Policy/Templates/phasewise/03_Development",
+"00_Policy/Templates/phasewise/05_Testing",
+"00_Policy/Templates/phasewise/06_Deployment",
+"00_Policy/Templates/phasewise/07_Operations",
+"00_Policy/Templates/phasewise/08_Change_Management",
+"01_Definition/Validation",
+"02_Design/Validation",
+"03_Development/Validation",
+"05_Testing/Validation",
+"06_Deployment/Validation",
+"07_Operations/Validation",
+"08_Change_Management/Validation",
+"Tools/Scripts",
+"Reports",
+".codex"
+)
+
+
+foreach ($f in $folders) { New-Dir (Join-Path $root $f) }
+
+
+# Seed Catalogue.csv if missing
+$catalogue = Join-Path $root "Catalogue.csv"
+if (-not (Test-Path $catalogue)) {
+@(
+'Artifact_ID,Artifact_Name,Artifact_Type,Phase,Owner,Status,Path',
+"PROJ-$($ProjectName),$ProjectName,PROJECT,ALL,Owner TBD,Active,.",
+'DOC-00-ELA_Development_Systems_Integration_Policy,ELA Development & Systems Integration Policy,DOC,Policy,EAO,Draft,00_Policy/ELA_Development_Systems_Integration_Policy.md'
+) | Set-Content -Encoding UTF8 $catalogue
 }
 
-# Create Tools directory
-Write-Host "\nCreating Tools directory..." -ForegroundColor Green
-$toolsPath = Join-Path $projectRoot "Tools"
-New-Item -Path $toolsPath -ItemType Directory -Force | Out-Null
 
-# Create Reports directory
-$reportsPath = Join-Path $projectRoot "Reports"
-New-Item -Path $reportsPath -ItemType Directory -Force | Out-Null
+# Seed README.md if missing
+$readme = Join-Path $root "README.md"
+if (-not (Test-Path $readme)) {
+@(
+"# $ProjectName",
+"\n> Bootstrapped using ELA-Main Initialize-ELAProject.ps1",
+"\n## New Project Quickstart",
+"1. Fill phase templates under \`00_Policy/Templates/phasewise\` and commit to phase folders.",
+"2. Create \`00_Policy/Systems_Integration_Blueprint.md\` and \`00_Policy/Systems_Integration_Blueprint.png\`.",
+"3. Open a PR — CI will run \`blueprint-guard\` and \`validate-policy\`.",
+"4. Fix any reported issues, then merge.",
+"5. Tag the release; archival is handled per policy.",
+"\n## Structure",
+"- 01_Definition … 08_Change_Management (each with /Validation)",
+"- 00_Policy — master templates & policies",
+"- Tools/Scripts — automation",
+"- Reports — exports and compliance output"
+) | Set-Content -Encoding UTF8 $readme
+}
 
-# Create Catalogue.csv
-Write-Host "Creating Catalogue.csv..." -ForegroundColor Green
-$catalogPath = Join-Path $projectRoot "Catalogue.csv"
-$catalogHeader = "ArtifactID,Phase,Type,Name,Version,Status,Owner,LastModified"
-$catalogHeader | Out-File -FilePath $catalogPath -Encoding UTF8
 
-# Create README.md
-Write-Host "Creating README.md..." -ForegroundColor Green
-$readmePath = Join-Path $projectRoot "README.md"
-$readmeContent = @"
-# $ProjectName
+# Seed minimal blueprint stub if missing
+$bpMd = Join-Path $root "00_Policy/Systems_Integration_Blueprint.md"
+if (-not (Test-Path $bpMd)) {
+@(
+"# Systems Integration Blueprint",
+"\n- **Project:** $ProjectName",
+"- **Last Updated:** $(Get-Date -Format 'yyyy-MM-dd')",
+"\n## Context",
+"(Describe domains, systems, and bounded contexts)",
+"\n## Integration Points",
+"(List services, protocols, data contracts, auth, SLAs)",
+"\n## Non-Functional Requirements",
+"(Latency, throughput, availability, security, compliance)",
+"\n## Diagrams",
+"(Reference Systems_Integration_Blueprint.png)"
+) | Set-Content -Encoding UTF8 $bpMd
+}
 
-ELA Framework Project
 
-## Project Structure
-
-This project follows the Enterprise-Level Application (ELA) framework structure:
-
-$(foreach ($phase in $phases) { "- $phase\n" })
-
-## Getting Started
-
-1. Review phase folders and populate with artifacts
-2. Use Tools/Scripts for automation
-3. Maintain Catalogue.csv for artifact tracking
-4. Generate reports using Tools/Modules
-
-## Tools
-
-- **Modules**: PowerShell modules for validation and reporting
-- **Scripts**: Automation scripts for common tasks
-
----
-Generated: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
-"@
-$readmeContent | Out-File -FilePath $readmePath -Encoding UTF8
-
-Write-Host "\n" + ("=" * 60) -ForegroundColor Cyan
-Write-Host "ELA Project initialized successfully!" -ForegroundColor Green
-Write-Host ("=" * 60) + "\n" -ForegroundColor Cyan
-
-Write-Host "Project: $ProjectName" -ForegroundColor White
-Write-Host "Location: $projectRoot" -ForegroundColor White
-Write-Host "Phases: $($phases.Count) folders created" -ForegroundColor White
-Write-Host "\nNext steps:" -ForegroundColor Yellow
-Write-Host "  1. Navigate to: cd $projectRoot" -ForegroundColor White
-Write-Host "  2. Review README.md" -ForegroundColor White
-Write-Host "  3. Start adding artifacts to phase folders\n" -ForegroundColor White
+$bpPng = Join-Path $root "00_Policy/Systems_Integration_Blueprint.png"
+Write-Host "\n✅ ELA project scaffold completed." -ForegroundColor Green
