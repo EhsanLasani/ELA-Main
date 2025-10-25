@@ -29,6 +29,23 @@ Version: v1.0
 **ELA-Main** is the **master governance and template repository** for all Enterprise-Level Application (ELA) projects.  
 It defines the standardized structure, policies, automation pipelines, and AI-assisted development workflows used across the organization.
 
+---
+
+## New Project Quickstart
+
+1. **Scaffold**
+   - Local: `./Tools/Scripts/Initialize-ELAProject.ps1 -ProjectPath "." -ProjectName "<Name>"`
+   - Or: Run GitHub Action **init-project** from the Actions tab.
+2. **Create/Update Blueprint**
+   - Edit `00_Policy/Systems_Integration_Blueprint.md` and add `00_Policy/Systems_Integration_Blueprint.png`.
+3. **Commit & Open PR**
+   - CI runs **blueprint-guard** and **validate-policy**.
+4. **Fix Findings**
+   - Address any missing artifacts/metadata.
+5. **Merge & Tag**
+   - Tag the release; archive docs per policy §16.4.
+
+---
 --
 ## 📘 Purpose
 
