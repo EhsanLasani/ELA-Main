@@ -1,0 +1,27 @@
+name: init-project
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: "Project name"
+        required: true
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create folders and seed files
+        run: |
+          set -e
+          PNAME="${{ github.event.inputs.project_name }}"
+          mkdir -p 00_Policy/Templates/phasewise/{01_Definition,02_Design,03_Development,05_Testing,06_Deployment,07_Operations,08_Change_Management}
+          mkdir -p 01_Definition/Validation 02_Design/Validation 03_Development/Validation 05_Testing/Validation 06_Deployment/Validation 07_Operations/Validation 08_Change_Management/Validation Tools/Scripts Reports .codex
+          [ -f Catalogue.csv ] || echo "Artifact_ID,Artifact_Name,Artifact_Type,Phase,Owner,Status,Path" > Catalogue.csv
+          [ -f README.md ] || printf "# %s\n\n> Bootstrapped via init-project workflow\n" "$PNAME" > README.md
+          [ -f 00_Policy/Systems_Integration_Blueprint.md ] || printf "# Systems Integration Blueprint\n\n- **Project:** %s\n- **Last Updated:** $(date +%F)\n" "$PNAME" > 00_Policy/Systems_Integration_Blueprint.md
+          [ -f 00_Policy/Systems_Integration_Blueprint.png ] || printf "" > 00_Policy/Systems_Integration_Blueprint.png
+      - name: Commit scaffold
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(scaffold): initialize ELA project structure"

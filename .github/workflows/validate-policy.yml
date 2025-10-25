@@ -1,0 +1,35 @@
+name: validate-policy
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check required validation directories
+        run: |
+          for d in 02_Design/Validation 03_Development/Validation 05_Testing/Validation 06_Deployment/Validation 07_Operations/Validation 08_Change_Management/Validation; do
+            test -d "$d" || { echo "Missing directory: $d"; exit 1; }
+          done
+      - name: Check policy metadata headers in Markdown files
+        run: |
+          set -euo pipefail
+          FAIL=0
+          while IFS= read -r -d '' f; do
+            echo "Checking $f"
+            grep -E "^# |^---$|^title:|^version:|^maintained_by:|^classification:|^template_type:|^ela_compliance:|^last_updated:" "$f" >/dev/null || { echo "::error file=$f::Missing required metadata header"; FAIL=1; }
+          done < <(find 00_Policy -name "*.md" -print0)
+          exit $FAIL
+      - name: Enforce presence of key artifacts
+        run: |
+          set -e
+          test -f "Catalogue.csv" || { echo "Missing Catalogue.csv"; exit 1; }
+          test -f "00_Policy/ELA_Development_Systems_Integration_Policy.md" || { echo "Missing merged policy"; exit 1; }
+      - name: Summary
+        run: |
+          echo "Policy validation passed." >> $GITHUB_STEP_SUMMARY
