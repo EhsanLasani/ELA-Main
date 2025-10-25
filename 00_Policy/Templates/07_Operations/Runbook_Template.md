@@ -1,71 +1,55 @@
 
-# RUNBOOK TEMPLATE
+# Runbook Template
 
 ---
-```yaml
-Artifact_ID: TMP-00-Runbook_Template
-Artifact_Name: RUNBOOK TEMPLATE
-Artifact_Type: TMP
-Version: v1.0
-Status: Draft
-Owner: Enterprise Architecture Office (EAO)
-Last_Updated: 2025-10-25
-Description: ELA-compliant template for documenting and executing operational runbooks
-File_Path: 00_Policy/Templates/07_Operations/Runbook_Template.md
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Runbook_Template.md
-Phase: Operations
-Dependencies: None
-Process_Group: Operations
-Process_Step: N/A
-Template_Source: ELA-Template
-Validation_Status: Pending
-Comments: Auto-generated on 2025-10-25
-```
+title: Runbook Template
+version: 2.0.0
+maintained_by: Operations Team
+classification: Internal Use
+template_type: Operations
+ela_compliance: true
+last_updated: 2025-10-25
+---
 
-| **Field**         | **Value**                                                                 |
-|-------------------|---------------------------------------------------------------------------|
-| Artifact ID       | TMP-00-Runbook_Template                                                   |
-| Artifact Name     | RUNBOOK TEMPLATE                                                          |
-| Artifact Type     | TMP                                                                       |
-| Version           | v1.0                                                                      |
-| Status            | Draft                                                                     |
-| Owner             | Enterprise Architecture Office (EAO)                                      |
-| Last Updated      | 2025-10-25                                                                |
-| Description       | ELA-compliant template for documenting and executing operational runbooks  |
-| File Path         | 00_Policy/Templates/07_Operations/Runbook_Template.md                     |
-| GitHub URL        | https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/07_Operations/Runbook_Template.md |
-| Phase             | Operations                                                                |
-| Dependencies      | None                                                                      |
-| Process Group     | Operations                                                                |
-| Process Step      | N/A                                                                       |
-| Template Source   | ELA-Template                                                              |
-| Validation Status | Pending                                                                   |
-| Comments          | Auto-generated on 2025-10-25                                              |
+| Key              | Value                      |
+|------------------|----------------------------|
+| Title            | Runbook Template           |
+| Version          | 2.0.0                      |
+| Maintained By    | Operations Team            |
+| Classification   | Internal Use               |
+| Template Type    | Operations                 |
+| ELA Compliance   | true                       |
+| Last Updated     | 2025-10-25                 |
 
 ---
 
-## How to Use This Template
-- Use this template to document, execute, and maintain operational runbooks for your ELA project or service.
-- Complete each section with actionable, project-specific details and update regularly.
-- Review and update with Operations, DevOps, and Service Owner teams.
+
+## Purpose & Scope
+
+This template provides a comprehensive, ELA-compliant structure for documenting, executing, and maintaining operational runbooks. It ensures clarity, accountability, and actionable guidance for Operations, DevOps, and Service Owner teams.
+
+**Best Practices:**
+- Complete each section with actionable, project-specific details.
+- Review and update regularly with all relevant teams.
+- Ensure all procedures are clear, testable, and up to date.
 
 ---
 
-## [Continue with all original content, starting from Document Control, but ensure all sections are deduplicated, clarified, and actionable.]
 
-## Document Control
-| Field | Value |
-|-------|-------|
-| Document ID | ELA-RUNBOOK-001 |
-| Version | 1.0.0 |
-| Created Date | [Date] |
-| Last Updated | [Date] |
-| Owner | Operations Team |
-| On-Call Contact | [Name/Phone] |
-| Escalation Contact | [Name/Phone] |
-| Approval Status | [Draft/Review/Approved] |
+## 1. Document Control
+| Field             | Value                |
+|-------------------|----------------------|
+| Document ID       | ELA-RUNBOOK-001      |
+| Version           | 2.0.0                |
+| Created Date      | [Date]               |
+| Last Updated      | 2025-10-25           |
+| Owner             | Operations Team      |
+| On-Call Contact   | [Name/Phone]         |
+| Escalation Contact| [Name/Phone]         |
+| Approval Status   | [Draft/Review/Approved] |
 
-## 1. System Overview
+
+## 2. System Overview
 
 ### 1.1 Service Description
 **Service Name:** [Service Name]  
@@ -86,7 +70,8 @@ Comments: Auto-generated on 2025-10-25
 | On-Call Engineer | [Rotation] | [PagerDuty/etc] | 24/7 |
 | Escalation Manager | [Name] | [Email/Phone] | Business hours |
 
-## 2. Service Architecture
+
+## 3. Service Architecture
 
 ### 2.1 Architecture Diagram
 ```
@@ -106,7 +91,8 @@ Comments: Auto-generated on 2025-10-25
 - **Database:** [Details]
 - **Cache:** [Details]
 
-## 3. Access and Authentication
+
+## 4. Access and Authentication
 
 ### 3.1 Access Requirements
 - [ ] VPN Access: [Instructions]
@@ -133,7 +119,8 @@ mysql -h [host] -u [user] -p
 kubectl config use-context [context]
 ```
 
-## 4. Monitoring and Alerting
+
+## 5. Monitoring and Alerting
 
 ### 4.1 Monitoring Dashboards
 - **Primary Dashboard:** [URL]
@@ -162,7 +149,8 @@ kubectl config use-context [context]
 - **Email:** [Distribution list]
 - **SMS:** [Emergency contacts]
 
-## 5. Common Operations
+
+## 6. Common Operations
 
 ### 5.1 Service Start
 ```bash
@@ -230,7 +218,8 @@ for server in server1 server2 server3; do
 done
 ```
 
-## 6. Deployment Procedures
+
+## 7. Deployment Procedures
 
 ### 6.1 Pre-Deployment Checklist
 - [ ] Change request approved
@@ -284,7 +273,8 @@ git pull origin [branch]
 [database rollback steps]
 ```
 
-## 7. Incident Response
+
+## 8. Incident Response
 
 ### 7.1 Incident Severity Levels
 | Severity | Description | Response Time | Escalation |
@@ -332,7 +322,8 @@ L3: Engineering Manager → (1 hour)
 L4: Director/VP Engineering
 ```
 
-## 8. Troubleshooting Guide
+
+## 9. Troubleshooting Guide
 
 ### 8.1 Service Won't Start
 
@@ -453,7 +444,8 @@ SHOW FULL PROCESSLIST;
 - Restart database connections
 - Scale database if needed
 
-## 9. Maintenance Procedures
+
+## 10. Maintenance Procedures
 
 ### 9.1 Regular Maintenance Tasks
 - [ ] Log rotation and cleanup
@@ -475,7 +467,8 @@ SHOW FULL PROCESSLIST;
 [restore command]
 ```
 
-## 10. Performance Tuning
+
+## 11. Performance Tuning
 
 ### 10.1 Optimization Checklist
 - [ ] Database query optimization
@@ -485,7 +478,8 @@ SHOW FULL PROCESSLIST;
 - [ ] JVM/runtime tuning
 - [ ] Load balancer optimization
 
-## 11. Security Operations
+
+## 12. Security Operations
 
 ### 11.1 Security Checks
 - [ ] Review access logs
@@ -500,7 +494,8 @@ SHOW FULL PROCESSLIST;
 3. Notify security team
 4. Follow incident response plan
 
-## 12. Disaster Recovery
+
+## 13. Disaster Recovery
 
 ### 12.1 DR Activation
 ```bash
@@ -520,13 +515,15 @@ SHOW FULL PROCESSLIST;
 [sync commands]
 ```
 
-## 13. Change Log
+
+## 14. Change Log
 
 | Date | Version | Author | Changes |
 |------|---------|--------|----------|
 | [Date] | 1.0.0 | [Name] | Initial release |
 
-## 14. Approval
+
+## 15. Approval
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
@@ -534,9 +531,15 @@ SHOW FULL PROCESSLIST;
 | Technical Lead | [Name] | [Signature] | [Date] |
 | Service Owner | [Name] | [Signature] | [Date] |
 
+
 ---
 
-**Template Version:** 1.0.0  
-**Maintained By:** Operations Team  
-**Next Review Date:** [Date + 3 months]  
-**Document Classification:** Internal Use
+**How to Use This Template:**
+1. Copy this file for your service or project.
+2. Fill in all metadata and document control details.
+3. Complete each section with actionable, up-to-date information.
+4. Review and update regularly with all stakeholders.
+5. Ensure all procedures are clear, testable, and ELA-compliant.
+6. Schedule regular reviews and keep the runbook current.
+
+---

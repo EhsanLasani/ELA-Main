@@ -1,29 +1,39 @@
-## Metadata
----
-Artifact_ID: DOC-00-Document_Structure_G
-Artifact_Name: Document Structure Guidelines
-Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: Document Structure Guidelines
-File_Path: 00_Policy/Document_Structure_Guidelines.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Document_Structure_Guidelines.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
+
 # Document Structure Guidelines
+
+---
+title: Document Structure Guidelines
+version: 2.0.0
+maintained_by: Enterprise Architecture Office (EAO)
+classification: Internal Use
+template_type: Policy
+ela_compliance: true
+last_updated: 2025-10-25
+---
+
+| Key              | Value                              |
+|------------------|------------------------------------|
+| Title            | Document Structure Guidelines      |
+| Version          | 2.0.0                              |
+| Maintained By    | Enterprise Architecture Office     |
+| Classification   | Internal Use                       |
+| Template Type    | Policy                             |
+| ELA Compliance   | true                               |
+| Last Updated     | 2025-10-25                         |
+
+---
+
+## Purpose & Scope
+
+These guidelines define the required structure for all ELA artifacts (DOC, TMP, GDL, VAL, WFL, SCR, IMG, CFG, TST, DAT, INST) across all lifecycle phases. They ensure clarity, traceability, and compliance for documentation in the ELA-Main repository.
+
+**Scope:**
+- All artifact types: DOC, TMP, GDL, VAL, WFL, SCR, IMG, CFG, TST, DAT, INST
+- All lifecycle phases: Definition, Design, Development, Testing, Deployment, Operations, Change Management
+- All storage contexts: GitHub repository, databases, web application
+- All workflow stages: Master templates → Process guides → Filled instances → Validation
+
+---
 
 ## 0. Metadata
 
@@ -66,12 +76,14 @@ Every ELA artifact follows this structure:
 #### 4.2.2 Extended Fields (Conditional)
 
 **For Templates (TMP):**
-```yaml\n\ntemplate_category: "Planning|Analysis|Design|Implementation|Validation"
+```yaml
+\n\ntemplate_category: "Planning|Analysis|Design|Implementation|Validation"
 fill_instructions_url: "[Link to guideline document]"
 ```
 
 **For Instances (INST):**
-```yaml\n\nfilled_date: "YYYY-MM-DD"
+```yaml
+\n\nfilled_date: "YYYY-MM-DD"
 
 ```
 

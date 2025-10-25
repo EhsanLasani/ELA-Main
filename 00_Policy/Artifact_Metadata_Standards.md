@@ -1,3 +1,78 @@
+# Artifact Metadata Standards and Catalog Guidelines
+
+---
+title: Artifact Metadata Standards and Catalog Guidelines
+version: 2.0.0
+maintained_by: Enterprise Architecture Office (EAO)
+classification: Internal Use
+template_type: Policy
+ela_compliance: true
+last_updated: 2025-10-25
+---
+
+| Key              | Value                                      |
+|------------------|--------------------------------------------|
+| Title            | Artifact Metadata Standards and Catalog Guidelines |
+| Version          | 2.0.0                                      |
+| Maintained By    | Enterprise Architecture Office (EAO)        |
+| Classification   | Internal Use                                |
+| Template Type    | Policy                                      |
+| ELA Compliance   | true                                        |
+| Last Updated     | 2025-10-25                                  |
+
+---
+## Purpose & Scope
+
+This standard defines the required metadata for all ELA artifacts (policies, templates, guidelines, checklists, workflows, scripts, diagrams, etc.) and the structure of the central artifact registry (`catalog.csv`). It ensures traceability, consistency, and compliance across the ELA-Main repository.
+
+**Scope:**
+- All artifacts in the ELA-Main repository
+- All project teams creating or maintaining ELA artifacts
+- Automated workflows that validate and update the catalog
+## 1. Required Metadata Fields
+
+All ELA artifacts must include a YAML metadata block after the H1 heading, followed by a human-readable metadata table. Required fields:
+
+| Field           | Example Value                        | Description                       |
+|-----------------|--------------------------------------|-----------------------------------|
+| title           | ELA Development Policy               | Artifact title                    |
+| version         | v2.0                                 | Semantic version                  |
+| maintained_by   | Enterprise Architecture Office (EAO) | Responsible team                  |
+| classification  | Internal Use                         | Data classification               |
+| template_type   | Policy                               | Artifact type/category            |
+| ela_compliance  | true                                 | ELA standards compliance          |
+| last_updated    | 2025-10-25                           | Last modification date            |
+
+**Optional fields:** custodian, effective_date, review_cycle, compliance_standards, approved_by, linked_pr, dependencies, phase, description, status, etc.
+## 2. Metadata Patterns by Artifact Type
+
+| Artifact Type | ID Pattern                | Example ID                | Example Owner/Team                |
+|--------------|---------------------------|---------------------------|-----------------------------------|
+| Policy Doc   | DOC-[PHASE]-[NAME]        | DOC-POL-ELA_DEV           | Enterprise Architecture Office    |
+| Template     | TMP-[PHASE]-[NAME]        | TMP-DEF-PROJECT_PLAN      | Business Analysis Team            |
+| Guideline    | GDL-[PHASE]-[NAME]        | GDL-DEF-NFR_GUIDELINES    | Solution Architecture Team        |
+| Validation   | VAL-[PHASE]-[NAME]        | VAL-DEF-EXIT_CHECKLIST    | QA Team                           |
+| Workflow     | WFL-[TYPE]-[NAME]         | WFL-VAL-CATALOG_LINT      | DevOps Team                       |
+| Script       | SCR-[TYPE]-[NAME]         | SCR-SYNC-GIT_SYNC         | DevOps Team                       |
+| Image        | IMG-[TYPE]-[NAME]         | IMG-ARCH-SYS_INT_BLUEPRINT| Enterprise Architecture Office    |
+| Config       | CFG-[CONTEXT]-[NAME]      | CFG-APP-DATABASE_CONFIG   | DevOps Team                       |
+| Test         | TST-[TYPE]-[NAME]         | TST-CASE-USER_LOGIN       | QA Team                           |
+| Data         | DAT-[TYPE]-[NAME]         | DAT-CATALOG-ARTIFACTS     | Data Governance Team              |
+
+**See Document Structure Guidelines for full details and examples.**
+## Version Control
+
+| Version | Date       | Description                                                    | Author |
+|---------|------------|----------------------------------------------------------------|--------|
+| v2.0    | 2025-10-25 | ELA-compliant structure, clarified, deduplicated, enhanced      | EAO    |
+| v1.0    | 2025-10-24 | Initial release with 10 artifact types and comprehensive metadata standards | EAO |
+
+---
+
+**Document Control:**
+- Version history and approvals tracked via PRs and tags
+- Policy owned by CTO, maintained by EAO
+- Review cycle: Semi-annual or as needed
 ## Metadata
 ---
 Artifact_ID: DOC-00-Artifact_Metadata_St

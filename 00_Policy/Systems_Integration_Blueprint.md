@@ -1,29 +1,33 @@
-## Metadata
+
+# Systems Integration Blueprint
+
 ---
-Artifact_ID: DOC-00-Systems_Integration_
-Artifact_Name: 0. Metadata
-Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: 0. Metadata
-File_Path: 00_Policy/Systems_Integration_Blueprint.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Systems_Integration_Blueprint.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
-Version: v1.0
+title: Systems Integration Blueprint
+version: 2.0.0
+maintained_by: Enterprise Architecture Office (EAO)
+classification: Internal Use
+template_type: Policy
+ela_compliance: true
+last_updated: 2025-10-25
 ---
-## Metadata
-## Metadata
-# 0. Metadata
+
+| Key              | Value                              |
+|------------------|------------------------------------|
+| Title            | Systems Integration Blueprint       |
+| Version          | 2.0.0                              |
+| Maintained By    | Enterprise Architecture Office     |
+| Classification   | Internal Use                       |
+| Template Type    | Policy                             |
+| ELA Compliance   | true                               |
+| Last Updated     | 2025-10-25                         |
+
+---
+
+## Purpose & Scope
+
+This blueprint provides a comprehensive, ELA-compliant framework for systems integration in the ELA-Main repository. It covers provisioning, automation, access management, branching, release management, observability, disaster recovery, and compliance, referencing the ELA Artifact Metadata Standards and Document Structure Guidelines.
+
+---
 
 - **Artifact ID (catalog.csv):** DOC-POL-SYSTEMS-INTE
 - **Version:** v2.0

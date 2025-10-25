@@ -1,95 +1,99 @@
-## Metadata
----
-Artifact_ID: DOC-00-README
-Artifact_Name: ELA-Main Policy Templates
-Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: ELA-Main Policy Templates
-File_Path: 00_Policy/Templates/README.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/Templates/README.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
-Version: v1.0
----
-## Metadata
-## Metadata
+
 # ELA-Main Policy Templates
 
-This folder contains enterprise-ready templates and checklists for implementing ELA Development Policy standards.
+---
+title: ELA-Main Policy Templates
+version: 2.0.0
+maintained_by: Enterprise Architecture Office (EAO)
+classification: Internal Use
+template_type: Policy
+ela_compliance: true
+last_updated: 2025-10-25
+---
+
+| Key              | Value                              |
+|------------------|------------------------------------|
+| Title            | ELA-Main Policy Templates          |
+| Version          | 2.0.0                              |
+| Maintained By    | Enterprise Architecture Office     |
+| Classification   | Internal Use                       |
+| Template Type    | Policy                             |
+| ELA Compliance   | true                               |
+| Last Updated     | 2025-10-25                         |
+
+---
+
+
+This folder contains enterprise-ready, ELA-compliant templates and checklists for implementing ELA Development Policy standards across all project phases. Each template is structured for clarity, traceability, and actionable use, following the latest ELA Artifact Metadata and Document Structure Guidelines.
+
+**How to Use:**
+1. Copy the relevant template to your project folder.
+2. Fill in all required sections, ensuring metadata and structure compliance.
+3. Update version control and document history as you make changes.
+4. Submit for review and approval according to ELA governance policy.
+
+**Best Practices:**
+- Always use the latest template version from this directory.
+- Complete all metadata fields and keep them up to date.
+- Review the ELA Artifact Metadata Standards and Document Structure Guidelines before submitting documentation.
+- Use the human-readable metadata table for quick reference and compliance checks.
+
 
 ## Template Categories
 
 ### 1. Non-Functional Requirements & Architecture
-- NFR_Specification_Template.md
-- Architecture_Decision_Record_Template.md
-- UX_Design_Standards_Checklist.md
+	- NFR_Specification_Template.md
+	- Architecture_Decision_Record_Template.md
+	- UX_Design_Standards_Checklist.md
 
 ### 2. Security & Compliance
-- Security_Requirements_Template.md
-- Threat_Modeling_Template.md
-- OWASP_Compliance_Checklist.md
-- Data_Governance_Template.md
+	- Security_Requirements_Template.md
+	- Threat_Modeling_Template.md
+	- OWASP_Compliance_Checklist.md
+	- Data_Governance_Template.md
 
 ### 3. API & Integration
-- API_Specification_Template.md
-- API_Versioning_Policy.md
-- Legacy_Integration_Checklist.md
+	- API_Specification_Template.md
+	- API_Versioning_Policy.md
+	- Legacy_Integration_Checklist.md
 
 ### 4. Quality Assurance & Testing
-- Test_Strategy_Template.md
-- Quality_Gates_Checklist.md
-- Performance_Testing_Plan.md
+	- Test_Strategy_Template.md
+	- Quality_Gates_Checklist.md
+	- Performance_Testing_Plan.md
 
 ### 5. DevOps & Infrastructure
-- Environment_Configuration_Template.md
-- DR_BCP_Plan_Template.md
-- Infrastructure_as_Code_Standards.md
+	- Environment_Configuration_Template.md
+	- DR_BCP_Plan_Template.md
+	- Infrastructure_as_Code_Standards.md
 
 ### 6. Governance & Project Management
-- Project_Kickoff_Checklist.md
-- Definition_of_Done_Checklist.md
-- Compliance_Matrix_ISO_IEEE_OWASP.md
+	- Project_Kickoff_Checklist.md
+	- Definition_of_Done_Checklist.md
+	- Compliance_Matrix_ISO_IEEE_OWASP.md
 
 ### 7. Documentation Standards
-- Technical_Documentation_Template.md
-- Runbook_Template.md
-- Knowledge_Transfer_Checklist.md
+	- Technical_Documentation_Template.md
+	- Runbook_Template.md
+	- Knowledge_Transfer_Checklist.md
 
 ### 8. Monitoring & Operations
-- Observability_Requirements_Template.md
-- Incident_Response_Playbook.md
-- SLI_SLO_Definition_Template.md
+	- Observability_Requirements_Template.md
+	- Incident_Response_Playbook.md
+	- SLI_SLO_Definition_Template.md
 
 ### 9. Dependencies & Cost Management
-- Dependency_Assessment_Template.md
-- FinOps_Budget_Tracker.md
+	- Dependency_Assessment_Template.md
+	- FinOps_Budget_Tracker.md
 
 ### 10. Continuous Improvement
-- Retrospective_Template.md
-- Technical_Debt_Register.md
-- Innovation_Proposal_Template.md
-
-## Usage
-
-1. Copy the relevant template to your project folder
-2. Fill in all required sections
-3. Update version control information
-4. Submit for review according to governance policy
-
-## Version Control
-
-All templates follow semantic versioning (MAJOR.MINOR.PATCH)
+	- Retrospective_Template.md
+	- Technical_Debt_Register.md
+	- Innovation_Proposal_Template.md
 
 ---
-Maintained by: Enterprise Architecture Office
-Last Updated: 2025-10-23
+
+**Version Control:**
+All templates follow semantic versioning (MAJOR.MINOR.PATCH).
+
+---

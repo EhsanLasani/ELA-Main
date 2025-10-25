@@ -1,29 +1,40 @@
-## Metadata
+
+# ELA Development Policy
+
 ---
-Artifact_ID: DOC-00-ELA_Development_Poli
-Artifact_Name: 0. Metadata
-Artifact_Type: DOC
-Comments: Auto-generated on 2025-10-25
-Dependencies: None
-Derived_From: 
-Description: 0. Metadata
-File_Path: 00_Policy/ELA_Development_Policy.md
-Filled_By: 
-GitHub_URL: https://github.com/EhsanLasani/ELA-Main/blob/main/00_Policy/ELA_Development_Policy.md
-Last_Updated: 2025-10-25
-Owner: Enterprise Architecture Office (EAO)
-Phase: Policy
-Process_Group: Policy
-Process_Step: N/A
-Project_Name: 
-Status: Draft
-Template_Source: 
-Validation_Status: Pending
-Version: v1.0
+title: ELA Development Policy
+version: 2.0.0
+maintained_by: Enterprise Architecture Office (EAO)
+classification: Internal Use
+template_type: Policy
+ela_compliance: true
+last_updated: 2025-10-25
 ---
-## Metadata
-## Metadata
-# 0. Metadata
+
+| Key              | Value                              |
+|------------------|------------------------------------|
+| Title            | ELA Development Policy             |
+| Version          | 2.0.0                              |
+| Maintained By    | Enterprise Architecture Office     |
+| Classification   | Internal Use                       |
+| Template Type    | Policy                             |
+| ELA Compliance   | true                               |
+| Last Updated     | 2025-10-25                         |
+
+---
+
+## Purpose & Scope
+
+This policy defines the mandatory standards, practices, and controls for all ELA projects and derivative repositories. It ensures quality, security, compliance, and continuous improvement across all phases and teams, referencing the ELA Artifact Metadata Standards and Document Structure Guidelines.
+
+**Scope:**
+- All ELA projects and derivative repositories
+- All contributors: internal teams, external contractors, and AI assistants
+- All tools and platforms: IDEs, GitHub, MS Teams, SharePoint, CI/CD systems, monitoring platforms
+- All environments: Local development, CI/CD, Dev, Test, Staging, Production
+- All phases: Definition, Design, Development, Testing, Deployment, Operations, Change Management, and Continuous Improvement
+
+---
 
 - **Artifact ID (catalog.csv):** DOC-POL-ELA-DEVELOPM
 - **Version:** v2.0
