@@ -1,5 +1,7 @@
 ## Metadata
 ---
+## Metadata
+```yaml
 Artifact_ID: DOC-00-README
 Artifact_Name: Definition Phase Templates
 Artifact_Type: DOC
