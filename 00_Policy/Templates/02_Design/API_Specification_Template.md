@@ -2,6 +2,7 @@
 # API SPECIFICATION TEMPLATE
 
 ---
+```yaml
 Artifact_ID: TMP-00-API_Specification_Template
 Artifact_Name: API Specification
 Artifact_Type: TMP
