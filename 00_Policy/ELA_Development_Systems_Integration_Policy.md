@@ -85,6 +85,20 @@ To ensure clarity, traceability, and compliance, the following principles apply:
 
 For each SDLC phase, follow the detailed process/steps below. Each step lists the controlling template(s) and references international standards (ISO/IEC/IEEE 12207, CMMI, PMBOK) and industry best practices. All activities must use ELA-compliant templates (00_Policy/Templates/phasewise), phasewise guides, and store completed artifacts in phasewise Validation folders.
 
+### SDLC Template-to-Phase/Step Mapping Summary
+
+| SDLC Phase / Step                | Template Name(s)                                 | File Name(s) / Location                                 |
+|----------------------------------|--------------------------------------------------|---------------------------------------------------------|
+| **Planning (Initiation)**        | Business Case, Feasibility Study, Stakeholder Register, Project Charter, Risk Assessment | Business_Case_Template.md, Feasibility_Study_Template.md, Stakeholder_Register.md, Project_Charter_Template.md, Risk_Assessment.csv (00_Policy/Templates/phasewise/01_Definition/) |
+| **Analysis (Definition)**        | Requirements Elicitation Agenda, Requirements Document, NFR Template, Gap Analysis, Risk Assessment, Traceability Matrix | Requirements_Elicitation_Workshop_Agenda.md, Requirements_Document.md, NFR_Template.md, Gap_Analysis_Template.md, Risk_Assessment.csv, Traceability_Matrix.md (00_Policy/Templates/phasewise/01_Definition/) |
+| **Design**                       | Architecture Diagram, Systems Integration Blueprint, NFR Template, Interface Contract, Design Review Checklist | Architecture_Diagram_Template.md, Systems_Integration_Blueprint.md, NFR_Template.md, Interface_Contract_Template.md, Design_Review_Checklist.md (00_Policy/Templates/phasewise/02_Design/) |
+| **Implementation (Development)** | Coding Standards, Integration Traceability Matrix, Systems Integration Blueprint, Traceability Matrix, Code Review Checklist, README | Coding_Standards.md, Integration_Traceability_Matrix.md, Systems_Integration_Blueprint.md, Traceability_Matrix.md, Code_Review_Checklist.md, README.md (00_Policy/Templates/phasewise/03_Development/) |
+| **Testing**                      | Test Plan, Test Case, Test Report, NFR Validation Checklist, Traceability Matrix, Test Exit Report | Test_Plan_Template.md, Test_Case_Template.md, Test_Report_Template.md, NFR_Validation_Checklist.md, Traceability_Matrix.md, Test_Exit_Report.md (00_Policy/Templates/phasewise/05_Testing/) |
+| **Deployment**                   | Deployment Plan, Rollback Plan, Systems Integration Blueprint, Training Materials, Release Notes, Deployment Approval Form | Deployment_Plan_Template.md, Rollback_Plan_Template.md, Systems_Integration_Blueprint.md, Training_Materials_Template.md, Release_Notes_Template.md, Deployment_Approval_Form.md (00_Policy/Templates/phasewise/06_Deployment/) |
+| **Maintenance (Operations & Change Management)** | Runbook, Incident Report, Systems Integration Blueprint, Change Request, Lessons Learned, Operations Review Checklist | Runbook_Template.md, Incident_Report_Template.md, Systems_Integration_Blueprint.md, Change_Request_Template.md, Lessons_Learned_Template.md, Operations_Review_Checklist.md (00_Policy/Templates/phasewise/07_Operations/, 08_Change_Management/) |
+
+> **Note:** Cross-cutting templates (e.g., Risk_Assessment.csv, Systems_Integration_Blueprint.md) are referenced in multiple phases but maintained as master templates in the authoritative location. Each phase/step folder contains references or symlinks as needed.
+
 ### 3.1 Planning (Initiation)
 **Purpose:** Define business need, objectives, feasibility, and initial scope.
 
